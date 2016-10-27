@@ -10,33 +10,6 @@
     <atom:link href="http://durtchrt.github.io/blog/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>즐겨찾기 등록용 스크립트 샘플들</title>
-      <link>http://durtchrt.github.io/blog/2016/10/27/script_samples/</link>
-      <pubDate>Thu, 27 Oct 2016 13:18:55 +0900</pubDate>
-      
-      <guid>http://durtchrt.github.io/blog/2016/10/27/script_samples/</guid>
-      <description>
-
-&lt;h4 id=&#34;다음-시작화면에서-쓸만한-기능들&#34;&gt;다음 시작화면에서 쓸만한 기능들&lt;/h4&gt;
-
-&lt;h3 id=&#34;루빅스보기&#34;&gt;루빅스보기&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;javascript:$(&#39;*&#39;).each((a, b) =&amp;gt; { if(b.className.indexOf(&#39;rubics&#39;) &amp;gt; 0) { b.style.backgroundColor = &#39;red&#39;; } })
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;루빅스-다시그리기&#34;&gt;루빅스 다시그리기&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;javascript:window.daumGlueDynamicContentRefresh({isHistoryBack:true})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;티아라태그보기&#34;&gt;티아라태그보기&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;javascript:$(&#39;#daumContent a&#39;).each((a, b) =&amp;gt; { if(b.className.indexOf(&#39;#&#39;) &amp;gt; 0) { var reg = /([\s]*[#][\w]+[\s]*){3}/; if(reg.test(b.className)) { $(b).text(b.className.match(reg)) } } })
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
       <title>크롬에 자주사용하는 javascript 즐겨찾기로 추가하기</title>
       <link>http://durtchrt.github.io/blog/2016/10/26/daum_favorites_javascript/</link>
       <pubDate>Wed, 26 Oct 2016 18:19:58 +0900</pubDate>
