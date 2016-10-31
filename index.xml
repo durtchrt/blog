@@ -7,8 +7,88 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>durtchrt</copyright>
-    <lastBuildDate>Wed, 26 Oct 2016 18:19:58 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 31 Oct 2016 15:52:48 +0900</lastBuildDate>
     <atom:link href="http://durtchrt.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Java Generics 번역 2</title>
+      <link>http://durtchrt.github.io/blog/java/generics/2/</link>
+      <pubDate>Mon, 31 Oct 2016 15:52:48 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/2/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Generics는 왜 사용하는가&lt;/strong&gt;  (Why Use Generics?)&lt;/p&gt;
+
+&lt;p&gt;간단히 말하면, generics는 타입을 클래스, 인터페이스, 메소드를 정의할 때 파라메터화 할 수 있다. 메소드 선언에 사용되는 파라미터 형식처럼, 타입 파라미터는 다른 입력값을 같은 코드를 재 사용할 수 있는 방법을 제시한다. 다른점은 형식 파라미터는 값이 입력이다, 타입 파라메터는 타입이 입력이다.
+&lt;code&gt;In a nutshell, generics enable types (classes and interfaces) to be parameters when defining classes, interfaces and methods. Much like the more familiar formal parameters used in method declarations, type parameters provide a way for you to re-use the same code with different inputs. The difference is that the inputs to formal parameters are values, while the inputs to type parameters are types.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;generic를 사용한 코드는 그렇지 않는 코드 대비 많은 장점을 가졌다:
+&lt;code&gt;Code that uses generics has many benefits over non-generic code&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;컴파일 타임에 강력한 타입 체크를한다.
+&lt;code&gt;Stronger type checks at compile time.&lt;/code&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;자바 컴파일러는 타입 안전성에 위반하는 코드가 있다면 일반적인 코드와 오류 이슈에 강한 타입 검사를 적용한다. 컴파일타임에 에러를 고치는 것은 런타임 에러를 고치는 것 보다 쉽다.&lt;br /&gt;
+&lt;code&gt;A Java compiler applies strong type checking to generic code and issues errors if the code violates type safety. Fixing compile-time errors is easier than fixing runtime errors, which can be difficult to find.&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Elimination of casts. &lt;br/&gt;
+generics 없이 캐스팅이 필요한 코드 조각입니다.
+&lt;code&gt;The following code snippet without generics requires casting:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List list = new ArrayList();
+list.add(&amp;quot;hello&amp;quot;);
+String s = (String) list.get(0);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;generics를 사용해서 코드를 다시 작성하면, 코드는 더이상 캐스팅이 필요 없어집니다.
+&lt;code&gt;When re-written to use generics, the code does not require casting:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List&amp;lt;String&amp;gt; list = new ArrayList&amp;lt;String&amp;gt;();
+list.add(&amp;quot;hello&amp;quot;);
+String s = list.get(0);   // no cast
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;프로그래머들이 일반적인 알고리즘을 구현하도록 지원한다.&lt;br&gt;
+generics를 사용하면서 프로그래머들은 다양한 타입들의 콜렉션에서 동작하고, 수정가능하며, 더 안정적이고 읽기 쉬운 코드를 일반적인 알고리즘으로 구현할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Enabling programmers to implement generic algorithms.
+By using generics, programmers can implement generic algorithms that work on collections of different types, can be customized, and are type safe and easier to read.&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>java generics 번역 1</title>
+      <link>http://durtchrt.github.io/blog/java/generics/1/</link>
+      <pubDate>Mon, 31 Oct 2016 15:07:44 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/1/</guid>
+      <description>
+
+&lt;h1 id=&#34;자바-제넥릭스-java-generics-1&#34;&gt;자바 제넥릭스 - Java Generics 1&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/index.html&#34;&gt;원본&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-java-tutorials&#34;&gt;The Java Tutorials&lt;/h2&gt;
+
+&lt;h3 id=&#34;lesson-generics-updated&#34;&gt;Lesson: Generics(Updated)&lt;/h3&gt;
+
+&lt;p&gt;모든 사소하지 않은 소프트웨어 프로젝트에서 버그는 삶의 진실이다. 주의깊게 계획, 프로그래밍, 테스트는 버그가 스며드는것을 줄여준다. 하지만 여찌됐든, 언젠가! 버그는 코드에서 기어다닐 방법을 항상 찾는다. 이는 결국 새로운 기능이 도입되거나 코드 사이즈와 복장섭이 증가됨에 따라 심각하게 눈에 띄게 될 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;In any nontrivial software project, bugs are simply a fact of life. Careful planning, programming, and testing can help reduce their pervasiveness, but somehow, somewhere, they&#39;ll always find a way to creep into your code. This becomes especially apparent as new features are introduced and your code base grows in size and complexity.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;운좋게 몇몇 버그는 찾기 쉽다. 예를들어, 컴파일 타임 버그는 초기에 찾을 수 있다. 컴파일러의 에러 메세지를 이용하여 문제점을 발견하고 바로 거기서 고칠수 있다. 반면에 런타임 버그는 훨씬 더 해결이 어렵다. 런타임버그는 겉으로 직접 나타나지 않으며, 버그가 동작할 때, 그것은 프로그램에서 실제 문제의 원인에서 멀리 떨어진 지점에 있을 수도 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Fortunately, some bugs are easier to detect than others. Compile-time bugs, for example, can be detected early on; you can use the compiler&#39;s error messages to figure out what the problem is and fix it, right then and there. Runtime bugs, however, can be much more problematic; they don&#39;t always surface immediately, and when they do, it may be at a point in the program that is far removed from the actual cause of the problem.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Generics는 컴파일 타임에 버그를 찾을수 있게되어 코드에 안정성을 더합니다. 이 과정을 마친후에는 Gilad Bracha의 Generics 튜토리얼을 진행할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Generics add stability to your code by making more of your bugs detectable at compile time. After completing this lesson, you may want to follow up with the Generics tutorial by Gilad Bracha.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>크롬에 자주사용하는 javascript 즐겨찾기로 추가하기</title>
