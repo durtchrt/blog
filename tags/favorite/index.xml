@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>개발 저장소</title>
+    <link>http://durtchrt.github.io/blog/tags/favorite/index.xml</link>
+    <description>Recent content on 개발 저장소</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>durtchrt</copyright>
+    <atom:link href="http://durtchrt.github.io/blog/tags/favorite/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>크롬에 자주사용하는 javascript 즐겨찾기로 추가하기</title>
+      <link>http://durtchrt.github.io/blog/2016/10/26/daum_favorites_javascript/</link>
+      <pubDate>Wed, 26 Oct 2016 18:19:58 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/2016/10/26/daum_favorites_javascript/</guid>
+      <description>
+
+&lt;h5 id=&#34;시작하기전-용어-정리&#34;&gt;시작하기전 용어 정리&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;주소표시줄: 웹브라우저에서 url을 입력하는 영역&lt;/li&gt;
+&lt;li&gt;스크립트 : 웹브라우저가 읽을수 있는 프로그램 코드 자바스크립트를 의미합니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;1-자바스크립트-주소표시줄에서-실행&#34;&gt;1. 자바스크립트 주소표시줄에서 실행&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;../script_run.png&#34; alt=&#34;주소창에서스크립트실행하기&#34; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;javascript:alert(&#39;Hello World!&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;위의 코드를 주소표시줄에 &lt;em&gt;직접&lt;/em&gt; 타이핑해보세요&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;(주소표시줄에 복사/붙여넣기하면 &amp;lsquo;javascript:&amp;rsquo; 글자가 없어져서 제대로 동작을하지 않아요)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../script_run_after.png&#34; alt=&#34;주소창에서스크립트실행후화면&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위의 이미지처럼 alert창이 나오면 스크립트 실행이 된 것입니다.&lt;/p&gt;
+
+&lt;h3 id=&#34;2-자바스크립트-즐겨찾기-추가&#34;&gt;2. 자바스크립트 즐겨찾기 추가&lt;/h3&gt;
+
+&lt;p&gt;웹브라우저가 제공하는 기능으로 즐겨찾기가 있습니다.
+&lt;img src=&#34;../bookmark_manager.png&#34; alt=&#34;bookmark&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;크롬의 우측에 있는 메뉴를 보면 북마크 관리자가 있습니다. 북마크 관리자를 클릭하면
+아래의 화면이 보이실 겁니다.(단축키: 옵션 + 커맨드 + B)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../bookmark_manager_1.png&#34; alt=&#34;bookmark_manager&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이 화면에서 우클릭을 하시면 아래의 메뉴가 나옵니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../bookmark_manager_menu.png&#34; alt=&#34;북마크메뉴&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;메뉴에서 페이지 추가를 누르시고&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../bookmark_add_page.png&#34; alt=&#34;페이지추가&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이미지와 같이 페이지를 추가해주세요&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../bookmark_added_page.png&#34; alt=&#34;페이지추가후&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;페이지가 즐겨찾기가 추가된 것을 보실수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;추가된 즐겨찾기에서 더블클릭을하시면 새창으로 즐겨찾기된 페이지가 나오는 것을 보실수 있습니다.
+&lt;img src=&#34;../daum.png&#34; alt=&#34;다음&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그럼 즐겨찾기에 자바스크립트를 추가해보겠습니다.&lt;/p&gt;
+
+&lt;p&gt;다시 북마크 관리자로 이동하신 후 아래의 이미지처럼 우클릭 후 폴더추가를 해주세요&lt;br /&gt;
+&lt;img src=&#34;../bookmark_add_javascript.png&#34; alt=&#34;자바스크립트 추가&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../alert_script.png&#34; alt=&#34;북마크alert&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;만들어진 즐겨찾기를 더블클릭해보면 새창이 열리면서 alert차이 나오는 것을 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../after_alert_script.png&#34; alt=&#34;북마크alert후&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;현시점까지는 스크립트가 북마크창에서만 실행시킬 수 밖에 없는 문제가 있습니다.
+이것을 해결하는 방법은 &lt;strong&gt;북마크바&lt;/strong&gt; 를 추가하는 것입니다.&lt;/p&gt;
+
+&lt;h2 id=&#34;3-북마크바-추가&#34;&gt;3. 북마크바 추가&lt;/h2&gt;
+
+&lt;p&gt;크롬 메뉴를 보시면
+&lt;img src=&#34;../bookmarkbarmenu.png&#34; alt=&#34;북마크바메뉴&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;북마크바 표시를 클릭해보시면 주소표시줄에 아래의 이미지 처럼 북마크 바가 추가된 것을 확인할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../bookmarkbar.png&#34; alt=&#34;북마크바&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../bookmarkbar2.png&#34; alt=&#34;북마크바2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;원하는 페이지에서 북마크된 스크립트를 실행해보면&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../daum_alert.png&#34; alt=&#34;북마크스크립트 실행&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;페이지에서 alert창이 나오는 것을 볼수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;다음 포스트는 유용한 스크립트들 모음을 작성할 예정입니다.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
