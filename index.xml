@@ -7,8 +7,155 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>durtchrt</copyright>
-    <lastBuildDate>Mon, 31 Oct 2016 15:52:48 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 31 Oct 2016 17:08:57 +0900</lastBuildDate>
     <atom:link href="http://durtchrt.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>java generics 번역 3</title>
+      <link>http://durtchrt.github.io/blog/java/generics/3/</link>
+      <pubDate>Mon, 31 Oct 2016 17:08:57 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/3/</guid>
+      <description>&lt;p&gt;Generic Types&lt;/p&gt;
+
+&lt;p&gt;generic type은 일반적인 클래스, 인터페이스를 타입 파라미터화하는 것이다. Box 클래스는 개념을 증명하며 코드가 변경되어질 것입니다.
+&lt;code&gt;A generic type is a generic class or interface that is parameterized over types. The following Box class will be modified to demonstrate the concept.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;A Simple Box Class&lt;/p&gt;
+
+&lt;p&gt;generic을 사용하지 않은 예제로 시작해봅시다. Box 클래스는 모든 타입의 object에서 동작합니다. Box 클래스는 set(추가), get(조회) 2개의 메서드가 있습니다.
+&lt;code&gt;Begin by examining a non-generic Box class that operates on objects of any type. It needs only to provide two methods: set, which adds an object to the box, and get, which retrieves it:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class Box {
+    private Object object;
+
+    public void set(Object object) { this.object = object; }
+    public Object get() { return object; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;객체의 set, get 메서드는 기본형을 제외하면 어떤 타입(참조형)이든 인자로 넣을수 있다. Box 클래스가 사용되어지지만 컴파일 타임에 검증할 방법이 없다. 코드의 한파트에서는 Integer를 넣고 Integer가 return되어지길 기대하지만 다른 한쪽 코드에서는 실수로 String을 입력해서 런타임 에러가 나올 것입니다.
+&lt;code&gt;Since its methods accept or return an Object, you are free to pass in whatever you want, provided that it is not one of the primitive types. There is no way to verify, at compile time, how the class is used. One part of the code may place an Integer in the box and expect to get Integers out of it, while another part of the code may mistakenly pass in a String, resulting in a runtime error.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Generic 버전의 Box 클래스.&lt;br&gt;
+&lt;code&gt;A Generic Version of the Box Class&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;generic 클래시는 아래 포멧처럼 정의되었다.&lt;br&gt;
+&lt;code&gt;A generic class is defined with the following format:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;class name&amp;lt;T1, T2, ..., Tn&amp;gt; { /* ... */ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;타입 파라미터 문법은 클래스명 뒤에 꺽쇠(&amp;lt;&amp;gt;) 기호로 구분된다. 이것은 T1, T2, &amp;hellip;, and Tn 등으로 타입 파라미터를 명시한다.(타입변수라고 불리기도한다.) .
+&lt;code&gt;The type parameter section, delimited by angle brackets (&amp;lt;&amp;gt;), follows the class name. It specifies the type parameters (also called type variables) T1, T2, ..., and Tn.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Box 클래스를 generics로 변경해보자. &amp;ldquo;public class Box&amp;rdquo; 코드를 &amp;ldquo;public class Box&lt;T&gt;&amp;ldquo;로 변경해서 generic 타입을 선언하여 생성한다. T라는 타입 변수를 말하자면 클래스 안 어디든지 사용할 수 있는 변수이다.
+&lt;code&gt;To update the Box class to use generics, you create a generic type declaration by changing the code &amp;quot;public class Box&amp;quot; to &amp;quot;public class Box&amp;lt;T&amp;gt;&amp;quot;. This introduces the type variable, T, that can be used anywhere inside the class.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Box 클래스가 이렇게 바뀝니다.&lt;br&gt;
+&lt;code&gt;With this change, the Box class becomes:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;/**
+ * Generic version of the Box class.
+ * @param &amp;lt;T&amp;gt; the type of the value being boxed
+ */
+public class Box&amp;lt;T&amp;gt; {
+    // T stands for &amp;quot;Type&amp;quot;
+    private T t;
+
+    public void set(T t) { this.t = t; }
+    public T get() { return t; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;소스 코드 변경에서 보이듯이, 기존 코드에서 Object 대신 T로 수정되었다. Type 변수는 기본형 빼고는(=참조형)이면 된다.(클래스/인터페이스/배열 타입 또는 다른 Type 변수가 Type 변수로 될 수 있다.)
+&lt;code&gt;As you can see, all occurrences of Object are replaced by T. A type variable can be any non-primitive type you specify: any class type, any interface type, any array type, or even another type variable.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;generic 인터페이스를 만드는 방법도 같다.&lt;br&gt;
+&amp;lsquo;This same technique can be applied to create generic interfaces.&amp;rsquo;&lt;/p&gt;
+
+&lt;p&gt;Type 파라미터 네이밍 관습&lt;br&gt;
+&lt;code&gt;Type Parameter Naming Conventions&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;관습에 의하면, Type 파라미터는 단일 대문자입니다. 이 기준은 이미 알고 있는 변수 네이밍 관습에 극명하게 반대입니다. (좋은점은)이런 관습이 없으면 Type 변수와 일반적인 클래스 혹은 인터페이스명 사이에 차이를 전달하기 어렵울겁니다.
+&lt;code&gt;By convention, type parameter names are single, uppercase letters. This stands in sharp contrast to the variable naming conventions that you already know about, and with good reason: Without this convention, it would be difficult to tell the difference between a type variable and an ordinary class or interface name.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;일반적으로 사용되어지는 Type파라메터명입니다.&lt;br&gt;
+&lt;code&gt;The most commonly used type parameter names are:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;E - Element (used extensively by the Java Collections Framework)
+K - Key
+N - Number
+T - Type
+V - Value
+S,U,V etc. - 2nd, 3rd, 4th types
+You&amp;rsquo;ll see these names used throughout the Java SE API and the rest of this lesson.&lt;/p&gt;
+
+&lt;p&gt;Invoking and Instantiating a Generic Type&lt;/p&gt;
+
+&lt;p&gt;To reference the generic Box class from within your code, you must perform a generic type invocation, which replaces T with some concrete value, such as Integer:&lt;/p&gt;
+
+&lt;p&gt;Box&lt;Integer&gt; integerBox;
+You can think of a generic type invocation as being similar to an ordinary method invocation, but instead of passing an argument to a method, you are passing a type argument — Integer in this case — to the Box class itself.&lt;/p&gt;
+
+&lt;p&gt;Type Parameter and Type Argument Terminology: Many developers use the terms &amp;ldquo;type parameter&amp;rdquo; and &amp;ldquo;type argument&amp;rdquo; interchangeably, but these terms are not the same. When coding, one provides type arguments in order to create a parameterized type. Therefore, the T in Foo&lt;T&gt; is a type parameter and the String in Foo&lt;String&gt; f is a type argument. This lesson observes this definition when using these terms.
+Like any other variable declaration, this code does not actually create a new Box object. It simply declares that integerBox will hold a reference to a &amp;ldquo;Box of Integer&amp;rdquo;, which is how Box&lt;Integer&gt; is read.&lt;/p&gt;
+
+&lt;p&gt;An invocation of a generic type is generally known as a parameterized type.&lt;/p&gt;
+
+&lt;p&gt;To instantiate this class, use the new keyword, as usual, but place &lt;Integer&gt; between the class name and the parenthesis:&lt;/p&gt;
+
+&lt;p&gt;Box&lt;Integer&gt; integerBox = new Box&lt;Integer&gt;();
+The Diamond&lt;/p&gt;
+
+&lt;p&gt;In Java SE 7 and later, you can replace the type arguments required to invoke the constructor of a generic class with an empty set of type arguments (&amp;lt;&amp;gt;) as long as the compiler can determine, or infer, the type arguments from the context. This pair of angle brackets, &amp;lt;&amp;gt;, is informally called the diamond. For example, you can create an instance of Box&lt;Integer&gt; with the following statement:&lt;/p&gt;
+
+&lt;p&gt;Box&lt;Integer&gt; integerBox = new Box&amp;lt;&amp;gt;();
+For more information on diamond notation and type inference, see Type Inference.&lt;/p&gt;
+
+&lt;p&gt;Multiple Type Parameters&lt;/p&gt;
+
+&lt;p&gt;As mentioned previously, a generic class can have multiple type parameters. For example, the generic OrderedPair class, which implements the generic Pair interface:&lt;/p&gt;
+
+&lt;p&gt;public interface Pair&lt;K, V&gt; {
+    public K getKey();
+    public V getValue();
+}&lt;/p&gt;
+
+&lt;p&gt;public class OrderedPair&lt;K, V&gt; implements Pair&lt;K, V&gt; {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;private K key;
+private V value;
+
+public OrderedPair(K key, V value) {
+this.key = key;
+this.value = value;
+}
+
+public K getKey()   { return key; }
+public V getValue() { return value; }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+The following statements create two instantiations of the OrderedPair class:&lt;/p&gt;
+
+&lt;p&gt;Pair&lt;String, Integer&gt; p1 = new OrderedPair&lt;String, Integer&gt;(&amp;ldquo;Even&amp;rdquo;, 8);
+Pair&lt;String, String&gt;  p2 = new OrderedPair&lt;String, String&gt;(&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;world&amp;rdquo;);
+The code, new OrderedPair&lt;String, Integer&gt;, instantiates K as a String and V as an Integer. Therefore, the parameter types of OrderedPair&amp;rsquo;s constructor are String and Integer, respectively. Due to autoboxing, it is valid to pass a String and an int to the class.&lt;/p&gt;
+
+&lt;p&gt;As mentioned in The Diamond, because a Java compiler can infer the K and V types from the declaration OrderedPair&lt;String, Integer&gt;, these statements can be shortened using diamond notation:&lt;/p&gt;
+
+&lt;p&gt;OrderedPair&lt;String, Integer&gt; p1 = new OrderedPair&amp;lt;&amp;gt;(&amp;ldquo;Even&amp;rdquo;, 8);
+OrderedPair&lt;String, String&gt;  p2 = new OrderedPair&amp;lt;&amp;gt;(&amp;ldquo;hello&amp;rdquo;, &amp;ldquo;world&amp;rdquo;);
+To create a generic interface, follow the same conventions as for creating a generic class.&lt;/p&gt;
+
+&lt;p&gt;Parameterized Types&lt;/p&gt;
+
+&lt;p&gt;You can also substitute a type parameter (i.e., K or V) with a parameterized type (i.e., List&lt;String&gt;). For example, using the OrderedPair&lt;K, V&gt; example:&lt;/p&gt;
+
+&lt;p&gt;OrderedPair&lt;String, Box&lt;Integer&gt;&amp;gt; p = new OrderedPair&amp;lt;&amp;gt;(&amp;ldquo;primes&amp;rdquo;, new Box&lt;Integer&gt;(&amp;hellip;));&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Java Generics 번역 2</title>
@@ -16,7 +163,9 @@
       <pubDate>Mon, 31 Oct 2016 15:52:48 +0900</pubDate>
       
       <guid>http://durtchrt.github.io/blog/java/generics/2/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Generics는 왜 사용하는가&lt;/strong&gt;  (Why Use Generics?)&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/why.html&#34;&gt;원문&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Generics는 왜 사용하는가&lt;/strong&gt;  (Why Use Generics?)&lt;/p&gt;
 
 &lt;p&gt;간단히 말하면, generics는 타입을 클래스, 인터페이스, 메소드를 정의할 때 파라메터화 할 수 있다. 메소드 선언에 사용되는 파라미터 형식처럼, 타입 파라미터는 다른 입력값을 같은 코드를 재 사용할 수 있는 방법을 제시한다. 다른점은 형식 파라미터는 값이 입력이다, 타입 파라메터는 타입이 입력이다.
 &lt;code&gt;In a nutshell, generics enable types (classes and interfaces) to be parameters when defining classes, interfaces and methods. Much like the more familiar formal parameters used in method declarations, type parameters provide a way for you to re-use the same code with different inputs. The difference is that the inputs to formal parameters are values, while the inputs to type parameters are types.&lt;/code&gt;&lt;/p&gt;
@@ -57,36 +206,6 @@ generics를 사용하면서 프로그래머들은 다양한 타입들의 콜렉�
 &lt;p&gt;&lt;code&gt;Enabling programmers to implement generic algorithms.
 By using generics, programmers can implement generic algorithms that work on collections of different types, can be customized, and are type safe and easier to read.&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>java generics 번역 1</title>
-      <link>http://durtchrt.github.io/blog/java/generics/1/</link>
-      <pubDate>Mon, 31 Oct 2016 15:07:44 +0900</pubDate>
-      
-      <guid>http://durtchrt.github.io/blog/java/generics/1/</guid>
-      <description>
-
-&lt;h1 id=&#34;자바-제넥릭스-java-generics-1&#34;&gt;자바 제넥릭스 - Java Generics 1&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/index.html&#34;&gt;원본&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;the-java-tutorials&#34;&gt;The Java Tutorials&lt;/h2&gt;
-
-&lt;h3 id=&#34;lesson-generics-updated&#34;&gt;Lesson: Generics(Updated)&lt;/h3&gt;
-
-&lt;p&gt;모든 사소하지 않은 소프트웨어 프로젝트에서 버그는 삶의 진실이다. 주의깊게 계획, 프로그래밍, 테스트는 버그가 스며드는것을 줄여준다. 하지만 여찌됐든, 언젠가! 버그는 코드에서 기어다닐 방법을 항상 찾는다. 이는 결국 새로운 기능이 도입되거나 코드 사이즈와 복장섭이 증가됨에 따라 심각하게 눈에 띄게 될 것이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;In any nontrivial software project, bugs are simply a fact of life. Careful planning, programming, and testing can help reduce their pervasiveness, but somehow, somewhere, they&#39;ll always find a way to creep into your code. This becomes especially apparent as new features are introduced and your code base grows in size and complexity.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;운좋게 몇몇 버그는 찾기 쉽다. 예를들어, 컴파일 타임 버그는 초기에 찾을 수 있다. 컴파일러의 에러 메세지를 이용하여 문제점을 발견하고 바로 거기서 고칠수 있다. 반면에 런타임 버그는 훨씬 더 해결이 어렵다. 런타임버그는 겉으로 직접 나타나지 않으며, 버그가 동작할 때, 그것은 프로그램에서 실제 문제의 원인에서 멀리 떨어진 지점에 있을 수도 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Fortunately, some bugs are easier to detect than others. Compile-time bugs, for example, can be detected early on; you can use the compiler&#39;s error messages to figure out what the problem is and fix it, right then and there. Runtime bugs, however, can be much more problematic; they don&#39;t always surface immediately, and when they do, it may be at a point in the program that is far removed from the actual cause of the problem.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Generics는 컴파일 타임에 버그를 찾을수 있게되어 코드에 안정성을 더합니다. 이 과정을 마친후에는 Gilad Bracha의 Generics 튜토리얼을 진행할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Generics add stability to your code by making more of your bugs detectable at compile time. After completing this lesson, you may want to follow up with the Generics tutorial by Gilad Bracha.&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     

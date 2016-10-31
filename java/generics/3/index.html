@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="http://durtchrt.github.io/blog/images/logo.png">
 
 
-<link rel="canonical" href="http://durtchrt.github.io/blog/java/generics/2/">
+<link rel="canonical" href="http://durtchrt.github.io/blog/java/generics/3/">
 
 
     
@@ -20,23 +20,23 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Java Generics 번역 2 - 개발 저장소</title>
+    <title>java generics 번역 3 - 개발 저장소</title>
     
-<meta name="description" content="Why use Generics, 제네릭스는 왜 사용하는가">
+<meta name="description" content="자바 제네릭스(java generics) 번역">
 
-<meta property="og:title" content="Java Generics 번역 2 - 개발 저장소">
+<meta property="og:title" content="java generics 번역 3 - 개발 저장소">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://durtchrt.github.io/blog/java/generics/2/">
+<meta property="og:url" content="http://durtchrt.github.io/blog/java/generics/3/">
 <meta property="og:image" content="http://durtchrt.github.io/blog/images/default.png">
 <meta property="og:site_name" content="개발 저장소">
-<meta property="og:description" content="Why use Generics, 제네릭스는 왜 사용하는가">
+<meta property="og:description" content="자바 제네릭스(java generics) 번역">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="개발 저장소">
-<meta name="twitter:url" content="http://durtchrt.github.io/blog/java/generics/2/">
-<meta name="twitter:title" content="Java Generics 번역 2 - 개발 저장소">
-<meta name="twitter:description" content="Why use Generics, 제네릭스는 왜 사용하는가">
+<meta name="twitter:url" content="http://durtchrt.github.io/blog/java/generics/3/">
+<meta name="twitter:title" content="java generics 번역 3 - 개발 저장소">
+<meta name="twitter:description" content="자바 제네릭스(java generics) 번역">
 <meta name="twitter:image" content="http://durtchrt.github.io/blog/images/default.png">
 
 
@@ -48,15 +48,15 @@
       "@type": "WebPage",
       "@id":"http:\/\/durtchrt.github.io\/blog\/"
     },
-    "headline": "Java Generics 번역 2 - 개발 저장소",
+    "headline": "java generics 번역 3 - 개발 저장소",
     "image": {
       "@type": "ImageObject",
       "url": "http:\/\/durtchrt.github.io\/blog\/images\/default.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2016-10-31T15:52:48JST",
-    "dateModified": "2016-10-31T15:52:48JST",
+    "datePublished": "2016-10-31T17:08:57JST",
+    "dateModified": "2016-10-31T17:08:57JST",
     "author": {
       "@type": "Person",
       "name": "개발 저장소"
@@ -71,7 +71,7 @@
         "height": 60
       }
     },
-    "description": "Why use Generics, 제네릭스는 왜 사용하는가"
+    "description": "자바 제네릭스(java generics) 번역"
   }
 </script>
 
@@ -118,65 +118,160 @@ ga('send', 'pageview');
         
         <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/java/" itemprop="url"><span itemprop="title">java</span></a></li>
         
-        <li class="active">Java Generics 번역 2</li>
+        <li class="active">java generics 번역 3</li>
       </ol>
     </nav>
 
     <article class="single">
 
-  <a href="http://durtchrt.github.io/blog/java/generics/2/" class="thumb"></a>
+  <a href="http://durtchrt.github.io/blog/java/generics/3/" class="thumb"></a>
   <div class="content-inner">
-    <h1 class="title">Java Generics 번역 2</h1>
+    <h1 class="title">java generics 번역 3</h1>
 
     <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-10-31T15:52:48JST">Oct 31, 2016</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-10-31T17:08:57JST">Oct 31, 2016</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
       
     </ul>
 
-    <div class="article-body"><p><a href="https://docs.oracle.com/javase/tutorial/java/generics/why.html">원문</a></p>
+    <div class="article-body"><p>Generic Types</p>
 
-<p><strong>Generics는 왜 사용하는가</strong>  (Why Use Generics?)</p>
+<p>generic type은 일반적인 클래스, 인터페이스를 타입 파라미터화하는 것이다. Box 클래스는 개념을 증명하며 코드가 변경되어질 것입니다.
+<code>A generic type is a generic class or interface that is parameterized over types. The following Box class will be modified to demonstrate the concept.</code></p>
 
-<p>간단히 말하면, generics는 타입을 클래스, 인터페이스, 메소드를 정의할 때 파라메터화 할 수 있다. 메소드 선언에 사용되는 파라미터 형식처럼, 타입 파라미터는 다른 입력값을 같은 코드를 재 사용할 수 있는 방법을 제시한다. 다른점은 형식 파라미터는 값이 입력이다, 타입 파라메터는 타입이 입력이다.
-<code>In a nutshell, generics enable types (classes and interfaces) to be parameters when defining classes, interfaces and methods. Much like the more familiar formal parameters used in method declarations, type parameters provide a way for you to re-use the same code with different inputs. The difference is that the inputs to formal parameters are values, while the inputs to type parameters are types.</code></p>
+<p>A Simple Box Class</p>
 
-<p>generic를 사용한 코드는 그렇지 않는 코드 대비 많은 장점을 가졌다:
-<code>Code that uses generics has many benefits over non-generic code</code></p>
+<p>generic을 사용하지 않은 예제로 시작해봅시다. Box 클래스는 모든 타입의 object에서 동작합니다. Box 클래스는 set(추가), get(조회) 2개의 메서드가 있습니다.
+<code>Begin by examining a non-generic Box class that operates on objects of any type. It needs only to provide two methods: set, which adds an object to the box, and get, which retrieves it:</code></p>
 
-<ul>
-<li>컴파일 타임에 강력한 타입 체크를한다.
-<code>Stronger type checks at compile time.</code>
-<br /></li>
-</ul>
+<pre><code class="language-java">public class Box {
+    private Object object;
 
-<p>자바 컴파일러는 타입 안전성에 위반하는 코드가 있다면 일반적인 코드와 오류 이슈에 강한 타입 검사를 적용한다. 컴파일타임에 에러를 고치는 것은 런타임 에러를 고치는 것 보다 쉽다.<br />
-<code>A Java compiler applies strong type checking to generic code and issues errors if the code violates type safety. Fixing compile-time errors is easier than fixing runtime errors, which can be difficult to find.</code></p>
-
-<ul>
-<li><p>Elimination of casts. <br/>
-generics 없이 캐스팅이 필요한 코드 조각입니다.
-<code>The following code snippet without generics requires casting:</code></p>
-
-<pre><code class="language-java">List list = new ArrayList();
-list.add(&quot;hello&quot;);
-String s = (String) list.get(0);
+    public void set(Object object) { this.object = object; }
+    public Object get() { return object; }
+}
 </code></pre>
 
-<p>generics를 사용해서 코드를 다시 작성하면, 코드는 더이상 캐스팅이 필요 없어집니다.
-<code>When re-written to use generics, the code does not require casting:</code></p>
+<p>객체의 set, get 메서드는 기본형을 제외하면 어떤 타입(참조형)이든 인자로 넣을수 있다. Box 클래스가 사용되어지지만 컴파일 타임에 검증할 방법이 없다. 코드의 한파트에서는 Integer를 넣고 Integer가 return되어지길 기대하지만 다른 한쪽 코드에서는 실수로 String을 입력해서 런타임 에러가 나올 것입니다.
+<code>Since its methods accept or return an Object, you are free to pass in whatever you want, provided that it is not one of the primitive types. There is no way to verify, at compile time, how the class is used. One part of the code may place an Integer in the box and expect to get Integers out of it, while another part of the code may mistakenly pass in a String, resulting in a runtime error.</code></p>
 
-<pre><code class="language-java">List&lt;String&gt; list = new ArrayList&lt;String&gt;();
-list.add(&quot;hello&quot;);
-String s = list.get(0);   // no cast
-</code></pre></li>
+<p>Generic 버전의 Box 클래스.<br>
+<code>A Generic Version of the Box Class</code></p>
 
-<li><p>프로그래머들이 일반적인 알고리즘을 구현하도록 지원한다.<br>
-generics를 사용하면서 프로그래머들은 다양한 타입들의 콜렉션에서 동작하고, 수정가능하며, 더 안정적이고 읽기 쉬운 코드를 일반적인 알고리즘으로 구현할 수 있습니다.</p>
+<p>generic 클래시는 아래 포멧처럼 정의되었다.<br>
+<code>A generic class is defined with the following format:</code></p>
 
-<p><code>Enabling programmers to implement generic algorithms.
-By using generics, programmers can implement generic algorithms that work on collections of different types, can be customized, and are type safe and easier to read.</code></p></li>
-</ul>
+<pre><code class="language-java">class name&lt;T1, T2, ..., Tn&gt; { /* ... */ }
+</code></pre>
+
+<p>타입 파라미터 문법은 클래스명 뒤에 꺽쇠(&lt;&gt;) 기호로 구분된다. 이것은 T1, T2, &hellip;, and Tn 등으로 타입 파라미터를 명시한다.(타입변수라고 불리기도한다.) .
+<code>The type parameter section, delimited by angle brackets (&lt;&gt;), follows the class name. It specifies the type parameters (also called type variables) T1, T2, ..., and Tn.</code></p>
+
+<p>Box 클래스를 generics로 변경해보자. &ldquo;public class Box&rdquo; 코드를 &ldquo;public class Box<T>&ldquo;로 변경해서 generic 타입을 선언하여 생성한다. T라는 타입 변수를 말하자면 클래스 안 어디든지 사용할 수 있는 변수이다.
+<code>To update the Box class to use generics, you create a generic type declaration by changing the code &quot;public class Box&quot; to &quot;public class Box&lt;T&gt;&quot;. This introduces the type variable, T, that can be used anywhere inside the class.</code></p>
+
+<p>Box 클래스가 이렇게 바뀝니다.<br>
+<code>With this change, the Box class becomes:</code></p>
+
+<pre><code class="language-java">/**
+ * Generic version of the Box class.
+ * @param &lt;T&gt; the type of the value being boxed
+ */
+public class Box&lt;T&gt; {
+    // T stands for &quot;Type&quot;
+    private T t;
+
+    public void set(T t) { this.t = t; }
+    public T get() { return t; }
+}
+</code></pre>
+
+<p>소스 코드 변경에서 보이듯이, 기존 코드에서 Object 대신 T로 수정되었다. Type 변수는 기본형 빼고는(=참조형)이면 된다.(클래스/인터페이스/배열 타입 또는 다른 Type 변수가 Type 변수로 될 수 있다.)
+<code>As you can see, all occurrences of Object are replaced by T. A type variable can be any non-primitive type you specify: any class type, any interface type, any array type, or even another type variable.</code></p>
+
+<p>generic 인터페이스를 만드는 방법도 같다.<br>
+&lsquo;This same technique can be applied to create generic interfaces.&rsquo;</p>
+
+<p>Type 파라미터 네이밍 관습<br>
+<code>Type Parameter Naming Conventions</code></p>
+
+<p>관습에 의하면, Type 파라미터는 단일 대문자입니다. 이 기준은 이미 알고 있는 변수 네이밍 관습에 극명하게 반대입니다. (좋은점은)이런 관습이 없으면 Type 변수와 일반적인 클래스 혹은 인터페이스명 사이에 차이를 전달하기 어렵울겁니다.
+<code>By convention, type parameter names are single, uppercase letters. This stands in sharp contrast to the variable naming conventions that you already know about, and with good reason: Without this convention, it would be difficult to tell the difference between a type variable and an ordinary class or interface name.</code></p>
+
+<p>일반적으로 사용되어지는 Type파라메터명입니다.<br>
+<code>The most commonly used type parameter names are:</code></p>
+
+<p>E - Element (used extensively by the Java Collections Framework)
+K - Key
+N - Number
+T - Type
+V - Value
+S,U,V etc. - 2nd, 3rd, 4th types
+You&rsquo;ll see these names used throughout the Java SE API and the rest of this lesson.</p>
+
+<p>Invoking and Instantiating a Generic Type</p>
+
+<p>To reference the generic Box class from within your code, you must perform a generic type invocation, which replaces T with some concrete value, such as Integer:</p>
+
+<p>Box<Integer> integerBox;
+You can think of a generic type invocation as being similar to an ordinary method invocation, but instead of passing an argument to a method, you are passing a type argument — Integer in this case — to the Box class itself.</p>
+
+<p>Type Parameter and Type Argument Terminology: Many developers use the terms &ldquo;type parameter&rdquo; and &ldquo;type argument&rdquo; interchangeably, but these terms are not the same. When coding, one provides type arguments in order to create a parameterized type. Therefore, the T in Foo<T> is a type parameter and the String in Foo<String> f is a type argument. This lesson observes this definition when using these terms.
+Like any other variable declaration, this code does not actually create a new Box object. It simply declares that integerBox will hold a reference to a &ldquo;Box of Integer&rdquo;, which is how Box<Integer> is read.</p>
+
+<p>An invocation of a generic type is generally known as a parameterized type.</p>
+
+<p>To instantiate this class, use the new keyword, as usual, but place <Integer> between the class name and the parenthesis:</p>
+
+<p>Box<Integer> integerBox = new Box<Integer>();
+The Diamond</p>
+
+<p>In Java SE 7 and later, you can replace the type arguments required to invoke the constructor of a generic class with an empty set of type arguments (&lt;&gt;) as long as the compiler can determine, or infer, the type arguments from the context. This pair of angle brackets, &lt;&gt;, is informally called the diamond. For example, you can create an instance of Box<Integer> with the following statement:</p>
+
+<p>Box<Integer> integerBox = new Box&lt;&gt;();
+For more information on diamond notation and type inference, see Type Inference.</p>
+
+<p>Multiple Type Parameters</p>
+
+<p>As mentioned previously, a generic class can have multiple type parameters. For example, the generic OrderedPair class, which implements the generic Pair interface:</p>
+
+<p>public interface Pair<K, V> {
+    public K getKey();
+    public V getValue();
+}</p>
+
+<p>public class OrderedPair<K, V> implements Pair<K, V> {</p>
+
+<pre><code>private K key;
+private V value;
+
+public OrderedPair(K key, V value) {
+this.key = key;
+this.value = value;
+}
+
+public K getKey()   { return key; }
+public V getValue() { return value; }
+</code></pre>
+
+<p>}
+The following statements create two instantiations of the OrderedPair class:</p>
+
+<p>Pair<String, Integer> p1 = new OrderedPair<String, Integer>(&ldquo;Even&rdquo;, 8);
+Pair<String, String>  p2 = new OrderedPair<String, String>(&ldquo;hello&rdquo;, &ldquo;world&rdquo;);
+The code, new OrderedPair<String, Integer>, instantiates K as a String and V as an Integer. Therefore, the parameter types of OrderedPair&rsquo;s constructor are String and Integer, respectively. Due to autoboxing, it is valid to pass a String and an int to the class.</p>
+
+<p>As mentioned in The Diamond, because a Java compiler can infer the K and V types from the declaration OrderedPair<String, Integer>, these statements can be shortened using diamond notation:</p>
+
+<p>OrderedPair<String, Integer> p1 = new OrderedPair&lt;&gt;(&ldquo;Even&rdquo;, 8);
+OrderedPair<String, String>  p2 = new OrderedPair&lt;&gt;(&ldquo;hello&rdquo;, &ldquo;world&rdquo;);
+To create a generic interface, follow the same conventions as for creating a generic class.</p>
+
+<p>Parameterized Types</p>
+
+<p>You can also substitute a type parameter (i.e., K or V) with a parameterized type (i.e., List<String>). For example, using the OrderedPair<K, V> example:</p>
+
+<p>OrderedPair<String, Box<Integer>&gt; p = new OrderedPair&lt;&gt;(&ldquo;primes&rdquo;, new Box<Integer>(&hellip;));</p>
 </div>
   </div>
 
@@ -186,10 +281,10 @@ By using generics, programmers can implement generic algorithms that work on col
       <aside class="p-share">
   <div class="share-inner">
     
-    <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f2%2f&t=Java%20Generics%20%eb%b2%88%ec%97%ad%202" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
-    <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f2%2f&text=Java%20Generics%20%eb%b2%88%ec%97%ad%202&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
-    <a href="https://plus.google.com/share?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f2%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
-    <a href="http://line.me/R/msg/text/?Java%20Generics%20%eb%b2%88%ec%97%ad%202 http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f2%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
+    <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f3%2f&t=java%20generics%20%eb%b2%88%ec%97%ad%203" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
+    <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f3%2f&text=java%20generics%20%eb%b2%88%ec%97%ad%203&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
+    <a href="https://plus.google.com/share?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f3%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
+    <a href="http://line.me/R/msg/text/?java%20generics%20%eb%b2%88%ec%97%ad%203 http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f3%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
   </div>
 </aside>
 
@@ -200,7 +295,7 @@ By using generics, programmers can implement generic algorithms that work on col
           
           <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/java/" itemprop="url"><span itemprop="title">java</span></a></li>
           
-          <li class="active">Java Generics 번역 2</li>
+          <li class="active">java generics 번역 3</li>
         </ol>
       </nav>
 
@@ -232,9 +327,9 @@ By using generics, programmers can implement generic algorithms that work on col
     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'bjm';
-    var disqus_identifier = 'http:\/\/durtchrt.github.io\/blog\/java\/generics\/2\/';
-    var disqus_title = 'Java Generics 번역 2';
-    var disqus_url = 'http:\/\/durtchrt.github.io\/blog\/java\/generics\/2\/';
+    var disqus_identifier = 'http:\/\/durtchrt.github.io\/blog\/java\/generics\/3\/';
+    var disqus_title = 'java generics 번역 3';
+    var disqus_url = 'http:\/\/durtchrt.github.io\/blog\/java\/generics\/3\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
