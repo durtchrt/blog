@@ -10,6 +10,190 @@
     <atom:link href="http://durtchrt.github.io/blog/tags/generics/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>java generics 번역 3</title>
+      <link>http://durtchrt.github.io/blog/java/generics/3/</link>
+      <pubDate>Mon, 31 Oct 2016 17:08:57 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/3/</guid>
+      <description>
+
+&lt;h3 id=&#34;generic-types&#34;&gt;Generic Types&lt;/h3&gt;
+
+&lt;p&gt;generic type은 일반적인 클래스, 인터페이스를 타입 파라미터화하는 것이다. Box 클래스는 개념을 증명하며 코드가 변경되어질 것입니다.
+&lt;code&gt;A generic type is a generic class or interface that is parameterized over types. The following Box class will be modified to demonstrate the concept.&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;a-simple-box-class&#34;&gt;A Simple Box Class&lt;/h3&gt;
+
+&lt;p&gt;generic을 사용하지 않은 예제로 시작해봅시다. Box 클래스는 모든 타입의 object에서 동작합니다. Box 클래스는 set(추가), get(조회) 2개의 메서드가 있습니다.
+&lt;code&gt;Begin by examining a non-generic Box class that operates on objects of any type. It needs only to provide two methods: set, which adds an object to the box, and get, which retrieves it:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class Box {
+    private Object object;
+
+    public void set(Object object) { this.object = object; }
+    public Object get() { return object; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;객체의 set, get 메서드는 기본형을 제외하면 어떤 타입(참조형)이든 인자로 넣을수 있다. Box 클래스가 사용되어지지만 컴파일 타임에 검증할 방법이 없다. 코드의 한파트에서는 Integer를 넣고 Integer가 return되어지길 기대하지만 다른 한쪽 코드에서는 실수로 String을 입력해서 런타임 에러가 나올 것입니다.
+&lt;code&gt;Since its methods accept or return an Object, you are free to pass in whatever you want, provided that it is not one of the primitive types. There is no way to verify, at compile time, how the class is used. One part of the code may place an Integer in the box and expect to get Integers out of it, while another part of the code may mistakenly pass in a String, resulting in a runtime error.&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;generic-버전의-box-클래스-br&#34;&gt;Generic 버전의 Box 클래스.&lt;br&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;A Generic Version of the Box Class&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;generic 클래시는 아래 포멧처럼 정의되었다.&lt;br&gt;
+&lt;code&gt;A generic class is defined with the following format:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;class name&amp;lt;T1, T2, ..., Tn&amp;gt; { /* ... */ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;타입 파라미터 문법은 클래스명 뒤에 꺽쇠(&amp;lt;&amp;gt;) 기호로 구분된다. 이것은 T1, T2, &amp;hellip;, and Tn 등으로 타입 파라미터를 명시한다.(타입변수라고 불리기도한다.) .
+&lt;code&gt;The type parameter section, delimited by angle brackets (&amp;lt;&amp;gt;), follows the class name. It specifies the type parameters (also called type variables) T1, T2, ..., and Tn.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Box 클래스를 generics로 변경해보자. &amp;ldquo;public class Box&amp;rdquo; 코드를 &amp;ldquo;public class Box&lt;T&gt;&amp;ldquo;로 변경해서 generic 타입을 선언하여 생성한다. T라는 타입 변수를 말하자면 클래스 안 어디든지 사용할 수 있는 변수이다.
+&lt;code&gt;To update the Box class to use generics, you create a generic type declaration by changing the code &amp;quot;public class Box&amp;quot; to &amp;quot;public class Box&amp;lt;T&amp;gt;&amp;quot;. This introduces the type variable, T, that can be used anywhere inside the class.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Box 클래스가 이렇게 바뀝니다.&lt;br&gt;
+&lt;code&gt;With this change, the Box class becomes:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;/**
+ * Generic version of the Box class.
+ * @param &amp;lt;T&amp;gt; the type of the value being boxed
+ */
+public class Box&amp;lt;T&amp;gt; {
+    // T stands for &amp;quot;Type&amp;quot;
+    private T t;
+
+    public void set(T t) { this.t = t; }
+    public T get() { return t; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;소스 코드 변경에서 보이듯이, 기존 코드에서 Object 대신 T로 수정되었다. Type 변수는 기본형 빼고는(=참조형)이면 된다.(클래스/인터페이스/배열 타입 또는 다른 Type 변수가 Type 변수로 될 수 있다.)
+&lt;code&gt;As you can see, all occurrences of Object are replaced by T. A type variable can be any non-primitive type you specify: any class type, any interface type, any array type, or even another type variable.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;generic 인터페이스를 만드는 방법도 같다.
+&amp;lsquo;This same technique can be applied to create generic interfaces.&amp;rsquo;&lt;/p&gt;
+
+&lt;h3 id=&#34;type-파라미터-네이밍-관습&#34;&gt;Type 파라미터 네이밍 관습&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Type Parameter Naming Conventions&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;관습에 의하면, Type 파라미터는 단일 대문자입니다. 이 기준은 이미 알고 있는 변수 네이밍 관습에 극명하게 반대입니다. (좋은점은)이런 관습이 없으면 Type 변수와 일반적인 클래스 혹은 인터페이스명 사이에 차이를 전달하기 어렵울겁니다.
+&lt;code&gt;By convention, type parameter names are single, uppercase letters. This stands in sharp contrast to the variable naming conventions that you already know about, and with good reason: Without this convention, it would be difficult to tell the difference between a type variable and an ordinary class or interface name.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;일반적으로 사용되어지는 Type파라메터명입니다.&lt;br&gt;
+&lt;code&gt;The most commonly used type parameter names are:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;E - Element (자바 콜렉션 프레인워크에 광범위하게 사용됨 &lt;code&gt;used extensively by the Java Collections Framework&lt;/code&gt;)
+K - Key
+N - Number
+T - Type
+V - Value
+S,U,V etc. - 2nd, 3rd, 4th types&lt;/p&gt;
+
+&lt;p&gt;이러한 이름들이 자바SE API을 통해 쓰여지는 것을 볼 수 있을 것이다.
+&lt;code&gt;You&#39;ll see these names used throughout the Java SE API and the rest of this lesson.&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;generic-type-호출과-객체-생성&#34;&gt;Generic Type 호출과 객체 생성&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Invoking and Instantiating a Generic Type&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;코드내에 generic Box 클래스를 참조하려면, generic Type을 호출해 Integer 같은 구현값(타입값)으로 T를 교체합니다.
+&lt;code&gt;To reference the generic Box class from within your code, you must perform a generic type invocation, which replaces T with some concrete value, such as Integer:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Box&amp;lt;Integer&amp;gt; integerBox;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;흔한 메소드 호출과 generic type 호출이 비슷하고 생각할 수 있다. 하지만 *메소드*에 인자를 전달하는 반면에 Box *클래스*에 type 인자를 전달한다(이번에는 Integer임).&lt;br /&gt;
+&lt;code&gt;You can think of a generic type invocation as being similar to an ordinary method invocation, but instead of passing an argument to a method, you are passing a type argument — Integer in this case — to the Box class itself.&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&#39;Type 파라미터&#39;, &#39;Type 인자&#39; 용어 설명: 많은 개발자들은 &amp;quot;type 파라미터&amp;quot;와 &amp;quot;type 인자&amp;quot;를 혼용해서 사용한다. 하지만 이 용어나 같지 않다. 코딩할 때 파라미터화한 type을 생성하기 위해서 type인자를 만든다. 그 결과, Foo&amp;lt;T&amp;gt;의 T는 Type 파라미터이고 Foo&amp;lt;String&amp;gt;의 String은  Type 인자이다. 이번장에서 Type 인자와 Type 파라미터를 사용할 때 위에 설명한 내용을 상기하고 살펴봅시다.
+
+`Type Parameter and Type Argument Terminology: Many developers use the terms &amp;quot;type parameter&amp;quot; and &amp;quot;type argument&amp;quot; interchangeably, but these terms are not the same. When coding, one provides type arguments in order to create a parameterized type. Therefore, the T in Foo&amp;lt;T&amp;gt; is a type parameter and the String in Foo&amp;lt;String&amp;gt; f is a type argument. This lesson observes this definition when using these terms.`
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;다른 변수를 선언하듯이, 이 코드는 새로운 Box 객체를 실제로 생성하지 않습니다. 간단히 말하면 integerBox 변수는 &amp;ldquo;Integer 타입의 Box 클래스&amp;rdquo;를 가리킨다.( Box&lt;Integer&gt;는 &amp;ldquo;Box of Integer&amp;rdquo;라고 읽는다.)
+Like any other variable declaration, this code does not actually create a new Box object. It simply declares that integerBox will hold a reference to a &amp;ldquo;Box of Integer&amp;rdquo;, which is how Box&lt;Integer&gt; is read.&lt;/p&gt;
+
+&lt;p&gt;generic 타입 호출은 일반적으로 파라미터화된 type으로 알려져 있다.
+&lt;code&gt;An invocation of a generic type is generally known as a parameterized type.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;이 클래스를 객체화할때 사용하는 new 키워드는 일반적이지만, 반면에 그렇지 않은 &lt;Integer&gt;가 클래스명과 소괄호(()) 사이에 있다.
+&lt;code&gt;To instantiate this class, use the new keyword, as usual, but place &amp;lt;Integer&amp;gt; between the class name and the parenthesis:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Box&amp;lt;Integer&amp;gt; integerBox = new Box&amp;lt;Integer&amp;gt;();
+````
+### 다이아몬드 연산자(&amp;lt;&amp;gt;) `The Diamond`
+
+자바SE 7 이후부터 자바 컴파일러가 코드의 문맥을 보고 타입을 추론(예상) 할수 있게 되어 type 인자가 필요한 부분에 empty type argument(빈 type 인자 = &amp;lt;&amp;gt;)를 사용할 수 있다. 꺽쇠(&amp;lt;&amp;gt;)는 비공식적이지만 다이아몬드라고 불린다. 예를 들면, Box&amp;lt;Integer&amp;gt; 객체를 생성할때 아래의 문법을 따른다:
+`In Java SE 7 and later, you can replace the type arguments required to invoke the constructor of a generic class with an empty set of type arguments (&amp;lt;&amp;gt;) as long as the compiler can determine, or infer, the type arguments from the context. This pair of angle brackets, &amp;lt;&amp;gt;, is informally called the diamond. For example, you can create an instance of Box&amp;lt;Integer&amp;gt; with the following statement:`
+
+```java
+Box&amp;lt;Integer&amp;gt; integerBox = new Box&amp;lt;&amp;gt;();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;다이아몬드 표기법과 타입 추론에 대한 더 자세한 정보는 타입 추론을 보시오.
+&lt;code&gt;For more information on diamond notation and type inference, see Type Inference.&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;복합적인-type-파라미터들&#34;&gt;복합적인 Type 파라미터들&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Multiple Type Parameters&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;이전에 말했듯이, generic 클래스는 여러개의 Type파라미터를 가질수 있다. 예를들어, generic OrderdPair클래스는 generic Pair 인터페이스를 구현하였다.
+&lt;code&gt;As mentioned previously, a generic class can have multiple type parameters. For example, the generic OrderedPair class, which implements the generic Pair interface:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public interface Pair&amp;lt;K, V&amp;gt; {
+    public K getKey();
+    public V getValue();
+}
+
+public class OrderedPair&amp;lt;K, V&amp;gt; implements Pair&amp;lt;K, V&amp;gt; {
+
+    private K key;
+    private V value;
+
+    public OrderedPair(K key, V value) {
+	this.key = key;
+	this.value = value;
+    }
+
+    public K getKey()	{ return key; }
+    public V getValue() { return value; }
+}
+The following statements create two instantiations of the OrderedPair class:
+
+Pair&amp;lt;String, Integer&amp;gt; p1 = new OrderedPair&amp;lt;String, Integer&amp;gt;(&amp;quot;Even&amp;quot;, 8);
+Pair&amp;lt;String, String&amp;gt;  p2 = new OrderedPair&amp;lt;String, String&amp;gt;(&amp;quot;hello&amp;quot;, &amp;quot;world&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이코드는 OrderedPair&lt;String, Integer&gt; 객체를 생성하면, K는 String 타입이고 V는 Integer 타입이다. Orderedpair의 생성자의 파라미터 타입들은 String, Integer이다.  autoboxing을 통해 String과 int를 OrderedPair클래스에 전달해도 문제없다.(참조형은 상관 없는데 기본형인 int는 참조형으로 변경되어야한다. int -&amp;gt; Integer) 
+&lt;code&gt;The code, new OrderedPair&amp;lt;String, Integer&amp;gt;, instantiates K as a String and V as an Integer. Therefore, the parameter types of OrderedPair&#39;s constructor are String and Integer, respectively. Due to autoboxing, it is valid to pass a String and an int to the class.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;이전에 다아몬드 연산자를 언급했듯이, 자바 컴파일러는 OrderedPair&lt;String, Integer&gt;로 선언한 K, V 타입을 추론 할수 있기 때문에 다이아몬드문법을 사용해서 코드를 줄일수 있다.
+&lt;code&gt;As mentioned in The Diamond, because a Java compiler can infer the K and V types from the declaration OrderedPair&amp;lt;String, Integer&amp;gt;, these statements can be shortened using diamond notation:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;OrderedPair&amp;lt;String, Integer&amp;gt; p1 = new OrderedPair&amp;lt;&amp;gt;(&amp;quot;Even&amp;quot;, 8);
+OrderedPair&amp;lt;String, String&amp;gt;  p2 = new OrderedPair&amp;lt;&amp;gt;(&amp;quot;hello&amp;quot;, &amp;quot;world&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;generic 인터페이스를 생성하는것은 generic 클래스를 만드는 방법과 같다
+&lt;code&gt;To create a generic interface, follow the same conventions as for creating a generic class.&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;타입-파라미터화&#34;&gt;타입 파라미터화&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Parameterized Types&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;타입 파라미터를 타입 파라미터화로 변경할 수 있다. OrderedPair&lt;K, V&gt;를 예를 들면:
+&lt;code&gt;You can also substitute a type parameter (i.e., K or V) with a parameterized type (i.e., List&amp;lt;String&amp;gt;). For example, using the OrderedPair&amp;lt;K, V&amp;gt; example:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;OrderedPair&amp;lt;String, Box&amp;lt;Integer&amp;gt;&amp;gt; p = new OrderedPair&amp;lt;&amp;gt;(&amp;quot;primes&amp;quot;, new Box&amp;lt;Integer&amp;gt;(...));
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Java Generics 번역 2</title>
       <link>http://durtchrt.github.io/blog/java/generics/2/</link>
       <pubDate>Mon, 31 Oct 2016 15:52:48 +0900</pubDate>
