@@ -138,12 +138,12 @@ ga('send', 'pageview');
 
 <h3 id="generic-types">Generic Types</h3>
 
-<p>generic type은 일반적인 클래스, 인터페이스를 타입 파라미터화하는 것이다. Box 클래스는 개념을 증명하며 코드가 변경되어질 것입니다.
+<p>generic type은 일반적인 클래스, 인터페이스를 타입 파라미터화하는 것이다. Box 클래스는 generic type을 설명하면서 코드가 변경되어질 것이다.
 <code>A generic type is a generic class or interface that is parameterized over types. The following Box class will be modified to demonstrate the concept.</code></p>
 
 <h3 id="a-simple-box-class">A Simple Box Class</h3>
 
-<p>generic을 사용하지 않은 예제로 시작해봅시다. Box 클래스는 모든 타입의 object에서 동작합니다. Box 클래스는 set(추가), get(조회) 2개의 메서드가 있습니다.
+<p>generic을 사용하지 않은 예제로 시작해봅시다. Box 클래스는 모든 타입의 object에서 동작합니다. Box 클래스는 set(추가), get(조회) 2개의 메서드가 있다.
 <code>Begin by examining a non-generic Box class that operates on objects of any type. It needs only to provide two methods: set, which adds an object to the box, and get, which retrieves it:</code></p>
 
 <pre><code class="language-java">public class Box {
@@ -154,7 +154,7 @@ ga('send', 'pageview');
 }
 </code></pre>
 
-<p>객체의 set, get 메서드는 기본형을 제외하면 어떤 타입(참조형)이든 인자로 넣을수 있다. Box 클래스가 사용되어지지만 컴파일 타임에 검증할 방법이 없다. 코드의 한파트에서는 Integer를 넣고 Integer가 return되어지길 기대하지만 다른 한쪽 코드에서는 실수로 String을 입력해서 런타임 에러가 나올 것입니다.
+<p>객체의 set, get 메서드는 기본형을 제외하면 어떤 타입(참조형)이든 인자로 넣을수 있다. Box 클래스가 사용되어지지만 컴파일 타임에 검증할 방법이 없다. 코드 일부분에서는 Integer를 넣고 Integer가 return되어지길 기대하지만 다른 일부분에서는 실수로 String을 입력해서 런타임 에러가 나올 것이다.
 <code>Since its methods accept or return an Object, you are free to pass in whatever you want, provided that it is not one of the primitive types. There is no way to verify, at compile time, how the class is used. One part of the code may place an Integer in the box and expect to get Integers out of it, while another part of the code may mistakenly pass in a String, resulting in a runtime error.</code></p>
 
 <h3 id="generic-버전의-box-클래스-br">Generic 버전의 Box 클래스.<br></h3>
@@ -167,13 +167,13 @@ ga('send', 'pageview');
 <pre><code class="language-java">class name&lt;T1, T2, ..., Tn&gt; { /* ... */ }
 </code></pre>
 
-<p>타입 파라미터 문법은 클래스명 뒤에 꺽쇠(&lt;&gt;) 기호로 구분된다. 이것은 T1, T2, &hellip;, and Tn 등으로 타입 파라미터를 명시한다.(타입변수라고 불리기도한다.) .
+<p>타입 파라미터 문법은 클래스명 뒤에 꺽쇠(&lt;&gt;) 기호로 구분된다. 이것은 T1, T2, &hellip;, and Tn 등으로 타입 파라미터를 명시한다.(타입변수라고 불리기도한다.)
 <code>The type parameter section, delimited by angle brackets (&lt;&gt;), follows the class name. It specifies the type parameters (also called type variables) T1, T2, ..., and Tn.</code></p>
 
-<p>Box 클래스를 generics로 변경해보자. &ldquo;public class Box&rdquo; 코드를 &ldquo;public class Box<T>&ldquo;로 변경해서 generic 타입을 선언하여 생성한다. T라는 타입 변수를 말하자면 클래스 안 어디든지 사용할 수 있는 변수이다.
+<p>Box 클래스를 generics로 변경해보자. &ldquo;public class Box&rdquo; 코드를 &ldquo;public class Box<T>&ldquo;로 변경해서 generic 타입을 선언하여 만든다. T라는 타입 변수는 클래스 어디든지 사용할 수 있는 변수이다.
 <code>To update the Box class to use generics, you create a generic type declaration by changing the code &quot;public class Box&quot; to &quot;public class Box&lt;T&gt;&quot;. This introduces the type variable, T, that can be used anywhere inside the class.</code></p>
 
-<p>Box 클래스가 이렇게 바뀝니다.<br>
+<p>Box 클래스가 이렇게 바뀐다.<br>
 <code>With this change, the Box class becomes:</code></p>
 
 <pre><code class="language-java">/**
@@ -189,7 +189,7 @@ public class Box&lt;T&gt; {
 }
 </code></pre>
 
-<p>소스 코드 변경에서 보이듯이, 기존 코드에서 Object 대신 T로 수정되었다. Type 변수는 기본형 빼고는(=참조형)이면 된다.(클래스/인터페이스/배열 타입 또는 다른 Type 변수가 Type 변수로 될 수 있다.)
+<p>소스 코드 변경에서 보이듯, 기존 코드에서 Object 대신 T로 수정되었다. Type 변수는 기본형 빼고는(=참조형)이면 된다.(클래스/인터페이스/배열 타입 또는 다른 Type 변수가 Type 변수로 될 수 있다.)
 <code>As you can see, all occurrences of Object are replaced by T. A type variable can be any non-primitive type you specify: any class type, any interface type, any array type, or even another type variable.</code></p>
 
 <p>generic 인터페이스를 만드는 방법도 같다.
@@ -199,20 +199,21 @@ public class Box&lt;T&gt; {
 
 <p><code>Type Parameter Naming Conventions</code></p>
 
-<p>관습에 의하면, Type 파라미터는 단일 대문자입니다. 이 기준은 이미 알고 있는 변수 네이밍 관습에 극명하게 반대입니다. (좋은점은)이런 관습이 없으면 Type 변수와 일반적인 클래스 혹은 인터페이스명 사이에 차이를 전달하기 어렵울겁니다.
+<p>관습에 의하면, Type 파라미터는 단일 대문자입니다. 이 기준은 이미 알고 있는 변수 네이밍 관습에 극명하게 반대입니다. (좋은점은)이런 관습이 없으면 Type 변수와 일반적인 클래스 혹은 인터페이스명 사이에 차이를 전달하기 어려울겁니다.
 <code>By convention, type parameter names are single, uppercase letters. This stands in sharp contrast to the variable naming conventions that you already know about, and with good reason: Without this convention, it would be difficult to tell the difference between a type variable and an ordinary class or interface name.</code></p>
 
-<p>일반적으로 사용되어지는 Type파라메터명입니다.<br>
+<p>일반적으로 사용되어지는 Type파라미터명<br>
 <code>The most commonly used type parameter names are:</code></p>
 
-<p>E - Element (자바 콜렉션 프레인워크에 광범위하게 사용됨 <code>used extensively by the Java Collections Framework</code>)
+<pre><code>E - Element (자바 콜렉션 프레인워크에 광범위하게 사용됨 - used extensively by the Java Collections Framework)
 K - Key
 N - Number
 T - Type
 V - Value
-S,U,V etc. - 2nd, 3rd, 4th types</p>
+S,U,V etc. - 2nd, 3rd, 4th types
+</code></pre>
 
-<p>이러한 이름들이 자바SE API을 통해 쓰여지는 것을 볼 수 있을 것이다.
+<p>이러한 이름들이 자바SE API을 통해 쓰여지는 것을 볼 수 있을 것입니다.
 <code>You'll see these names used throughout the Java SE API and the rest of this lesson.</code></p>
 
 <h3 id="generic-type-호출과-객체-생성">Generic Type 호출과 객체 생성</h3>
@@ -225,7 +226,7 @@ S,U,V etc. - 2nd, 3rd, 4th types</p>
 <pre><code class="language-java">Box&lt;Integer&gt; integerBox;
 </code></pre>
 
-<p>흔한 메소드 호출과 generic type 호출이 비슷하고 생각할 수 있다. 하지만 *메소드*에 인자를 전달하는 반면에 Box *클래스*에 type 인자를 전달한다(이번에는 Integer임).<br />
+<p>흔한 메소드 호출과 generic type 호출이 비슷하고 생각할 수 있다. 하지만 *메소드*에 인자를 전달하는 반면에 Box *클래스*에 type 인자를 전달한다(이번에는 Integer임).
 <code>You can think of a generic type invocation as being similar to an ordinary method invocation, but instead of passing an argument to a method, you are passing a type argument — Integer in this case — to the Box class itself.</code></p>
 
 <pre><code>'Type 파라미터', 'Type 인자' 용어 설명: 많은 개발자들은 &quot;type 파라미터&quot;와 &quot;type 인자&quot;를 혼용해서 사용한다. 하지만 이 용어나 같지 않다. 코딩할 때 파라미터화한 type을 생성하기 위해서 type인자를 만든다. 그 결과, Foo&lt;T&gt;의 T는 Type 파라미터이고 Foo&lt;String&gt;의 String은  Type 인자이다. 이번장에서 Type 인자와 Type 파라미터를 사용할 때 위에 설명한 내용을 상기하고 살펴봅시다.
@@ -233,7 +234,7 @@ S,U,V etc. - 2nd, 3rd, 4th types</p>
 `Type Parameter and Type Argument Terminology: Many developers use the terms &quot;type parameter&quot; and &quot;type argument&quot; interchangeably, but these terms are not the same. When coding, one provides type arguments in order to create a parameterized type. Therefore, the T in Foo&lt;T&gt; is a type parameter and the String in Foo&lt;String&gt; f is a type argument. This lesson observes this definition when using these terms.`
 </code></pre>
 
-<p>다른 변수를 선언하듯이, 이 코드는 새로운 Box 객체를 실제로 생성하지 않습니다. 간단히 말하면 integerBox 변수는 &ldquo;Integer 타입의 Box 클래스&rdquo;를 가리킨다.( Box<Integer>는 &ldquo;Box of Integer&rdquo;라고 읽는다.)
+<p>다른 변수를 선언하듯이, 이 코드는 새로운 Box 객체를 실제로 생성하지 않습니다. 간단히 말하면 integerBox 변수는 &ldquo;Integer 타입의 Box 클래스&rdquo;를 가리킨다.( Box<Integer>는 &ldquo;Box of Integer&rdquo;라고 읽는다.)
 Like any other variable declaration, this code does not actually create a new Box object. It simply declares that integerBox will hold a reference to a &ldquo;Box of Integer&rdquo;, which is how Box<Integer> is read.</p>
 
 <p>generic 타입 호출은 일반적으로 파라미터화된 type으로 알려져 있다.
@@ -309,6 +310,8 @@ OrderedPair&lt;String, String&gt;  p2 = new OrderedPair&lt;&gt;(&quot;hello&quot
 
 <pre><code class="language-java">OrderedPair&lt;String, Box&lt;Integer&gt;&gt; p = new OrderedPair&lt;&gt;(&quot;primes&quot;, new Box&lt;Integer&gt;(...));
 </code></pre>
+
+<p>마라미터화된 타입(Parameterized Type)은 위의 소스에서는 <strong>Box&lt;Integer&gt;</strong> 확인</p>
 </div>
   </div>
 
