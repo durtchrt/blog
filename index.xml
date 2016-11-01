@@ -18,6 +18,8 @@
       <guid>http://durtchrt.github.io/blog/java/generics/3/</guid>
       <description>
 
+&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/types.html&#34;&gt;원문 링크&lt;/a&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;generic-types&#34;&gt;Generic Types&lt;/h3&gt;
 
 &lt;p&gt;generic type은 일반적인 클래스, 인터페이스를 타입 파라미터화하는 것이다. Box 클래스는 generic type을 설명하면서 코드가 변경되어질 것이다.
@@ -108,7 +110,7 @@ S,U,V etc. - 2nd, 3rd, 4th types
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Box&amp;lt;Integer&amp;gt; integerBox;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;흔한 메소드 호출과 generic type 호출이 비슷하고 생각할 수 있다. 하지만 *메소드*에 인자를 전달하는 반면에 Box *클래스*에 type 인자를 전달한다(이번에는 Integer임).
+&lt;p&gt;흔한 메소드 호출과 generic type 호출이 비슷하고 생각할 수 있다. 하지만 &lt;strong&gt;메소드&lt;/strong&gt;에 인자를 전달하는 반면에 Box &lt;strong&gt;클래스&lt;/strong&gt;에 type 인자를 전달한다(이번에는 Integer임).
 &lt;code&gt;You can think of a generic type invocation as being similar to an ordinary method invocation, but instead of passing an argument to a method, you are passing a type argument — Integer in this case — to the Box class itself.&lt;/code&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&#39;Type 파라미터&#39;, &#39;Type 인자&#39; 용어 설명: 많은 개발자들은 &amp;quot;type 파라미터&amp;quot;와 &amp;quot;type 인자&amp;quot;를 혼용해서 사용한다. 하지만 이 용어나 같지 않다. 코딩할 때 파라미터화한 type을 생성하기 위해서 type인자를 만든다. 그 결과, Foo&amp;lt;T&amp;gt;의 T는 Type 파라미터이고 Foo&amp;lt;String&amp;gt;의 String은  Type 인자이다. 이번장에서 Type 인자와 Type 파라미터를 사용할 때 위에 설명한 내용을 상기하고 살펴봅시다.
