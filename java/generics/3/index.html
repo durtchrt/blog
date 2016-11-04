@@ -138,14 +138,32 @@ ga('send', 'pageview');
 
 <p><a href="https://docs.oracle.com/javase/tutorial/java/generics/types.html">원문 링크</a></p>
 
+<p>용어 참조</p>
+
+<ul>
+<li>타입 : 자바에서는 클래스, 추상클래스, 인터페이스, 열거형(Enum), 배열을 의미. 기본형, 참조형을 포괄하는 개념
+
+<ul>
+<li>기본형: byte, short, int, long, float, double, char, String, boolean (call by value)</li>
+<li>참조형: 기본형을 제외한 모든 타입 (call by reference)</li>
+</ul></li>
+</ul>
+
+<p>매개변수 vs 인자</p>
+
+<ul>
+<li>매개변수(Parameter): 함수 선언할 때 변수의 이름</li>
+<li>인자(Argument): 함수를 호출할 때 전달하는 값</li>
+</ul>
+
 <h3 id="generic-types">Generic Types</h3>
 
-<p>generic type은 일반적인 클래스, 인터페이스를 타입 파라미터화하는 것이다. Box 클래스는 generic type을 설명하면서 코드가 변경되어질 것이다.
+<p>generic 타입은 클래스, 인터페이스를 타입 파라미터화하는 것이다. Box 클래스는 generic  타입을 설명하면서 코드를 수정할 것이다.
 <code>A generic type is a generic class or interface that is parameterized over types. The following Box class will be modified to demonstrate the concept.</code></p>
 
 <h3 id="a-simple-box-class">A Simple Box Class</h3>
 
-<p>generic을 사용하지 않은 예제로 시작해봅시다. Box 클래스는 모든 타입의 object에서 동작합니다. Box 클래스는 set(추가), get(조회) 2개의 메서드가 있다.
+<p>generic을 사용하지 않은 예제로 시작해봅시다. Box 클래스는 set(추가), get(조회) 2개의 메서드가 있습니다.
 <code>Begin by examining a non-generic Box class that operates on objects of any type. It needs only to provide two methods: set, which adds an object to the box, and get, which retrieves it:</code></p>
 
 <pre><code class="language-java">public class Box {
@@ -169,10 +187,10 @@ ga('send', 'pageview');
 <pre><code class="language-java">class name&lt;T1, T2, ..., Tn&gt; { /* ... */ }
 </code></pre>
 
-<p>타입 파라미터 문법은 클래스명 뒤에 꺽쇠(&lt;&gt;) 기호로 구분된다. 이것은 T1, T2, &hellip;, and Tn 등으로 타입 파라미터를 명시한다.(타입변수라고 불리기도한다.)
+<p>타입 파라미터 문법은 클래스명 뒤에 꺽쇠(&lt;&gt;) 기호로 구분된다. 이것은 T1, T2, &hellip;, and Tn 등으로 타입 매개변수를 명시한다.(타입변수라고 불리기도한다.)
 <code>The type parameter section, delimited by angle brackets (&lt;&gt;), follows the class name. It specifies the type parameters (also called type variables) T1, T2, ..., and Tn.</code></p>
 
-<p>Box 클래스를 generics로 변경해보자. &ldquo;public class Box&rdquo; 코드를 &ldquo;public class Box<T>&ldquo;로 변경해서 generic 타입을 선언하여 만든다. T라는 타입 변수는 클래스 어디든지 사용할 수 있는 변수이다.
+<p>Box 클래스를 generics로 변경해보자. &ldquo;public class Box&rdquo; 코드를 &ldquo;public class Box<T>&ldquo;로 변경해서 generic 타입을 선언하여 만든다. T라는 타입 매개변수는 클래스 어디든지 사용할 수 있는 변수이다.
 <code>To update the Box class to use generics, you create a generic type declaration by changing the code &quot;public class Box&quot; to &quot;public class Box&lt;T&gt;&quot;. This introduces the type variable, T, that can be used anywhere inside the class.</code></p>
 
 <p>Box 클래스가 이렇게 바뀐다.<br>
@@ -242,14 +260,14 @@ Like any other variable declaration, this code does not actually create a new Bo
 <p>generic 타입 호출은 일반적으로 파라미터화된 type으로 알려져 있다.
 <code>An invocation of a generic type is generally known as a parameterized type.</code></p>
 
-<p>이 클래스를 객체화할때 사용하는 new 키워드는 일반적이지만, 반면에 그렇지 않은 <Integer>가 클래스명과 소괄호(()) 사이에 있다.
+<p>클래스를 객체화할때 사용하는 new 키워드는 기존과 같지만 Generics를 위한 표기법으로  <strong><Integer></strong>가 클래스명과 소괄호(()) 사이에 있다.
 <code>To instantiate this class, use the new keyword, as usual, but place &lt;Integer&gt; between the class name and the parenthesis:</code></p>
 
 <pre><code class="language-java">Box&lt;Integer&gt; integerBox = new Box&lt;Integer&gt;();
 ````
 ### 다이아몬드 연산자(&lt;&gt;) `The Diamond`
 
-자바SE 7 이후부터 자바 컴파일러가 코드의 문맥을 보고 타입을 추론(예상) 할수 있게 되어 type 인자가 필요한 부분에 empty type argument(빈 type 인자 = &lt;&gt;)를 사용할 수 있다. 꺽쇠(&lt;&gt;)는 비공식적이지만 다이아몬드라고 불린다. 예를 들면, Box&lt;Integer&gt; 객체를 생성할때 아래의 문법을 따른다:
+자바SE 7부터 컴파일러가 코드의 문맥을 보고 타입을 추론 할수 있게 되어 타입 인자가 필요한 부분에 empty type argument(빈 type 인자 = &lt;&gt;)를 사용할 수 있다. 꺽쇠(&lt;&gt;)는 비공식적이지만 다이아몬드라고 불린다. 예를 들면, Box&lt;Integer&gt; 객체를 생성할때 아래의 문법을 따른다:
 `In Java SE 7 and later, you can replace the type arguments required to invoke the constructor of a generic class with an empty set of type arguments (&lt;&gt;) as long as the compiler can determine, or infer, the type arguments from the context. This pair of angle brackets, &lt;&gt;, is informally called the diamond. For example, you can create an instance of Box&lt;Integer&gt; with the following statement:`
 
 ```java
@@ -259,11 +277,11 @@ Box&lt;Integer&gt; integerBox = new Box&lt;&gt;();
 <p>다이아몬드 표기법과 타입 추론에 대한 더 자세한 정보는 타입 추론을 보시오.
 <code>For more information on diamond notation and type inference, see Type Inference.</code></p>
 
-<h3 id="복합적인-type-파라미터들">복합적인 Type 파라미터들</h3>
+<h3 id="복수개의-타입매개변수">복수개의 타입매개변수</h3>
 
 <p><code>Multiple Type Parameters</code></p>
 
-<p>이전에 말했듯이, generic 클래스는 여러개의 Type파라미터를 가질수 있다. 예를들어, generic OrderdPair클래스는 generic Pair 인터페이스를 구현하였다.
+<p>이전에 말했듯이, generic 클래스는 여러개의 타입매개변수를 가질수 있다. 예를들어, generic OrderdPair클래스는 generic Pair 인터페이스를 구현하였다.
 <code>As mentioned previously, a generic class can have multiple type parameters. For example, the generic OrderedPair class, which implements the generic Pair interface:</code></p>
 
 <pre><code class="language-java">public interface Pair&lt;K, V&gt; {
@@ -284,13 +302,16 @@ public class OrderedPair&lt;K, V&gt; implements Pair&lt;K, V&gt; {
     public K getKey()	{ return key; }
     public V getValue() { return value; }
 }
-The following statements create two instantiations of the OrderedPair class:
+</code></pre>
 
-Pair&lt;String, Integer&gt; p1 = new OrderedPair&lt;String, Integer&gt;(&quot;Even&quot;, 8);
+<p>아래는 OrderedPair클래스로 두개의 객체를 만드는 코드이다.
+<code>The following statements create two instantiations of the OrderedPair class:</code></p>
+
+<pre><code class="language-java">Pair&lt;String, Integer&gt; p1 = new OrderedPair&lt;String, Integer&gt;(&quot;Even&quot;, 8);
 Pair&lt;String, String&gt;  p2 = new OrderedPair&lt;String, String&gt;(&quot;hello&quot;, &quot;world&quot;);
 </code></pre>
 
-<p>이코드는 OrderedPair<String, Integer> 객체를 생성하면, K는 String 타입이고 V는 Integer 타입이다. Orderedpair의 생성자의 파라미터 타입들은 String, Integer이다.  autoboxing을 통해 String과 int를 OrderedPair클래스에 전달해도 문제없다.(참조형은 상관 없는데 기본형인 int는 참조형으로 변경되어야한다. int -&gt; Integer) 
+<p>코드는 OrderedPair<String, Integer> 객체를 생성하면, K는 String 타입이고 V는 Integer 타입이다. Orderedpair의 생성자의 파라미터 타입들은 String, Integer이다.  autoboxing을 통해 String과 int를 OrderedPair클래스에 전달해도 문제없다.(참조형은 상관 없는데 기본형인 int는 참조형으로 변경되어야한다. int -&gt; Integer) 
 <code>The code, new OrderedPair&lt;String, Integer&gt;, instantiates K as a String and V as an Integer. Therefore, the parameter types of OrderedPair's constructor are String and Integer, respectively. Due to autoboxing, it is valid to pass a String and an int to the class.</code></p>
 
 <p>이전에 다아몬드 연산자를 언급했듯이, 자바 컴파일러는 OrderedPair<String, Integer>로 선언한 K, V 타입을 추론 할수 있기 때문에 다이아몬드문법을 사용해서 코드를 줄일수 있다.
@@ -307,13 +328,13 @@ OrderedPair&lt;String, String&gt;  p2 = new OrderedPair&lt;&gt;(&quot;hello&quot
 
 <p><code>Parameterized Types</code></p>
 
-<p>타입 파라미터를 타입 파라미터화로 변경할 수 있다. OrderedPair<K, V>를 예를 들면:
+<p>매개변수타입(예 K, V)은  매개변수화된 타입(예 List<String>)으로 대체할 수 있다. OrderedPair<K, V>를 예를 들면:
 <code>You can also substitute a type parameter (i.e., K or V) with a parameterized type (i.e., List&lt;String&gt;). For example, using the OrderedPair&lt;K, V&gt; example:</code></p>
 
 <pre><code class="language-java">OrderedPair&lt;String, Box&lt;Integer&gt;&gt; p = new OrderedPair&lt;&gt;(&quot;primes&quot;, new Box&lt;Integer&gt;(...));
 </code></pre>
 
-<p>마라미터화된 타입(Parameterized Type)은 위의 소스에서는 <strong>Box&lt;Integer&gt;</strong> 확인</p>
+<p>위의 코드에서 매개변수화된 타입(Parameterized Type)은 위의 소스에서는 <strong>Box&lt;Integer&gt;</strong>을 의미</p>
 </div>
   </div>
 
