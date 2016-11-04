@@ -9,9 +9,9 @@
 <meta name="generator" content="Hugo 0.17" />
 
 <link rel="apple-touch-icon" href="http://durtchrt.github.io/blog/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://durtchrt.github.io/blog/tags/%EB%B2%88%EC%97%AD/index.xml">
 
-<link rel="canonical" href="http://durtchrt.github.io/blog/tags/%EB%B2%88%EC%97%AD/">
+
+<link rel="canonical" href="http://durtchrt.github.io/blog/java/generics/5/">
 
 
     
@@ -20,8 +20,62 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>번역 - 개발 저장소</title>
+    <title>java generics 번역 4 - 개발 저장소</title>
     
+<meta name="description" content="자바 제네릭스(java generics) 번역">
+
+<meta property="og:title" content="java generics 번역 4 - 개발 저장소">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://durtchrt.github.io/blog/java/generics/5/">
+<meta property="og:image" content="http://durtchrt.github.io/blog/images/default.png">
+<meta property="og:site_name" content="개발 저장소">
+<meta property="og:description" content="자바 제네릭스(java generics) 번역">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="개발 저장소">
+<meta name="twitter:url" content="http://durtchrt.github.io/blog/java/generics/5/">
+<meta name="twitter:title" content="java generics 번역 4 - 개발 저장소">
+<meta name="twitter:description" content="자바 제네릭스(java generics) 번역">
+<meta name="twitter:image" content="http://durtchrt.github.io/blog/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http:\/\/durtchrt.github.io\/blog\/"
+    },
+    "headline": "java generics 번역 4 - 개발 저장소",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http:\/\/durtchrt.github.io\/blog\/images\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2016-11-04T13:43:44JST",
+    "dateModified": "2016-11-04T13:43:44JST",
+    "author": {
+      "@type": "Person",
+      "name": "개발 저장소"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "개발 저장소",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http:\/\/durtchrt.github.io\/blog\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "자바 제네릭스(java generics) 번역"
+  }
+</script>
+
+
     <style>
       html { font-size: 18px;}@media (max-width: 768px) { html { font-size: 15px; }}body { font-family: 'Noto Sans','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-size: inherit; font-weight: 300; line-height: 1rem; background-color: #eceff1;}p { margin: 0;}a { color: #4caf50;}a:hover { text-decoration: none; color: #388e3c;}ul,ol { margin: 0; padding: 0;}h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 700;}h1 { font-size: 1.8rem; line-height: 2rem; margin: 1.5rem 0; }h2 { font-size: 1.4rem; line-height: 2rem; margin: 1.5rem 0; }h3 { font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; }h4, h5, h6 { font-size: 1rem; line-height: 1.5rem; margin: 1.5rem 0; }main { display: block;}.content-inner { padding: 1rem 2rem;}.content-inner.thin { padding: .5rem 1rem;}@media (max-width: 768px) { .content-inner { padding: 1rem; }}/* Override */.container { position: relative;}/* Parts:layouts */.l-header { background-color: #fff; margin-bottom: 1rem; padding: 1rem 0; text-align: center;}.l-footer { font-size: .8rem; padding: 1.5rem 0;}/* Parts:menu */.p-menu { position: absolute; right: 15px; top: 0;}/* Parts:terms */.p-terms { list-style: none;}.p-terms .terms-title { margin: 0;}.p-terms a { display: inline-block; padding: .25rem 0;}.p-terms.inline li { display: inline-block; font-size: .8rem;}.p-terms.inline li::after { content: ',';}.p-terms.inline li:last-child::after { content: '';}/* Parts:paging */.p-paging { margin-bottom: 1.5rem; text-align: center;}.p-paging a { display: inline-block; padding: 1rem 1.5rem; margin: 0 .5rem; background-color: #cfd8dc; color: #263238;}/* Parts:section */section { margin-bottom: 1.5rem;}section>header { font-size: .8rem; font-weight: 700; margin-bottom: .5rem; text-transform: uppercase;}section>header a { color: #333; text-decoration: underline;}section.article-footer { margin-bottom: 1rem;}section.article-footer>header { margin-bottom: 0;}/* Parts:share */.p-share { min-width: 100%; margin-bottom: 1.5rem;}.p-share .share-inner { display: table; table-layout: fixed; width: 100%; border-spacing: .25rem;}.p-share a { display: table-cell; text-align: center; font-weight: 700; font-size: .7rem; padding: .5rem 0; color: #fff; border-radius: 5px;}.p-share a.ht { background-color: #00a4de; border-bottom: 2px solid #0083b1; }.p-share a.fb { background-color: #3b5998; border-bottom: 2px solid #2f4779; }.p-share a.tw { background-color: #1da1f2; border-bottom: 2px solid #1780c1; }.p-share a.gp { background-color: #dd4b39; border-bottom: 2px solid #b03c2d; }.p-share a.ln { background-color: #00c300; border-bottom: 2px solid #009c00; }.p-share a.ht::before { content: 'Hatena'; }.p-share a.fb::before { content: 'Facebook'; }.p-share a.tw::before { content: 'Twitter'; }.p-share a.gp::before { content: 'Google+'; }.p-share a.ln::before { content: 'LINE'; }/* Parts:logo */.h-logo { font-family: 'Montserrat', sans-serif;}.p-logo { display: inline-block; text-transform: uppercase;}.p-logo a { display: inline-block; font-size: 1.4rem; line-height: 2rem; color: #000;}/* Parts:crumb */.p-crumb ol { list-style: none; margin-bottom: 1rem;}.p-crumb li { display: inline; margin-right: .25rem; font-size: .8rem; color: #607d8b;}.p-crumb li::after { content: '/'; margin-left: .25rem;}.p-crumb li:last-child::after { content: '';}/* Parts:facts */.p-facts { list-style: none; font-size: .8rem; margin-bottom: 1rem;}.p-facts li { display: inline-block; margin-right: .5rem; color: #90a4ae;}.p-facts li i { margin-right: .5rem; color: #cfd8dc;}/* Parts:article */article { background-color: #fff;}article .title { margin: 0; margin-bottom: .5rem; font-weight: 700;}article .title a { color: #000;}article .thumb { display: block; background-image: url(http://durtchrt.github.io/blog/images/default.jpg); background-position: center; background-size: cover;}article .summary { margin-bottom: .5rem; max-height: 5rem; overflow: hidden;}article.single .thumb { height: 18rem; margin-bottom: 1rem;}@media (max-width: 768px) { article.single .thumb { height: 12rem; }}article.li { margin-bottom: 1rem;}article.li .thumb { height: 7.5rem; margin-bottom: .5rem;}article.li.sm { background-color: transparent; margin-bottom: .5rem;}article.li.sm>header { padding: .5rem 0;}article.li.sm .title { font-size: .8rem; line-height: 1rem; margin-bottom: .25rem;}article.li.sm .p-facts { font-size: .6rem; margin-bottom: 0;}article.li.sm .thumb { float: left; margin-right: .5rem; height: 3rem; width: 3rem;}.article-body h2 { padding: 1rem 0; border-bottom: 2px solid #eceff1;}.article-body h2:first-child { margin-top: 0; }.article-body h3 { color: #428bca;}.article-body h4 { border-left: solid .25rem #428bca; padding: 0 .5rem;}.article-body p { margin: 1.5rem 0; line-height: 1.5rem;}.article-body a { text-decoration: underline;}.article-body ul,.article-body ol { padding-left: 1.5rem;}.article-body code { display: inline-block; font-family: Menlo, consolas, monospace; font-size: .8rem; padding: 0 .5rem; line-height: 1.5rem;}.article-body pre { margin: 1.5rem 0; padding: 0; font-size: .8rem; border: none; border-radius: 0;}.article-body pre code { display: block; line-height: 1rem; padding: 1rem;}.article-body blockquote { margin: 1.5rem 0; padding: .5rem 0; font-size: .8rem; border-top: 1px solid #eceff1; border-bottom: 1px solid #eceff1; color: #607d8b;}.article-body blockquote p { margin: .5rem 0; line-height: 1rem;}.article-body strong { box-shadow: 0 -.5rem 0 0 #90caf9 inset;}.article-body em { font-style: normal; font-weight: 700; color: #03a9f4;}.article-body figure { margin: 1.5rem 0; }.article-body figure img { max-width: 100%; }.article-body figure.left,.article-body figure.right { width: 15rem; height: 12rem; margin-top: 0;}.article-body figure.left { float: left; margin-right: 1rem; }.article-body figure.right { float: right; margin-left: 1rem; }@media (max-width: 768px) { .article-body figure.left, .article-body figure.right { float: none; margin: 0; width: auto; height: auto; }}.article-body figcaption { padding: .5rem 0; font-size: .8rem; text-align: center;}.article-body figcaption a { color: #263238;}
       
@@ -58,18 +112,21 @@ ga('send', 'pageview');
 <div class="row">
   <div class="col-md-8">
 
-    
-    <header class="p-page-title">
-      <h1 class="title">번역</h1>
-    </header>
-    
+    <nav class="p-crumb">
+      <ol>
+        <li><a href="http://durtchrt.github.io/blog/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/java/" itemprop="url"><span itemprop="title">java</span></a></li>
+        
+        <li class="active">java generics 번역 4</li>
+      </ol>
+    </nav>
 
-    <div class="row">
-      
-      <div class="col-sm-6 col-xs-12"><article class="li">
+    <article class="single">
+
   <a href="http://durtchrt.github.io/blog/java/generics/5/" class="thumb"></a>
-  <div class="content-inner thin">
-    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/5/">java generics 번역 4</a></h2>
+  <div class="content-inner">
+    <h1 class="title">java generics 번역 4</h1>
 
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-04T13:43:44JST">Nov 4, 2016</time></li>
@@ -77,37 +134,135 @@ ga('send', 'pageview');
       
     </ul>
 
-    <div class="summary">원문 링크
-Generic 메서드 Generic Methods Generic 메서드는 자시의 타입매개변수를 가진 메서드이다. generic 타입을 선언하는 것과 비슷하지만 타입매개변수의 스코프는 메서드로 제한된다. 일반 메서드, 정적 메서드 generic 클래스의 생성자는 이 룰을 동일하게 적용된다. Generic methods are methods that introduce their own type parameters. This is similar to declaring a generic type, but the type parameter's scope is limited to the method where it is declared. Static and non-static generic methods are allowed, as well as generic class constructors.</div>
-  </div>
-</article>
-</div>
-      
-      
-      <div class="col-sm-6 col-xs-12"><article class="li">
-  <a href="http://durtchrt.github.io/blog/java/generics/4/" class="thumb"></a>
-  <div class="content-inner thin">
-    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/4/">java generics 번역 4</a></h2>
+    <div class="article-body">
 
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-01T16:05:56JST">Nov 1, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-      
-    </ul>
+<p><a href="https://docs.oracle.com/javase/tutorial/java/generics/methods.html">원문 링크</a></p>
 
-    <div class="summary">원문 링크
-Raw Types Raw 타입은 generic 클래스 혹은 인터페이스에 타입인자가 없는 것. 예를들어 generic Box 클래스를 보자 A raw type is the name of a generic class or interface without any type arguments. For example, given the generic Box class:
-public class Box&lt;T&gt; { public void set(T t) { /* ... */ } // ... }  아래 코드를 보면 Box의 매개변수화된 타입을 만드면서, 타입매개변수 T에 해당하는 Integer를 타입인자로 제공하였다.</div>
-  </div>
-</article>
+<h3 id="generic-메서드-generic-methods">Generic 메서드 <code>Generic Methods</code></h3>
+
+<p>Generic 메서드는 자시의 타입매개변수를 가진 메서드이다. generic 타입을 선언하는 것과 비슷하지만 타입매개변수의 스코프는 메서드로 제한된다. 일반 메서드, 정적 메서드 generic 클래스의 생성자는 이 룰을 동일하게 적용된다.
+<code>Generic methods are methods that introduce their own type parameters. This is similar to declaring a generic type, but the type parameter's scope is limited to the method where it is declared. Static and non-static generic methods are allowed, as well as generic class constructors.</code></p>
+
+<p>generic 메서드 문법은 return 타입 전에 꺽쇠 사이에 타입매개변수를 표기한다. static generic 메서드를 위해 타입매개변수는 반드시 메서드의 return 타입 이전에 위치해야한다.
+<code>The syntax for a generic method includes a type parameter, inside angle brackets, and appears before the method's return type. For static generic methods, the type parameter section must appear before the method's return type.</code></p>
+
+<p>Util 클래스는 두 Pair 객체를 비교하는 generic 메서드를 포함하고 있습니다.
+<code>The Util class includes a generic method, compare, which compares two Pair objects:</code></p>
+
+<pre><code class="language-java">public class Util {
+    public static &lt;K, V&gt; boolean compare(Pair&lt;K, V&gt; p1, Pair&lt;K, V&gt; p2) {
+        return p1.getKey().equals(p2.getKey()) &amp;&amp;
+               p1.getValue().equals(p2.getValue());
+    }
+}
+
+public class Pair&lt;K, V&gt; {
+
+    private K key;
+    private V value;
+
+    public Pair(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    public void setKey(K key) { this.key = key; }
+    public void setValue(V value) { this.value = value; }
+    public K getKey()   { return key; }
+    public V getValue() { return value; }
+}
+</code></pre>
+
+<p>이 메서드를(static <K, V> boolean compare)를 호출한 문장은 다음과 같다.
+<code>The complete syntax for invoking this method would be:</code></p>
+
+<pre><code class="language-java">Pair&lt;Integer, String&gt; p1 = new Pair&lt;&gt;(1, &quot;apple&quot;);
+Pair&lt;Integer, String&gt; p2 = new Pair&lt;&gt;(2, &quot;pear&quot;);
+boolean same = Util.&lt;Integer, String&gt;compare(p1, p2);
+</code></pre>
+
+<p>Util.<strong>&lt;Integer, String&gt;</strong>compare(p1, p2)<br>
+강조한 영역처럼 타입을 명시하였다. 타입인자는 컴파일러가 타입 추론할때 필요한 정보가 된다.
+<code>The type has been explicitly provided, as shown in bold. Generally, this can be left out and the compiler will infer the type that is needed:</code></p>
+
+<pre><code class="language-java">Pair&lt;Integer, String&gt; p1 = new Pair&lt;&gt;(1, &quot;apple&quot;);
+Pair&lt;Integer, String&gt; p2 = new Pair&lt;&gt;(2, &quot;pear&quot;);
+boolean same = Util.compare(p1, p2);
+</code></pre>
+
+<p>위의 코드는 타입 추론을 나타낸것이다. 꺽쇠에 타입 명시하지 않고 generic 메서드가 아닌 일반 메서드를 호출해도 타입 추론이 이루어진다. 이 주제는 뒤에 나오는 타입 추론 섹션에서 더 논의한다.
+<code>This feature, known as type inference, allows you to invoke a generic method as an ordinary method, without specifying a type between angle brackets. This topic is further discussed in the following section, Type Inference.</code></p>
 </div>
-      <div class="col-sm-12"></div>
+  </div>
+
+  <footer class="article-footer">
+    <div class="content-inner">
+
+      <aside class="p-share">
+  <div class="share-inner">
+    
+    <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f5%2f&t=java%20generics%20%eb%b2%88%ec%97%ad%204" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
+    <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f5%2f&text=java%20generics%20%eb%b2%88%ec%97%ad%204&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
+    <a href="https://plus.google.com/share?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f5%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
+    <a href="http://line.me/R/msg/text/?java%20generics%20%eb%b2%88%ec%97%ad%204 http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f5%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
+  </div>
+</aside>
+
+
+      <nav class="p-crumb">
+        <ol>
+          <li><a href="http://durtchrt.github.io/blog/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+          
+          <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/java/" itemprop="url"><span itemprop="title">java</span></a></li>
+          
+          <li class="active">java generics 번역 4</li>
+        </ol>
+      </nav>
+
+      
+      
+      
+      <section class="article-footer">
+        <header>
+          <a href="http://durtchrt.github.io/blog/tags/">TAGS</a>
+        </header>
+        <div>
+          <ul class="p-terms inline">
+            
+            <li><a href="http://durtchrt.github.io/blog/tags/java/">java</a></li>
+            
+            <li><a href="http://durtchrt.github.io/blog/tags/generics/">generics</a></li>
+            
+            <li><a href="http://durtchrt.github.io/blog/tags/%EB%B2%88%EC%97%AD/">번역</a></li>
+            
+          </ul>
+        </div>
+      </section>
+      
       
     </div>
+  </footer>
 
-    
+</article>
 
+
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'bjm';
+    var disqus_identifier = 'http:\/\/durtchrt.github.io\/blog\/java\/generics\/5\/';
+    var disqus_title = 'java generics 번역 4';
+    var disqus_url = 'http:\/\/durtchrt.github.io\/blog\/java\/generics\/5\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </div>
+
   <div class="col-md-4">
     <aside class="site">
 

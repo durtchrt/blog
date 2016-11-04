@@ -7,8 +7,75 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>durtchrt</copyright>
-    <lastBuildDate>Tue, 01 Nov 2016 16:05:56 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 04 Nov 2016 13:43:44 +0900</lastBuildDate>
     <atom:link href="http://durtchrt.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>java generics 번역 4</title>
+      <link>http://durtchrt.github.io/blog/java/generics/5/</link>
+      <pubDate>Fri, 04 Nov 2016 13:43:44 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/5/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/methods.html&#34;&gt;원문 링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;generic-메서드-generic-methods&#34;&gt;Generic 메서드 &lt;code&gt;Generic Methods&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Generic 메서드는 자시의 타입매개변수를 가진 메서드이다. generic 타입을 선언하는 것과 비슷하지만 타입매개변수의 스코프는 메서드로 제한된다. 일반 메서드, 정적 메서드 generic 클래스의 생성자는 이 룰을 동일하게 적용된다.
+&lt;code&gt;Generic methods are methods that introduce their own type parameters. This is similar to declaring a generic type, but the type parameter&#39;s scope is limited to the method where it is declared. Static and non-static generic methods are allowed, as well as generic class constructors.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;generic 메서드 문법은 return 타입 전에 꺽쇠 사이에 타입매개변수를 표기한다. static generic 메서드를 위해 타입매개변수는 반드시 메서드의 return 타입 이전에 위치해야한다.
+&lt;code&gt;The syntax for a generic method includes a type parameter, inside angle brackets, and appears before the method&#39;s return type. For static generic methods, the type parameter section must appear before the method&#39;s return type.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Util 클래스는 두 Pair 객체를 비교하는 generic 메서드를 포함하고 있습니다.
+&lt;code&gt;The Util class includes a generic method, compare, which compares two Pair objects:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class Util {
+    public static &amp;lt;K, V&amp;gt; boolean compare(Pair&amp;lt;K, V&amp;gt; p1, Pair&amp;lt;K, V&amp;gt; p2) {
+        return p1.getKey().equals(p2.getKey()) &amp;amp;&amp;amp;
+               p1.getValue().equals(p2.getValue());
+    }
+}
+
+public class Pair&amp;lt;K, V&amp;gt; {
+
+    private K key;
+    private V value;
+
+    public Pair(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    public void setKey(K key) { this.key = key; }
+    public void setValue(V value) { this.value = value; }
+    public K getKey()   { return key; }
+    public V getValue() { return value; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;이 메서드를(static &lt;K, V&gt; boolean compare)를 호출한 문장은 다음과 같다.
+&lt;code&gt;The complete syntax for invoking this method would be:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Pair&amp;lt;Integer, String&amp;gt; p1 = new Pair&amp;lt;&amp;gt;(1, &amp;quot;apple&amp;quot;);
+Pair&amp;lt;Integer, String&amp;gt; p2 = new Pair&amp;lt;&amp;gt;(2, &amp;quot;pear&amp;quot;);
+boolean same = Util.&amp;lt;Integer, String&amp;gt;compare(p1, p2);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Util.&lt;strong&gt;&amp;lt;Integer, String&amp;gt;&lt;/strong&gt;compare(p1, p2)&lt;br&gt;
+강조한 영역처럼 타입을 명시하였다. 타입인자는 컴파일러가 타입 추론할때 필요한 정보가 된다.
+&lt;code&gt;The type has been explicitly provided, as shown in bold. Generally, this can be left out and the compiler will infer the type that is needed:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Pair&amp;lt;Integer, String&amp;gt; p1 = new Pair&amp;lt;&amp;gt;(1, &amp;quot;apple&amp;quot;);
+Pair&amp;lt;Integer, String&amp;gt; p2 = new Pair&amp;lt;&amp;gt;(2, &amp;quot;pear&amp;quot;);
+boolean same = Util.compare(p1, p2);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;위의 코드는 타입 추론을 나타낸것이다. 꺽쇠에 타입 명시하지 않고 generic 메서드가 아닌 일반 메서드를 호출해도 타입 추론이 이루어진다. 이 주제는 뒤에 나오는 타입 추론 섹션에서 더 논의한다.
+&lt;code&gt;This feature, known as type inference, allows you to invoke a generic method as an ordinary method, without specifying a type between angle brackets. This topic is further discussed in the following section, Type Inference.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>java generics 번역 4</title>
