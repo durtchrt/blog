@@ -11,7 +11,7 @@
     <atom:link href="http://durtchrt.github.io/blog/java/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>java generics: 제한된 타입 매개변수 (Bounded Type Parameters)</title>
+      <title>자바 제네릭스(6) Java Generics: 제한된 타입 매개변수 (Bounded Type Parameters)</title>
       <link>http://durtchrt.github.io/blog/java/generics/6/</link>
       <pubDate>Fri, 04 Nov 2016 18:03:27 +0900</pubDate>
       
@@ -108,7 +108,7 @@ class D &amp;lt;T extends A &amp;amp; B &amp;amp; C&amp;gt; { /* ... */ }
     </item>
     
     <item>
-      <title>java generics 번역 5</title>
+      <title>자바 제네릭스(5) Java Generics: 제네릭 메서드</title>
       <link>http://durtchrt.github.io/blog/java/generics/5/</link>
       <pubDate>Fri, 04 Nov 2016 13:43:44 +0900</pubDate>
       
@@ -175,7 +175,7 @@ boolean same = Util.compare(p1, p2);
     </item>
     
     <item>
-      <title>java generics 번역 4</title>
+      <title>자바 제네릭스(4) Java Generics: 원천(Raw) 타입들</title>
       <link>http://durtchrt.github.io/blog/java/generics/4/</link>
       <pubDate>Tue, 01 Nov 2016 16:05:56 +0900</pubDate>
       
@@ -184,7 +184,7 @@ boolean same = Util.compare(p1, p2);
 
 &lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/rawTypes.html&#34;&gt;원문 링크&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;raw-types&#34;&gt;Raw Types&lt;/h3&gt;
+&lt;h3 id=&#34;원천-타입들-raw-types&#34;&gt;원천 타입들 &lt;code&gt;Raw Types&lt;/code&gt;&lt;/h3&gt;
 
 &lt;p&gt;Raw 타입은 generic 클래스 혹은 인터페이스에 타입인자가 없는 것. 예를들어 generic Box 클래스를 보자
 &lt;code&gt;A raw type is the name of a generic class or interface without any type arguments. For example, given the generic Box class:&lt;/code&gt;&lt;/p&gt;
@@ -298,7 +298,7 @@ found:    Box
     </item>
     
     <item>
-      <title>java generics 번역 3</title>
+      <title>자바 제네릭스(3) Java Generics: 제네릭 타입들</title>
       <link>http://durtchrt.github.io/blog/java/generics/3/</link>
       <pubDate>Mon, 31 Oct 2016 17:08:57 +0900</pubDate>
       
@@ -508,7 +508,7 @@ OrderedPair&amp;lt;String, String&amp;gt;  p2 = new OrderedPair&amp;lt;&amp;gt;(
     </item>
     
     <item>
-      <title>Java Generics 번역 2</title>
+      <title>자바 제네릭스(2) Java Generics: 제네릭스는 왜 사용하는가? </title>
       <link>http://durtchrt.github.io/blog/java/generics/2/</link>
       <pubDate>Mon, 31 Oct 2016 15:52:48 +0900</pubDate>
       
@@ -560,7 +560,7 @@ By using generics, programmers can implement generic algorithms that work on col
     </item>
     
     <item>
-      <title>java generics 번역 1</title>
+      <title>자바 제네릭스(1) Java  Generics</title>
       <link>http://durtchrt.github.io/blog/java/generics/1/</link>
       <pubDate>Mon, 31 Oct 2016 15:07:44 +0900</pubDate>
       
