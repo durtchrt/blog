@@ -20,11 +20,11 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>java generics 번역 6 - 개발 저장소</title>
+    <title>java generics: 제한된 타입 매개변수 (Bounded Type Parameters) - 개발 저장소</title>
     
 <meta name="description" content="자바 제네릭스(java generics) 번역">
 
-<meta property="og:title" content="java generics 번역 6 - 개발 저장소">
+<meta property="og:title" content="java generics: 제한된 타입 매개변수 (Bounded Type Parameters) - 개발 저장소">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://durtchrt.github.io/blog/java/generics/6/">
 <meta property="og:image" content="http://durtchrt.github.io/blog/images/default.png">
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="개발 저장소">
 <meta name="twitter:url" content="http://durtchrt.github.io/blog/java/generics/6/">
-<meta name="twitter:title" content="java generics 번역 6 - 개발 저장소">
+<meta name="twitter:title" content="java generics: 제한된 타입 매개변수 (Bounded Type Parameters) - 개발 저장소">
 <meta name="twitter:description" content="자바 제네릭스(java generics) 번역">
 <meta name="twitter:image" content="http://durtchrt.github.io/blog/images/default.png">
 
@@ -48,7 +48,7 @@
       "@type": "WebPage",
       "@id":"http:\/\/durtchrt.github.io\/blog\/"
     },
-    "headline": "java generics 번역 6 - 개발 저장소",
+    "headline": "java generics: 제한된 타입 매개변수 (Bounded Type Parameters) - 개발 저장소",
     "image": {
       "@type": "ImageObject",
       "url": "http:\/\/durtchrt.github.io\/blog\/images\/default.png",
@@ -118,7 +118,7 @@ ga('send', 'pageview');
         
         <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/java/" itemprop="url"><span itemprop="title">java</span></a></li>
         
-        <li class="active">java generics 번역 6</li>
+        <li class="active">java generics: 제한된 타입 매개변수 (Bounded Type Parameters)</li>
       </ol>
     </nav>
 
@@ -126,7 +126,7 @@ ga('send', 'pageview');
 
   <a href="http://durtchrt.github.io/blog/java/generics/6/" class="thumb"></a>
   <div class="content-inner">
-    <h1 class="title">java generics 번역 6</h1>
+    <h1 class="title">java generics: 제한된 타입 매개변수 (Bounded Type Parameters)</h1>
 
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-04T18:03:27JST">Nov 4, 2016</time></li>
@@ -231,10 +231,10 @@ class D &lt;T extends A &amp; B &amp; C&gt; { /* ... */ }
       <aside class="p-share">
   <div class="share-inner">
     
-    <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f6%2f&t=java%20generics%20%eb%b2%88%ec%97%ad%206" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
-    <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f6%2f&text=java%20generics%20%eb%b2%88%ec%97%ad%206&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
+    <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f6%2f&t=java%20generics%3a%20%ec%a0%9c%ed%95%9c%eb%90%9c%20%ed%83%80%ec%9e%85%20%eb%a7%a4%ea%b0%9c%eb%b3%80%ec%88%98%20%28Bounded%20Type%20Parameters%29" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
+    <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f6%2f&text=java%20generics%3a%20%ec%a0%9c%ed%95%9c%eb%90%9c%20%ed%83%80%ec%9e%85%20%eb%a7%a4%ea%b0%9c%eb%b3%80%ec%88%98%20%28Bounded%20Type%20Parameters%29&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
     <a href="https://plus.google.com/share?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f6%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
-    <a href="http://line.me/R/msg/text/?java%20generics%20%eb%b2%88%ec%97%ad%206 http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f6%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
+    <a href="http://line.me/R/msg/text/?java%20generics%3a%20%ec%a0%9c%ed%95%9c%eb%90%9c%20%ed%83%80%ec%9e%85%20%eb%a7%a4%ea%b0%9c%eb%b3%80%ec%88%98%20%28Bounded%20Type%20Parameters%29 http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f6%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
   </div>
 </aside>
 
@@ -245,7 +245,7 @@ class D &lt;T extends A &amp; B &amp; C&gt; { /* ... */ }
           
           <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/java/" itemprop="url"><span itemprop="title">java</span></a></li>
           
-          <li class="active">java generics 번역 6</li>
+          <li class="active">java generics: 제한된 타입 매개변수 (Bounded Type Parameters)</li>
         </ol>
       </nav>
 
@@ -280,7 +280,7 @@ class D &lt;T extends A &amp; B &amp; C&gt; { /* ... */ }
 <script type="text/javascript">
     var disqus_shortname = 'bjm';
     var disqus_identifier = 'http:\/\/durtchrt.github.io\/blog\/java\/generics\/6\/';
-    var disqus_title = 'java generics 번역 6';
+    var disqus_title = 'java generics: 제한된 타입 매개변수 (Bounded Type Parameters)';
     var disqus_url = 'http:\/\/durtchrt.github.io\/blog\/java\/generics\/6\/';
 
     (function() {
@@ -304,7 +304,7 @@ class D &lt;T extends A &amp; B &amp; C&gt; { /* ... */ }
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/java/generics/6/" class="thumb"></a>
   <header>
-    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/6/">java generics 번역 6</a></div>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/6/">java generics: 제한된 타입 매개변수 (Bounded Type Parameters)</a></div>
 
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-04T18:03:27JST">Nov 4, 2016</time></li>
