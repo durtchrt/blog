@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="http://durtchrt.github.io/blog/images/logo.png">
 
 
-<link rel="canonical" href="http://durtchrt.github.io/blog/java/generics/6/">
+<link rel="canonical" href="http://durtchrt.github.io/blog/java/generics/8/">
 
 
     
@@ -20,23 +20,23 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>자바 제네릭스(6) Java Generics: 제한된 타입 매개변수 (Bounded Type Parameters) - 개발 저장소</title>
+    <title>자바 제네릭스(8) Java Generics: 제네릭스, 상속, 서브타입 (Generics, Inheritance, and Subtypes) - 개발 저장소</title>
     
-<meta name="description" content="자바 제네릭스(java generics) 번역">
+<meta name="description" content="자바 제네릭스(7) Java Generics: Generic 메서드와 제한된 타입 매개변수 (Generic Methods and Bounded Type Parameters)">
 
-<meta property="og:title" content="자바 제네릭스(6) Java Generics: 제한된 타입 매개변수 (Bounded Type Parameters) - 개발 저장소">
+<meta property="og:title" content="자바 제네릭스(8) Java Generics: 제네릭스, 상속, 서브타입 (Generics, Inheritance, and Subtypes) - 개발 저장소">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://durtchrt.github.io/blog/java/generics/6/">
+<meta property="og:url" content="http://durtchrt.github.io/blog/java/generics/8/">
 <meta property="og:image" content="http://durtchrt.github.io/blog/images/default.png">
 <meta property="og:site_name" content="개발 저장소">
-<meta property="og:description" content="자바 제네릭스(java generics) 번역">
+<meta property="og:description" content="자바 제네릭스(7) Java Generics: Generic 메서드와 제한된 타입 매개변수 (Generic Methods and Bounded Type Parameters)">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="개발 저장소">
-<meta name="twitter:url" content="http://durtchrt.github.io/blog/java/generics/6/">
-<meta name="twitter:title" content="자바 제네릭스(6) Java Generics: 제한된 타입 매개변수 (Bounded Type Parameters) - 개발 저장소">
-<meta name="twitter:description" content="자바 제네릭스(java generics) 번역">
+<meta name="twitter:url" content="http://durtchrt.github.io/blog/java/generics/8/">
+<meta name="twitter:title" content="자바 제네릭스(8) Java Generics: 제네릭스, 상속, 서브타입 (Generics, Inheritance, and Subtypes) - 개발 저장소">
+<meta name="twitter:description" content="자바 제네릭스(7) Java Generics: Generic 메서드와 제한된 타입 매개변수 (Generic Methods and Bounded Type Parameters)">
 <meta name="twitter:image" content="http://durtchrt.github.io/blog/images/default.png">
 
 
@@ -48,15 +48,15 @@
       "@type": "WebPage",
       "@id":"http:\/\/durtchrt.github.io\/blog\/"
     },
-    "headline": "자바 제네릭스(6) Java Generics: 제한된 타입 매개변수 (Bounded Type Parameters) - 개발 저장소",
+    "headline": "자바 제네릭스(8) Java Generics: 제네릭스, 상속, 서브타입 (Generics, Inheritance, and Subtypes) - 개발 저장소",
     "image": {
       "@type": "ImageObject",
       "url": "http:\/\/durtchrt.github.io\/blog\/images\/default.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2016-11-04T18:03:27JST",
-    "dateModified": "2016-11-04T18:03:27JST",
+    "datePublished": "2016-11-05T08:48:42JST",
+    "dateModified": "2016-11-05T08:48:42JST",
     "author": {
       "@type": "Person",
       "name": "개발 저장소"
@@ -71,7 +71,7 @@
         "height": 60
       }
     },
-    "description": "자바 제네릭스(java generics) 번역"
+    "description": "자바 제네릭스(7) Java Generics: Generic 메서드와 제한된 타입 매개변수 (Generic Methods and Bounded Type Parameters)"
   }
 </script>
 
@@ -118,112 +118,108 @@ ga('send', 'pageview');
         
         <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/java/" itemprop="url"><span itemprop="title">java</span></a></li>
         
-        <li class="active">자바 제네릭스(6) Java Generics: 제한된 타입 매개변수 (Bounded Type Parameters)</li>
+        <li class="active">자바 제네릭스(8) Java Generics: 제네릭스, 상속, 서브타입 (Generics, Inheritance, and Subtypes)</li>
       </ol>
     </nav>
 
     <article class="single">
 
-  <a href="http://durtchrt.github.io/blog/java/generics/6/" class="thumb"></a>
+  <a href="http://durtchrt.github.io/blog/java/generics/8/" class="thumb"></a>
   <div class="content-inner">
-    <h1 class="title">자바 제네릭스(6) Java Generics: 제한된 타입 매개변수 (Bounded Type Parameters)</h1>
+    <h1 class="title">자바 제네릭스(8) Java Generics: 제네릭스, 상속, 서브타입 (Generics, Inheritance, and Subtypes)</h1>
 
     <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-04T18:03:27JST">Nov 4, 2016</time></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-05T08:48:42JST">Nov 5, 2016</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
       
     </ul>
 
     <div class="article-body">
 
-<p><a href="https://docs.oracle.com/javase/tutorial/java/generics/bounded.html">원문 링크</a></p>
+<p>용어
+메서드 시그니처(method signature): 메서들간에 개성 주는것으로 자바 컴파일러인지 메서드 시그니처를 기준으로 오버로딩을 한다.  자바에서는 메서드명, 파라미터 갯수, 파라미터 타입, 파라미터 순서(자바에서는 리턴타입은 시그니처가 아니다.) - 파라미터명도 시그니처인지는 아리까리하다. 메서드 오버로딩를 생각하면 맞는거 같은데&hellip; 좀더 생각해보고 내용 수정 예정
+콘크리트 타입, 구현타입(concrete type): 자바에서는 타입들중 interface, abstract class를 제외하고 남은 class를 concrete 타입으로 이해하면 될 듯.<a href="http://dreuarchive.cra.org/2002/heise/typeComp.html">참고링크 - 영문: 번역 예정</a></p>
 
-<h3 id="제한된-타입-매개변수-bounded-type-parameters">제한된 타입 매개변수 <code>Bounded Type Parameters</code></h3>
+<h3 id="제네릭스-상속-서브타입-generics-inheritance-and-subtypes">제네릭스, 상속, 서브타입 <code>Generics, Inheritance, and Subtypes</code></h3>
 
-<p>매개변수화된 타입에 타입인자를 넣을때 타입 제한을 걸고 싶을 때가 있을 것이다. 예를 들어, Number 타입 또는 Number 타입의 자식 클래스의 객체만 허용하는 숫자 처리를 위한 메서드를 만들 수 있다. 이것이 제한된 타입 매개변수다
-<code>There may be times when you want to restrict the types that can be used as type arguments in a parameterized type. For example, a method that operates on numbers might only want to accept instances of Number or its subclasses. This is what bounded type parameters are for.</code></p>
+<p>타입간 호환이된다면 특정 타입의 객체를 다른 타입에 할당이 가능합니다. 아래의 코드처럼 Object 타입은 Integer의 슈퍼타입중 하나이기 때문에 Integer 타입인 someInteger의 객체가 Object 타입인 someObject에 할당이 가능합니다.
+<code>As you already know, it is possible to assign an object of one type to an object of another type provided that the types are compatible. For example, you can assign an Integer to an Object, since Object is one of Integer's supertypes:</code></p>
 
-<p>제한된 타입매개변수를 선언하는 방법은, 타입매개변수의 이름 뒤에  extends 키워드를 놓고 제한시킬 타입을 작성하면 된다. 아래의 에에서는 Number 타입으로 하였다. 주의할점은, 여기서 사용한 extends는 클래스안의 &ldquo;extends&rdquo; 또는 인터페이스의 &ldquo;implements&rdquo; 처럼 구현한다는 의미는 아니다.
-<code>To declare a bounded type parameter, list the type parameter's name, followed by the extends keyword, followed by its upper bound, which in this example is Number. Note that, in this context, extends is used in a general sense to mean either &quot;extends&quot; (as in classes) or &quot;implements&quot; (as in interfaces).</code></p>
+<pre><code class="language-java">Object someObject = new Object();
+Integer someInteger = new Integer(10);
+someObject = someInteger;   // OK
+</code></pre>
 
-<pre><code class="language-java">public class Box&lt;T&gt; {
+<p>객체지향 이론에서는 이를 &ldquo;is a&rdquo;(~는 ~이다) 관계라고 부른다. Integer는 Object의 &ldquo;is a&rdquo;이므로 Integer 타입을 Object 타입에 할당이 가능하다. 하지만 Integer는 Number 타입에 &ldquo;is a&rdquo; 관계이다. 그러므로 아래의 코드는 잘 동작한다.
+<code>In object-oriented terminology, this is called an &quot;is a&quot; relationship. Since an Integer is a kind of Object, the assignment is allowed. But Integer is also a kind of Number, so the following code is valid as well:</code></p>
 
-    private T t;
+<pre><code class="language-java">public void someMethod(Number n) { /* ... */ }
 
-    public void set(T t) {
-        this.t = t;
-    }
+someMethod(new Integer(10));   // OK
+someMethod(new Double(10.1));   // OK
+</code></pre>
 
-    public T get() {
-        return t;
-    }
+<p>위의 룰은 generics도 마찬가지다. generic 타입을 호출할때, 타입인자가 Number 타입과 호환되는 &ldquo;is a&rdquo; 관계라면 Number 타입으로 타입인자를 전달한다.
+<code>The same is also true with generics. You can perform a generic type invocation, passing Number as its type argument, and any subsequent invocation of add will be allowed if the argument is compatible with Number:</code></p>
 
-    public &lt;U extends Number&gt; void inspect(U u){
-        System.out.println(&quot;T: &quot; + t.getClass().getName());
-        System.out.println(&quot;U: &quot; + u.getClass().getName());
-    }
+<pre><code class="language-java">Box&lt;Number&gt; box = new Box&lt;Number&gt;();
+box.add(new Integer(10));   // OK
+box.add(new Double(10.1));  // OK
+</code></pre>
 
-    public static void main(String[] args) {
-        Box&lt;Integer&gt; integerBox = new Box&lt;Integer&gt;();
-        integerBox.set(new Integer(10));
-        integerBox.inspect(&quot;some text&quot;); // error: this is still String!
-    }
+<p>아래의 메서드를 살펴보자
+<code>Now consider the following method:</code></p>
+
+<pre><code class="language-java">public void boxTest(Box&lt;Number&gt; n) { /* ... */ }
+</code></pre>
+
+<p>어떤 타입을 인자로 받을수 있을까? 메서드의 시그니처를 보면, Box<Number> 타입의 객체 하나를 인자로 받는 메서드이다. 그럼, Box<Integer>나 Box<Double>을 인자로 넣을수 있을까? 아니다! 왜냐하면 Box<Integer>, Box<Double>는 Box<Number>의 서브타입이 아니기 때문이다. (자바에서는 꺽쇠안에 Number 타입은 컴파일러가 is a관계를 파악하지 못한다. - 공변성, 반공변성쪽 내용 참조하면 좋은데 자바는 이를 지원 못함. 스칼라 언어 참조. 눈이 공부하다보면 팽팽 돔.)
+<code>What type of argument does it accept? By looking at its signature, you can see that it accepts a single argument whose type is Box&lt;Number&gt;. But what does that mean? Are you allowed to pass in Box&lt;Integer&gt; or Box&lt;Double&gt;, as you might expect? The answer is &quot;no&quot;, because Box&lt;Integer&gt; and Box&lt;Double&gt; are not subtypes of Box&lt;Number&gt;.</code></p>
+
+<p>이것은 generics를 공부할때 흔히 겪는 문제이다. 하지만 generic을 공부할때 중요한 컨셉이다.
+<code>This is a common misunderstanding when it comes to programming with generics, but it is an important concept to learn.</code></p>
+
+<p><img src="../8-1.git" alt="Box&lt;Integer&gt; is not a subtype of Box&lt;Number&gt; even though Integer is a subtype of Number." /></p>
+
+<p>Number의 서브타입인 Integer를 가진 Box<Integer>는 Box<Number>의 서브타입이 아니다.
+<code>Box&lt;Integer&gt; is not a subtype of Box&lt;Number&gt; even though Integer is a subtype of Number.</code></p>
+
+<p>중요:  A와 B 두 구현타입을 제공할때(예를 들어 Number와 Integer),A와 B가 &ldquo;is a&rdquo; 관계가 있든 상관없이  MyClass<A>는 MyClass<B>와 더 이상 관계가 형성되지 않는다.
+<code>Note: Given two concrete types A and B (for example, Number and Integer), MyClass&lt;A&gt; has no relationship to MyClass&lt;B&gt;, regardless of whether or not A and B are related. The common parent of MyClass&lt;A&gt; and MyClass&lt;B&gt; is Object.</code></p>
+
+<p>두 generic 클래스들간에 서브타입<strong>처럼</strong> 타입매개변수가 관련있다라는 정보를 주려면(컴파일러에게), 와일드카드와 서브타이핑 항목을 보라
+<code>For information on how to create a subtype-like relationship between two generic classes when the type parameters are related, see Wildcards and Subtyping.</code></p>
+
+<h3 id="제네릭-클래스와-서브타이핑-generic-classes-and-subtyping">제네릭 클래스와 서브타이핑 <code>Generic Classes and Subtyping</code></h3>
+
+<p>generic 클래스 상속 또는 generic 인터페이스 만들 때, 만드는 타입을 상속(또는 구현) 받은 부모  generic 타입의 서브 generic 타입(자식타입)으로 두 타입간에 관계(is a)를 만들수 있다.
+<code>You can subtype a generic class or interface by extending or implementing it. The relationship between the type parameters of one class or interface and the type parameters of another are determined by the extends and implements clauses.</code></p>
+
+<p>Collections 클래스들 사용할 때 예를 들면,  ArrayList<E>는 List<E>를 구현했고 List<E>는 Collection을 상속했다. 그러므로 ArrayList<String>은 List<String>의 서브타입이고 List<String>은 Collection<String>의 서브타입니다. 그럼 <String>이라는 형식인자를 변경하지 않으면 타입간 서브타이핑 관계가 유지된다.
+<code>Using the Collections classes as an example, ArrayList&lt;E&gt; implements List&lt;E&gt;, and List&lt;E&gt; extends Collection&lt;E&gt;. So ArrayList&lt;String&gt; is a subtype of List&lt;String&gt;, which is a subtype of Collection&lt;String&gt;. So long as you do not vary the type argument, the subtyping relationship is preserved between the types.</code></p>
+
+<p><img src="../8-2.git" alt="A sample Collections hierarchy" />
+콜렉션들간의 계층구조 예<code>sample Collections hierarchy</code></p>
+
+<p>PayloadList라는 인터페이스를 정의할 때 P라는 generic 타입을 메서드의 파라메터로 사용한다고했을때, 아래 코드와 같을 것이다.
+<code>Now imagine we want to define our own list interface, PayloadList, that associates an optional value of generic type P with each element. Its declaration might look like:</code></p>
+
+<pre><code class="language-java">interface PayloadList&lt;E,P&gt; extends List&lt;E&gt; {
+  void setPayload(int index, P val);
+  ...
 }
 </code></pre>
 
-<p>generic Box 클래스는 제한된 타입 파라메터를 가진 메서드인 inspect를 포함하도록 기존 코드를 수정하였다. inspect 메서드 호출시에 String 타입을 인자로 받았기 때문에 컴파일이 실패할 것이다.
-<code>By modifying our generic method to include this bounded type parameter, compilation will now fail, since our invocation of inspect still includes a String:</code></p>
+<p>List<String>의 서브타입이면서 PayloadList가 타입인자로 전달할수 있는 것은 아래처럼 다양하게 볼수 있다.(일부임.)
+<code>The following parameterizations of PayloadList are subtypes of List&lt;String&gt;:</code></p>
 
-<pre><code class="language-shell">Box.java:21: &lt;U&gt;inspect(U) in Box&lt;java.lang.Integer&gt; cannot
-  be applied to (java.lang.String)
-                        integerBox.inspect(&quot;10&quot;);
-                                  ^
-1 error
-</code></pre>
+<ul>
+<li>PayloadList<String,String></li>
+<li>PayloadList<String,Integer></li>
+<li>PayloadList<String,Exception></li>
+</ul>
 
-<p>결론은 generic 타입을 객체로 만들때 제한을 걸수 있다. 제한된 타입 매개변수는 정의된 제한된 범위 내에서 메서드를 호출 할 수 있다.
-<code>In addition to limiting the types you can use to instantiate a generic type, bounded type parameters allow you to invoke methods defined in the bounds:</code></p>
-
-<pre><code class="language-java">public class NaturalNumber&lt;T extends Integer&gt; {
-
-    private T n;
-
-    public NaturalNumber(T n)  { this.n = n; }
-
-    public boolean isEven() {
-        return n.intValue() % 2 == 0;
-    }
-
-    // ...
-}
-</code></pre>
-
-<p>isEven 메서드는 변수 n에 타입인자로 전달된 Integer 타입에 정의된 intValue 메서드를 호출한다.
-<code>The isEven method invokes the intValue method defined in the Integer class through n.</code></p>
-
-<h3 id="여러번-제한하기-multiple-bounds">여러번 제한하기 <code>Multiple Bounds</code></h3>
-
-<p>이전까지 예제는 하나만 제한한 타입매개변수를 사용한 것만 설명했지만, 타입 매개변수는 여러개를 제한할 수 있다.
-<code>The preceding example illustrates the use of a type parameter with a single bound, but a type parameter can have multiple bounds:</code></p>
-
-<pre><code class="language-java">&lt;T extends B1 &amp; B2 &amp; B3&gt;
-</code></pre>
-
-<p>여러개의 제한들로 구성된 타입매개변수는 제한하려 나열한 모든 타입들의 서브타입이다.(굳이 class라고 안하고 타입이란 용어를 쓰는건 interface를 포함하는 단어가 아니기 때문이다. 클래스는 타입의 부분) 제한된 타입중 하나가 class라면, class는 열거되는 타입들중 처음에 작성해야한다. 예를 들면:
-<code>A type variable with multiple bounds is a subtype of all the types listed in the bound. If one of the bounds is a class, it must be specified first. For example:</code></p>
-
-<pre><code class="language-java">Class A { /* ... */ }
-interface B { /* ... */ }
-interface C { /* ... */ }
-
-class D &lt;T extends A &amp; B &amp; C&gt; { /* ... */ }
-</code></pre>
-
-<p>만약 A라는 제한 class가 다른 제한 클래스들중 처음에 위치하지 않으면, 컴파일타임 에러를 발생된다.
-<code>If bound A is not specified first, you get a compile-time error:</code></p>
-
-<pre><code class="language-java">class D &lt;T extends B &amp; A &amp; C&gt; { /* ... */ }  // compile-time error
-</code></pre>
+<p><img src="../8-3.git" alt="A sample PayloadList hierarchy" /></p>
 </div>
   </div>
 
@@ -233,10 +229,10 @@ class D &lt;T extends A &amp; B &amp; C&gt; { /* ... */ }
       <aside class="p-share">
   <div class="share-inner">
     
-    <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f6%2f&t=%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%286%29%20Java%20Generics%3a%20%ec%a0%9c%ed%95%9c%eb%90%9c%20%ed%83%80%ec%9e%85%20%eb%a7%a4%ea%b0%9c%eb%b3%80%ec%88%98%20%28Bounded%20Type%20Parameters%29" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
-    <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f6%2f&text=%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%286%29%20Java%20Generics%3a%20%ec%a0%9c%ed%95%9c%eb%90%9c%20%ed%83%80%ec%9e%85%20%eb%a7%a4%ea%b0%9c%eb%b3%80%ec%88%98%20%28Bounded%20Type%20Parameters%29&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
-    <a href="https://plus.google.com/share?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f6%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
-    <a href="http://line.me/R/msg/text/?%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%286%29%20Java%20Generics%3a%20%ec%a0%9c%ed%95%9c%eb%90%9c%20%ed%83%80%ec%9e%85%20%eb%a7%a4%ea%b0%9c%eb%b3%80%ec%88%98%20%28Bounded%20Type%20Parameters%29 http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f6%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
+    <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f8%2f&t=%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%288%29%20Java%20Generics%3a%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%2c%20%ec%83%81%ec%86%8d%2c%20%ec%84%9c%eb%b8%8c%ed%83%80%ec%9e%85%20%28Generics%2c%20Inheritance%2c%20and%20Subtypes%29" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
+    <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f8%2f&text=%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%288%29%20Java%20Generics%3a%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%2c%20%ec%83%81%ec%86%8d%2c%20%ec%84%9c%eb%b8%8c%ed%83%80%ec%9e%85%20%28Generics%2c%20Inheritance%2c%20and%20Subtypes%29&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
+    <a href="https://plus.google.com/share?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f8%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
+    <a href="http://line.me/R/msg/text/?%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%288%29%20Java%20Generics%3a%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%2c%20%ec%83%81%ec%86%8d%2c%20%ec%84%9c%eb%b8%8c%ed%83%80%ec%9e%85%20%28Generics%2c%20Inheritance%2c%20and%20Subtypes%29 http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fgenerics%2f8%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
   </div>
 </aside>
 
@@ -247,7 +243,7 @@ class D &lt;T extends A &amp; B &amp; C&gt; { /* ... */ }
           
           <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/java/" itemprop="url"><span itemprop="title">java</span></a></li>
           
-          <li class="active">자바 제네릭스(6) Java Generics: 제한된 타입 매개변수 (Bounded Type Parameters)</li>
+          <li class="active">자바 제네릭스(8) Java Generics: 제네릭스, 상속, 서브타입 (Generics, Inheritance, and Subtypes)</li>
         </ol>
       </nav>
 
@@ -267,6 +263,10 @@ class D &lt;T extends A &amp; B &amp; C&gt; { /* ... */ }
             
             <li><a href="http://durtchrt.github.io/blog/tags/%EB%B2%88%EC%97%AD/">번역</a></li>
             
+            <li><a href="http://durtchrt.github.io/blog/tags/inheritance/">Inheritance</a></li>
+            
+            <li><a href="http://durtchrt.github.io/blog/tags/subtype/">subtype</a></li>
+            
           </ul>
         </div>
       </section>
@@ -281,9 +281,9 @@ class D &lt;T extends A &amp; B &amp; C&gt; { /* ... */ }
     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'bjm';
-    var disqus_identifier = 'http:\/\/durtchrt.github.io\/blog\/java\/generics\/6\/';
-    var disqus_title = '자바 제네릭스(6) Java Generics: 제한된 타입 매개변수 (Bounded Type Parameters)';
-    var disqus_url = 'http:\/\/durtchrt.github.io\/blog\/java\/generics\/6\/';
+    var disqus_identifier = 'http:\/\/durtchrt.github.io\/blog\/java\/generics\/8\/';
+    var disqus_title = '자바 제네릭스(8) Java Generics: 제네릭스, 상속, 서브타입 (Generics, Inheritance, and Subtypes)';
+    var disqus_url = 'http:\/\/durtchrt.github.io\/blog\/java\/generics\/8\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
