@@ -60,7 +60,7 @@ box.add(new Double(10.1));  // OK
 &lt;p&gt;이것은 generics를 공부할때 흔히 겪는 문제이다. 하지만 generic을 공부할때 중요한 컨셉이다.
 &lt;code&gt;This is a common misunderstanding when it comes to programming with generics, but it is an important concept to learn.&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../8-1.git&#34; alt=&#34;Box&amp;lt;Integer&amp;gt; is not a subtype of Box&amp;lt;Number&amp;gt; even though Integer is a subtype of Number.&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../8-1.gif&#34; alt=&#34;Box&amp;lt;Integer&amp;gt; is not a subtype of Box&amp;lt;Number&amp;gt; even though Integer is a subtype of Number.&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Number의 서브타입인 Integer를 가진 Box&lt;Integer&gt;는 Box&lt;Number&gt;의 서브타입이 아니다.
 &lt;code&gt;Box&amp;lt;Integer&amp;gt; is not a subtype of Box&amp;lt;Number&amp;gt; even though Integer is a subtype of Number.&lt;/code&gt;&lt;/p&gt;
@@ -79,7 +79,7 @@ box.add(new Double(10.1));  // OK
 &lt;p&gt;Collections 클래스들 사용할 때 예를 들면,  ArrayList&lt;E&gt;는 List&lt;E&gt;를 구현했고 List&lt;E&gt;는 Collection을 상속했다. 그러므로 ArrayList&lt;String&gt;은 List&lt;String&gt;의 서브타입이고 List&lt;String&gt;은 Collection&lt;String&gt;의 서브타입니다. 그럼 &lt;String&gt;이라는 형식인자를 변경하지 않으면 타입간 서브타이핑 관계가 유지된다.
 &lt;code&gt;Using the Collections classes as an example, ArrayList&amp;lt;E&amp;gt; implements List&amp;lt;E&amp;gt;, and List&amp;lt;E&amp;gt; extends Collection&amp;lt;E&amp;gt;. So ArrayList&amp;lt;String&amp;gt; is a subtype of List&amp;lt;String&amp;gt;, which is a subtype of Collection&amp;lt;String&amp;gt;. So long as you do not vary the type argument, the subtyping relationship is preserved between the types.&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../8-2.git&#34; alt=&#34;A sample Collections hierarchy&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;../8-2.gif&#34; alt=&#34;A sample Collections hierarchy&#34; /&gt;
 콜렉션들간의 계층구조 예&lt;code&gt;sample Collections hierarchy&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;PayloadList라는 인터페이스를 정의할 때 P라는 generic 타입을 메서드의 파라메터로 사용한다고했을때, 아래 코드와 같을 것이다.
@@ -100,7 +100,7 @@ box.add(new Double(10.1));  // OK
 &lt;li&gt;PayloadList&lt;String,Exception&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;../8-3.git&#34; alt=&#34;A sample PayloadList hierarchy&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../8-3.gif&#34; alt=&#34;A sample PayloadList hierarchy&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
