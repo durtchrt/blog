@@ -173,18 +173,18 @@ box.add(new Double(10.1));  // OK
 <pre><code class="language-java">public void boxTest(Box&lt;Number&gt; n) { /* ... */ }
 </code></pre>
 
-<p>어떤 타입을 인자로 받을수 있을까? 메서드의 시그니처를 보면, Box<Number> 타입의 객체 하나를 인자로 받는 메서드이다. 그럼, Box<Integer>나 Box<Double>을 인자로 넣을수 있을까? 아니다! 왜냐하면 Box<Integer>, Box<Double>는 Box<Number>의 서브타입이 아니기 때문이다. (자바에서는 꺽쇠안에 Number 타입은 컴파일러가 is a관계를 파악하지 못한다. - 공변성, 반공변성쪽 내용 참조하면 좋은데 자바는 이를 지원 못함. 스칼라 언어 참조. 눈이 공부하다보면 팽팽 돔.)
+<p>어떤 타입을 인자로 받을수 있을까? 메서드의 시그니처를 보면, Box<Number> 타입의 객체 하나를 인자로 받는 메서드이다. 그럼, Box&lt;Integer&gt;나 Box&lt;Double&gt;을 인자로 넣을수 있을까? 아니다! 왜냐하면 Box&lt;Integer&gt;, Box&lt;Double&gt;는 Box&lt;Number&gt;의 서브타입이 아니기 때문이다. (자바에서는 꺽쇠안에 Number 타입은 컴파일러가 is a관계를 파악하지 못한다. - 공변성, 반공변성쪽 내용 참조하면 좋은데 자바는 이를 지원 못함. 스칼라 언어 참조. 눈이 공부하다보면 팽팽 돔.)
 <code>What type of argument does it accept? By looking at its signature, you can see that it accepts a single argument whose type is Box&lt;Number&gt;. But what does that mean? Are you allowed to pass in Box&lt;Integer&gt; or Box&lt;Double&gt;, as you might expect? The answer is &quot;no&quot;, because Box&lt;Integer&gt; and Box&lt;Double&gt; are not subtypes of Box&lt;Number&gt;.</code></p>
 
 <p>이것은 generics를 공부할때 흔히 겪는 문제이다. 하지만 generic을 공부할때 중요한 컨셉이다.
 <code>This is a common misunderstanding when it comes to programming with generics, but it is an important concept to learn.</code></p>
 
-<p><img src="../8-1.gif" alt="Box&lt;Integer&gt; is not a subtype of Box&lt;Number&gt; even though Integer is a subtype of Number." /></p>
-
-<p>Number의 서브타입인 Integer를 가진 Box<Integer>는 Box<Number>의 서브타입이 아니다.
+<p><img src="../8-1.gif" alt="Box&lt;Integer&gt; is not a subtype of Box&lt;Number&gt; even though Integer is a subtype of Number." />
+<br>
+Number의 서브타입인 Integer를 가진 Box&lt;Integer&gt;는 Box&lt;Number&gt;의 서브타입이 아니다.
 <code>Box&lt;Integer&gt; is not a subtype of Box&lt;Number&gt; even though Integer is a subtype of Number.</code></p>
 
-<p>중요:  A와 B 두 구현타입을 제공할때(예를 들어 Number와 Integer),A와 B가 &ldquo;is a&rdquo; 관계가 있든 상관없이  MyClass<A>는 MyClass<B>와 더 이상 관계가 형성되지 않는다.
+<p>중요:  A와 B 두 구현타입을 제공할때(예를 들어 Number와 Integer),A와 B가 &ldquo;is a&rdquo; 관계가 있든 상관없이  MyClass&lt;A&gt;는 MyClass&lt;B&gt;와 더 이상 관계가 형성되지 않는다.
 <code>Note: Given two concrete types A and B (for example, Number and Integer), MyClass&lt;A&gt; has no relationship to MyClass&lt;B&gt;, regardless of whether or not A and B are related. The common parent of MyClass&lt;A&gt; and MyClass&lt;B&gt; is Object.</code></p>
 
 <p>두 generic 클래스들간에 서브타입<strong>처럼</strong> 타입매개변수가 관련있다라는 정보를 주려면(컴파일러에게), 와일드카드와 서브타이핑 항목을 보라
@@ -195,10 +195,11 @@ box.add(new Double(10.1));  // OK
 <p>generic 클래스 상속 또는 generic 인터페이스 만들 때, 만드는 타입을 상속(또는 구현) 받은 부모  generic 타입의 서브 generic 타입(자식타입)으로 두 타입간에 관계(is a)를 만들수 있다.
 <code>You can subtype a generic class or interface by extending or implementing it. The relationship between the type parameters of one class or interface and the type parameters of another are determined by the extends and implements clauses.</code></p>
 
-<p>Collections 클래스들 사용할 때 예를 들면,  ArrayList<E>는 List<E>를 구현했고 List<E>는 Collection을 상속했다. 그러므로 ArrayList<String>은 List<String>의 서브타입이고 List<String>은 Collection<String>의 서브타입니다. 그럼 <String>이라는 형식인자를 변경하지 않으면 타입간 서브타이핑 관계가 유지된다.
+<p>Collections 클래스들 사용할 때 예를 들면,  ArrayList&lt;E&gt;는 List&lt;E&gt;를 구현했고 List&lt;E&gt;는 Collection을 상속했다. 그러므로 ArrayList&lt;String&gt;은 List&lt;String&gt;의 서브타입이고 List&lt;String&gt;은 Collection&lt;String&gt;의 서브타입니다. 그럼 &lt;String&gt;이라는 형식인자를 변경하지 않으면 타입간 서브타이핑 관계가 유지된다.
 <code>Using the Collections classes as an example, ArrayList&lt;E&gt; implements List&lt;E&gt;, and List&lt;E&gt; extends Collection&lt;E&gt;. So ArrayList&lt;String&gt; is a subtype of List&lt;String&gt;, which is a subtype of Collection&lt;String&gt;. So long as you do not vary the type argument, the subtyping relationship is preserved between the types.</code></p>
 
 <p><img src="../8-2.gif" alt="A sample Collections hierarchy" />
+<br>
 콜렉션들간의 계층구조 예<code>sample Collections hierarchy</code></p>
 
 <p>PayloadList라는 인터페이스를 정의할 때 P라는 generic 타입을 메서드의 파라메터로 사용한다고했을때, 아래 코드와 같을 것이다.
@@ -210,7 +211,7 @@ box.add(new Double(10.1));  // OK
 }
 </code></pre>
 
-<p>List<String>의 서브타입이면서 PayloadList가 타입인자로 전달할수 있는 것은 아래처럼 다양하게 볼수 있다.(일부임.)
+<p>List&lt;String&gt;의 서브타입이면서 PayloadList가 타입인자로 전달할수 있는 것은 아래처럼 다양하게 볼수 있다.(일부임.)
 <code>The following parameterizations of PayloadList are subtypes of List&lt;String&gt;:</code></p>
 
 <ul>
