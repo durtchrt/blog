@@ -17,6 +17,8 @@
       <guid>http://durtchrt.github.io/blog/java/generics/8/</guid>
       <description>
 
+&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/inheritance.html&#34;&gt;원문링크&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;용어
 메서드 시그니처(method signature): 메서들간에 개성 주는것으로 자바 컴파일러인지 메서드 시그니처를 기준으로 오버로딩을 한다.  자바에서는 메서드명, 파라미터 갯수, 파라미터 타입, 파라미터 순서(자바에서는 리턴타입은 시그니처가 아니다.) - 파라미터명도 시그니처인지는 아리까리하다. 메서드 오버로딩를 생각하면 맞는거 같은데&amp;hellip; 좀더 생각해보고 내용 수정 예정
 콘크리트 타입, 구현타입(concrete type): 자바에서는 타입들중 interface, abstract class를 제외하고 남은 class를 concrete 타입으로 이해하면 될 듯.&lt;a href=&#34;http://dreuarchive.cra.org/2002/heise/typeComp.html&#34;&gt;참고링크 - 영문: 번역 예정&lt;/a&gt;&lt;/p&gt;
