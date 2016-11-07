@@ -216,7 +216,7 @@ class MyClass&amp;lt;X&amp;gt; {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Java SE 8에서는 더이상 필요치 않다. 이 표기법은 target type은 메서드 인자를 포함해서 확장했다 (아래 예처럼 processStringList 메서드에 인자를 넣는것처럼). 이런경우, processStringList는 List&lt;String&gt; 타입의 인자를 필요로한다. Collections.emptyList 메서드는 List&lt;T&gt; 타입의 값을 리턴한다. 그럼 List&lt;String&gt;의 target type을 사용하면 컴파일러는 T의 타입인자를 String으로 추론하다. 따라서 Java SE 8은 아래의 문장이 컴파일된다.
-This is no longer necessary in Java SE 8. The notion of what is a target type has been expanded to include method arguments, such as the argument to the method processStringList. In this case, processStringList requires an argument of type List&lt;String&gt;. The method Collections.emptyList returns a value of List&lt;T&gt;, so using the target type of List&lt;String&gt;, the compiler infers that the type argument T has a value of String. Thus, in Java SE 8, the following statement compiles:&lt;/p&gt;
+&lt;code&gt;This is no longer necessary in Java SE 8. The notion of what is a target type has been expanded to include method arguments, such as the argument to the method processStringList. In this case, processStringList requires an argument of type List&amp;lt;String&amp;gt;. The method Collections.emptyList returns a value of List&amp;lt;T&amp;gt;, so using the target type of List&amp;lt;String&amp;gt;, the compiler infers that the type argument T has a value of String. Thus, in Java SE 8, the following statement compiles:&lt;/code&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;processStringList(Collections.emptyList());
 &lt;/code&gt;&lt;/pre&gt;
