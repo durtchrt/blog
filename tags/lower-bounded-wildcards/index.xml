@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>개발 저장소</title>
+    <link>http://durtchrt.github.io/blog/tags/lower-bounded-wildcards/index.xml</link>
+    <description>Recent content on 개발 저장소</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>durtchrt</copyright>
+    <atom:link href="http://durtchrt.github.io/blog/tags/lower-bounded-wildcards/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>자바 제네릭스(13) Java Generics: 하위 제한 와일드카드(Lower Bounded Wildcards)</title>
+      <link>http://durtchrt.github.io/blog/java/generics/13/</link>
+      <pubDate>Mon, 07 Nov 2016 14:00:42 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/13/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/wildcards.htm://docs.oracle.com/javase/tutorial/java/generics/lowerBounded.html&#34;&gt;원문링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;하위-제한-와일드카드-lower-bounded-wildcards&#34;&gt;하위 제한 와일드카드  &lt;code&gt;Lower Bounded Wildcards&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;상위제한와일드카드장은 특정 타입이나 그 특정타입의  서브타입을 알 수 없을때는 &amp;lsquo;extends&amp;rsquo; 키워드를 사용하는 것을 보여줬다. 비슷한 것으로, 하위제한와일드카드는 특정타입이나 그 특정 타입의 슈퍼타입을 제한하고자할때 사용한다.
+&lt;code&gt;The Upper Bounded Wildcards section shows that an upper bounded wildcard restricts the unknown type to be a specific type or a subtype of that type and is represented using the extends keyword. In a similar way, a lower bounded wildcard restricts the unknown type to be a specific type or a super type of that type.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;하위제한 와일드카드는 와일드카드문자(&amp;lsquo;?&amp;rsquo;) 그 뒤로 super 키워드와 그 뒤로 하위제한 타입이 온다. &amp;lt;? super A&amp;gt;.
+&lt;code&gt;A lower bounded wildcard is expressed using the wildcard character (&#39;?&#39;), following by the super keyword, followed by its lower bound: &amp;lt;? super A&amp;gt;.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;중요: 상위제한와일드카드를 사용하거나 하위제한와일드카드를 사용할 수 있지만, 둘을 동시에 사용할 수 없다.&lt;/code&gt;
+&lt;code&gt;Note: You can specify an upper bound for a wildcard, or you can specify a lower bound, but you cannot specify both.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;리스트에 Integer 객체를 넣는 코드를 작성할때, List&amp;lt;Integer&amp;gt;, List&amp;lt;Number&amp;gt;, List&amp;lt;Object\&amp;gt;에서만 동작하길 원하는 메서드를 만든다고 가정하자.
+&lt;code&gt;Say you want to write a method that puts Integer objects into a list. To maximize flexibility, you would like the method to work on List&amp;lt;Integer&amp;gt;, List&amp;lt;Number&amp;gt;, and List&amp;lt;Object&amp;gt; — anything that can hold Integer values.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Integer타이이나 Integer의 상위타입에서 동작하는 메서드를 작성하려면 List&amp;lt;? super Integer&amp;gt;라고 할 수 있다. List&amp;lt;Integer&amp;gt;는 List&amp;lt;? super Integer&amp;gt;보다 제한적이다. 왜냐하면 전자는 Integer 타입의 리스트만 사용, 후자는 Integer 타입과 Integer의 슈퍼타입에 사용할 수 있기 때문이다.
+&lt;code&gt;To write the method that works on lists of Integer and the supertypes of Integer, such as Integer, Number, and Object, you would specify List&amp;lt;? super Integer&amp;gt;. The term List&amp;lt;Integer&amp;gt; is more restrictive than List&amp;lt;? super Integer&amp;gt; because the former matches a list of type Integer only, whereas the latter matches a list of any type that is a supertype of Integer.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;아래의 코드는 1에서 10까지 리스트에 add한다.
+&lt;code&gt;The following code adds the numbers 1 through 10 to the end of a list:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void addNumbers(List&amp;lt;? super Integer&amp;gt; list) {
+    for (int i = 1; i &amp;lt;= 10; i++) {
+        list.add(i);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;와일드카드 사용절에서는 상위제한와일드카드와 하위제한와일드카드를 각각 언제 사용할지 설명하였다.
+&lt;code&gt;The Guidelines for Wildcard Use section provides guidance on when to use upper bounded wildcards and when to use lower bounded wildcards.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

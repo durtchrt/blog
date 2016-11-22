@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+
+<meta name="generator" content="Hugo 0.17" />
+
+<link rel="apple-touch-icon" href="http://durtchrt.github.io/blog/images/logo.png">
+
+
+<link rel="canonical" href="http://durtchrt.github.io/blog/clojure/4clojure/questions/">
+
+
+    
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Montserrat" rel="stylesheet">
+    
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>4Clojure 문제 모음 - 개발 저장소</title>
+    
+<meta name="description" content="4Clojure 문제 모음">
+
+<meta property="og:title" content="4Clojure 문제 모음 - 개발 저장소">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://durtchrt.github.io/blog/clojure/4clojure/questions/">
+<meta property="og:image" content="http://durtchrt.github.io/blog/images/default.png">
+<meta property="og:site_name" content="개발 저장소">
+<meta property="og:description" content="4Clojure 문제 모음">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="개발 저장소">
+<meta name="twitter:url" content="http://durtchrt.github.io/blog/clojure/4clojure/questions/">
+<meta name="twitter:title" content="4Clojure 문제 모음 - 개발 저장소">
+<meta name="twitter:description" content="4Clojure 문제 모음">
+<meta name="twitter:image" content="http://durtchrt.github.io/blog/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http:\/\/durtchrt.github.io\/blog\/"
+    },
+    "headline": "4Clojure 문제 모음 - 개발 저장소",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http:\/\/durtchrt.github.io\/blog\/images\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2016-11-20T04:22:01JST",
+    "dateModified": "2016-11-20T04:22:01JST",
+    "author": {
+      "@type": "Person",
+      "name": "개발 저장소"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "개발 저장소",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http:\/\/durtchrt.github.io\/blog\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "4Clojure 문제 모음"
+  }
+</script>
+
+
+    <style>
+      html { font-size: 18px;}@media (max-width: 768px) { html { font-size: 15px; }}body { font-family: 'Noto Sans','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-size: inherit; font-weight: 300; line-height: 1rem; background-color: #eceff1;}p { margin: 0;}a { color: #4caf50;}a:hover { text-decoration: none; color: #388e3c;}ul,ol { margin: 0; padding: 0;}h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 700;}h1 { font-size: 1.8rem; line-height: 2rem; margin: 1.5rem 0; }h2 { font-size: 1.4rem; line-height: 2rem; margin: 1.5rem 0; }h3 { font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; }h4, h5, h6 { font-size: 1rem; line-height: 1.5rem; margin: 1.5rem 0; }main { display: block;}.content-inner { padding: 1rem 2rem;}.content-inner.thin { padding: .5rem 1rem;}@media (max-width: 768px) { .content-inner { padding: 1rem; }}/* Override */.container { position: relative;}/* Parts:layouts */.l-header { background-color: #fff; margin-bottom: 1rem; padding: 1rem 0; text-align: center;}.l-footer { font-size: .8rem; padding: 1.5rem 0;}/* Parts:menu */.p-menu { position: absolute; right: 15px; top: 0;}/* Parts:terms */.p-terms { list-style: none;}.p-terms .terms-title { margin: 0;}.p-terms a { display: inline-block; padding: .25rem 0;}.p-terms.inline li { display: inline-block; font-size: .8rem;}.p-terms.inline li::after { content: ',';}.p-terms.inline li:last-child::after { content: '';}/* Parts:paging */.p-paging { margin-bottom: 1.5rem; text-align: center;}.p-paging a { display: inline-block; padding: 1rem 1.5rem; margin: 0 .5rem; background-color: #cfd8dc; color: #263238;}/* Parts:section */section { margin-bottom: 1.5rem;}section>header { font-size: .8rem; font-weight: 700; margin-bottom: .5rem; text-transform: uppercase;}section>header a { color: #333; text-decoration: underline;}section.article-footer { margin-bottom: 1rem;}section.article-footer>header { margin-bottom: 0;}/* Parts:share */.p-share { min-width: 100%; margin-bottom: 1.5rem;}.p-share .share-inner { display: table; table-layout: fixed; width: 100%; border-spacing: .25rem;}.p-share a { display: table-cell; text-align: center; font-weight: 700; font-size: .7rem; padding: .5rem 0; color: #fff; border-radius: 5px;}.p-share a.ht { background-color: #00a4de; border-bottom: 2px solid #0083b1; }.p-share a.fb { background-color: #3b5998; border-bottom: 2px solid #2f4779; }.p-share a.tw { background-color: #1da1f2; border-bottom: 2px solid #1780c1; }.p-share a.gp { background-color: #dd4b39; border-bottom: 2px solid #b03c2d; }.p-share a.ln { background-color: #00c300; border-bottom: 2px solid #009c00; }.p-share a.ht::before { content: 'Hatena'; }.p-share a.fb::before { content: 'Facebook'; }.p-share a.tw::before { content: 'Twitter'; }.p-share a.gp::before { content: 'Google+'; }.p-share a.ln::before { content: 'LINE'; }/* Parts:logo */.h-logo { font-family: 'Montserrat', sans-serif;}.p-logo { display: inline-block; text-transform: uppercase;}.p-logo a { display: inline-block; font-size: 1.4rem; line-height: 2rem; color: #000;}/* Parts:crumb */.p-crumb ol { list-style: none; margin-bottom: 1rem;}.p-crumb li { display: inline; margin-right: .25rem; font-size: .8rem; color: #607d8b;}.p-crumb li::after { content: '/'; margin-left: .25rem;}.p-crumb li:last-child::after { content: '';}/* Parts:facts */.p-facts { list-style: none; font-size: .8rem; margin-bottom: 1rem;}.p-facts li { display: inline-block; margin-right: .5rem; color: #90a4ae;}.p-facts li i { margin-right: .5rem; color: #cfd8dc;}/* Parts:article */article { background-color: #fff;}article .title { margin: 0; margin-bottom: .5rem; font-weight: 700;}article .title a { color: #000;}article .thumb { display: block; background-image: url(http://durtchrt.github.io/blog/images/default.jpg); background-position: center; background-size: cover;}article .summary { margin-bottom: .5rem; max-height: 5rem; overflow: hidden;}article.single .thumb { height: 18rem; margin-bottom: 1rem;}@media (max-width: 768px) { article.single .thumb { height: 12rem; }}article.li { margin-bottom: 1rem;}article.li .thumb { height: 7.5rem; margin-bottom: .5rem;}article.li.sm { background-color: transparent; margin-bottom: .5rem;}article.li.sm>header { padding: .5rem 0;}article.li.sm .title { font-size: .8rem; line-height: 1rem; margin-bottom: .25rem;}article.li.sm .p-facts { font-size: .6rem; margin-bottom: 0;}article.li.sm .thumb { float: left; margin-right: .5rem; height: 3rem; width: 3rem;}.article-body h2 { padding: 1rem 0; border-bottom: 2px solid #eceff1;}.article-body h2:first-child { margin-top: 0; }.article-body h3 { color: #428bca;}.article-body h4 { border-left: solid .25rem #428bca; padding: 0 .5rem;}.article-body p { margin: 1.5rem 0; line-height: 1.5rem;}.article-body a { text-decoration: underline;}.article-body ul,.article-body ol { padding-left: 1.5rem;}.article-body code { display: inline-block; font-family: Menlo, consolas, monospace; font-size: .8rem; padding: 0 .5rem; line-height: 1.5rem;}.article-body pre { margin: 1.5rem 0; padding: 0; font-size: .8rem; border: none; border-radius: 0;}.article-body pre code { display: block; line-height: 1rem; padding: 1rem;}.article-body blockquote { margin: 1.5rem 0; padding: .5rem 0; font-size: .8rem; border-top: 1px solid #eceff1; border-bottom: 1px solid #eceff1; color: #607d8b;}.article-body blockquote p { margin: .5rem 0; line-height: 1rem;}.article-body strong { box-shadow: 0 -.5rem 0 0 #90caf9 inset;}.article-body em { font-style: normal; font-weight: 700; color: #03a9f4;}.article-body figure { margin: 1.5rem 0; }.article-body figure img { max-width: 100%; }.article-body figure.left,.article-body figure.right { width: 15rem; height: 12rem; margin-top: 0;}.article-body figure.left { float: left; margin-right: 1rem; }.article-body figure.right { float: right; margin-left: 1rem; }@media (max-width: 768px) { .article-body figure.left, .article-body figure.right { float: none; margin: 0; width: auto; height: auto; }}.article-body figcaption { padding: .5rem 0; font-size: .8rem; text-align: center;}.article-body figcaption a { color: #263238;}
+      
+      
+    </style>
+  </head>
+
+  <body>
+    
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-86354121-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+
+    <header class="l-header">
+      <div class="container">
+        <div class="p-logo">
+          <a href="http://durtchrt.github.io/blog/" class="h-logo">개발 저장소</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol>
+        <li><a href="http://durtchrt.github.io/blog/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/clojure/" itemprop="url"><span itemprop="title">clojure</span></a></li>
+        
+        <li class="active">4Clojure 문제 모음</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+
+  <a href="http://durtchrt.github.io/blog/clojure/4clojure/questions/" class="thumb"></a>
+  <div class="content-inner">
+    <h1 class="title">4Clojure 문제 모음</h1>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-20T04:22:01JST">Nov 20, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/clojure/">clojure</a></li>
+      
+    </ul>
+
+    <div class="article-body">
+
+<h3 id="1-진실만있다-nothing-but-the-truth-https-www-4clojure-com-problem-1">1.진실만있다. <a href="https://www.4clojure.com/problem/1">Nothing but the Truth</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code></p>
+
+<p>이것은 클로저 폼이다. 폼 평가를 true가 되도록 값을 넣으세요. 생각이 깊게 하지 마세요! 만약 헤갈린다면, 클로저 초급 문서를 보세요. Hint: true는 true와 같다</p>
+
+<pre><code>This is a clojure form. Enter a value which will make the form evaluate to true. Don't over think it! If you are confused, see the getting started page. Hint: true is equal to true.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= __ true)
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">true
+</code></pre>
+
+<hr />
+
+<h3 id="2-간단한-수학-simple-math-https-www-4clojure-com-problem-2">2. 간단한 수학<a href="https://www.4clojure.com/problem/2">Simple Math</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+polish notation(전위연산)이 익숙하지 않다면 간단한 계산 혼란을 느낄것이다.
+중요: 빈칸을 채우세요(숫자 하나입니다.) - 문제 전체를 타이핑하지 마세요.</p>
+
+<pre><code>If you are not familiar with polish notation, simple arithmetic might seem confusing.
+Note: Enter only enough to fill in the blank (in this case, a single number) - do not retype the whole problem. 
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= (- 10 (* 2 3)) __)
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">4
+</code></pre>
+
+<hr />
+
+<h3 id="3-문자열-소개-intro-to-strings-https-www-4clojure-com-problem-3">3.문자열 소개<a href="https://www.4clojure.com/problem/3">Intro to Strings</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+클로저 String은 자바 String이다. 즉, 클로저 String은 자바 String 메서드를 사용할 수 있다.</p>
+
+<pre><code>Clojure strings are Java strings. This means that you can use any of the Java string methods on Clojure strings.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= __ (.toUpperCase &quot;hello world&quot;))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">&quot;HELLO WORLD&quot;
+</code></pre>
+
+<hr />
+
+<h3 id="4-리스트-소개-intro-to-lists-https-www-4clojure-com-problem-4">4.리스트 소개<a href="https://www.4clojure.com/problem/4">Intro to Lists</a></h3>
+
+<p>난이도:초급</p>
+
+<p><code>문제</code>
+Lists는 함수 또는 quoted form으로 만들수 있다.</p>
+
+<pre><code>Lists can be constructed with either a function or a quoted form. 
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= (list __) '(:a :b :c))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">:a :b :c
+</code></pre>
+
+<hr />
+
+<h3 id="5-리스트-conj-lists-conj-https-www-4clojure-com-problem-5">5.리스트: conj <a href="https://www.4clojure.com/problem/5">Lists: conj</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+리스트를 조작할때 conj함수는 하나 이상의 아이템이 앞에 &ldquo;추가된&rdquo; 새로운 리스트를 반환한다.
+중요: 두 테스트 케이스는 답이 하나다.</p>
+
+<pre><code>When operating on a list, the conj function will return a new list with one or more items &quot;added&quot; to the front.
+
+Note that there are two test cases, but you are expected to supply only one answer, which will cause all the tests to pass. 
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= __ (conj '(2 3 4) 1))
+(= __ (conj '(3 4) 2 1))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">'(1 2 3 4)
+</code></pre>
+
+<hr />
+
+<h3 id="6-벡터소개-intro-to-vectors-https-www-4clojure-com-problem-6">6.벡터소개 <a href="https://www.4clojure.com/problem/6">Intro to Vectors</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+Vector는 다양한 방법으로 생성할 수 있다. 벡터는 리스트와 비교할 수 있다.</p>
+
+<p>브라켓([])으로 둘러싸여진 __ 부분을 채워라.</p>
+
+<pre><code>Vectors can be constructed several ways. You can compare them with lists.
+
+Note: the brackets [] surrounding the blanks __ are part of the test case.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= [__] (list :a :b :c) (vec '(:a :b :c)) (vector :a :b :c))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">:a :b :c
+</code></pre>
+
+<hr />
+
+<h3 id="7-벡터-conj-vectors-conj-https-www-4clojure-com-problem-7">7. 벡터: conj<a href="https://www.4clojure.com/problem/7">Vectors: conj</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+Vector를 조작할 때, conj 함수는 마지막에 하나 이상의 아이템이 &ldquo;추가된&rdquo; 새로운 vector를 반환한다.</p>
+
+<pre><code>When operating on a Vector, the conj function will return a new vector with one or more items &quot;added&quot; to the end.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= __ (conj [1 2 3] 4))
+(= __ (conj [1 2] 3 4))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">[1 2 3 4]
+</code></pre>
+
+<hr />
+
+<h3 id="8-set-소개-intro-to-sets-https-www-4clojure-com-problem-8">8. Set 소개<a href="https://www.4clojure.com/problem/8">Intro to Sets</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+Set은 유일한 값의 집합(collection)이다.</p>
+
+<pre><code>Sets are collections of unique values.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= __ (set '(:a :a :b :c :c :c :c :d :d)))
+(= __ (clojure.set/union #{:a :b :c} #{:b :c :d}))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">#{:a :b :c :d}
+</code></pre>
+
+<hr />
+
+<h3 id="9-sets-conj-sets-conj-https-www-4clojure-com-problem-9">9 Sets: conj <a href="https://www.4clojure.com/problem/9">Sets: conj</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+set을 조작할 때, conj 함수는 한개 이상의 키가 &ldquo;추가된&rdquo; 새로운 set을 반환한다.</p>
+
+<pre><code>When operating on a set, the conj function returns a new set with one or more keys &quot;added&quot;.
+</code></pre>
+
+<pre><code class="language-clojure">(= #{1 2 3 4} (conj #{1 4 3} __))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">2
+</code></pre>
+
+<hr />
+
+<h3 id="10-map-소개-intro-to-maps-https-www-4clojure-com-problem-10">10. Map 소개<a href="https://www.4clojure.com/problem/10">Intro to Maps</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+Map은 키-값(key-value)쌍을 저장한다. maps와 keywords는 둘다 검색(lookup) 함수를 사용할 수 있다. 쉼표(,)는 맵을 더 읽기 쉽게하지만 필수는 아니다.</p>
+
+<pre><code>Maps store key-value pairs. Both maps and keywords can be used as lookup functions. Commas can be used to make maps more readable, but they are not required. 
+</code></pre>
+
+<p><em>keyword 참고</em>
+user=&gt; (keyword &lsquo;foo)
+:foo</p>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= __ ((hash-map :a 10, :b 20, :c 30) :b))
+(= __ (:b {:a 10, :b 20, :c 30}))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">20
+</code></pre>
+
+<hr />
+
+<h3 id="11-mpas-conj-maps-conj-https-www-4clojure-com-problem-11">11. Mpas: conj <a href="https://www.4clojure.com/problem/11">Maps: conj</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+맵을 조작할때, conj 함수는 하나 이상의 키와 값의 쌍이 &ldquo;추가된&rdquo; 새로운 맵을 반환한다.</p>
+
+<pre><code>When operating on a map, the conj function returns a new map with one or more key-value pairs &quot;added&quot;. 
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= {:a 1, :b 2, :c 3} (conj {:a 1} __ [:c 3]))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">{:b 2}
+</code></pre>
+
+<hr />
+
+<h3 id="12-시퀀스-소개-intro-to-sequences-https-www-4clojure-com-problem-12">12.시퀀스 소개<a href="https://www.4clojure.com/problem/12">Intro to Sequences</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+모든 클로저의 컬렉션들은 시퀀싱(순서)을 지원한다. first, second, last 함수와 함께 시퀀스를 조작할 수 있다.</p>
+
+<pre><code>All Clojure collections support sequencing. You can operate on sequences with functions like first, second, and last.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= __ (first '(3 2 1)))
+
+(= __ (second [2 3 4]))
+
+(= __ (last (list 1 2 3)))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">3
+</code></pre>
+
+<hr />
+
+<h3 id="13-시퀀스-rest-sequences-rest-https-www-4clojure-com-problem-13">13.시퀀스: rest<a href="https://www.4clojure.com/problem/13">Sequences: rest</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+rest 함수는 첫번째를 제외한 모든 아이템들의 시퀀스를 반환한다.</p>
+
+<p>The rest function will return all the items of a sequence except the first.</p>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= __ (rest [10 20 30 40]))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">[20 30 40]
+</code></pre>
+
+<hr />
+
+<h3 id="14-함수-소개-intro-to-functions-https-www-4clojure-com-problem-14">14.함수 소개<a href="https://www.4clojure.com/problem/14">Intro to Functions</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+클로저는 함수를 생성하는 다양한 방법이 있다.</p>
+
+<pre><code>Clojure has many different ways to create functions.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= __ ((fn add-five [x] (+ x 5)) 3))
+
+(= __ ((fn [x] (+ x 5)) 3))
+
+(= __ (#(+ % 5) 3))
+
+(= __ ((partial + 5) 3))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">8
+</code></pre>
+
+<hr />
+
+<h3 id="15-double-down-https-www-4clojure-com-problem">15.<a href="https://www.4clojure.com/problem/">Double Down</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+숫자를 2배 만드는 함수를 작성하시오.</p>
+
+<pre><code>Write a function which doubles a number.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= (__ 2) 4)
+
+(= (__ 3) 6)
+
+(= (__ 11) 22)
+
+(= (__ 7) 14)
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">* 2
+</code></pre>
+
+<hr />
+
+<h3 id="16-hello-world-hello-world-https-www-4clojure-com-problem-16">16.Hello World<a href="https://www.4clojure.com/problem/16">Hello World</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+개인화된 인사말을 반환하는 함수를 작성하시오.</p>
+
+<pre><code>Write a function which returns a personalized greeting.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= (__ &quot;Dave&quot;) &quot;Hello, Dave!&quot;)
+
+(= (__ &quot;Jenn&quot;) &quot;Hello, Jenn!&quot;)
+
+(= (__ &quot;Rhea&quot;) &quot;Hello, Rhea!&quot;)
+
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">#(str &quot;Hello, &quot; % &quot;!&quot;)
+</code></pre>
+
+<pre><code class="language-clojure">(fn [name] (str &quot;Hello, &quot; name &quot;!&quot;))
+</code></pre>
+
+<pre><code class="language-clojure">(fn helloGreeting [name] (str &quot;Hello, &quot; name &quot;!&quot;))
+</code></pre>
+
+<hr />
+
+<h3 id="17-시퀀스-map-sequences-map-https-www-4clojure-com-problem-17">17.시퀀스: map<a href="https://www.4clojure.com/problem/17">Sequences: map</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+map 함수는 두개의 인자를 취합니다(함수(f), 시퀀스(s)). map은 시퀀스(s)의 개별 아이템에 함수(f)를 적용한 결과의 새로운 시퀀스 consisting(구조물?)을 반환한다. 자료구조 map과 map 함수와 헤갈리지 말자.</p>
+
+<pre><code>The map function takes two arguments: a function (f) and a sequence (s). Map returns a new sequence consisting of the result of applying f to each item of s. Do not confuse the map function with the map data structure.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= __ (map #(+ % 5) '(1 2 3)))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">'(6 7 8)
+</code></pre>
+
+<hr />
+
+<h3 id="18-시퀀스-filter-sequences-filter-https-www-4clojure-com-problem-18">18.시퀀스: filter<a href="https://www.4clojure.com/problem/18">Sequences: filter</a></h3>
+
+<p>난이도: 초급</p>
+
+<p><code>문제</code>
+filter 함수는 두개의 인자를 취합니다(predicate 함수(f), 시퀀스(s)). filter는 (f item)의 결과가 true인 모든 아이템의 시퀀스 consisting을 반환합니다.</p>
+
+<pre><code>The filter function takes two arguments: a predicate function (f) and a sequence (s). Filter returns a new sequence consisting of all the items of s for which (f item) returns true.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= __ (filter #(&gt; % 5) '(3 4 5 6 7)))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">'(6 7)
+</code></pre>
+
+<hr />
+
+<h3 id="19-마지막-요소-last-element-https-www-4clojure-com-problem-19">19.마지막 요소<a href="https://www.4clojure.com/problem/19">Last Element</a></h3>
+
+<p>난이도: 쉬움
+주제: seqs 코어 함수 <code>seqs core-functions</code></p>
+
+<p><code>문제</code>
+시퀀스의 마지막 요소를 반환하는 함수를 작성하시오.</p>
+
+<pre><code>Write a function which returns the last element in a sequence.
+</code></pre>
+
+<p><strong>last 함수는 사용하지 마세요</strong></p>
+
+<pre><code>Special Restrictions
+last 
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= (__ [1 2 3 4 5]) 5)
+
+(= (__ '(5 4 3)) 3)
+
+(= (__ [&quot;b&quot; &quot;c&quot; &quot;d&quot;]) &quot;d&quot;)
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">(comp first reverse) ; &lt;- last가 안되서 찾다가 참조한 답. 아래는 다른 답으로 제출
+</code></pre>
+
+<pre><code class="language-clojure">#(nth % (- (count %) 1))
+</code></pre>
+
+<hr />
+
+<h3 id="20-두번째-요소-penultimate-element-https-www-4clojure-com-problem-20">20.두번째 요소<a href="https://www.4clojure.com/problem/20">Penultimate Element</a></h3>
+
+<p>난이도: 쉬움
+주제: seqs</p>
+
+<p><code>문제</code>
+시퀀스에서 마지막에서 두번째 요소를 반환하는 함수를 작성하세요</p>
+
+<pre><code>Write a function which returns the second to last element from a sequence.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= (__ (list 1 2 3 4 5)) 4)
+
+(= (__ [&quot;a&quot; &quot;b&quot; &quot;c&quot;]) &quot;b&quot;)
+
+(= (__ [[1 2] [3 4]]) [1 2])
+
+
+
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">(comp first rest reverse)
+</code></pre>
+
+<hr />
+
+<h3 id="21-n번째-요소-nth-element-https-www-4clojure-com-problem-21">21.N번째 요소<a href="https://www.4clojure.com/problem/21">Nth Element</a></h3>
+
+<p>난이도: 쉬움
+주제: seqs core-functions</p>
+
+<p><code>문제</code>
+시퀀스로부터 N번째 요소를 반환하는 함수를 작성하세요.</p>
+
+<p>Write a function which returns the Nth element from a sequence.</p>
+
+<p><code>문제 코드</code></p>
+
+<p><strong>nth 함수는 사용하지 마세요.</strong></p>
+
+<pre><code>Special Restrictions
+nth
+</code></pre>
+
+<pre><code class="language-clojure">(= (__ '(4 5 6 7) 2) 6)
+(= (__ [:a :b :c] 0) :a)
+(= (__ [1 2 3 4] 1) 2)
+(= (__ '([1 2] [3 4] [5 6]) 2) [5 6])
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">(fn [x y] (get (into [] x) y))
+</code></pre>
+
+<hr />
+
+<h3 id="22-시퀀스-갯수-세기-count-a-sequence-https-www-4clojure-com-problem-22">22.시퀀스 갯수 세기<a href="https://www.4clojure.com/problem/22">Count a Sequence</a></h3>
+
+<p>난이도: 쉬움</p>
+
+<p><code>문제</code>
+시퀀스의 요소의 전체 갯수를 반환하는 함수를 작성하세요</p>
+
+<pre><code>Write a function which returns the total number of elements in a sequence.
+</code></pre>
+
+<p><strong>count함수는 사용하지 마세요</strong></p>
+
+<pre><code>Special Restrictions
+count
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= (__ '(1 2 3 3 1)) 5)
+(= (__ &quot;Hello World&quot;) 11)
+(= (__ [[1 2] [3 4] [5 6]]) 3)
+(= (__ '(13)) 1)
+(= (__ '(:a :b :c)) 3)
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">#(reduce + (map (fn [_] 1) %))
+</code></pre>
+
+<hr />
+
+<h3 id="23-시퀀스-뒤집기-reverse-a-sequence-https-www-4clojure-com-problem-23">23.시퀀스 뒤집기<a href="https://www.4clojure.com/problem/23">Reverse a Sequence</a></h3>
+
+<p>난이도: 초급
+주제: seqs core-functions</p>
+
+<p><code>문제</code>
+시퀀스 reverses 함수를 작성하시오</p>
+
+<pre><code>Write a function which reverses a sequence.
+</code></pre>
+
+<p><strong>reverse, rseq 함수를 사용하지 마세요</strong>
+    Special Restrictions
+    reverse
+    rseq</p>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= (__ [1 2 3 4 5]) [5 4 3 2 1])
+(= (__ (sorted-set 5 7 2 7)) '(7 5 2))
+(= (__ [[1 2][3 4][5 6]]) [[5 6][3 4][1 2]])
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">#(reduce conj '() %)
+</code></pre>
+
+<hr />
+
+<h3 id="24-모두-더해라-sum-it-all-up-https-www-4clojure-com-problem-24">24.모두 더해라<a href="https://www.4clojure.com/problem/24">Sum It All Up</a></h3>
+
+<p>난이도: 쉬움
+주제: seqs</p>
+
+<p><code>문제</code>
+숫자로된 시퀀스의 합을 반환하는 함수를 작성하시오.</p>
+
+<pre><code>Write a function which returns the sum of a sequence of numbers.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= (__ [1 2 3]) 6)
+(= (__ (list 0 -2 5 5)) 8)
+(= (__ #{4 2 1}) 7)
+(= (__ '(0 0 -1)) -1)
+(= (__ '(1 10 3)) 14)
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">#(reduce + %)
+</code></pre>
+
+<hr />
+
+<h3 id="25-홀수를-찾아라-find-the-odd-numbers-https-www-4clojure-com-problem-25">25.홀수를 찾아라<a href="https://www.4clojure.com/problem/25">Find the odd numbers</a></h3>
+
+<p>난이도: 쉬움
+주제: seqs</p>
+
+<p><code>문제</code>
+시퀀스로부터 홀수만 반환하는 함수를 작성하세요</p>
+
+<pre><code>Write a function which returns only the odd numbers from a sequence.
+</code></pre>
+
+<p><code>문제 코드</code></p>
+
+<pre><code class="language-clojure">(= (__ #{1 2 3 4 5}) '(1 3 5))
+(= (__ [4 2 1 6]) '(1))
+(= (__ [2 2 4 6]) '())
+(= (__ [1 1 1 3]) '(1 1 1 3))
+</code></pre>
+
+<p><code>통과한 코드</code></p>
+
+<pre><code class="language-clojure">#(filter odd? %)
+</code></pre>
+</div>
+  </div>
+
+  <footer class="article-footer">
+    <div class="content-inner">
+
+      <aside class="p-share">
+  <div class="share-inner">
+    
+    <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fdurtchrt.github.io%2fblog%2fclojure%2f4clojure%2fquestions%2f&t=4Clojure%20%eb%ac%b8%ec%a0%9c%20%eb%aa%a8%ec%9d%8c" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
+    <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fclojure%2f4clojure%2fquestions%2f&text=4Clojure%20%eb%ac%b8%ec%a0%9c%20%eb%aa%a8%ec%9d%8c&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
+    <a href="https://plus.google.com/share?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fclojure%2f4clojure%2fquestions%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
+    <a href="http://line.me/R/msg/text/?4Clojure%20%eb%ac%b8%ec%a0%9c%20%eb%aa%a8%ec%9d%8c http%3a%2f%2fdurtchrt.github.io%2fblog%2fclojure%2f4clojure%2fquestions%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
+  </div>
+</aside>
+
+
+      <nav class="p-crumb">
+        <ol>
+          <li><a href="http://durtchrt.github.io/blog/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+          
+          <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/clojure/" itemprop="url"><span itemprop="title">clojure</span></a></li>
+          
+          <li class="active">4Clojure 문제 모음</li>
+        </ol>
+      </nav>
+
+      
+      
+      
+      <section class="article-footer">
+        <header>
+          <a href="http://durtchrt.github.io/blog/tags/">TAGS</a>
+        </header>
+        <div>
+          <ul class="p-terms inline">
+            
+            <li><a href="http://durtchrt.github.io/blog/tags/clojure/">clojure</a></li>
+            
+            <li><a href="http://durtchrt.github.io/blog/tags/4clojure/">4clojure</a></li>
+            
+            <li><a href="http://durtchrt.github.io/blog/tags/question/">question</a></li>
+            
+          </ul>
+        </div>
+      </section>
+      
+      
+    </div>
+  </footer>
+
+</article>
+
+
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'bjm';
+    var disqus_identifier = 'http:\/\/durtchrt.github.io\/blog\/clojure\/4clojure\/questions\/';
+    var disqus_title = '4Clojure 문제 모음';
+    var disqus_url = 'http:\/\/durtchrt.github.io\/blog\/clojure\/4clojure\/questions\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+  <div class="col-md-4">
+    <aside class="site">
+
+  <section>
+    <header>latests</header>
+    <div>
+      <div class="row">
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/clojure/4clojure/questions/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/clojure/4clojure/questions/">4Clojure 문제 모음</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-20T04:22:01JST">Nov 20, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/clojure/">clojure</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/generics/11/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/11/">자바 제네릭스(10) 와일드카드 Wildcards </a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-12T18:23:01JST">Nov 12, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        <div class="col-sm-12"></div>
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/generics/10/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/10/">자바 제네릭스(10) 와일드카드 Wildcards </a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-11T18:23:01JST">Nov 11, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/generics/13/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/13/">자바 제네릭스(13) Java Generics: 하위 제한 와일드카드(Lower Bounded Wildcards)</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-07T14:00:42JST">Nov 7, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        <div class="col-sm-12"></div>
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/generics/12/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/12/">자바 제네릭스(12) Java Generics: 상위 제한된 와일드카드(Upper Bounded Wildcards)</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-07T13:00:42JST">Nov 7, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/generics/9/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/9/">자바 제네릭스(9) Java Generics: 타입추론(Type Inference)</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-05T18:23:01JST">Nov 5, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        <div class="col-sm-12"></div>
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/generics/8/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/8/">자바 제네릭스(8) Java Generics: 제네릭스, 상속, 서브타입 (Generics, Inheritance, and Subtypes)</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-05T08:48:42JST">Nov 5, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/generics/7/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/7/">자바 제네릭스(7) Java Generics: Generic 메서드와 제한된 타입 매개변수 (Generic Methods and Bounded Type Parameters)</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-05T08:24:47JST">Nov 5, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        <div class="col-sm-12"></div>
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/generics/6/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/6/">자바 제네릭스(6) Java Generics: 제한된 타입 매개변수 (Bounded Type Parameters)</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-04T18:03:27JST">Nov 4, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/generics/5/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/5/">자바 제네릭스(5) Java Generics: 제네릭 메서드</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-04T13:43:44JST">Nov 4, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        <div class="col-sm-12"></div>
+        
+      </div>
+    </div>
+  </section>
+
+  
+  <section>
+    <header>tag</header>
+    <div>
+      <ul class="p-terms">
+        <li><a href="http://durtchrt.github.io/blog/tags/generics">generics</a></li><li><a href="http://durtchrt.github.io/blog/tags/java">java</a></li><li><a href="http://durtchrt.github.io/blog/tags/%EB%B2%88%EC%97%AD">번역</a></li><li><a href="http://durtchrt.github.io/blog/tags/4clojure">4clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/bounded-type-parameter">bounded-type-parameter</a></li><li><a href="http://durtchrt.github.io/blog/tags/clojure">clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/favorite">favorite</a></li><li><a href="http://durtchrt.github.io/blog/tags/generic-method">generic-method</a></li><li><a href="http://durtchrt.github.io/blog/tags/inheritance">inheritance</a></li><li><a href="http://durtchrt.github.io/blog/tags/javascript">javascript</a></li>
+      </ul>
+    </div>
+  </section>
+  
+
+</aside>
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p>durtchrt</p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

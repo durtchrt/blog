@@ -67,6 +67,77 @@ ga('send', 'pageview');
     <div class="row">
       
       <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/generics/11/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/11/">자바 제네릭스(10) 와일드카드 Wildcards </a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-12T18:23:01JST">Nov 12, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">상위 제한된 와일드 카드 Upper Bounded Wildcards 변수에 완화된 제한을 걸고 싶을때 upper bounded wildcard를 사용한다. 예를들면, List&lt;Integer&gt;, List&lt;Double&gt;, List&lt;Number&gt; 타입들에서 동작하는 메서드를 작성할때 upper bounded wildcard를 사용해서 만들수 있다. You can use an upper bounded wildcard to relax the restrictions on a variable. For example, say you want to write a method that works on List&lt;Integer&gt;, List&lt;Double&gt;, and List&lt;Number&gt;; you can achieve this by using an upper bounded wildcard.</div>
+  </div>
+</article>
+</div>
+      
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/generics/10/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/10/">자바 제네릭스(10) 와일드카드 Wildcards </a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-11T18:23:01JST">Nov 11, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">와일드카드 Wildcards generic 코드에서는 unkown 타입을 표현하는 물음표(?)를 와일드 카드라고 부른다. 와일드카드는 다양한 상황에서 쓰인다.(파라메터, 필드, 지역변수 타입 때로는 리턴 타입에도 쓰인다. (though it is better programming practice to be more specific). 와일드카드는 제네릭 메서드 호출, 제네릭 클래스의 인스턴스 생성, 또는 슈퍼타입을 위해 타입인자로는 사용되지 않는다. In generic code, the question mark (?), called the wildcard, represents an unknown type. The wildcard can be used in a variety of situations: as the type of a parameter, field, or local variable; sometimes as a return type (though it is better programming practice to be more specific).</div>
+  </div>
+</article>
+</div>
+      <div class="col-sm-12"></div>
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/generics/13/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/13/">자바 제네릭스(13) Java Generics: 하위 제한 와일드카드(Lower Bounded Wildcards)</a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-07T14:00:42JST">Nov 7, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">원문링크
+하위 제한 와일드카드 Lower Bounded Wildcards 상위제한와일드카드장은 특정 타입이나 그 특정타입의 서브타입을 알 수 없을때는 &lsquo;extends&rsquo; 키워드를 사용하는 것을 보여줬다. 비슷한 것으로, 하위제한와일드카드는 특정타입이나 그 특정 타입의 슈퍼타입을 제한하고자할때 사용한다. The Upper Bounded Wildcards section shows that an upper bounded wildcard restricts the unknown type to be a specific type or a subtype of that type and is represented using the extends keyword. In a similar way, a lower bounded wildcard restricts the unknown type to be a specific type or a super type of that type.</div>
+  </div>
+</article>
+</div>
+      
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/generics/12/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/12/">자바 제네릭스(12) Java Generics: 상위 제한된 와일드카드(Upper Bounded Wildcards)</a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-07T13:00:42JST">Nov 7, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">원문링크
+제한없는 와일드카드 Unbounded Wildcards 제한없는 와일드카드 타입은 와일드카드 문자(&lsquo;?&rsquo;)만 사용한것이다. 예를 들면 List&lt;?&gt;와 같다. List&lt;?&gt;의 ?는 List의 &lsquo;알수없는 타입(unkown type)&lsquo;이라고 부른다. 아래 두개의 시나리오는 제한없는 와일드카드가 유용한 접근법이다. The unbounded wildcard type is specified using the wildcard character (?), for example, List&lt;?&gt;. This is called a list of unknown type. There are two scenarios where an unbounded wildcard is a useful approach:
+ Object 클래스에서 제공하는 기능(메서드)을 사용하도록 메서드를 구현할 때.</div>
+  </div>
+</article>
+</div>
+      <div class="col-sm-12"></div>
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
   <a href="http://durtchrt.github.io/blog/java/generics/9/" class="thumb"></a>
   <div class="content-inner thin">
     <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/9/">자바 제네릭스(9) Java Generics: 타입추론(Type Inference)</a></h2>
@@ -178,67 +249,17 @@ public class Box&lt;T&gt; { public void set(T t) { /* ... */ } // ... }  아래 
 </div>
       <div class="col-sm-12"></div>
       
-      <div class="col-sm-6 col-xs-12"><article class="li">
-  <a href="http://durtchrt.github.io/blog/java/generics/3/" class="thumb"></a>
-  <div class="content-inner thin">
-    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/3/">자바 제네릭스(3) Java Generics: 제네릭 타입들</a></h2>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-10-31T17:08:57JST">Oct 31, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-      
-    </ul>
-
-    <div class="summary">원문 링크
-용어 참조
- 타입 : 자바에서는 클래스, 추상클래스, 인터페이스, 열거형(Enum), 배열을 의미. 기본형, 참조형을 포괄하는 개념  기본형: byte, short, int, long, float, double, char, String, boolean (call by value) 참조형: 기본형을 제외한 모든 타입 (call by reference)   매개변수 vs 인자
- 매개변수(Parameter): 함수 선언할 때 변수의 이름 인자(Argument): 함수를 호출할 때 전달하는 값  Generic Types generic 타입은 클래스, 인터페이스를 타입 파라미터화하는 것이다. Box 클래스는 generic 타입을 설명하면서 코드를 수정할 것이다.</div>
-  </div>
-</article>
-</div>
-      
-      
-      <div class="col-sm-6 col-xs-12"><article class="li">
-  <a href="http://durtchrt.github.io/blog/java/generics/2/" class="thumb"></a>
-  <div class="content-inner thin">
-    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/2/">자바 제네릭스(2) Java Generics: 제네릭스는 왜 사용하는가? </a></h2>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-10-31T15:52:48JST">Oct 31, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-      
-    </ul>
-
-    <div class="summary">원문
-Generics는 왜 사용하는가 (Why Use Generics?)
-간단히 말하면, generics는 타입을 클래스, 인터페이스, 메소드를 정의할 때 파라메터화 할 수 있다. 메소드 선언에 사용되는 파라미터 형식처럼, 타입 파라미터는 다른 입력값을 같은 코드를 재 사용할 수 있는 방법을 제시한다. 다른점은 형식 파라미터는 값이 입력이다, 타입 파라메터는 타입이 입력이다. In a nutshell, generics enable types (classes and interfaces) to be parameters when defining classes, interfaces and methods. Much like the more familiar formal parameters used in method declarations, type parameters provide a way for you to re-use the same code with different inputs.</div>
-  </div>
-</article>
-</div>
-      <div class="col-sm-12"></div>
-      
-      <div class="col-sm-6 col-xs-12"><article class="li">
-  <a href="http://durtchrt.github.io/blog/java/generics/1/" class="thumb"></a>
-  <div class="content-inner thin">
-    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/1/">자바 제네릭스(1) Java  Generics</a></h2>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-10-31T15:07:44JST">Oct 31, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-      
-    </ul>
-
-    <div class="summary">자바 제넥릭스 - Java Generics 1 원본
-The Java Tutorials Lesson: Generics(Updated) 소프트웨어에서 버그는 일상이다. 모든 사소하지 않은 소프트웨어 프로젝트에서 버그는 삶의 진실이다. 주의깊게 계획, 프로그래밍, 테스트는 버그가 스며드는것을 줄여준다. 하지만 여찌됐든, 언젠가! 버그는 코드에서 기어다닐 방법을 항상 찾는다. 이는 결국 새로운 기능이 도입되거나 코드 사이즈와 복잡섭이 증가됨에 따라 심각하게 눈에 띄게 될 것이다.
-In any nontrivial software project, bugs are simply a fact of life. Careful planning, programming, and testing can help reduce their pervasiveness, but somehow, somewhere, they'll always find a way to creep into your code.</div>
-  </div>
-</article>
-</div>
-      
-      
     </div>
 
     
+<nav class="p-paging">
+  
+
+  
+  <a href="/tags/java/page/2/" rel="next" class="next">Next</a>
+  
+</nav>
+
 
   </div>
   <div class="col-md-4">
@@ -248,6 +269,76 @@ In any nontrivial software project, bugs are simply a fact of life. Careful plan
     <header>latests</header>
     <div>
       <div class="row">
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/clojure/4clojure/questions/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/clojure/4clojure/questions/">4Clojure 문제 모음</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-20T04:22:01JST">Nov 20, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/clojure/">clojure</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/generics/11/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/11/">자바 제네릭스(10) 와일드카드 Wildcards </a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-12T18:23:01JST">Nov 12, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        <div class="col-sm-12"></div>
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/generics/10/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/10/">자바 제네릭스(10) 와일드카드 Wildcards </a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-11T18:23:01JST">Nov 11, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/generics/13/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/13/">자바 제네릭스(13) Java Generics: 하위 제한 와일드카드(Lower Bounded Wildcards)</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-07T14:00:42JST">Nov 7, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        <div class="col-sm-12"></div>
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/generics/12/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/12/">자바 제네릭스(12) Java Generics: 상위 제한된 와일드카드(Upper Bounded Wildcards)</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-07T13:00:42JST">Nov 7, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        
         
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/java/generics/9/" class="thumb"></a>
@@ -261,7 +352,7 @@ In any nontrivial software project, bugs are simply a fact of life. Careful plan
   </header>
 </article>
 </div>
-        
+        <div class="col-sm-12"></div>
         
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/java/generics/8/" class="thumb"></a>
@@ -275,7 +366,7 @@ In any nontrivial software project, bugs are simply a fact of life. Careful plan
   </header>
 </article>
 </div>
-        <div class="col-sm-12"></div>
+        
         
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/java/generics/7/" class="thumb"></a>
@@ -289,7 +380,7 @@ In any nontrivial software project, bugs are simply a fact of life. Careful plan
   </header>
 </article>
 </div>
-        
+        <div class="col-sm-12"></div>
         
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/java/generics/6/" class="thumb"></a>
@@ -303,7 +394,7 @@ In any nontrivial software project, bugs are simply a fact of life. Careful plan
   </header>
 </article>
 </div>
-        <div class="col-sm-12"></div>
+        
         
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/java/generics/5/" class="thumb"></a>
@@ -313,76 +404,6 @@ In any nontrivial software project, bugs are simply a fact of life. Careful plan
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-04T13:43:44JST">Nov 4, 2016</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-    </ul>
-  </header>
-</article>
-</div>
-        
-        
-        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
-  <a href="http://durtchrt.github.io/blog/java/generics/4/" class="thumb"></a>
-  <header>
-    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/4/">자바 제네릭스(4) Java Generics: 원천(Raw) 타입들</a></div>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-01T16:05:56JST">Nov 1, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-    </ul>
-  </header>
-</article>
-</div>
-        <div class="col-sm-12"></div>
-        
-        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
-  <a href="http://durtchrt.github.io/blog/java/generics/3/" class="thumb"></a>
-  <header>
-    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/3/">자바 제네릭스(3) Java Generics: 제네릭 타입들</a></div>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-10-31T17:08:57JST">Oct 31, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-    </ul>
-  </header>
-</article>
-</div>
-        
-        
-        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
-  <a href="http://durtchrt.github.io/blog/java/generics/2/" class="thumb"></a>
-  <header>
-    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/2/">자바 제네릭스(2) Java Generics: 제네릭스는 왜 사용하는가? </a></div>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-10-31T15:52:48JST">Oct 31, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-    </ul>
-  </header>
-</article>
-</div>
-        <div class="col-sm-12"></div>
-        
-        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
-  <a href="http://durtchrt.github.io/blog/java/generics/1/" class="thumb"></a>
-  <header>
-    <div class="title"><a href="http://durtchrt.github.io/blog/java/generics/1/">자바 제네릭스(1) Java  Generics</a></div>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-10-31T15:07:44JST">Oct 31, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-    </ul>
-  </header>
-</article>
-</div>
-        
-        
-        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
-  <a href="http://durtchrt.github.io/blog/2016/10/26/daum_favorites_javascript/" class="thumb"></a>
-  <header>
-    <div class="title"><a href="http://durtchrt.github.io/blog/2016/10/26/daum_favorites_javascript/">크롬에 자주사용하는 javascript 즐겨찾기로 추가하기</a></div>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-10-26T18:19:58JST">Oct 26, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/2016/">2016</a></li>
     </ul>
   </header>
 </article>
@@ -398,7 +419,7 @@ In any nontrivial software project, bugs are simply a fact of life. Careful plan
     <header>tag</header>
     <div>
       <ul class="p-terms">
-        <li><a href="http://durtchrt.github.io/blog/tags/generics">generics</a></li><li><a href="http://durtchrt.github.io/blog/tags/java">java</a></li><li><a href="http://durtchrt.github.io/blog/tags/%EB%B2%88%EC%97%AD">번역</a></li><li><a href="http://durtchrt.github.io/blog/tags/bounded-type-parameter">bounded-type-parameter</a></li><li><a href="http://durtchrt.github.io/blog/tags/favorite">favorite</a></li><li><a href="http://durtchrt.github.io/blog/tags/generic-method">generic-method</a></li><li><a href="http://durtchrt.github.io/blog/tags/inheritance">inheritance</a></li><li><a href="http://durtchrt.github.io/blog/tags/javascript">javascript</a></li><li><a href="http://durtchrt.github.io/blog/tags/subtype">subtype</a></li><li><a href="http://durtchrt.github.io/blog/tags/type-parameter">type-parameter</a></li>
+        <li><a href="http://durtchrt.github.io/blog/tags/generics">generics</a></li><li><a href="http://durtchrt.github.io/blog/tags/java">java</a></li><li><a href="http://durtchrt.github.io/blog/tags/%EB%B2%88%EC%97%AD">번역</a></li><li><a href="http://durtchrt.github.io/blog/tags/4clojure">4clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/bounded-type-parameter">bounded-type-parameter</a></li><li><a href="http://durtchrt.github.io/blog/tags/clojure">clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/favorite">favorite</a></li><li><a href="http://durtchrt.github.io/blog/tags/generic-method">generic-method</a></li><li><a href="http://durtchrt.github.io/blog/tags/inheritance">inheritance</a></li><li><a href="http://durtchrt.github.io/blog/tags/javascript">javascript</a></li>
       </ul>
     </div>
   </section>

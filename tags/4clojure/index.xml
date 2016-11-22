@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>개발 저장소</title>
+    <link>http://durtchrt.github.io/blog/tags/4clojure/index.xml</link>
+    <description>Recent content on 개발 저장소</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>durtchrt</copyright>
+    <atom:link href="http://durtchrt.github.io/blog/tags/4clojure/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>4Clojure 문제 모음</title>
+      <link>http://durtchrt.github.io/blog/clojure/4clojure/questions/</link>
+      <pubDate>Sun, 20 Nov 2016 04:22:01 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/clojure/4clojure/questions/</guid>
+      <description>
+
+&lt;h3 id=&#34;1-진실만있다-nothing-but-the-truth-https-www-4clojure-com-problem-1&#34;&gt;1.진실만있다. &lt;a href=&#34;https://www.4clojure.com/problem/1&#34;&gt;Nothing but the Truth&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;이것은 클로저 폼이다. 폼 평가를 true가 되도록 값을 넣으세요. 생각이 깊게 하지 마세요! 만약 헤갈린다면, 클로저 초급 문서를 보세요. Hint: true는 true와 같다&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is a clojure form. Enter a value which will make the form evaluate to true. Don&#39;t over think it! If you are confused, see the getting started page. Hint: true is equal to true.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ true)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;2-간단한-수학-simple-math-https-www-4clojure-com-problem-2&#34;&gt;2. 간단한 수학&lt;a href=&#34;https://www.4clojure.com/problem/2&#34;&gt;Simple Math&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+polish notation(전위연산)이 익숙하지 않다면 간단한 계산 혼란을 느낄것이다.
+중요: 빈칸을 채우세요(숫자 하나입니다.) - 문제 전체를 타이핑하지 마세요.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;If you are not familiar with polish notation, simple arithmetic might seem confusing.
+Note: Enter only enough to fill in the blank (in this case, a single number) - do not retype the whole problem. 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (- 10 (* 2 3)) __)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;3-문자열-소개-intro-to-strings-https-www-4clojure-com-problem-3&#34;&gt;3.문자열 소개&lt;a href=&#34;https://www.4clojure.com/problem/3&#34;&gt;Intro to Strings&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+클로저 String은 자바 String이다. 즉, 클로저 String은 자바 String 메서드를 사용할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Clojure strings are Java strings. This means that you can use any of the Java string methods on Clojure strings.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (.toUpperCase &amp;quot;hello world&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;&amp;quot;HELLO WORLD&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;4-리스트-소개-intro-to-lists-https-www-4clojure-com-problem-4&#34;&gt;4.리스트 소개&lt;a href=&#34;https://www.4clojure.com/problem/4&#34;&gt;Intro to Lists&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도:초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+Lists는 함수 또는 quoted form으로 만들수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Lists can be constructed with either a function or a quoted form. 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (list __) &#39;(:a :b :c))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;:a :b :c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;5-리스트-conj-lists-conj-https-www-4clojure-com-problem-5&#34;&gt;5.리스트: conj &lt;a href=&#34;https://www.4clojure.com/problem/5&#34;&gt;Lists: conj&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+리스트를 조작할때 conj함수는 하나 이상의 아이템이 앞에 &amp;ldquo;추가된&amp;rdquo; 새로운 리스트를 반환한다.
+중요: 두 테스트 케이스는 답이 하나다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;When operating on a list, the conj function will return a new list with one or more items &amp;quot;added&amp;quot; to the front.
+
+Note that there are two test cases, but you are expected to supply only one answer, which will cause all the tests to pass. 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (conj &#39;(2 3 4) 1))
+(= __ (conj &#39;(3 4) 2 1))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;&#39;(1 2 3 4)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;6-벡터소개-intro-to-vectors-https-www-4clojure-com-problem-6&#34;&gt;6.벡터소개 &lt;a href=&#34;https://www.4clojure.com/problem/6&#34;&gt;Intro to Vectors&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+Vector는 다양한 방법으로 생성할 수 있다. 벡터는 리스트와 비교할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;브라켓([])으로 둘러싸여진 __ 부분을 채워라.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Vectors can be constructed several ways. You can compare them with lists.
+
+Note: the brackets [] surrounding the blanks __ are part of the test case.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= [__] (list :a :b :c) (vec &#39;(:a :b :c)) (vector :a :b :c))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;:a :b :c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;7-벡터-conj-vectors-conj-https-www-4clojure-com-problem-7&#34;&gt;7. 벡터: conj&lt;a href=&#34;https://www.4clojure.com/problem/7&#34;&gt;Vectors: conj&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+Vector를 조작할 때, conj 함수는 마지막에 하나 이상의 아이템이 &amp;ldquo;추가된&amp;rdquo; 새로운 vector를 반환한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;When operating on a Vector, the conj function will return a new vector with one or more items &amp;quot;added&amp;quot; to the end.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (conj [1 2 3] 4))
+(= __ (conj [1 2] 3 4))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;[1 2 3 4]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;8-set-소개-intro-to-sets-https-www-4clojure-com-problem-8&#34;&gt;8. Set 소개&lt;a href=&#34;https://www.4clojure.com/problem/8&#34;&gt;Intro to Sets&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+Set은 유일한 값의 집합(collection)이다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Sets are collections of unique values.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (set &#39;(:a :a :b :c :c :c :c :d :d)))
+(= __ (clojure.set/union #{:a :b :c} #{:b :c :d}))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#{:a :b :c :d}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;9-sets-conj-sets-conj-https-www-4clojure-com-problem-9&#34;&gt;9 Sets: conj &lt;a href=&#34;https://www.4clojure.com/problem/9&#34;&gt;Sets: conj&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+set을 조작할 때, conj 함수는 한개 이상의 키가 &amp;ldquo;추가된&amp;rdquo; 새로운 set을 반환한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;When operating on a set, the conj function returns a new set with one or more keys &amp;quot;added&amp;quot;.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= #{1 2 3 4} (conj #{1 4 3} __))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;10-map-소개-intro-to-maps-https-www-4clojure-com-problem-10&#34;&gt;10. Map 소개&lt;a href=&#34;https://www.4clojure.com/problem/10&#34;&gt;Intro to Maps&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+Map은 키-값(key-value)쌍을 저장한다. maps와 keywords는 둘다 검색(lookup) 함수를 사용할 수 있다. 쉼표(,)는 맵을 더 읽기 쉽게하지만 필수는 아니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Maps store key-value pairs. Both maps and keywords can be used as lookup functions. Commas can be used to make maps more readable, but they are not required. 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;keyword 참고&lt;/em&gt;
+user=&amp;gt; (keyword &amp;lsquo;foo)
+:foo&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ ((hash-map :a 10, :b 20, :c 30) :b))
+(= __ (:b {:a 10, :b 20, :c 30}))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;11-mpas-conj-maps-conj-https-www-4clojure-com-problem-11&#34;&gt;11. Mpas: conj &lt;a href=&#34;https://www.4clojure.com/problem/11&#34;&gt;Maps: conj&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+맵을 조작할때, conj 함수는 하나 이상의 키와 값의 쌍이 &amp;ldquo;추가된&amp;rdquo; 새로운 맵을 반환한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;When operating on a map, the conj function returns a new map with one or more key-value pairs &amp;quot;added&amp;quot;. 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= {:a 1, :b 2, :c 3} (conj {:a 1} __ [:c 3]))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;{:b 2}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;12-시퀀스-소개-intro-to-sequences-https-www-4clojure-com-problem-12&#34;&gt;12.시퀀스 소개&lt;a href=&#34;https://www.4clojure.com/problem/12&#34;&gt;Intro to Sequences&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+모든 클로저의 컬렉션들은 시퀀싱(순서)을 지원한다. first, second, last 함수와 함께 시퀀스를 조작할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;All Clojure collections support sequencing. You can operate on sequences with functions like first, second, and last.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (first &#39;(3 2 1)))
+
+(= __ (second [2 3 4]))
+
+(= __ (last (list 1 2 3)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;13-시퀀스-rest-sequences-rest-https-www-4clojure-com-problem-13&#34;&gt;13.시퀀스: rest&lt;a href=&#34;https://www.4clojure.com/problem/13&#34;&gt;Sequences: rest&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+rest 함수는 첫번째를 제외한 모든 아이템들의 시퀀스를 반환한다.&lt;/p&gt;
+
+&lt;p&gt;The rest function will return all the items of a sequence except the first.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (rest [10 20 30 40]))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;[20 30 40]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;14-함수-소개-intro-to-functions-https-www-4clojure-com-problem-14&#34;&gt;14.함수 소개&lt;a href=&#34;https://www.4clojure.com/problem/14&#34;&gt;Intro to Functions&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+클로저는 함수를 생성하는 다양한 방법이 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Clojure has many different ways to create functions.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ ((fn add-five [x] (+ x 5)) 3))
+
+(= __ ((fn [x] (+ x 5)) 3))
+
+(= __ (#(+ % 5) 3))
+
+(= __ ((partial + 5) 3))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;8
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;15-double-down-https-www-4clojure-com-problem&#34;&gt;15.&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;Double Down&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+숫자를 2배 만드는 함수를 작성하시오.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which doubles a number.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ 2) 4)
+
+(= (__ 3) 6)
+
+(= (__ 11) 22)
+
+(= (__ 7) 14)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;* 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;16-hello-world-hello-world-https-www-4clojure-com-problem-16&#34;&gt;16.Hello World&lt;a href=&#34;https://www.4clojure.com/problem/16&#34;&gt;Hello World&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+개인화된 인사말을 반환하는 함수를 작성하시오.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which returns a personalized greeting.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ &amp;quot;Dave&amp;quot;) &amp;quot;Hello, Dave!&amp;quot;)
+
+(= (__ &amp;quot;Jenn&amp;quot;) &amp;quot;Hello, Jenn!&amp;quot;)
+
+(= (__ &amp;quot;Rhea&amp;quot;) &amp;quot;Hello, Rhea!&amp;quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#(str &amp;quot;Hello, &amp;quot; % &amp;quot;!&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(fn [name] (str &amp;quot;Hello, &amp;quot; name &amp;quot;!&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(fn helloGreeting [name] (str &amp;quot;Hello, &amp;quot; name &amp;quot;!&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;17-시퀀스-map-sequences-map-https-www-4clojure-com-problem-17&#34;&gt;17.시퀀스: map&lt;a href=&#34;https://www.4clojure.com/problem/17&#34;&gt;Sequences: map&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+map 함수는 두개의 인자를 취합니다(함수(f), 시퀀스(s)). map은 시퀀스(s)의 개별 아이템에 함수(f)를 적용한 결과의 새로운 시퀀스 consisting(구조물?)을 반환한다. 자료구조 map과 map 함수와 헤갈리지 말자.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;The map function takes two arguments: a function (f) and a sequence (s). Map returns a new sequence consisting of the result of applying f to each item of s. Do not confuse the map function with the map data structure.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (map #(+ % 5) &#39;(1 2 3)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;&#39;(6 7 8)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;18-시퀀스-filter-sequences-filter-https-www-4clojure-com-problem-18&#34;&gt;18.시퀀스: filter&lt;a href=&#34;https://www.4clojure.com/problem/18&#34;&gt;Sequences: filter&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+filter 함수는 두개의 인자를 취합니다(predicate 함수(f), 시퀀스(s)). filter는 (f item)의 결과가 true인 모든 아이템의 시퀀스 consisting을 반환합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;The filter function takes two arguments: a predicate function (f) and a sequence (s). Filter returns a new sequence consisting of all the items of s for which (f item) returns true.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (filter #(&amp;gt; % 5) &#39;(3 4 5 6 7)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;&#39;(6 7)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;19-마지막-요소-last-element-https-www-4clojure-com-problem-19&#34;&gt;19.마지막 요소&lt;a href=&#34;https://www.4clojure.com/problem/19&#34;&gt;Last Element&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제: seqs 코어 함수 &lt;code&gt;seqs core-functions&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+시퀀스의 마지막 요소를 반환하는 함수를 작성하시오.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which returns the last element in a sequence.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;last 함수는 사용하지 마세요&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Special Restrictions
+last 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ [1 2 3 4 5]) 5)
+
+(= (__ &#39;(5 4 3)) 3)
+
+(= (__ [&amp;quot;b&amp;quot; &amp;quot;c&amp;quot; &amp;quot;d&amp;quot;]) &amp;quot;d&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(comp first reverse) ; &amp;lt;- last가 안되서 찾다가 참조한 답. 아래는 다른 답으로 제출
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#(nth % (- (count %) 1))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;20-두번째-요소-penultimate-element-https-www-4clojure-com-problem-20&#34;&gt;20.두번째 요소&lt;a href=&#34;https://www.4clojure.com/problem/20&#34;&gt;Penultimate Element&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제: seqs&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+시퀀스에서 마지막에서 두번째 요소를 반환하는 함수를 작성하세요&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which returns the second to last element from a sequence.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ (list 1 2 3 4 5)) 4)
+
+(= (__ [&amp;quot;a&amp;quot; &amp;quot;b&amp;quot; &amp;quot;c&amp;quot;]) &amp;quot;b&amp;quot;)
+
+(= (__ [[1 2] [3 4]]) [1 2])
+
+
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(comp first rest reverse)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;21-n번째-요소-nth-element-https-www-4clojure-com-problem-21&#34;&gt;21.N번째 요소&lt;a href=&#34;https://www.4clojure.com/problem/21&#34;&gt;Nth Element&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제: seqs core-functions&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+시퀀스로부터 N번째 요소를 반환하는 함수를 작성하세요.&lt;/p&gt;
+
+&lt;p&gt;Write a function which returns the Nth element from a sequence.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;nth 함수는 사용하지 마세요.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Special Restrictions
+nth
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ &#39;(4 5 6 7) 2) 6)
+(= (__ [:a :b :c] 0) :a)
+(= (__ [1 2 3 4] 1) 2)
+(= (__ &#39;([1 2] [3 4] [5 6]) 2) [5 6])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(fn [x y] (get (into [] x) y))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;22-시퀀스-갯수-세기-count-a-sequence-https-www-4clojure-com-problem-22&#34;&gt;22.시퀀스 갯수 세기&lt;a href=&#34;https://www.4clojure.com/problem/22&#34;&gt;Count a Sequence&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 쉬움&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+시퀀스의 요소의 전체 갯수를 반환하는 함수를 작성하세요&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which returns the total number of elements in a sequence.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;count함수는 사용하지 마세요&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Special Restrictions
+count
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ &#39;(1 2 3 3 1)) 5)
+(= (__ &amp;quot;Hello World&amp;quot;) 11)
+(= (__ [[1 2] [3 4] [5 6]]) 3)
+(= (__ &#39;(13)) 1)
+(= (__ &#39;(:a :b :c)) 3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#(reduce + (map (fn [_] 1) %))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;23-시퀀스-뒤집기-reverse-a-sequence-https-www-4clojure-com-problem-23&#34;&gt;23.시퀀스 뒤집기&lt;a href=&#34;https://www.4clojure.com/problem/23&#34;&gt;Reverse a Sequence&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급
+주제: seqs core-functions&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+시퀀스 reverses 함수를 작성하시오&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which reverses a sequence.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;reverse, rseq 함수를 사용하지 마세요&lt;/strong&gt;
+    Special Restrictions
+    reverse
+    rseq&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ [1 2 3 4 5]) [5 4 3 2 1])
+(= (__ (sorted-set 5 7 2 7)) &#39;(7 5 2))
+(= (__ [[1 2][3 4][5 6]]) [[5 6][3 4][1 2]])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#(reduce conj &#39;() %)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;24-모두-더해라-sum-it-all-up-https-www-4clojure-com-problem-24&#34;&gt;24.모두 더해라&lt;a href=&#34;https://www.4clojure.com/problem/24&#34;&gt;Sum It All Up&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제: seqs&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+숫자로된 시퀀스의 합을 반환하는 함수를 작성하시오.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which returns the sum of a sequence of numbers.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ [1 2 3]) 6)
+(= (__ (list 0 -2 5 5)) 8)
+(= (__ #{4 2 1}) 7)
+(= (__ &#39;(0 0 -1)) -1)
+(= (__ &#39;(1 10 3)) 14)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#(reduce + %)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;25-홀수를-찾아라-find-the-odd-numbers-https-www-4clojure-com-problem-25&#34;&gt;25.홀수를 찾아라&lt;a href=&#34;https://www.4clojure.com/problem/25&#34;&gt;Find the odd numbers&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제: seqs&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+시퀀스로부터 홀수만 반환하는 함수를 작성하세요&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which returns only the odd numbers from a sequence.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ #{1 2 3 4 5}) &#39;(1 3 5))
+(= (__ [4 2 1 6]) &#39;(1))
+(= (__ [2 2 4 6]) &#39;())
+(= (__ [1 1 1 3]) &#39;(1 1 1 3))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#(filter odd? %)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

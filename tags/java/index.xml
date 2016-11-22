@@ -10,6 +10,195 @@
     <atom:link href="http://durtchrt.github.io/blog/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>자바 제네릭스(10) 와일드카드 Wildcards </title>
+      <link>http://durtchrt.github.io/blog/java/generics/11/</link>
+      <pubDate>Sat, 12 Nov 2016 18:23:01 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/11/</guid>
+      <description>
+
+&lt;h3 id=&#34;상위-제한된-와일드-카드-upper-bounded-wildcards&#34;&gt;상위 제한된 와일드 카드 &lt;code&gt;Upper Bounded Wildcards&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;변수에 완화된 제한을 걸고 싶을때 upper bounded wildcard를 사용한다. 예를들면, List&amp;lt;Integer&amp;gt;, List&amp;lt;Double&amp;gt;, List&amp;lt;Number&amp;gt; 타입들에서 동작하는 메서드를 작성할때 upper bounded wildcard를 사용해서 만들수 있다.
+&lt;code&gt;You can use an upper bounded wildcard to relax the restrictions on a variable. For example, say you want to write a method that works on List&amp;lt;Integer&amp;gt;, List&amp;lt;Double&amp;gt;, and List&amp;lt;Number&amp;gt;; you can achieve this by using an upper bounded wildcard.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;uppper-bounded wildcard는 와일드카드 문자 &amp;lsquo;?&amp;lsquo;와 뒤에는 extends 키워드를 사용하고 뒤에는 상위 타입을 써서 정의한다. 클래스의 extends, 인터페이스의 implements처럼 extends 키워드는 이러한 의미로 사용된다.
+&lt;code&gt;To declare an upper-bounded wildcard, use the wildcard character (&#39;?&#39;), followed by the extends keyword, followed by its upper bound. Note that, in this context, extends is used in a general sense to mean either &amp;quot;extends&amp;quot; (as in classes) or &amp;quot;implements&amp;quot; (as in interfaces).&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Integer, Double, Float처럼 Number 타입의 서브타입들에서 동작하는 메서드를 작성할 때, List&amp;lt;? extends Number&amp;gt; 요래 작성하면된다. List&amp;lt;Number&amp;gt;는 List&amp;lt;? extends Number&amp;gt;보다 제한적이다. 전자는 Number 타입의 리스트만 가능, 후자는 Number 타입 또는 Number 타입의 서브 타입 리스트도 가능하다.
+&lt;code&gt;To write the method that works on lists of Number and the subtypes of Number, such as Integer, Double, and Float, you would specify List&amp;lt;? extends Number&amp;gt;. The term List&amp;lt;Number&amp;gt; is more restrictive than List&amp;lt;? extends Number&amp;gt; because the former matches a list of type Number only, whereas the latter matches a list of type Number or any of its subclasses.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;아래의 process 메서드를 살펴보자 &lt;code&gt;Consider the following process method:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void process(List&amp;lt;? extends Foo&amp;gt; list) { /* ... */ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;? extends Foo&amp;gt; upper bounded wildcard는 Foo와 Foo의 서브타입과 매치되는 표현이다. (아래의 코드 참조)process 메서드는 Foo타입과 같은 리스트의 요소를 엑세스할수 있다.
+&lt;code&gt;The upper bounded wildcard, &amp;lt;? extends Foo&amp;gt;, where Foo is any type, matches Foo and any subtype of Foo. The process method can access the list elements as type Foo:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void process(List&amp;lt;? extends Foo&amp;gt; list) {
+    for (Foo elem : list) {
+        // ...
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;foreach절은 list의 각각 요소를 순회하며 elem 변수에 할당한다.  elem은 Foo 클래스에 정의되어 있는 메서드를 모두 사용할 수 있다.
+&lt;code&gt;In the foreach clause, the elem variable iterates over each element in the list. Any method defined in the Foo class can now be used on elem.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;sumOfList메서드는 리스트 안의 숫자의 합을 리턴한다. &lt;code&gt;The sumOfList method returns the sum of the numbers in a list:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static double sumOfList(List&amp;lt;? extends Number&amp;gt; list) {
+    double s = 0.0;
+    for (Number n : list)
+        s += n.doubleValue();
+    return s;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;아래의 코드는 Integer 객체 리스트를 사용하여 &amp;ldquo;sum = 6.0&amp;rdquo;을 출력한다.
+&lt;code&gt;The following code, using a list of Integer objects, prints sum = 6.0:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List&amp;lt;Integer&amp;gt; li = Arrays.asList(1, 2, 3);
+System.out.println(&amp;quot;sum = &amp;quot; + sumOfList(li));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Double값을 가진 리스트도 sumOfList 메서드를 역시 사용할 수 있다. 아래의 코드는 &amp;ldquo;sum = 7.0&amp;rdquo;을 출력한다.
+&lt;code&gt;A list of Double values can use the same sumOfList method. The following code prints sum = 7.0:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List&amp;lt;Double&amp;gt; ld = Arrays.asList(1.2, 2.3, 3.5);
+System.out.println(&amp;quot;sum = &amp;quot; + sumOfList(ld));
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>자바 제네릭스(10) 와일드카드 Wildcards </title>
+      <link>http://durtchrt.github.io/blog/java/generics/10/</link>
+      <pubDate>Fri, 11 Nov 2016 18:23:01 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/10/</guid>
+      <description>
+
+&lt;h3 id=&#34;와일드카드-wildcards&#34;&gt;와일드카드 &lt;code&gt;Wildcards&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;generic 코드에서는 unkown 타입을 표현하는 물음표(?)를 와일드 카드라고 부른다. 와일드카드는 다양한 상황에서 쓰인다.(파라메터, 필드, 지역변수 타입 때로는 리턴 타입에도 쓰인다. (though it is better programming practice to be more specific). 와일드카드는 제네릭 메서드 호출, 제네릭 클래스의 인스턴스 생성, 또는 슈퍼타입을 위해 타입인자로는 사용되지 않는다.
+&lt;code&gt;In generic code, the question mark (?), called the wildcard, represents an unknown type. The wildcard can be used in a variety of situations: as the type of a parameter, field, or local variable; sometimes as a return type (though it is better programming practice to be more specific). The wildcard is never used as a type argument for a generic method invocation, a generic class instance creation, or a supertype.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;이번장에는 와일드카드에 대해 논의한다. 상위제한된 와일드카드/하위제한된 와일드카드, 와일드카드 캡쳐등을 다룬다.
+&lt;code&gt;The following sections discuss wildcards in more detail, including upper bounded wildcards, lower bounded wildcards, and wildcard capture.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>자바 제네릭스(13) Java Generics: 하위 제한 와일드카드(Lower Bounded Wildcards)</title>
+      <link>http://durtchrt.github.io/blog/java/generics/13/</link>
+      <pubDate>Mon, 07 Nov 2016 14:00:42 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/13/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/wildcards.htm://docs.oracle.com/javase/tutorial/java/generics/lowerBounded.html&#34;&gt;원문링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;하위-제한-와일드카드-lower-bounded-wildcards&#34;&gt;하위 제한 와일드카드  &lt;code&gt;Lower Bounded Wildcards&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;상위제한와일드카드장은 특정 타입이나 그 특정타입의  서브타입을 알 수 없을때는 &amp;lsquo;extends&amp;rsquo; 키워드를 사용하는 것을 보여줬다. 비슷한 것으로, 하위제한와일드카드는 특정타입이나 그 특정 타입의 슈퍼타입을 제한하고자할때 사용한다.
+&lt;code&gt;The Upper Bounded Wildcards section shows that an upper bounded wildcard restricts the unknown type to be a specific type or a subtype of that type and is represented using the extends keyword. In a similar way, a lower bounded wildcard restricts the unknown type to be a specific type or a super type of that type.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;하위제한 와일드카드는 와일드카드문자(&amp;lsquo;?&amp;rsquo;) 그 뒤로 super 키워드와 그 뒤로 하위제한 타입이 온다. &amp;lt;? super A&amp;gt;.
+&lt;code&gt;A lower bounded wildcard is expressed using the wildcard character (&#39;?&#39;), following by the super keyword, followed by its lower bound: &amp;lt;? super A&amp;gt;.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;중요: 상위제한와일드카드를 사용하거나 하위제한와일드카드를 사용할 수 있지만, 둘을 동시에 사용할 수 없다.&lt;/code&gt;
+&lt;code&gt;Note: You can specify an upper bound for a wildcard, or you can specify a lower bound, but you cannot specify both.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;리스트에 Integer 객체를 넣는 코드를 작성할때, List&amp;lt;Integer&amp;gt;, List&amp;lt;Number&amp;gt;, List&amp;lt;Object\&amp;gt;에서만 동작하길 원하는 메서드를 만든다고 가정하자.
+&lt;code&gt;Say you want to write a method that puts Integer objects into a list. To maximize flexibility, you would like the method to work on List&amp;lt;Integer&amp;gt;, List&amp;lt;Number&amp;gt;, and List&amp;lt;Object&amp;gt; — anything that can hold Integer values.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Integer타이이나 Integer의 상위타입에서 동작하는 메서드를 작성하려면 List&amp;lt;? super Integer&amp;gt;라고 할 수 있다. List&amp;lt;Integer&amp;gt;는 List&amp;lt;? super Integer&amp;gt;보다 제한적이다. 왜냐하면 전자는 Integer 타입의 리스트만 사용, 후자는 Integer 타입과 Integer의 슈퍼타입에 사용할 수 있기 때문이다.
+&lt;code&gt;To write the method that works on lists of Integer and the supertypes of Integer, such as Integer, Number, and Object, you would specify List&amp;lt;? super Integer&amp;gt;. The term List&amp;lt;Integer&amp;gt; is more restrictive than List&amp;lt;? super Integer&amp;gt; because the former matches a list of type Integer only, whereas the latter matches a list of any type that is a supertype of Integer.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;아래의 코드는 1에서 10까지 리스트에 add한다.
+&lt;code&gt;The following code adds the numbers 1 through 10 to the end of a list:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void addNumbers(List&amp;lt;? super Integer&amp;gt; list) {
+    for (int i = 1; i &amp;lt;= 10; i++) {
+        list.add(i);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;와일드카드 사용절에서는 상위제한와일드카드와 하위제한와일드카드를 각각 언제 사용할지 설명하였다.
+&lt;code&gt;The Guidelines for Wildcard Use section provides guidance on when to use upper bounded wildcards and when to use lower bounded wildcards.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>자바 제네릭스(12) Java Generics: 상위 제한된 와일드카드(Upper Bounded Wildcards)</title>
+      <link>http://durtchrt.github.io/blog/java/generics/12/</link>
+      <pubDate>Mon, 07 Nov 2016 13:00:42 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/12/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/unboundedWildcards.html&#34;&gt;원문링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;제한없는-와일드카드-unbounded-wildcards&#34;&gt;제한없는 와일드카드 &lt;code&gt;Unbounded Wildcards&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;제한없는 와일드카드 타입은 와일드카드 문자(&amp;lsquo;?&amp;rsquo;)만 사용한것이다. 예를 들면 List&amp;lt;?&amp;gt;와 같다. List&amp;lt;?&amp;gt;의 ?는 List의 &amp;lsquo;알수없는 타입(unkown type)&amp;lsquo;이라고 부른다. 아래 두개의 시나리오는 제한없는 와일드카드가 유용한 접근법이다.
+&lt;code&gt;The unbounded wildcard type is specified using the wildcard character (?), for example, List&amp;lt;?&amp;gt;. This is called a list of unknown type. There are two scenarios where an unbounded wildcard is a useful approach:&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Object 클래스에서 제공하는 기능(메서드)을 사용하도록 메서드를 구현할 때.
+&lt;code&gt;- If you are writing a method that can be implemented using functionality provided in the Object class.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;코드가 generic 클래스에서 메서드가 타입매개변수에 의존적이지 않게 작성하고 싶을 때.(예 List.size나 List.clear). 사실, Class&amp;lt;T&amp;gt; 클래스는 범위없는 와일드카드를 자주 사용한다.(Class&amp;lt;T&amp;gt;의 메서드가 T에 의존적으로 동작하지 않게 만들기 위해)
+&lt;code&gt;- When the code is using methods in the generic class that don&#39;t depend on the type parameter. For example, List.size or List.clear. In fact, Class&amp;lt;?&amp;gt; is so often used because most of the methods in Class&amp;lt;T&amp;gt; do not depend on T.&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;printList 메서드를 살펴보자.
+&lt;code&gt;Consider the following method, printList:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void printList(List&amp;lt;Object&amp;gt; list) {
+    for (Object elem : list)
+        System.out.println(elem + &amp;quot; &amp;quot;); // elem.toString() 자동으로 호출됨.
+    System.out.println();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;printList는 List가 가진 객체가 어떤 타입이든간에 상관없이 print하고 싶어한다. 하지만 List 객체는 Object 타입의 객체만 출력할 수 있다. (참조:&lt;a href=&#34;../8&#34;&gt;제네릭스, 상속, 서브타입&lt;/a&gt;) List&amp;lt;Object&amp;gt;는 List&amp;lt;Integer&amp;gt;, List&amp;lt;String&amp;gt;, List&amp;lt;Double&amp;gt;을 출력할 수 없다. 왜냐하면 List&amp;lt;Object&amp;gt; 타입의 stub type(스텁타입 용어 아시는분 공유 부탁요 ㅠㅠ)이 아니다. 아래는 List&amp;lt;?&amp;gt;를 사용해서 generic 메서드인 printList를 작성한 예이다..&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;The goal of printList is to print a list of any type, but it fails to achieve that goal — it prints only a list of Object instances; it cannot print List&amp;lt;Integer&amp;gt;, List&amp;lt;String&amp;gt;, List&amp;lt;Double&amp;gt;, and so on, because they are not subtypes of List&amp;lt;Object&amp;gt;. To write a generic printList method, use List&amp;lt;?&amp;gt;:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;(역자 추가 - 위의 예가 설명하는 코드 - 컴파일 에러 발생)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List&amp;lt;Integer&amp;gt; integerList = Arrays.asList(1,2);
+printList(integerList);   // 컴파일 에러
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void printList(List&amp;lt;?&amp;gt; list) {
+    for (Object elem: list)
+        System.out.print(elem + &amp;quot; &amp;quot;);
+    System.out.println();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;아무 타입을 A로 지칭했을때, List&amp;lt;?&amp;gt;의 서브타입은 List&amp;lt;A&amp;gt;이 성립이 되기 때문에, printList 메서드가 모든 타입을 대상으로 print할 수 있다.
+&lt;code&gt;Because for any concrete type A, List&amp;lt;A&amp;gt; is a subtype of List&amp;lt;?&amp;gt;, you can use printList to print a list of any type:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List&amp;lt;Integer&amp;gt; li = Arrays.asList(1, 2, 3);
+List&amp;lt;String&amp;gt;  ls = Arrays.asList(&amp;quot;one&amp;quot;, &amp;quot;two&amp;quot;, &amp;quot;three&amp;quot;);
+printList(li);
+printList(ls);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;참고: Arrays.asList 메서드는 범위없는 와일드카드를 사용해서 구현되었다. Arrays.asList라는 static 팩토리 메서드는 배열을 구체화하여 변경하고(요소들의 공통 타입을 타입추론)  고정된 사이즈의 리스트를 반환한다.
+&lt;code&gt;Note: The Arrays.asList method is used in examples throughout this lesson. This static factory method converts the specified array and returns a fixed-size list.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;(중요!)List&lt;Object&gt;와 List&amp;lt;?&amp;gt;과 다르다. List&lt;Object&gt;에 Object 타입이나 Object의 서브타입을 insert할 수 있다. 하지만 List&amp;lt;?&amp;gt;에는 null만 insert할 수 있다.(하고자하는 말이 무언지 이해가 안된다;;;) 와일드카드 사용 섹션은은 상황별 어떤 와일드카드를 사용할지 결정에 대한 가이드라인을 제공한다.
+&lt;code&gt;It&#39;s important to note that List&amp;lt;Object&amp;gt; and List&amp;lt;?&amp;gt; are not the same. You can insert an Object, or any subtype of Object, into a List&amp;lt;Object&amp;gt;. But you can only insert null into a List&amp;lt;?&amp;gt;. The Guidelines for Wildcard Use section has more information on how to determine what kind of wildcard, if any, should be used in a given situation.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>자바 제네릭스(9) Java Generics: 타입추론(Type Inference)</title>
       <link>http://durtchrt.github.io/blog/java/generics/9/</link>
       <pubDate>Sat, 05 Nov 2016 18:23:01 +0900</pubDate>

@@ -7,8 +7,855 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>durtchrt</copyright>
-    <lastBuildDate>Sat, 05 Nov 2016 18:23:01 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 20 Nov 2016 04:22:01 +0900</lastBuildDate>
     <atom:link href="http://durtchrt.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>4Clojure 문제 모음</title>
+      <link>http://durtchrt.github.io/blog/clojure/4clojure/questions/</link>
+      <pubDate>Sun, 20 Nov 2016 04:22:01 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/clojure/4clojure/questions/</guid>
+      <description>
+
+&lt;h3 id=&#34;1-진실만있다-nothing-but-the-truth-https-www-4clojure-com-problem-1&#34;&gt;1.진실만있다. &lt;a href=&#34;https://www.4clojure.com/problem/1&#34;&gt;Nothing but the Truth&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;이것은 클로저 폼이다. 폼 평가를 true가 되도록 값을 넣으세요. 생각이 깊게 하지 마세요! 만약 헤갈린다면, 클로저 초급 문서를 보세요. Hint: true는 true와 같다&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is a clojure form. Enter a value which will make the form evaluate to true. Don&#39;t over think it! If you are confused, see the getting started page. Hint: true is equal to true.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ true)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;2-간단한-수학-simple-math-https-www-4clojure-com-problem-2&#34;&gt;2. 간단한 수학&lt;a href=&#34;https://www.4clojure.com/problem/2&#34;&gt;Simple Math&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+polish notation(전위연산)이 익숙하지 않다면 간단한 계산 혼란을 느낄것이다.
+중요: 빈칸을 채우세요(숫자 하나입니다.) - 문제 전체를 타이핑하지 마세요.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;If you are not familiar with polish notation, simple arithmetic might seem confusing.
+Note: Enter only enough to fill in the blank (in this case, a single number) - do not retype the whole problem. 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (- 10 (* 2 3)) __)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;3-문자열-소개-intro-to-strings-https-www-4clojure-com-problem-3&#34;&gt;3.문자열 소개&lt;a href=&#34;https://www.4clojure.com/problem/3&#34;&gt;Intro to Strings&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+클로저 String은 자바 String이다. 즉, 클로저 String은 자바 String 메서드를 사용할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Clojure strings are Java strings. This means that you can use any of the Java string methods on Clojure strings.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (.toUpperCase &amp;quot;hello world&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;&amp;quot;HELLO WORLD&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;4-리스트-소개-intro-to-lists-https-www-4clojure-com-problem-4&#34;&gt;4.리스트 소개&lt;a href=&#34;https://www.4clojure.com/problem/4&#34;&gt;Intro to Lists&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도:초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+Lists는 함수 또는 quoted form으로 만들수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Lists can be constructed with either a function or a quoted form. 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (list __) &#39;(:a :b :c))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;:a :b :c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;5-리스트-conj-lists-conj-https-www-4clojure-com-problem-5&#34;&gt;5.리스트: conj &lt;a href=&#34;https://www.4clojure.com/problem/5&#34;&gt;Lists: conj&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+리스트를 조작할때 conj함수는 하나 이상의 아이템이 앞에 &amp;ldquo;추가된&amp;rdquo; 새로운 리스트를 반환한다.
+중요: 두 테스트 케이스는 답이 하나다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;When operating on a list, the conj function will return a new list with one or more items &amp;quot;added&amp;quot; to the front.
+
+Note that there are two test cases, but you are expected to supply only one answer, which will cause all the tests to pass. 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (conj &#39;(2 3 4) 1))
+(= __ (conj &#39;(3 4) 2 1))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;&#39;(1 2 3 4)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;6-벡터소개-intro-to-vectors-https-www-4clojure-com-problem-6&#34;&gt;6.벡터소개 &lt;a href=&#34;https://www.4clojure.com/problem/6&#34;&gt;Intro to Vectors&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+Vector는 다양한 방법으로 생성할 수 있다. 벡터는 리스트와 비교할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;브라켓([])으로 둘러싸여진 __ 부분을 채워라.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Vectors can be constructed several ways. You can compare them with lists.
+
+Note: the brackets [] surrounding the blanks __ are part of the test case.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= [__] (list :a :b :c) (vec &#39;(:a :b :c)) (vector :a :b :c))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;:a :b :c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;7-벡터-conj-vectors-conj-https-www-4clojure-com-problem-7&#34;&gt;7. 벡터: conj&lt;a href=&#34;https://www.4clojure.com/problem/7&#34;&gt;Vectors: conj&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+Vector를 조작할 때, conj 함수는 마지막에 하나 이상의 아이템이 &amp;ldquo;추가된&amp;rdquo; 새로운 vector를 반환한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;When operating on a Vector, the conj function will return a new vector with one or more items &amp;quot;added&amp;quot; to the end.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (conj [1 2 3] 4))
+(= __ (conj [1 2] 3 4))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;[1 2 3 4]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;8-set-소개-intro-to-sets-https-www-4clojure-com-problem-8&#34;&gt;8. Set 소개&lt;a href=&#34;https://www.4clojure.com/problem/8&#34;&gt;Intro to Sets&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+Set은 유일한 값의 집합(collection)이다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Sets are collections of unique values.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (set &#39;(:a :a :b :c :c :c :c :d :d)))
+(= __ (clojure.set/union #{:a :b :c} #{:b :c :d}))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#{:a :b :c :d}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;9-sets-conj-sets-conj-https-www-4clojure-com-problem-9&#34;&gt;9 Sets: conj &lt;a href=&#34;https://www.4clojure.com/problem/9&#34;&gt;Sets: conj&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+set을 조작할 때, conj 함수는 한개 이상의 키가 &amp;ldquo;추가된&amp;rdquo; 새로운 set을 반환한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;When operating on a set, the conj function returns a new set with one or more keys &amp;quot;added&amp;quot;.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= #{1 2 3 4} (conj #{1 4 3} __))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;10-map-소개-intro-to-maps-https-www-4clojure-com-problem-10&#34;&gt;10. Map 소개&lt;a href=&#34;https://www.4clojure.com/problem/10&#34;&gt;Intro to Maps&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+Map은 키-값(key-value)쌍을 저장한다. maps와 keywords는 둘다 검색(lookup) 함수를 사용할 수 있다. 쉼표(,)는 맵을 더 읽기 쉽게하지만 필수는 아니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Maps store key-value pairs. Both maps and keywords can be used as lookup functions. Commas can be used to make maps more readable, but they are not required. 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;keyword 참고&lt;/em&gt;
+user=&amp;gt; (keyword &amp;lsquo;foo)
+:foo&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ ((hash-map :a 10, :b 20, :c 30) :b))
+(= __ (:b {:a 10, :b 20, :c 30}))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;11-mpas-conj-maps-conj-https-www-4clojure-com-problem-11&#34;&gt;11. Mpas: conj &lt;a href=&#34;https://www.4clojure.com/problem/11&#34;&gt;Maps: conj&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+맵을 조작할때, conj 함수는 하나 이상의 키와 값의 쌍이 &amp;ldquo;추가된&amp;rdquo; 새로운 맵을 반환한다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;When operating on a map, the conj function returns a new map with one or more key-value pairs &amp;quot;added&amp;quot;. 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= {:a 1, :b 2, :c 3} (conj {:a 1} __ [:c 3]))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;{:b 2}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;12-시퀀스-소개-intro-to-sequences-https-www-4clojure-com-problem-12&#34;&gt;12.시퀀스 소개&lt;a href=&#34;https://www.4clojure.com/problem/12&#34;&gt;Intro to Sequences&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+모든 클로저의 컬렉션들은 시퀀싱(순서)을 지원한다. first, second, last 함수와 함께 시퀀스를 조작할 수 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;All Clojure collections support sequencing. You can operate on sequences with functions like first, second, and last.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (first &#39;(3 2 1)))
+
+(= __ (second [2 3 4]))
+
+(= __ (last (list 1 2 3)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;13-시퀀스-rest-sequences-rest-https-www-4clojure-com-problem-13&#34;&gt;13.시퀀스: rest&lt;a href=&#34;https://www.4clojure.com/problem/13&#34;&gt;Sequences: rest&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+rest 함수는 첫번째를 제외한 모든 아이템들의 시퀀스를 반환한다.&lt;/p&gt;
+
+&lt;p&gt;The rest function will return all the items of a sequence except the first.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (rest [10 20 30 40]))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;[20 30 40]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;14-함수-소개-intro-to-functions-https-www-4clojure-com-problem-14&#34;&gt;14.함수 소개&lt;a href=&#34;https://www.4clojure.com/problem/14&#34;&gt;Intro to Functions&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+클로저는 함수를 생성하는 다양한 방법이 있다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Clojure has many different ways to create functions.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ ((fn add-five [x] (+ x 5)) 3))
+
+(= __ ((fn [x] (+ x 5)) 3))
+
+(= __ (#(+ % 5) 3))
+
+(= __ ((partial + 5) 3))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;8
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;15-double-down-https-www-4clojure-com-problem&#34;&gt;15.&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;Double Down&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+숫자를 2배 만드는 함수를 작성하시오.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which doubles a number.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ 2) 4)
+
+(= (__ 3) 6)
+
+(= (__ 11) 22)
+
+(= (__ 7) 14)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;* 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;16-hello-world-hello-world-https-www-4clojure-com-problem-16&#34;&gt;16.Hello World&lt;a href=&#34;https://www.4clojure.com/problem/16&#34;&gt;Hello World&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+개인화된 인사말을 반환하는 함수를 작성하시오.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which returns a personalized greeting.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ &amp;quot;Dave&amp;quot;) &amp;quot;Hello, Dave!&amp;quot;)
+
+(= (__ &amp;quot;Jenn&amp;quot;) &amp;quot;Hello, Jenn!&amp;quot;)
+
+(= (__ &amp;quot;Rhea&amp;quot;) &amp;quot;Hello, Rhea!&amp;quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#(str &amp;quot;Hello, &amp;quot; % &amp;quot;!&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(fn [name] (str &amp;quot;Hello, &amp;quot; name &amp;quot;!&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(fn helloGreeting [name] (str &amp;quot;Hello, &amp;quot; name &amp;quot;!&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;17-시퀀스-map-sequences-map-https-www-4clojure-com-problem-17&#34;&gt;17.시퀀스: map&lt;a href=&#34;https://www.4clojure.com/problem/17&#34;&gt;Sequences: map&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+map 함수는 두개의 인자를 취합니다(함수(f), 시퀀스(s)). map은 시퀀스(s)의 개별 아이템에 함수(f)를 적용한 결과의 새로운 시퀀스 consisting(구조물?)을 반환한다. 자료구조 map과 map 함수와 헤갈리지 말자.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;The map function takes two arguments: a function (f) and a sequence (s). Map returns a new sequence consisting of the result of applying f to each item of s. Do not confuse the map function with the map data structure.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (map #(+ % 5) &#39;(1 2 3)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;&#39;(6 7 8)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;18-시퀀스-filter-sequences-filter-https-www-4clojure-com-problem-18&#34;&gt;18.시퀀스: filter&lt;a href=&#34;https://www.4clojure.com/problem/18&#34;&gt;Sequences: filter&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+filter 함수는 두개의 인자를 취합니다(predicate 함수(f), 시퀀스(s)). filter는 (f item)의 결과가 true인 모든 아이템의 시퀀스 consisting을 반환합니다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;The filter function takes two arguments: a predicate function (f) and a sequence (s). Filter returns a new sequence consisting of all the items of s for which (f item) returns true.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= __ (filter #(&amp;gt; % 5) &#39;(3 4 5 6 7)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;&#39;(6 7)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;19-마지막-요소-last-element-https-www-4clojure-com-problem-19&#34;&gt;19.마지막 요소&lt;a href=&#34;https://www.4clojure.com/problem/19&#34;&gt;Last Element&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제: seqs 코어 함수 &lt;code&gt;seqs core-functions&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+시퀀스의 마지막 요소를 반환하는 함수를 작성하시오.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which returns the last element in a sequence.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;last 함수는 사용하지 마세요&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Special Restrictions
+last 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ [1 2 3 4 5]) 5)
+
+(= (__ &#39;(5 4 3)) 3)
+
+(= (__ [&amp;quot;b&amp;quot; &amp;quot;c&amp;quot; &amp;quot;d&amp;quot;]) &amp;quot;d&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(comp first reverse) ; &amp;lt;- last가 안되서 찾다가 참조한 답. 아래는 다른 답으로 제출
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#(nth % (- (count %) 1))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;20-두번째-요소-penultimate-element-https-www-4clojure-com-problem-20&#34;&gt;20.두번째 요소&lt;a href=&#34;https://www.4clojure.com/problem/20&#34;&gt;Penultimate Element&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제: seqs&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+시퀀스에서 마지막에서 두번째 요소를 반환하는 함수를 작성하세요&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which returns the second to last element from a sequence.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ (list 1 2 3 4 5)) 4)
+
+(= (__ [&amp;quot;a&amp;quot; &amp;quot;b&amp;quot; &amp;quot;c&amp;quot;]) &amp;quot;b&amp;quot;)
+
+(= (__ [[1 2] [3 4]]) [1 2])
+
+
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(comp first rest reverse)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;21-n번째-요소-nth-element-https-www-4clojure-com-problem-21&#34;&gt;21.N번째 요소&lt;a href=&#34;https://www.4clojure.com/problem/21&#34;&gt;Nth Element&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제: seqs core-functions&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+시퀀스로부터 N번째 요소를 반환하는 함수를 작성하세요.&lt;/p&gt;
+
+&lt;p&gt;Write a function which returns the Nth element from a sequence.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;nth 함수는 사용하지 마세요.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Special Restrictions
+nth
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ &#39;(4 5 6 7) 2) 6)
+(= (__ [:a :b :c] 0) :a)
+(= (__ [1 2 3 4] 1) 2)
+(= (__ &#39;([1 2] [3 4] [5 6]) 2) [5 6])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(fn [x y] (get (into [] x) y))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;22-시퀀스-갯수-세기-count-a-sequence-https-www-4clojure-com-problem-22&#34;&gt;22.시퀀스 갯수 세기&lt;a href=&#34;https://www.4clojure.com/problem/22&#34;&gt;Count a Sequence&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 쉬움&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+시퀀스의 요소의 전체 갯수를 반환하는 함수를 작성하세요&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which returns the total number of elements in a sequence.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;count함수는 사용하지 마세요&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Special Restrictions
+count
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ &#39;(1 2 3 3 1)) 5)
+(= (__ &amp;quot;Hello World&amp;quot;) 11)
+(= (__ [[1 2] [3 4] [5 6]]) 3)
+(= (__ &#39;(13)) 1)
+(= (__ &#39;(:a :b :c)) 3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#(reduce + (map (fn [_] 1) %))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;23-시퀀스-뒤집기-reverse-a-sequence-https-www-4clojure-com-problem-23&#34;&gt;23.시퀀스 뒤집기&lt;a href=&#34;https://www.4clojure.com/problem/23&#34;&gt;Reverse a Sequence&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 초급
+주제: seqs core-functions&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+시퀀스 reverses 함수를 작성하시오&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which reverses a sequence.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;reverse, rseq 함수를 사용하지 마세요&lt;/strong&gt;
+    Special Restrictions
+    reverse
+    rseq&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ [1 2 3 4 5]) [5 4 3 2 1])
+(= (__ (sorted-set 5 7 2 7)) &#39;(7 5 2))
+(= (__ [[1 2][3 4][5 6]]) [[5 6][3 4][1 2]])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#(reduce conj &#39;() %)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;24-모두-더해라-sum-it-all-up-https-www-4clojure-com-problem-24&#34;&gt;24.모두 더해라&lt;a href=&#34;https://www.4clojure.com/problem/24&#34;&gt;Sum It All Up&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제: seqs&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+숫자로된 시퀀스의 합을 반환하는 함수를 작성하시오.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which returns the sum of a sequence of numbers.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ [1 2 3]) 6)
+(= (__ (list 0 -2 5 5)) 8)
+(= (__ #{4 2 1}) 7)
+(= (__ &#39;(0 0 -1)) -1)
+(= (__ &#39;(1 10 3)) 14)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#(reduce + %)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;25-홀수를-찾아라-find-the-odd-numbers-https-www-4clojure-com-problem-25&#34;&gt;25.홀수를 찾아라&lt;a href=&#34;https://www.4clojure.com/problem/25&#34;&gt;Find the odd numbers&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제: seqs&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+시퀀스로부터 홀수만 반환하는 함수를 작성하세요&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which returns only the odd numbers from a sequence.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ #{1 2 3 4 5}) &#39;(1 3 5))
+(= (__ [4 2 1 6]) &#39;(1))
+(= (__ [2 2 4 6]) &#39;())
+(= (__ [1 1 1 3]) &#39;(1 1 1 3))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;#(filter odd? %)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>자바 제네릭스(10) 와일드카드 Wildcards </title>
+      <link>http://durtchrt.github.io/blog/java/generics/11/</link>
+      <pubDate>Sat, 12 Nov 2016 18:23:01 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/11/</guid>
+      <description>
+
+&lt;h3 id=&#34;상위-제한된-와일드-카드-upper-bounded-wildcards&#34;&gt;상위 제한된 와일드 카드 &lt;code&gt;Upper Bounded Wildcards&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;변수에 완화된 제한을 걸고 싶을때 upper bounded wildcard를 사용한다. 예를들면, List&amp;lt;Integer&amp;gt;, List&amp;lt;Double&amp;gt;, List&amp;lt;Number&amp;gt; 타입들에서 동작하는 메서드를 작성할때 upper bounded wildcard를 사용해서 만들수 있다.
+&lt;code&gt;You can use an upper bounded wildcard to relax the restrictions on a variable. For example, say you want to write a method that works on List&amp;lt;Integer&amp;gt;, List&amp;lt;Double&amp;gt;, and List&amp;lt;Number&amp;gt;; you can achieve this by using an upper bounded wildcard.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;uppper-bounded wildcard는 와일드카드 문자 &amp;lsquo;?&amp;lsquo;와 뒤에는 extends 키워드를 사용하고 뒤에는 상위 타입을 써서 정의한다. 클래스의 extends, 인터페이스의 implements처럼 extends 키워드는 이러한 의미로 사용된다.
+&lt;code&gt;To declare an upper-bounded wildcard, use the wildcard character (&#39;?&#39;), followed by the extends keyword, followed by its upper bound. Note that, in this context, extends is used in a general sense to mean either &amp;quot;extends&amp;quot; (as in classes) or &amp;quot;implements&amp;quot; (as in interfaces).&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Integer, Double, Float처럼 Number 타입의 서브타입들에서 동작하는 메서드를 작성할 때, List&amp;lt;? extends Number&amp;gt; 요래 작성하면된다. List&amp;lt;Number&amp;gt;는 List&amp;lt;? extends Number&amp;gt;보다 제한적이다. 전자는 Number 타입의 리스트만 가능, 후자는 Number 타입 또는 Number 타입의 서브 타입 리스트도 가능하다.
+&lt;code&gt;To write the method that works on lists of Number and the subtypes of Number, such as Integer, Double, and Float, you would specify List&amp;lt;? extends Number&amp;gt;. The term List&amp;lt;Number&amp;gt; is more restrictive than List&amp;lt;? extends Number&amp;gt; because the former matches a list of type Number only, whereas the latter matches a list of type Number or any of its subclasses.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;아래의 process 메서드를 살펴보자 &lt;code&gt;Consider the following process method:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void process(List&amp;lt;? extends Foo&amp;gt; list) { /* ... */ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;? extends Foo&amp;gt; upper bounded wildcard는 Foo와 Foo의 서브타입과 매치되는 표현이다. (아래의 코드 참조)process 메서드는 Foo타입과 같은 리스트의 요소를 엑세스할수 있다.
+&lt;code&gt;The upper bounded wildcard, &amp;lt;? extends Foo&amp;gt;, where Foo is any type, matches Foo and any subtype of Foo. The process method can access the list elements as type Foo:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void process(List&amp;lt;? extends Foo&amp;gt; list) {
+    for (Foo elem : list) {
+        // ...
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;foreach절은 list의 각각 요소를 순회하며 elem 변수에 할당한다.  elem은 Foo 클래스에 정의되어 있는 메서드를 모두 사용할 수 있다.
+&lt;code&gt;In the foreach clause, the elem variable iterates over each element in the list. Any method defined in the Foo class can now be used on elem.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;sumOfList메서드는 리스트 안의 숫자의 합을 리턴한다. &lt;code&gt;The sumOfList method returns the sum of the numbers in a list:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static double sumOfList(List&amp;lt;? extends Number&amp;gt; list) {
+    double s = 0.0;
+    for (Number n : list)
+        s += n.doubleValue();
+    return s;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;아래의 코드는 Integer 객체 리스트를 사용하여 &amp;ldquo;sum = 6.0&amp;rdquo;을 출력한다.
+&lt;code&gt;The following code, using a list of Integer objects, prints sum = 6.0:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List&amp;lt;Integer&amp;gt; li = Arrays.asList(1, 2, 3);
+System.out.println(&amp;quot;sum = &amp;quot; + sumOfList(li));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Double값을 가진 리스트도 sumOfList 메서드를 역시 사용할 수 있다. 아래의 코드는 &amp;ldquo;sum = 7.0&amp;rdquo;을 출력한다.
+&lt;code&gt;A list of Double values can use the same sumOfList method. The following code prints sum = 7.0:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List&amp;lt;Double&amp;gt; ld = Arrays.asList(1.2, 2.3, 3.5);
+System.out.println(&amp;quot;sum = &amp;quot; + sumOfList(ld));
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>자바 제네릭스(10) 와일드카드 Wildcards </title>
+      <link>http://durtchrt.github.io/blog/java/generics/10/</link>
+      <pubDate>Fri, 11 Nov 2016 18:23:01 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/10/</guid>
+      <description>
+
+&lt;h3 id=&#34;와일드카드-wildcards&#34;&gt;와일드카드 &lt;code&gt;Wildcards&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;generic 코드에서는 unkown 타입을 표현하는 물음표(?)를 와일드 카드라고 부른다. 와일드카드는 다양한 상황에서 쓰인다.(파라메터, 필드, 지역변수 타입 때로는 리턴 타입에도 쓰인다. (though it is better programming practice to be more specific). 와일드카드는 제네릭 메서드 호출, 제네릭 클래스의 인스턴스 생성, 또는 슈퍼타입을 위해 타입인자로는 사용되지 않는다.
+&lt;code&gt;In generic code, the question mark (?), called the wildcard, represents an unknown type. The wildcard can be used in a variety of situations: as the type of a parameter, field, or local variable; sometimes as a return type (though it is better programming practice to be more specific). The wildcard is never used as a type argument for a generic method invocation, a generic class instance creation, or a supertype.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;이번장에는 와일드카드에 대해 논의한다. 상위제한된 와일드카드/하위제한된 와일드카드, 와일드카드 캡쳐등을 다룬다.
+&lt;code&gt;The following sections discuss wildcards in more detail, including upper bounded wildcards, lower bounded wildcards, and wildcard capture.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>자바 제네릭스(13) Java Generics: 하위 제한 와일드카드(Lower Bounded Wildcards)</title>
+      <link>http://durtchrt.github.io/blog/java/generics/13/</link>
+      <pubDate>Mon, 07 Nov 2016 14:00:42 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/13/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/wildcards.htm://docs.oracle.com/javase/tutorial/java/generics/lowerBounded.html&#34;&gt;원문링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;하위-제한-와일드카드-lower-bounded-wildcards&#34;&gt;하위 제한 와일드카드  &lt;code&gt;Lower Bounded Wildcards&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;상위제한와일드카드장은 특정 타입이나 그 특정타입의  서브타입을 알 수 없을때는 &amp;lsquo;extends&amp;rsquo; 키워드를 사용하는 것을 보여줬다. 비슷한 것으로, 하위제한와일드카드는 특정타입이나 그 특정 타입의 슈퍼타입을 제한하고자할때 사용한다.
+&lt;code&gt;The Upper Bounded Wildcards section shows that an upper bounded wildcard restricts the unknown type to be a specific type or a subtype of that type and is represented using the extends keyword. In a similar way, a lower bounded wildcard restricts the unknown type to be a specific type or a super type of that type.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;하위제한 와일드카드는 와일드카드문자(&amp;lsquo;?&amp;rsquo;) 그 뒤로 super 키워드와 그 뒤로 하위제한 타입이 온다. &amp;lt;? super A&amp;gt;.
+&lt;code&gt;A lower bounded wildcard is expressed using the wildcard character (&#39;?&#39;), following by the super keyword, followed by its lower bound: &amp;lt;? super A&amp;gt;.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;중요: 상위제한와일드카드를 사용하거나 하위제한와일드카드를 사용할 수 있지만, 둘을 동시에 사용할 수 없다.&lt;/code&gt;
+&lt;code&gt;Note: You can specify an upper bound for a wildcard, or you can specify a lower bound, but you cannot specify both.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;리스트에 Integer 객체를 넣는 코드를 작성할때, List&amp;lt;Integer&amp;gt;, List&amp;lt;Number&amp;gt;, List&amp;lt;Object\&amp;gt;에서만 동작하길 원하는 메서드를 만든다고 가정하자.
+&lt;code&gt;Say you want to write a method that puts Integer objects into a list. To maximize flexibility, you would like the method to work on List&amp;lt;Integer&amp;gt;, List&amp;lt;Number&amp;gt;, and List&amp;lt;Object&amp;gt; — anything that can hold Integer values.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Integer타이이나 Integer의 상위타입에서 동작하는 메서드를 작성하려면 List&amp;lt;? super Integer&amp;gt;라고 할 수 있다. List&amp;lt;Integer&amp;gt;는 List&amp;lt;? super Integer&amp;gt;보다 제한적이다. 왜냐하면 전자는 Integer 타입의 리스트만 사용, 후자는 Integer 타입과 Integer의 슈퍼타입에 사용할 수 있기 때문이다.
+&lt;code&gt;To write the method that works on lists of Integer and the supertypes of Integer, such as Integer, Number, and Object, you would specify List&amp;lt;? super Integer&amp;gt;. The term List&amp;lt;Integer&amp;gt; is more restrictive than List&amp;lt;? super Integer&amp;gt; because the former matches a list of type Integer only, whereas the latter matches a list of any type that is a supertype of Integer.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;아래의 코드는 1에서 10까지 리스트에 add한다.
+&lt;code&gt;The following code adds the numbers 1 through 10 to the end of a list:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void addNumbers(List&amp;lt;? super Integer&amp;gt; list) {
+    for (int i = 1; i &amp;lt;= 10; i++) {
+        list.add(i);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;와일드카드 사용절에서는 상위제한와일드카드와 하위제한와일드카드를 각각 언제 사용할지 설명하였다.
+&lt;code&gt;The Guidelines for Wildcard Use section provides guidance on when to use upper bounded wildcards and when to use lower bounded wildcards.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>자바 제네릭스(12) Java Generics: 상위 제한된 와일드카드(Upper Bounded Wildcards)</title>
+      <link>http://durtchrt.github.io/blog/java/generics/12/</link>
+      <pubDate>Mon, 07 Nov 2016 13:00:42 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/generics/12/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/unboundedWildcards.html&#34;&gt;원문링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;제한없는-와일드카드-unbounded-wildcards&#34;&gt;제한없는 와일드카드 &lt;code&gt;Unbounded Wildcards&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;제한없는 와일드카드 타입은 와일드카드 문자(&amp;lsquo;?&amp;rsquo;)만 사용한것이다. 예를 들면 List&amp;lt;?&amp;gt;와 같다. List&amp;lt;?&amp;gt;의 ?는 List의 &amp;lsquo;알수없는 타입(unkown type)&amp;lsquo;이라고 부른다. 아래 두개의 시나리오는 제한없는 와일드카드가 유용한 접근법이다.
+&lt;code&gt;The unbounded wildcard type is specified using the wildcard character (?), for example, List&amp;lt;?&amp;gt;. This is called a list of unknown type. There are two scenarios where an unbounded wildcard is a useful approach:&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Object 클래스에서 제공하는 기능(메서드)을 사용하도록 메서드를 구현할 때.
+&lt;code&gt;- If you are writing a method that can be implemented using functionality provided in the Object class.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;코드가 generic 클래스에서 메서드가 타입매개변수에 의존적이지 않게 작성하고 싶을 때.(예 List.size나 List.clear). 사실, Class&amp;lt;T&amp;gt; 클래스는 범위없는 와일드카드를 자주 사용한다.(Class&amp;lt;T&amp;gt;의 메서드가 T에 의존적으로 동작하지 않게 만들기 위해)
+&lt;code&gt;- When the code is using methods in the generic class that don&#39;t depend on the type parameter. For example, List.size or List.clear. In fact, Class&amp;lt;?&amp;gt; is so often used because most of the methods in Class&amp;lt;T&amp;gt; do not depend on T.&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;printList 메서드를 살펴보자.
+&lt;code&gt;Consider the following method, printList:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void printList(List&amp;lt;Object&amp;gt; list) {
+    for (Object elem : list)
+        System.out.println(elem + &amp;quot; &amp;quot;); // elem.toString() 자동으로 호출됨.
+    System.out.println();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;printList는 List가 가진 객체가 어떤 타입이든간에 상관없이 print하고 싶어한다. 하지만 List 객체는 Object 타입의 객체만 출력할 수 있다. (참조:&lt;a href=&#34;../8&#34;&gt;제네릭스, 상속, 서브타입&lt;/a&gt;) List&amp;lt;Object&amp;gt;는 List&amp;lt;Integer&amp;gt;, List&amp;lt;String&amp;gt;, List&amp;lt;Double&amp;gt;을 출력할 수 없다. 왜냐하면 List&amp;lt;Object&amp;gt; 타입의 stub type(스텁타입 용어 아시는분 공유 부탁요 ㅠㅠ)이 아니다. 아래는 List&amp;lt;?&amp;gt;를 사용해서 generic 메서드인 printList를 작성한 예이다..&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;The goal of printList is to print a list of any type, but it fails to achieve that goal — it prints only a list of Object instances; it cannot print List&amp;lt;Integer&amp;gt;, List&amp;lt;String&amp;gt;, List&amp;lt;Double&amp;gt;, and so on, because they are not subtypes of List&amp;lt;Object&amp;gt;. To write a generic printList method, use List&amp;lt;?&amp;gt;:&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;(역자 추가 - 위의 예가 설명하는 코드 - 컴파일 에러 발생)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List&amp;lt;Integer&amp;gt; integerList = Arrays.asList(1,2);
+printList(integerList);   // 컴파일 에러
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void printList(List&amp;lt;?&amp;gt; list) {
+    for (Object elem: list)
+        System.out.print(elem + &amp;quot; &amp;quot;);
+    System.out.println();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;아무 타입을 A로 지칭했을때, List&amp;lt;?&amp;gt;의 서브타입은 List&amp;lt;A&amp;gt;이 성립이 되기 때문에, printList 메서드가 모든 타입을 대상으로 print할 수 있다.
+&lt;code&gt;Because for any concrete type A, List&amp;lt;A&amp;gt; is a subtype of List&amp;lt;?&amp;gt;, you can use printList to print a list of any type:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List&amp;lt;Integer&amp;gt; li = Arrays.asList(1, 2, 3);
+List&amp;lt;String&amp;gt;  ls = Arrays.asList(&amp;quot;one&amp;quot;, &amp;quot;two&amp;quot;, &amp;quot;three&amp;quot;);
+printList(li);
+printList(ls);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;참고: Arrays.asList 메서드는 범위없는 와일드카드를 사용해서 구현되었다. Arrays.asList라는 static 팩토리 메서드는 배열을 구체화하여 변경하고(요소들의 공통 타입을 타입추론)  고정된 사이즈의 리스트를 반환한다.
+&lt;code&gt;Note: The Arrays.asList method is used in examples throughout this lesson. This static factory method converts the specified array and returns a fixed-size list.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;(중요!)List&lt;Object&gt;와 List&amp;lt;?&amp;gt;과 다르다. List&lt;Object&gt;에 Object 타입이나 Object의 서브타입을 insert할 수 있다. 하지만 List&amp;lt;?&amp;gt;에는 null만 insert할 수 있다.(하고자하는 말이 무언지 이해가 안된다;;;) 와일드카드 사용 섹션은은 상황별 어떤 와일드카드를 사용할지 결정에 대한 가이드라인을 제공한다.
+&lt;code&gt;It&#39;s important to note that List&amp;lt;Object&amp;gt; and List&amp;lt;?&amp;gt; are not the same. You can insert an Object, or any subtype of Object, into a List&amp;lt;Object&amp;gt;. But you can only insert null into a List&amp;lt;?&amp;gt;. The Guidelines for Wildcard Use section has more information on how to determine what kind of wildcard, if any, should be used in a given situation.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>자바 제네릭스(9) Java Generics: 타입추론(Type Inference)</title>
