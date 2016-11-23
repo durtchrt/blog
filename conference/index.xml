@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conference-rsses on 개발 저장소</title>
+    <link>http://durtchrt.github.io/blog/conference/index.xml</link>
+    <description>Recent content in Conference-rsses on 개발 저장소</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>durtchrt</copyright>
+    <lastBuildDate>Wed, 23 Nov 2016 11:55:37 +0900</lastBuildDate>
+    <atom:link href="http://durtchrt.github.io/blog/conference/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>playnode2016-javascript everywhere - 1. 하나의 프로그래밍 언어로 천하통일을 꿈꾸는 메이커</title>
+      <link>http://durtchrt.github.io/blog/conference/20161123/session1_track_e/</link>
+      <pubDate>Wed, 23 Nov 2016 11:55:37 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/conference/20161123/session1_track_e/</guid>
+      <description>
+
+&lt;h1 id=&#34;javascrpt-everywhere-하나의-프로그래밍-언어로-모바일부터-로봇까지&#34;&gt;javascrpt everywhere - 하나의 프로그래밍 언어로 모바일부터 로봇까지&lt;/h1&gt;
+
+&lt;h3 id=&#34;주제&#34;&gt;주제&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;why? nodejs&lt;/li&gt;
+&lt;li&gt;how?&lt;/li&gt;
+&lt;li&gt;what&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&#34;발표자&#34;&gt;발표자&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;rippertnt@gmail.com&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.circul.us&#34;&gt;http://www.circul.us&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;why-javascript&#34;&gt;Why - Javascript&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;One Language - Multi platform
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;과거
+기계어 -&amp;gt; 저급언어 -&amp;gt; 하이레벨
+==&amp;gt; 언어의 파편화&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;desktop : C#&lt;/li&gt;
+&lt;li&gt;mobile: Object-C&lt;/li&gt;
+&lt;li&gt;web: javascripot&lt;/li&gt;
+&lt;li&gt;server : java&lt;/li&gt;
+&lt;li&gt;embeded : c/c++&lt;/li&gt;
+&lt;li&gt;database : sql&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;analysis : etc&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://namu.wiki/w/%EB%B0%94%EB%B2%A8%ED%83%91&#34;&gt;바벨탑&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;하나의 언어를 사용하던 시대에서&lt;/li&gt;
+&lt;li&gt;바벨탑의 저로 언어가 다양해짐.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;자바스크립크 랭크&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://githut.info/&#34;&gt;github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/research/developer-survey-2016&#34;&gt;stackoverflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;javascript-everywhere&#34;&gt;Javascript everywhere&lt;/h2&gt;
+
+&lt;p&gt;모바일부터 로봇까지 가장 폭넓게 활용할 수 있는 언어&lt;/p&gt;
+
+&lt;h5 id=&#34;개발자-메이커의-시대&#34;&gt;개발자 -&amp;gt; 메이커의 시대&lt;/h5&gt;
+
+&lt;p&gt;기존 sw개발에서, HW + SW 결합하고 아이디어를 개발 SW개발자에서 융복합 메이커로의 진화&lt;/p&gt;
+
+&lt;h5 id=&#34;opensource-hardware&#34;&gt;Opensource Hardware&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;저렴한 마이크로 컨트롤러/컴퓨터의 등장으로 H/W 영역도 실패가 가능해짐.(출시하면 납땜다시하지 않는이상 변경 불가였던 시절이 있었음 - 지금은 H/W rewrite 가능해짐)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.kickstarter.com/projects/1598272670/chip-the-worlds-first-9-computer&#34;&gt;CHIP&lt;/a&gt; =&amp;gt; 9$ 컴퓨터&lt;/li&gt;
+&lt;li&gt;3D 프린터&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;make-movement&#34;&gt;Make Movement&lt;/h5&gt;
+
+&lt;p&gt;기존의 DIY 영역에서 ICT 기술이 접목.
+&lt;a href=&#34;http://makerfaire.com/&#34;&gt;Maker Faire&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;S/W + H/W + Service 결합되어 다양한 아이디어들이 실제로 구현&lt;/p&gt;
+
+&lt;h4 id=&#34;arduino-vs-raspberry-pi&#34;&gt;Arduino vs Raspberry Pi&lt;/h4&gt;
+
+&lt;p&gt;Raspberry pi - microcomputer
+(s/w)linux + javascript
+(h/w) gpio
+==&amp;gt; javascript로 개발하고 gpio와 연결된 외부 디바이스를 제어(ex- 모터, led)&lt;/p&gt;
+
+&lt;h2 id=&#34;circulus&#34;&gt;Circulus&lt;/h2&gt;
+
+&lt;p&gt;=&amp;gt; 발표자 회사 및 서비스 소개 자세한 내용은 슬라이드 참조.&lt;/p&gt;
+
+&lt;h4 id=&#34;program-or-be-programmed&#34;&gt;Program or be programmed&lt;/h4&gt;
+
+&lt;h4 id=&#34;education-making-with-circulus&#34;&gt;Education/Making with circulus&lt;/h4&gt;
+
+&lt;h4 id=&#34;circulus-iot-platform&#34;&gt;Circulus Iot Platform&lt;/h4&gt;
+
+&lt;h4 id=&#34;javascript-in-circulus&#34;&gt;javaScript in Circulus&lt;/h4&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Web&lt;/th&gt;
+&lt;th&gt;Server&lt;/th&gt;
+&lt;th&gt;IoT platform&lt;/th&gt;
+&lt;th&gt;Database&lt;/th&gt;
+&lt;th&gt;win pc&lt;/th&gt;
+&lt;th&gt;mobile&lt;/th&gt;
+&lt;th&gt;wearable&lt;/th&gt;
+&lt;th&gt;analysis&lt;/th&gt;
+&lt;th&gt;embeded&lt;/th&gt;
+&lt;th&gt;linux pc&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;javascript&lt;/td&gt;
+&lt;td&gt;node&lt;/td&gt;
+&lt;td&gt;node&lt;/td&gt;
+&lt;td&gt;mongodb&lt;/td&gt;
+&lt;td&gt;nw.js&lt;/td&gt;
+&lt;td&gt;cordova&lt;/td&gt;
+&lt;td&gt;tizen&lt;/td&gt;
+&lt;td&gt;elastic serach&lt;/td&gt;
+&lt;td&gt;nodejs&lt;/td&gt;
+&lt;td&gt;nw.js&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;how-robotics-intelligent-bot&#34;&gt;How - Robotics (Intelligent Bot)&lt;/h2&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -10,11 +10,200 @@
     <atom:link href="http://durtchrt.github.io/blog/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>4Clojure 문제 모음</title>
-      <link>http://durtchrt.github.io/blog/clojure/4clojure/questions/</link>
+      <title>4Clojure 문제 모음 30 ~</title>
+      <link>http://durtchrt.github.io/blog/clojure/4clojure/questions30/</link>
+      <pubDate>Tue, 22 Nov 2016 18:22:01 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/clojure/4clojure/questions30/</guid>
+      <description>
+
+&lt;h3 id=&#34;26-피보나치-시퀀스-fibonacci-sequence-https-www-4clojure-com-problem-26&#34;&gt;26.피보나치 시퀀스 &lt;a href=&#34;https://www.4clojure.com/problem/26&#34;&gt;Fibonacci Sequence&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제: Fibonacci seqs&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
+피보나치 숫자들중 주어진 인자값만큼 피보나치 시퀀스를 반환하는 함수를 작성하세요.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Write a function which returns the first X fibonacci numbers.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ 3) &#39;(1 1 2))
+(= (__ 6) &#39;(1 1 2 3 5 8))
+(= (__ 8) &#39;(1 1 2 3 5 8 13 21))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;난이도: 쉬움
+주제:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;C
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>4Clojure 문제 모음 1 ~ 25</title>
+      <link>http://durtchrt.github.io/blog/clojure/4clojure/questions25/</link>
       <pubDate>Sun, 20 Nov 2016 04:22:01 +0900</pubDate>
       
-      <guid>http://durtchrt.github.io/blog/clojure/4clojure/questions/</guid>
+      <guid>http://durtchrt.github.io/blog/clojure/4clojure/questions25/</guid>
       <description>
 
 &lt;h3 id=&#34;1-진실만있다-nothing-but-the-truth-https-www-4clojure-com-problem-1&#34;&gt;1.진실만있다. &lt;a href=&#34;https://www.4clojure.com/problem/1&#34;&gt;Nothing but the Truth&lt;/a&gt;&lt;/h3&gt;
