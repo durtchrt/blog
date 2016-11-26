@@ -7,8 +7,217 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>durtchrt</copyright>
-    <lastBuildDate>Sat, 12 Nov 2016 18:23:01 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 24 Nov 2016 15:00:35 +0900</lastBuildDate>
     <atom:link href="http://durtchrt.github.io/blog/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>[발번역]The Java™ Tutorials - 2-2. Pausing Execution with Sleep</title>
+      <link>http://durtchrt.github.io/blog/java/concurrency/5/</link>
+      <pubDate>Thu, 24 Nov 2016 15:00:35 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/concurrency/5/</guid>
+      <description>
+
+&lt;h2 id=&#34;원문링크-http-docs-oracle-com-javase-tutorial-essential-concurrency-sleep-html&#34;&gt;&lt;a href=&#34;http://docs.oracle.com/javase/tutorial/essential/concurrency/sleep.html&#34;&gt;원문링크&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;sleep으로-실행-중지하기&#34;&gt;Sleep으로 실행 중지하기&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Pausing Execution with Sleep&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Thread.sleep은 현재 실행하는 쓰레드를 정해진 시간만큼 실행을 중지한다. 컴퓨터에서 동작하는 어플리케이션의 프로세서의 시간을 효율적으로 만든다. sleep 메서드는 아래 예제처럼 다른 스레드들간에 동일한 간격(4초)으로 실행하게 하는데 사용하거나 다음 섹션에 SimpleThreads처럼 다른 스레드를 기다리게할 수 있다.
+&lt;code&gt;Thread.sleep causes the current thread to suspend execution for a specified period. This is an efficient means of making processor time available to the other threads of an application or other applications that might be running on a computer system. The sleep method can also be used for pacing, as shown in the example that follows, and waiting for another thread with duties that are understood to have time requirements, as with the SimpleThreads example in a later section.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;두가지 오버로드 버전 sleep 제공: 하나는 sleep 시간을 밀리초(ms)로, 다른 하나는 나노초(ns)로 명시햇다. 하지만 sleep되는 시간은 완벽하게는 보장되지 않는다. 왜냐하면 OS단에서 제공하는 기능 제약 때문이다. 또한 sleep 시간은 나중에 나올 섹션에 볼 수 있듯이 인터럽트에 의해 종료될수 있습니다.  어쨌든, sleep을 호출해서 설정한 시간을 완벽히 스레드가 정지한다고 확신 할 수 없다.
+&lt;code&gt;Two overloaded versions of sleep are provided: one that specifies the sleep time to the millisecond and one that specifies the sleep time to the nanosecond. However, these sleep times are not guaranteed to be precise, because they are limited by the facilities provided by the underlying OS. Also, the sleep period can be terminated by interrupts, as we&#39;ll see in a later section. In any case, you cannot assume that invoking sleep will suspend the thread for precisely the time period specified.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;SleepMessage 예제는 4초 간격으로 메세지를 프린트하려 sleep 메서드를 사용한다.
+&lt;code&gt;The SleepMessages example uses sleep to print messages at four-second intervals:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class SleepMessages {
+    public static void main(String args[])
+        throws InterruptedException {
+        String importantInfo[] = {
+            &amp;quot;Mares eat oats&amp;quot;,
+            &amp;quot;Does eat oats&amp;quot;,
+            &amp;quot;Little lambs eat ivy&amp;quot;,
+            &amp;quot;A kid will eat ivy too&amp;quot;
+        };
+
+        for (int i = 0;
+             i &amp;lt; importantInfo.length;
+             i++) {
+            //Pause for 4 seconds
+            Thread.sleep(4000);
+            //Print a message
+            System.out.println(importantInfo[i]);
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;main 메서드는  InterruptedException을 throws 한다. 현재 실행되는 쓰레드가 sleep하는 동안 다른 쓰레드가 인터럽트를하면 sleep 메서드가 throws하는 예외입니다. 이 어플리케이션은 다른 쓰레드를 인터럽트하지 않기 때문에  InterruptedException이 발생하지 않습니다.
+&lt;code&gt;Notice that main declares that it throws InterruptedException. This is an exception that sleep throws when another thread interrupts the current thread while sleep is active. Since this application has not defined another thread to cause the interrupt, it doesn&#39;t bother to catch InterruptedException.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[발번역]The Java™ Tutorials - 2-1. 쓰레드 정의와 시작 Defining and Starting a Thread</title>
+      <link>http://durtchrt.github.io/blog/java/concurrency/4/</link>
+      <pubDate>Thu, 24 Nov 2016 14:00:35 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/concurrency/4/</guid>
+      <description>
+
+&lt;h2 id=&#34;원문링크-http-docs-oracle-com-javase-tutorial-essential-concurrency-runthread-html&#34;&gt;&lt;a href=&#34;http://docs.oracle.com/javase/tutorial/essential/concurrency/runthread.html&#34;&gt;원문링크&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;쓰레드-정의와-시작&#34;&gt;쓰레드 정의와 시작&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Defining and Starting a Thread&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;쓰레드의 인스턴스를 생성하는 응용프로그램은 반드시 쓰레드에 run 메서드 코드를 제공해야합니다. 이는 두가지 방법이 있습니다.
+&lt;code&gt;An application that creates an instance of Thread must provide the code that will run in that thread. There are two ways to do this:&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Runnable 객체 제공&lt;/code&gt; Runnable 인터페이스는 쓰레드에서 실행하는 코드를 포함하는 단일 메서드 run을 정의합니다. 이 Runnable 객체는 쓰레드 생성자에 인자로 전달됩니다. HelloRunnable 예제 참조
+&lt;code&gt;Provide a Runnable object. The Runnable interface defines a single method, run, meant to contain the code executed in the thread. The Runnable object is passed to the Thread constructor, as in the HelloRunnable example:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class HelloRunnable implements Runnable {
+
+public void run() {
+    System.out.println(&amp;quot;Hello from a thread!&amp;quot;);
+}
+
+public static void main(String args[]) {
+    (new Thread(new HelloRunnable())).start();
+}
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;서브클래스 쓰레드&lt;/code&gt; 쓰레드 클래스는 스스로 Runnable 인터페이스를 구현함에도 불구하고 run 메서드는 (main 메서드안에) 없습니다 어플리케이션은 HelloThread 예제처럼 자신의 run 메서드 구현체를 제공하여 Thread의 서브클래스화 할 수 있습니다.(Thread의 서브 클래스이므로 Thread로 동작 가능해짐.)
+&lt;code&gt;Subclass Thread. The Thread class itself implements Runnable, though its run method does nothing. An application can subclass Thread, providing its own implementation of run, as in the HelloThread example:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class HelloThread extends Thread {
+
+public void run() {
+    System.out.println(&amp;quot;Hello from a thread!&amp;quot;);
+}
+
+public static void main(String args[]) {
+    (new HelloThread()).start();
+}
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;두 예제는 새 스레드를 시작하기위해 Thread.start를 호출한다.
+&lt;code&gt;Notice that both examples invoke Thread.start in order to start the new thread.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;두 용례중 어느것을 사용하겠습니까? 첫번째 용례 Runnable 객체를 사용하는 것이 더 일반적이다 왜냐하면 Runnable 객체는 Thread가아닌 다른 클래스를 서브클래스화 할 수 있습니다. 두번째 용례는 간단한 응용프로그램에서 사용하기 쉽지만 태스크 클래스가 Thread의 하위 클래스여하는 제한이 있습니다. 이 수업에서는 실행하는 태스크인 Thread 객체로부터 Runnable 태스크를 분리하는 것에 초점을 두고있습니다. 이 방법은 더 유연하고 나중에 다를 고수준 쓰레드 관리 API에 적용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Which of these idioms should you use? The first idiom, which employs a Runnable object, is more general, because the Runnable object can subclass a class other than Thread. The second idiom is easier to use in simple applications, but is limited by the fact that your task class must be a descendant of Thread. This lesson focuses on the first approach, which separates the Runnable task from the Thread object that executes the task. Not only is this approach more flexible, but it is applicable to the high-level thread management APIs covered later.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;쓰레드 클래스는 쓰레드 관리를 위해 쓸만한 메서드들을 정의했다. 이는 쓰레드에대한 정보나 쓰레드의 상태에 영향에 대한 정적 메서들를 제공한다.(???? - the thread invoking the method.) 다른 메서드들은 다른 쓰레드로부터 호출됩니다.(쓰레드와 쓰레드 객체를 관리하는데 관련된) 우리는 이러한 메서드들을 다음 세션에서 검토할 것이다.
+&lt;code&gt;The Thread class defines a number of methods useful for thread management. These include static methods, which provide information about, or affect the status of, the thread invoking the method. The other methods are invoked from other threads involved in managing the thread and Thread object. We&#39;ll examine some of these methods in the following sections.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[발번역]The Java™ Tutorials - 2. Thread Objects</title>
+      <link>http://durtchrt.github.io/blog/java/concurrency/3/</link>
+      <pubDate>Thu, 24 Nov 2016 13:00:35 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/concurrency/3/</guid>
+      <description>
+
+&lt;h2 id=&#34;원문링크-http-docs-oracle-com-javase-tutorial-essential-concurrency-threads-html&#34;&gt;&lt;a href=&#34;http://docs.oracle.com/javase/tutorial/essential/concurrency/threads.html&#34;&gt;원문링크&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;쓰레드-객체&#34;&gt;쓰레드 객체&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Thread Objects&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;쓰레드마다 클래스 쓰레드의 인스턴스와 연관되어있다. 병행 어플리케이션을 만드는 쓰레드 객체를 사용하기 위해서는 두가지 전략이 있다.
+&lt;code&gt;Each thread is associated with an instance of the class Thread. There are two basic strategies for using Thread objects to create a concurrent application.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;직접적으로 쓰레드 생성과 관리를하려면, 어플리케이션이 비동기 태스크를 시작려는 필요할때마다 쓰레드를 인스턴스화합니다. 나머지 어플리케이션으로부터 추상 스레드를 관려하려면, 어플리케이션의 태스크를 executor에 전달하시요. 이 섹션에서는 쓰레드 객체의 사용법을 설명합니다.  Excutor는 고수준 병행 객체와 함께 논의합니다.
+&lt;code&gt;To directly control thread creation and management, simply instantiate Thread each time the application needs to initiate an asynchronous task. 
+To abstract thread management from the rest of your application, pass the application&#39;s tasks to an executor.
+This section documents the use of Thread objects. Executors are discussed with other high-level concurrency objects.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[발번역]The Java™ Tutorials - 1. Processes and Threads </title>
+      <link>http://durtchrt.github.io/blog/java/concurrency/2/</link>
+      <pubDate>Thu, 24 Nov 2016 12:00:35 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/concurrency/2/</guid>
+      <description>
+
+&lt;p&gt;##&lt;a href=&#34;http://docs.oracle.com/javase/tutorial/essential/concurrency/procthread.html&#34;&gt;원문링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;프로세스와-쓰레드&#34;&gt;프로세스와 쓰레드&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;Processes and Threads&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;병행 프로그래밍에서는 실행의 두개의 기본 개념이 있다(프로세스, 쓰레드). 자바 프로그래밍 언어에서는 병행 프로그래밍은 거의 대부분 쓰레드와 관련있다. 하지만 프로세스 역시 중요하다.
+&lt;code&gt;In concurrent programming, there are two basic units of execution: processes and threads. In the Java programming language, concurrent programming is mostly concerned with threads. However, processes are also important.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;컴퓨터 시스템은 일반적으로 많은 활동적인 프로세스와 쓰레드를 가지고 있다. 싱글 코에서는 하나만 동작할 수 있으므로 한순간에는 한 스레드만 동작할 수 있다. (;;;;) 싱글코어는 타임슬라이싱이라고 불리는 OS 기능을 통해 프로세스와 스레드들간에 공유한다.(Processing time for ???)
+&lt;code&gt;A computer system normally has many active processes and threads. This is true even in systems that only have a single execution core, and thus only have one thread actually executing at any given moment. Processing time for a single core is shared among processes and threads through an OS feature called time slicing.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;컴퓨터 시스템은 멀티 프로세서 또는  멀티 코어를 가지는건 점점 더 흔해지고 있다. 이건 시스템의  프로세스와 스레드의 병행 실행 능력을 훌륭하게 높여주였다. 하지만 병행성은 멀티프로세서 또는 멀티코어가 아니더라도 싱글코어 시스템에서도 가능하다.
+&lt;code&gt;It&#39;s becoming more and more common for computer systems to have multiple processors or processors with multiple execution cores. This greatly enhances a system&#39;s capacity for concurrent execution of processes and threads — but concurrency is possible even on simple systems, without multiple processors or execution cores.&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;프로세스&#34;&gt;프로세스&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Processes&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;프로세스는 독립 실행환경을 가졌습니다. 프로세스는 일반적으로 완벽하고, 외부에 노출안되는  런타임 자원의 집합을 제공합니다.(말이 어렵네;;); 개별적으로 각각의 프로세스들은 자신만의 메모리 공간을 가집니다.
+&lt;code&gt;A process has a self-contained execution environment. A process generally has a complete, private set of basic run-time resources; in particular, each process has its own memory space.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;프로세스는 프로그램 또는 어플리케이션과 유의어로 종종 인지한다. 하지만 사용자가 단일 어플리케이션처럼 보이는것은 사실 협력적인 프로세스일수 있습니다. 프로스스간에 통신이 잘될려면, OS는 파이프, 소켓 같은 IPC(Inter Process Communication)을 지원한다. IPC는 단순히 동일 시스템내에서 프록세스간의 통신뿐만 아니라 다른 시스템의 프로세스들간에도 사용됩니다.(뭔가 어려움;;)
+&lt;code&gt;Processes are often seen as synonymous with programs or applications. However, what the user sees as a single application may in fact be a set of cooperating processes. To facilitate communication between processes, most operating systems support Inter Process Communication (IPC) resources, such as pipes and sockets. IPC is used not just for communication between processes on the same system, but processes on different systems.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;거의 모든 자바 가상머신은 싱글 프로세스로 구현된다. 자바 어플리케이션은 ProcessBuilder 객체를 사용해서 추가 프로세스들을 만들수 있습니다. 멀티프로세스 어플리케이션은 이 수업의 범위를 넘기므로 없습니다.
+&lt;code&gt;Most implementations of the Java virtual machine run as a single process. A Java application can create additional processes using a ProcessBuilder object. Multiprocess applications are beyond the scope of this lesson.&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;쓰레드&#34;&gt;쓰레드&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Threads&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;쓰레드는 때때로 가벼운 프로세스(lightwight processes)라고 불린다. 프로세스와 쓰레드는 실행환경을 제공하지만 새로운 프로세스를 생성하는 것보다 스레드를 생성하는게 자원 사용이 적다.
+&lt;code&gt;Threads are sometimes called lightweight processes. Both processes and threads provide an execution environment, but creating a new thread requires fewer resources than creating a new process.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;쓰레드는 프로세스 안에 존재한다.(모든 프로세스는 최소한 하나의 스레드를 가진다.) 스레드는 프로세스의 메모리, 열린 파일등을 포함하여 자원을 공유한다. 이건 효과적이지만 잠재적으로 문제가 있습니다.(communication??)
+&lt;code&gt;Threads exist within a process — every process has at least one. Threads share the process&#39;s resources, including memory and open files. This makes for efficient, but potentially problematic, communication.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;멀티쓰레드 동작은 자바 플랫폼의 필수적인 특징이다. 모든 어플리케이션은 최소한 하나의 (또는 여러개 )스레드를 가진다.메모리 관리와 시그널 핸들링과 같은 것과 같이 &amp;ldquo;시스템&amp;rdquo; 스레드를 셀 수 있습니다(???). 그러나 어플리케이션 프로그래머의 관점에서 보면 main 쓰레드라고 불리는 하나의 스레드로부터 시작합니다. 이 스레드는 추가 스레드를 생성하는 능력을 가졌다. 다음 섹션에서 설명하겠다.
+&lt;code&gt;Multithreaded execution is an essential feature of the Java platform. Every application has at least one thread — or several, if you count &amp;quot;system&amp;quot; threads that do things like memory management and signal handling. But from the application programmer&#39;s point of view, you start with just one thread, called the main thread. This thread has the ability to create additional threads, as we&#39;ll demonstrate in the next section.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[발번역]The Java™ Tutorials - 0. Concurrency</title>
+      <link>http://durtchrt.github.io/blog/java/concurrency/1/</link>
+      <pubDate>Thu, 24 Nov 2016 12:00:34 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/concurrency/1/</guid>
+      <description>
+
+&lt;p&gt;##&lt;a href=&#34;http://docs.oracle.com/javase/tutorial/essential/concurrency/index.html&#34;&gt;원문링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;lesson-concurrency&#34;&gt;Lesson: Concurrency&lt;/h1&gt;
+
+&lt;p&gt;컴퓨터는 사용자에게 동일시간에 한가지 이상의 일을 할 수 있도록 시스템이 보장이 되야한다. 컴퓨터 사용자는 워드프로세서 작업을 할 때 다른 어플리케이션이 파일 다운로드, 스트리밍 오디오, 프린터 큐 관리등을 동시에 하는게 당연하사 생각한다. 심지어 하나의 어플레케이션이 한번에 한가지 이상의 동작하는 것을 종종 기대한다. 예를들면 스트리밍 오디오 어플레케이션은 반드시 동시에 네트워크로부터 디지털 오디오 읽기, 압축을 풀기, 재생 관리, 디스플레이 업데이트를 수행한다. 심지어 워드프로세서도 디스플레이 업데이트나 텍스트를 다시 포맷팅하는것이 얼마나 바쁜지 상관없이 키보드의 응답, 마우스 이벤트들의 응답을 대기해야한다. 그러한 것을 할 수 있는 소프트웨어를 병행성(동시성) 소프트웨어라고 알려져있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Computer users take it for granted that their systems can do more than one thing at a time. They assume that they can continue to work in a word processor, while other applications download files, manage the print queue, and stream audio. Even a single application is often expected to do more than one thing at a time. For example, that streaming audio application must simultaneously read the digital audio off the network, decompress it, manage playback, and update its display. Even the word processor should always be ready to respond to keyboard and mouse events, no matter how busy it is reformatting text or updating the display. Software that can do such things is known as concurrent software.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;자바 플랫폼은 병행 프로그래밍을 지원하도록 (밑바닥부터 끝까지) 설계 되었다. 자바 프로그래밍 언어와 자바 클래스 라이브러리들로 기본 병행성을 지원한다. 자바 플랫폼 5.0 버전부터는 고수준의 concurrency API도 포함되었다. 이번 자바 플랫폼의 수업은 기본 병행 지원과 몇가지 java.util.concurrent 패키지의 수준 API의 요약을 소개한다.
+&lt;code&gt;The Java platform is designed from the ground up to support concurrent programming, with basic concurrency support in the Java programming language and the Java class libraries. Since version 5.0, the Java platform has also included high-level concurrency APIs. This lesson introduces the platform&#39;s basic concurrency support and summarizes some of the high-level APIs in the java.util.concurrent packages.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>자바 제네릭스(10) 와일드카드 Wildcards </title>
@@ -843,298 +1052,6 @@ required: Box&amp;lt;Integer&amp;gt;
 found:    Box
 1 warning
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>자바 제네릭스(3) Java Generics: 제네릭 타입들</title>
-      <link>http://durtchrt.github.io/blog/java/generics/3/</link>
-      <pubDate>Mon, 31 Oct 2016 17:08:57 +0900</pubDate>
-      
-      <guid>http://durtchrt.github.io/blog/java/generics/3/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/types.html&#34;&gt;원문 링크&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;용어 참조&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;타입 : 자바에서는 클래스, 추상클래스, 인터페이스, 열거형(Enum), 배열을 의미. 기본형, 참조형을 포괄하는 개념
-
-&lt;ul&gt;
-&lt;li&gt;기본형: byte, short, int, long, float, double, char, String, boolean (call by value)&lt;/li&gt;
-&lt;li&gt;참조형: 기본형을 제외한 모든 타입 (call by reference)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;매개변수 vs 인자&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;매개변수(Parameter): 함수 선언할 때 변수의 이름&lt;/li&gt;
-&lt;li&gt;인자(Argument): 함수를 호출할 때 전달하는 값&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;generic-types&#34;&gt;Generic Types&lt;/h3&gt;
-
-&lt;p&gt;generic 타입은 클래스, 인터페이스를 타입 파라미터화하는 것이다. Box 클래스는 generic  타입을 설명하면서 코드를 수정할 것이다.
-&lt;code&gt;A generic type is a generic class or interface that is parameterized over types. The following Box class will be modified to demonstrate the concept.&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;a-simple-box-class&#34;&gt;A Simple Box Class&lt;/h3&gt;
-
-&lt;p&gt;generic을 사용하지 않은 예제로 시작해봅시다. Box 클래스는 set(추가), get(조회) 2개의 메서드가 있습니다.
-&lt;code&gt;Begin by examining a non-generic Box class that operates on objects of any type. It needs only to provide two methods: set, which adds an object to the box, and get, which retrieves it:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class Box {
-    private Object object;
-
-    public void set(Object object) { this.object = object; }
-    public Object get() { return object; }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;객체의 set, get 메서드는 기본형을 제외하면 어떤 타입(참조형)이든 인자로 넣을수 있다. Box 클래스가 사용되어지지만 컴파일 타임에 검증할 방법이 없다. 코드 일부분에서는 Integer를 넣고 Integer가 return되어지길 기대하지만 다른 일부분에서는 실수로 String을 입력해서 런타임 에러가 나올 것이다.
-&lt;code&gt;Since its methods accept or return an Object, you are free to pass in whatever you want, provided that it is not one of the primitive types. There is no way to verify, at compile time, how the class is used. One part of the code may place an Integer in the box and expect to get Integers out of it, while another part of the code may mistakenly pass in a String, resulting in a runtime error.&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;generic-버전의-box-클래스-br&#34;&gt;Generic 버전의 Box 클래스.&lt;br&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;A Generic Version of the Box Class&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;generic 클래시는 아래 포멧처럼 정의되었다.&lt;br&gt;
-&lt;code&gt;A generic class is defined with the following format:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;class name&amp;lt;T1, T2, ..., Tn&amp;gt; { /* ... */ }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;타입 파라미터 문법은 클래스명 뒤에 꺽쇠(&amp;lt;&amp;gt;) 기호로 구분된다. 이것은 T1, T2, &amp;hellip;, and Tn 등으로 타입 매개변수를 명시한다.(타입변수라고 불리기도한다.)
-&lt;code&gt;The type parameter section, delimited by angle brackets (&amp;lt;&amp;gt;), follows the class name. It specifies the type parameters (also called type variables) T1, T2, ..., and Tn.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Box 클래스를 generics로 변경해보자. &amp;ldquo;public class Box&amp;rdquo; 코드를 &amp;ldquo;public class Box&lt;T&gt;&amp;ldquo;로 변경해서 generic 타입을 선언하여 만든다. T라는 타입 매개변수는 클래스 어디든지 사용할 수 있는 변수이다.
-&lt;code&gt;To update the Box class to use generics, you create a generic type declaration by changing the code &amp;quot;public class Box&amp;quot; to &amp;quot;public class Box&amp;lt;T&amp;gt;&amp;quot;. This introduces the type variable, T, that can be used anywhere inside the class.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Box 클래스가 이렇게 바뀐다.&lt;br&gt;
-&lt;code&gt;With this change, the Box class becomes:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;/**
- * Generic version of the Box class.
- * @param &amp;lt;T&amp;gt; the type of the value being boxed
- */
-public class Box&amp;lt;T&amp;gt; {
-    // T stands for &amp;quot;Type&amp;quot;
-    private T t;
-
-    public void set(T t) { this.t = t; }
-    public T get() { return t; }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;소스 코드 변경에서 보이듯, 기존 코드에서 Object 대신 T로 수정되었다. Type 변수는 기본형 빼고는(=참조형)이면 된다.(클래스/인터페이스/배열 타입 또는 다른 Type 변수가 Type 변수로 될 수 있다.)
-&lt;code&gt;As you can see, all occurrences of Object are replaced by T. A type variable can be any non-primitive type you specify: any class type, any interface type, any array type, or even another type variable.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;generic 인터페이스를 만드는 방법도 같다.
-&amp;lsquo;This same technique can be applied to create generic interfaces.&amp;rsquo;&lt;/p&gt;
-
-&lt;h3 id=&#34;type-파라미터-네이밍-관습&#34;&gt;Type 파라미터 네이밍 관습&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;Type Parameter Naming Conventions&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;관습에 의하면, Type 파라미터는 단일 대문자입니다. 이 기준은 이미 알고 있는 변수 네이밍 관습에 극명하게 반대입니다. (좋은점은)이런 관습이 없으면 Type 변수와 일반적인 클래스 혹은 인터페이스명 사이에 차이를 전달하기 어려울겁니다.
-&lt;code&gt;By convention, type parameter names are single, uppercase letters. This stands in sharp contrast to the variable naming conventions that you already know about, and with good reason: Without this convention, it would be difficult to tell the difference between a type variable and an ordinary class or interface name.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;일반적으로 사용되어지는 Type파라미터명&lt;br&gt;
-&lt;code&gt;The most commonly used type parameter names are:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;E - Element (자바 콜렉션 프레인워크에 광범위하게 사용됨 - used extensively by the Java Collections Framework)
-K - Key
-N - Number
-T - Type
-V - Value
-S,U,V etc. - 2nd, 3rd, 4th types
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;이러한 이름들이 자바SE API을 통해 쓰여지는 것을 볼 수 있을 것입니다.
-&lt;code&gt;You&#39;ll see these names used throughout the Java SE API and the rest of this lesson.&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;generic-type-호출과-객체-생성&#34;&gt;Generic Type 호출과 객체 생성&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;Invoking and Instantiating a Generic Type&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;코드내에 generic Box 클래스를 참조하려면, generic Type을 호출해 Integer 같은 구현값(타입값)으로 T를 교체합니다.
-&lt;code&gt;To reference the generic Box class from within your code, you must perform a generic type invocation, which replaces T with some concrete value, such as Integer:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Box&amp;lt;Integer&amp;gt; integerBox;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;흔한 메소드 호출과 generic type 호출이 비슷하고 생각할 수 있다. 하지만 &lt;strong&gt;메소드&lt;/strong&gt;에 인자를 전달하는 반면에 Box &lt;strong&gt;클래스&lt;/strong&gt;에 type 인자를 전달한다(이번에는 Integer임).
-&lt;code&gt;You can think of a generic type invocation as being similar to an ordinary method invocation, but instead of passing an argument to a method, you are passing a type argument — Integer in this case — to the Box class itself.&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&#39;Type 파라미터&#39;, &#39;Type 인자&#39; 용어 설명: 많은 개발자들은 &amp;quot;type 파라미터&amp;quot;와 &amp;quot;type 인자&amp;quot;를 혼용해서 사용한다. 하지만 이 용어나 같지 않다. 코딩할 때 파라미터화한 type을 생성하기 위해서 type인자를 만든다. 그 결과, Foo&amp;lt;T&amp;gt;의 T는 Type 파라미터이고 Foo&amp;lt;String&amp;gt;의 String은  Type 인자이다. 이번장에서 Type 인자와 Type 파라미터를 사용할 때 위에 설명한 내용을 상기하고 살펴봅시다.
-
-`Type Parameter and Type Argument Terminology: Many developers use the terms &amp;quot;type parameter&amp;quot; and &amp;quot;type argument&amp;quot; interchangeably, but these terms are not the same. When coding, one provides type arguments in order to create a parameterized type. Therefore, the T in Foo&amp;lt;T&amp;gt; is a type parameter and the String in Foo&amp;lt;String&amp;gt; f is a type argument. This lesson observes this definition when using these terms.`
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;다른 변수를 선언하듯이, 이 코드는 새로운 Box 객체를 실제로 생성하지 않습니다. 간단히 말하면 integerBox 변수는 &amp;ldquo;Integer 타입의 Box 클래스&amp;rdquo;를 가리킨다.( Box&lt;Integer&gt;는 &amp;ldquo;Box of Integer&amp;rdquo;라고 읽는다.)
-Like any other variable declaration, this code does not actually create a new Box object. It simply declares that integerBox will hold a reference to a &amp;ldquo;Box of Integer&amp;rdquo;, which is how Box&lt;Integer&gt; is read.&lt;/p&gt;
-
-&lt;p&gt;generic 타입 호출은 일반적으로 파라미터화된 type으로 알려져 있다.
-&lt;code&gt;An invocation of a generic type is generally known as a parameterized type.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;클래스를 객체화할때 사용하는 new 키워드는 기존과 같지만 Generics를 위한 표기법으로  &lt;strong&gt;&lt;Integer&gt;&lt;/strong&gt;가 클래스명과 소괄호(()) 사이에 있다.
-&lt;code&gt;To instantiate this class, use the new keyword, as usual, but place &amp;lt;Integer&amp;gt; between the class name and the parenthesis:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Box&amp;lt;Integer&amp;gt; integerBox = new Box&amp;lt;Integer&amp;gt;();
-````
-### 다이아몬드 연산자(&amp;lt;&amp;gt;) `The Diamond`
-
-자바SE 7부터 컴파일러가 코드의 문맥을 보고 타입을 추론 할수 있게 되어 타입 인자가 필요한 부분에 empty type argument(빈 type 인자 = &amp;lt;&amp;gt;)를 사용할 수 있다. 꺽쇠(&amp;lt;&amp;gt;)는 비공식적이지만 다이아몬드라고 불린다. 예를 들면, Box&amp;lt;Integer&amp;gt; 객체를 생성할때 아래의 문법을 따른다:
-`In Java SE 7 and later, you can replace the type arguments required to invoke the constructor of a generic class with an empty set of type arguments (&amp;lt;&amp;gt;) as long as the compiler can determine, or infer, the type arguments from the context. This pair of angle brackets, &amp;lt;&amp;gt;, is informally called the diamond. For example, you can create an instance of Box&amp;lt;Integer&amp;gt; with the following statement:`
-
-```java
-Box&amp;lt;Integer&amp;gt; integerBox = new Box&amp;lt;&amp;gt;();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;다이아몬드 표기법과 타입 추론에 대한 더 자세한 정보는 타입 추론을 보시오.
-&lt;code&gt;For more information on diamond notation and type inference, see Type Inference.&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;복수개의-타입매개변수&#34;&gt;복수개의 타입매개변수&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;Multiple Type Parameters&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;이전에 말했듯이, generic 클래스는 여러개의 타입매개변수를 가질수 있다. 예를들어, generic OrderdPair클래스는 generic Pair 인터페이스를 구현하였다.
-&lt;code&gt;As mentioned previously, a generic class can have multiple type parameters. For example, the generic OrderedPair class, which implements the generic Pair interface:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public interface Pair&amp;lt;K, V&amp;gt; {
-    public K getKey();
-    public V getValue();
-}
-
-public class OrderedPair&amp;lt;K, V&amp;gt; implements Pair&amp;lt;K, V&amp;gt; {
-
-    private K key;
-    private V value;
-
-    public OrderedPair(K key, V value) {
-	this.key = key;
-	this.value = value;
-    }
-
-    public K getKey()	{ return key; }
-    public V getValue() { return value; }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;아래는 OrderedPair클래스로 두개의 객체를 만드는 코드이다.
-&lt;code&gt;The following statements create two instantiations of the OrderedPair class:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Pair&amp;lt;String, Integer&amp;gt; p1 = new OrderedPair&amp;lt;String, Integer&amp;gt;(&amp;quot;Even&amp;quot;, 8);
-Pair&amp;lt;String, String&amp;gt;  p2 = new OrderedPair&amp;lt;String, String&amp;gt;(&amp;quot;hello&amp;quot;, &amp;quot;world&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;코드는 OrderedPair&lt;String, Integer&gt; 객체를 생성하면, K는 String 타입이고 V는 Integer 타입이다. Orderedpair의 생성자의 파라미터 타입들은 String, Integer이다.  autoboxing을 통해 String과 int를 OrderedPair클래스에 전달해도 문제없다.(참조형은 상관 없는데 기본형인 int는 참조형으로 변경되어야한다. int -&amp;gt; Integer) 
-&lt;code&gt;The code, new OrderedPair&amp;lt;String, Integer&amp;gt;, instantiates K as a String and V as an Integer. Therefore, the parameter types of OrderedPair&#39;s constructor are String and Integer, respectively. Due to autoboxing, it is valid to pass a String and an int to the class.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;이전에 다아몬드 연산자를 언급했듯이, 자바 컴파일러는 OrderedPair&lt;String, Integer&gt;로 선언한 K, V 타입을 추론 할수 있기 때문에 다이아몬드문법을 사용해서 코드를 줄일수 있다.
-&lt;code&gt;As mentioned in The Diamond, because a Java compiler can infer the K and V types from the declaration OrderedPair&amp;lt;String, Integer&amp;gt;, these statements can be shortened using diamond notation:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;OrderedPair&amp;lt;String, Integer&amp;gt; p1 = new OrderedPair&amp;lt;&amp;gt;(&amp;quot;Even&amp;quot;, 8);
-OrderedPair&amp;lt;String, String&amp;gt;  p2 = new OrderedPair&amp;lt;&amp;gt;(&amp;quot;hello&amp;quot;, &amp;quot;world&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;generic 인터페이스를 생성하는것은 generic 클래스를 만드는 방법과 같다
-&lt;code&gt;To create a generic interface, follow the same conventions as for creating a generic class.&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;타입-파라미터화&#34;&gt;타입 파라미터화&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;Parameterized Types&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;매개변수타입(예 K, V)은  매개변수화된 타입(예 List&lt;String&gt;)으로 대체할 수 있다. OrderedPair&lt;K, V&gt;를 예를 들면:
-&lt;code&gt;You can also substitute a type parameter (i.e., K or V) with a parameterized type (i.e., List&amp;lt;String&amp;gt;). For example, using the OrderedPair&amp;lt;K, V&amp;gt; example:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;OrderedPair&amp;lt;String, Box&amp;lt;Integer&amp;gt;&amp;gt; p = new OrderedPair&amp;lt;&amp;gt;(&amp;quot;primes&amp;quot;, new Box&amp;lt;Integer&amp;gt;(...));
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;위의 코드에서 매개변수화된 타입(Parameterized Type)은 위의 소스에서는 &lt;strong&gt;Box&amp;lt;Integer&amp;gt;&lt;/strong&gt;을 의미&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>자바 제네릭스(2) Java Generics: 제네릭스는 왜 사용하는가? </title>
-      <link>http://durtchrt.github.io/blog/java/generics/2/</link>
-      <pubDate>Mon, 31 Oct 2016 15:52:48 +0900</pubDate>
-      
-      <guid>http://durtchrt.github.io/blog/java/generics/2/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/why.html&#34;&gt;원문&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Generics는 왜 사용하는가&lt;/strong&gt;  (Why Use Generics?)&lt;/p&gt;
-
-&lt;p&gt;간단히 말하면, generics는 타입을 클래스, 인터페이스, 메소드를 정의할 때 파라메터화 할 수 있다. 메소드 선언에 사용되는 파라미터 형식처럼, 타입 파라미터는 다른 입력값을 같은 코드를 재 사용할 수 있는 방법을 제시한다. 다른점은 형식 파라미터는 값이 입력이다, 타입 파라메터는 타입이 입력이다.
-&lt;code&gt;In a nutshell, generics enable types (classes and interfaces) to be parameters when defining classes, interfaces and methods. Much like the more familiar formal parameters used in method declarations, type parameters provide a way for you to re-use the same code with different inputs. The difference is that the inputs to formal parameters are values, while the inputs to type parameters are types.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;generic를 사용한 코드는 그렇지 않는 코드 대비 많은 장점을 가졌다:
-&lt;code&gt;Code that uses generics has many benefits over non-generic code&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;컴파일 타임에 강력한 타입 체크를한다.
-&lt;code&gt;Stronger type checks at compile time.&lt;/code&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;자바 컴파일러는 타입 안전성에 위반하는 코드가 있다면 일반적인 코드와 오류 이슈에 강한 타입 검사를 적용한다. 컴파일타임에 에러를 고치는 것은 런타임 에러를 고치는 것 보다 쉽다.&lt;br /&gt;
-&lt;code&gt;A Java compiler applies strong type checking to generic code and issues errors if the code violates type safety. Fixing compile-time errors is easier than fixing runtime errors, which can be difficult to find.&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Elimination of casts. &lt;br/&gt;
-generics 없이 캐스팅이 필요한 코드 조각입니다.
-&lt;code&gt;The following code snippet without generics requires casting:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List list = new ArrayList();
-list.add(&amp;quot;hello&amp;quot;);
-String s = (String) list.get(0);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;generics를 사용해서 코드를 다시 작성하면, 코드는 더이상 캐스팅이 필요 없어집니다.
-&lt;code&gt;When re-written to use generics, the code does not require casting:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List&amp;lt;String&amp;gt; list = new ArrayList&amp;lt;String&amp;gt;();
-list.add(&amp;quot;hello&amp;quot;);
-String s = list.get(0);   // no cast
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;프로그래머들이 일반적인 알고리즘을 구현하도록 지원한다.&lt;br&gt;
-generics를 사용하면서 프로그래머들은 다양한 타입들의 콜렉션에서 동작하고, 수정가능하며, 더 안정적이고 읽기 쉬운 코드를 일반적인 알고리즘으로 구현할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Enabling programmers to implement generic algorithms.
-By using generics, programmers can implement generic algorithms that work on collections of different types, can be customized, and are type safe and easier to read.&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>자바 제네릭스(1) Java  Generics</title>
-      <link>http://durtchrt.github.io/blog/java/generics/1/</link>
-      <pubDate>Mon, 31 Oct 2016 15:07:44 +0900</pubDate>
-      
-      <guid>http://durtchrt.github.io/blog/java/generics/1/</guid>
-      <description>
-
-&lt;h1 id=&#34;자바-제넥릭스-java-generics-1&#34;&gt;자바 제넥릭스 - Java Generics 1&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/index.html&#34;&gt;원본&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;the-java-tutorials&#34;&gt;The Java Tutorials&lt;/h2&gt;
-
-&lt;h3 id=&#34;lesson-generics-updated&#34;&gt;Lesson: Generics(Updated)&lt;/h3&gt;
-
-&lt;p&gt;소프트웨어에서 버그는 일상이다. &lt;del&gt;모든 사소하지 않은 소프트웨어 프로젝트에서 버그는 삶의 진실이다.&lt;/del&gt; 주의깊게 계획, 프로그래밍, 테스트는 버그가 스며드는것을 줄여준다. 하지만 여찌됐든, 언젠가! 버그는 코드에서 기어다닐 방법을 항상 찾는다. 이는 결국 새로운 기능이 도입되거나 코드 사이즈와 복잡섭이 증가됨에 따라 심각하게 눈에 띄게 될 것이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;In any nontrivial software project, bugs are simply a fact of life. Careful planning, programming, and testing can help reduce their pervasiveness, but somehow, somewhere, they&#39;ll always find a way to creep into your code. This becomes especially apparent as new features are introduced and your code base grows in size and complexity.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;운좋게 몇몇 버그는 찾기 쉽다. 예를들어, 컴파일 타임 버그는 초기에 찾을 수 있다. 컴파일러의 에러 메세지를 이용하여 문제점을 발견하고 바로 거기서 고칠수 있다. 반면에 런타임 버그는 훨씬 더 해결이 어렵다. 런타임 버그는 겉으로 직접 나타나지 않으며, 버그가 동작할 때, 그것은 프로그램에서 실제 문제의 원인에서 멀리 떨어진 지점에 있을 수도 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Fortunately, some bugs are easier to detect than others. Compile-time bugs, for example, can be detected early on; you can use the compiler&#39;s error messages to figure out what the problem is and fix it, right then and there. Runtime bugs, however, can be much more problematic; they don&#39;t always surface immediately, and when they do, it may be at a point in the program that is far removed from the actual cause of the problem.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Generics는 컴파일 타임에 버그를 찾을수 있게되어 코드에 안정성을 더합니다. 이 과정을 마친후에는 Gilad Bracha의 Generics 튜토리얼을 진행할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Generics add stability to your code by making more of your bugs detectable at compile time. After completing this lesson, you may want to follow up with the Generics tutorial by Gilad Bracha.&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     

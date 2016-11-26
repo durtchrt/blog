@@ -7,18 +7,611 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>durtchrt</copyright>
-    <lastBuildDate>Wed, 23 Nov 2016 11:55:37 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 25 Nov 2016 14:08:04 +0900</lastBuildDate>
     <atom:link href="http://durtchrt.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>playnode2016-javascript everywhere - 1. 하나의 프로그래밍 언어로 천하통일을 꿈꾸는 메이커</title>
-      <link>http://durtchrt.github.io/blog/conference/20161123/session1_track_e/</link>
-      <pubDate>Wed, 23 Nov 2016 11:55:37 +0900</pubDate>
+      <title> 20161125 나는 프로그래머다 컨퍼런스</title>
+      <link>http://durtchrt.github.io/blog/conference/20161125/1/</link>
+      <pubDate>Fri, 25 Nov 2016 14:08:04 +0900</pubDate>
       
-      <guid>http://durtchrt.github.io/blog/conference/20161123/session1_track_e/</guid>
+      <guid>http://durtchrt.github.io/blog/conference/20161125/1/</guid>
       <description>
 
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;code&gt;발표 후기 1&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;functional-programming-그게-뭐죠&#34;&gt;Functional Programming 그게 뭐죠?&lt;/h1&gt;
+
+&lt;h4 id=&#34;함수&#34;&gt;함수&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;절차지향
+
+&lt;ul&gt;
+&lt;li&gt;subroutin&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;functional
+
+&lt;ul&gt;
+&lt;li&gt;수학에서 말하는 함수&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;why-functional-programming&#34;&gt;Why? Functional Programming&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;동시성
+무어의 법칙이 깨진후
+CPU제조업체가 멀티 코어 성능 향상을 꾀함.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;간결
+expression의 조합
+고민해야할 문제가 하나로 줄어듬.
+oop의 단일책임원칙이 자연스럽게 적용됨.
+동일 입력값이 동일 출력값으로&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;테스트
+값을 직접입력하지 않아도 테스트 프레임워크가 자동으로 생성도 가능&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;재미!!!&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;맛보기&#34;&gt;맛보기&lt;/h4&gt;
+
+&lt;p&gt;과거 함수형 프로그래밍 언어는 느려서 못썼는데
+요새는 속도가 빠름.&lt;/p&gt;
+
+&lt;p&gt;haskel 샘플&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-haskel&#34;&gt;let add :: Int -&amp;gt; Int -&amp;gt; Int
+add a b = a + b
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(파라메터)  (리턴타입)
+Int -&amp;gt;Int -&amp;gt; Int&lt;/p&gt;
+
+&lt;p&gt;함수형언어들은 함수 우선권을 가짐
+add 2 5 * 3
+=&amp;gt; 21&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;1.toString()
+==&amp;gt; error
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;1.toString
+==&amp;gt; &amp;quot;1&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;자바에서의 1은 primitive type
+scala에서의 1은 object   =&amp;gt; PURE object oriented programming language&lt;/p&gt;
+
+&lt;p&gt;Full-blown
+Functional Language
+=&amp;gt; 순수 함수형 언어가 아닌 함수형 프로그래밍하기에 적합한 언어를 지칭
+=&amp;gt; 스칼라가 이 범위에 있음.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;호주 이민은 스칼라&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;kevin github -&amp;gt; functional transaction without aop&lt;/p&gt;
+
+&lt;h2 id=&#34;br-br-br-br-br-br-br&#34;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;발표 후기 2&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;machine-intelligence-at-google-service&#34;&gt;Machine Intelligence at Google Service&lt;/h1&gt;
+
+&lt;p&gt;What we&amp;rsquo;ll cover
+what is neural network and deep learning
+machine learning use cases at google services
+externalizing the power of ML
+tensorFlow: the open source library for ML
+tensorFlow in the wild
+??&lt;/p&gt;
+
+&lt;h4 id=&#34;what-is-neural-network-and-deep-learning&#34;&gt;What is Neural Network and Deep Learning&lt;/h4&gt;
+
+&lt;p&gt;Neural network is a functio that can learn
+-&amp;gt; 고양이의 이미지를 분석해서 레이블을 만듬.
+-&amp;gt; 이러한 기술을 게임서버에서 로그를 분석해서 악성행위 분석 가능&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../1.png&#34; alt=&#34;spiral&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;나선 이미지를 보면 오렌지, 블루 색상을 사람은 쉽게 알 수 있음&lt;/p&gt;
+
+&lt;p&gt;하지만 컴퓨터는&amp;hellip;
+점마다 위치정보를 if-else하는 프로그래밍은 괴로움.
+-&amp;gt; 이러한 문제를 해결하기 위해 ML사용&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://playground.tensorflow.org/#activation=tanh&amp;amp;batchSize=10&amp;amp;dataset=spiral&amp;amp;regDataset=reg-plane&amp;amp;learningRate=0.03&amp;amp;regularizationRate=0&amp;amp;noise=0&amp;amp;networkShape=4,2&amp;amp;seed=0.82086&amp;amp;showTestData=false&amp;amp;discretize=false&amp;amp;percTrainData=50&amp;amp;x=true&amp;amp;y=true&amp;amp;xTimesY=false&amp;amp;xSquared=false&amp;amp;ySquared=false&amp;amp;cosX=false&amp;amp;sinX=false&amp;amp;cosY=false&amp;amp;sinY=false&amp;amp;collectStats=false&amp;amp;problem=classification&amp;amp;initZero=false&amp;amp;hideText=false&#34;&gt;Neural network traning play ground&lt;/a&gt; - site sample&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;site에서 패턴인식하는게 실시간으로 나와서 파란색과 오렌지색을 인식하는것을 볼 수 있음&lt;/li&gt;
+&lt;li&gt;더 많은 데이터와 더 많은 샘플을 주면 더 빠르고 더 정확하게 데이터를 학습함.&lt;/li&gt;
+&lt;li&gt;한레이어에서 나오는 아웃풋을 그 다음 레이어의 인풋으로 제공해서 더 스마트헤거 됨.&lt;/li&gt;
+&lt;li&gt;각각의 레이어는 단순하지만 이 것들이 통합하면서 스마트한 뉴런네트워크가 됨.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;=&amp;gt; 사람이 이미지를 어떻게 인식하라고 알려주지 않아도 알아서 하는 것이 중요&lt;br&gt;
+=&amp;gt; AI, AlphaGo가 이세돌을 이길수 있었던것.
+=&amp;gt; 컴퓨터가 스스로 방법을 찾아내기 때문에 사람보다 뛰어난 방법을 찾아낼 수 있는 것.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.petdrugsonline.co.uk/images/page-headers/cats-master-header&#34; alt=&#34;cat&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;고양이 인식&lt;br&gt;
+=&amp;gt; 고양이를 인식하기 위해 50개 이상의 레이어가 생성되고, 각각의 레이어(뉴런)은 단순 하지만 모이면 스마트해지면서 컴퓨터가 이미지상에서 고양이를 판별할 수 있게됨.&lt;/p&gt;
+
+&lt;h4 id=&#34;machine-learning-use-cases-at-google-services&#34;&gt;machine learning use cases at google services&lt;/h4&gt;
+
+&lt;p&gt;구글 검색을 통해 이를 사용하고 있음
+최근에 구글은 랭크브레인이라는 서비스를 내놓음
+Image를 컨텐츠에 따라 구분하는 google photo
+gmail - smart reply in box mobile - 이메일을 자동으로 전송.
+google translate with neural machine translation
+data center - energy save
+More&amp;hellip;. 60개 이상의 프로덕트에 사용&lt;/p&gt;
+
+&lt;h4 id=&#34;externalizing-the-power-of-ml&#34;&gt;externalizing the power of ML&lt;/h4&gt;
+
+&lt;p&gt;ML api는 머신러닝과 상관없는 개발자가 사용하도록 제공하려함.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CoudVision API
+이미 트레이닝된 모델을 제공하기 때문에 이미지가 인풋되면 바로 결과가 나옴.
+8만개 이상의 이미지를 이용해서 서비스를 사용.
+사진을 주면 다양한 레이블 정보를 줌 (0_0 데모 우와~~)&lt;/li&gt;
+&lt;li&gt;WebSpeech Api
+google.com/speech&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;tensorflow-the-open-source-library-for-ml&#34;&gt;tensorFlow: the open source library for ML&lt;/h4&gt;
+
+&lt;p&gt;자신의 뉴럴네트워크를 구축하고 싶을때 사용하는 오픈소스
+Portable and Scalable&lt;/p&gt;
+
+&lt;h4 id=&#34;tensorflow-in-the-wild&#34;&gt;tensorFlow in the wild&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;일본의 예를 보여줌.
+어머니는 오이를 하루 8시간씩 골라내는 일을 함.
+스스로 텐서플로우로 오이 분류기를 만듬.
+embedded software 개발자로 머신러닝을 모르는 사람이지만 함!!!
+현재 70%의 정확성으로 오이를 9개의 등급으로 나눌수 있다.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;치킨너겟을 서빙하는 로봇 팔.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;드론으로 트럭의 갯수를 세는 것.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;distributed-training-and-prediction-in-computing-power&#34;&gt;Distributed training and prediction in Computing power(?)&lt;/h4&gt;
+
+&lt;p&gt;컴퓨터 파워가 엄청 필요함.
+GPU가 있어도 몇주가 걸리기도 함.&lt;/p&gt;
+
+&lt;p&gt;구글 클라우드가 수십만개의 GPU 클러스터를 가짐.&lt;/p&gt;
+
+&lt;p&gt;jupitor network
+tensor processiong unit&lt;/p&gt;
+
+&lt;p&gt;=&amp;gt; 40배 ~ 300배 성능 향상 가능&lt;/p&gt;
+
+&lt;h2 id=&#34;br-br-br-br-br-br-br-1&#34;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;발표 후기 3&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;스칼라로-웹사이트-개발하기&#34;&gt;스칼라로 웹사이트 개발하기&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;라스칼라코딩단, 최정열 &amp;amp; 케빈리&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;=&amp;gt; 라이브 코딩(작성 못함. T-T)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;나프다 동영상 참조. 시연신이 나오셔서 방해를 엄청하심;;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;br-br-br-br-br-br-br-2&#34;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;발표 후기 4&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;ms는-rx를-왜-만들었을까-feat-rxjs&#34;&gt;MS는 Rx를 왜 만들었을까?  feat. RxJS&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;네이버, 김훈민&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://huns.me/development/2051&#34;&gt;발표자가 발표 주제로 포스팅한 글&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;rx는-어디에서-왔을까&#34;&gt;Rx는 어디에서 왔을까?&lt;/h4&gt;
+
+&lt;p&gt;volta project에서 시작
+-&amp;gt; live labs 다양한 기술을 하나의 플랫폼에서 실행 GWT과 비슷하지만 많은 플랫폼과 대응하는게 목적.
+-&amp;gt; volta 프로젝트는 좌초됨.&lt;/p&gt;
+
+&lt;p&gt;volta =&amp;gt; Reactive Framework를 가져와서 =&amp;gt; .Net의 Reactive Extenstion&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2009.11.17
+Rx.NET 릴리즈&lt;/li&gt;
+&lt;li&gt;2010.03.17
+RxJS&lt;/li&gt;
+&lt;li&gt;2012.11.06
+오픈소스 공개
+Rx.NET, RxJS, Rx++&lt;/li&gt;
+&lt;li&gt;2013.02.05
+RxJava by Netflix&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.reactivemanifesto.org&#34;&gt;리액트 선언 - Reative Manifesto&lt;/a&gt;
+&lt;img src=&#34;http://www.reactivemanifesto.org/images/reactive-traits.svg&#34; alt=&#34;설명&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;2-rx를-지탱하는-키워드&#34;&gt;2 Rx를 지탱하는 키워드&lt;/h4&gt;
+
+&lt;p&gt;Reactive Programming
+데이터 플로우와 상태 변경을 전파한다는 생각에 근간을 둔 프로그래밍 패러다임.&lt;/p&gt;
+
+&lt;p&gt;1985 - on the development of reactive systems
+=&amp;gt; 논문에 reactive란 용어 시초라고 봄.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;반응
+자극은 밖에서 안으로 흐름
+자극이 있어야만 반응하는 수동성&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://huns.me/wp/wp-content/uploads/2016/09/reactive-eric.png&#34; alt=&#34;참조이미지&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;iterator pattern - pull
+observalbe pattern - push&lt;/p&gt;
+
+&lt;p&gt;iterator - observable 쌍대 관계에 있다.
+-&amp;gt; slide의 설명문을 보면  @_@
+=&amp;gt; A와 B의 본질이 같다.&lt;/p&gt;
+
+&lt;p&gt;메서드표 자료 참조&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;LINQ to Events
+이벤트와  LINQ의 개념을 결합한 오퍼레이터(Operator) 제공
+Language Intergrated Query
+에릭마이어가 만든 통합 질의 언어 C# 3.0부터 등장 데이터 질의 문법 설탕
+두가지 스타일을 지원&lt;/li&gt;
+&lt;li&gt;Query syntax&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Method syntax&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Scheduler
+비동기 환경에서 오퍼레이터 실행 시점 제어&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;rp와-frp의-경계에서&#34;&gt;RP와 FRP의 경계에서&lt;/h4&gt;
+
+&lt;p&gt;RP != FRP&lt;/p&gt;
+
+&lt;p&gt;FRAN(Functional Reactive Animaton)1997 - 표현과 모델링의 분리 -&amp;gt;  시간에 따라 변하는 값을 표현(Behavior)
+-&amp;gt; 함수형 리액티브 프로그래밍의 시작&lt;/p&gt;
+
+&lt;p&gt;Evan Czaplicki - Elm만든 사람.
+Controlling Time and Space -&amp;gt; FRP 다양한 변종들 설명.&lt;/p&gt;
+
+&lt;p&gt;FRP 번위를 간단히 좁히면 (FRAN 논문 저자 왈)
+1. denotational : 연속하는 시간에 따라 변하는 값이 1급 시민으로 표현되어야함.
+2. countinuous-time&lt;/p&gt;
+
+&lt;p&gt;개념적인 FRAN, 실질적인 Rx불연속값 처리 스트림 결합시 일괁성 없는 동시 이벤트 처리 발생
+단점 -&amp;gt; 구성성 결여&lt;/p&gt;
+
+&lt;p&gt;rx는 순간 불일치(glitch) 생김 =&amp;gt; 진정한 FRP 구현체라고 보기 힘들어함.&lt;/p&gt;
+
+&lt;p&gt;제대로된 reactive를 보고 싶으면 &amp;lsquo;reactive-banana&amp;rsquo; 라이브러리 참조.
+=&amp;gt; FRP 설명을 하스켈로 설명.&lt;/p&gt;
+
+&lt;h4 id=&#34;웹프론트엔드-그리고-rxjs&#34;&gt;웹프론트엔드, 그리고  RxJS&lt;/h4&gt;
+
+&lt;p&gt;뷰와 상태의 동기화 문제를 프레임워크마다 푸는 방식
+backborn - KVO(key-value observing) =&amp;gt; 데이터 변경 체크 까지만 프레임워크 뷰의 상태 변화는 개발자가(MVC)
+angular - 양방향 databinding =&amp;gt; 속도 문제 발생
+reactjs - virtual dom - 상대가 변경되면 뷰가 바낌.
+flux - react는 view만 담당. 순수 함수 조합 단방향 데이터 플로우
+MVI(Model-view-intent) 순환 스트림 설계 함수형 프로그래밍.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Reactive&lt;/li&gt;
+&lt;li&gt;Functinal&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;rx는-fe-개발자에게-좋은-자극제&#34;&gt;Rx는 FE 개발자에게 좋은 자극제&lt;/h4&gt;
+
+&lt;p&gt;Elm에서 영감을 얻은 Redux, Cycle.js
+다른 진영 또는 클래식한 기술에서 새로운 통찰을 경험.&lt;/p&gt;
+
+&lt;h2 id=&#34;br-br-br-br-br-br-br-3&#34;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;발표 후기 5&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;스타트업-1인-개발-극복기-와-javascript-vs-scala-함수형-언어-관점으로-방황기&#34;&gt;&amp;lsquo;스타트업 1인 개발 극복기&amp;rsquo;와 &amp;lsquo;javascript vs Scala, (함수형 언어 관점으로)방황기&amp;rsquo;&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I/O Inc, 박미정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;왜-함수형-언어&#34;&gt;왜 함수형 언어?&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;개인
+
+&lt;ul&gt;
+&lt;li&gt;성장욕구&lt;/li&gt;
+&lt;li&gt;높은 추상화&lt;/li&gt;
+&lt;li&gt;코드 신뢰성&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;회사
+
+&lt;ul&gt;
+&lt;li&gt;시간적 여유&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;lsquo;코드 신뢰성&amp;rsquo; -&amp;gt; 적은 코드가 적은 버그를 만들어낸다.&lt;/p&gt;
+
+&lt;h4 id=&#34;어떻게-팀에-도입을&#34;&gt;어떻게 팀에 도입을?&lt;/h4&gt;
+
+&lt;p&gt;매주 sw 세미나 -&amp;gt; (관심끌기 성공) -&amp;gt; 함수형 패러다임 도적 -&amp;gt; 프로덕션 적용 시작&lt;/p&gt;
+
+&lt;p&gt;&amp;lsquo;관심끌기 사례&amp;rsquo;
+ - &amp;gt; 같은 입력 같은 출력 (사이드이펙트가 없으니) TDD시에 상당히 자연스럽게 연결.&lt;/p&gt;
+
+&lt;h4 id=&#34;어떻게-팀에-도입을-1&#34;&gt;어떻게 팀에 도입을?&lt;/h4&gt;
+
+&lt;p&gt;함수형 언어에 등장하는 &amp;lsquo;특성들&amp;rsquo;을 &amp;lsquo;기존 제품의 서버에 적용&amp;rsquo; 해보고 함수형 패러다임의 &amp;lsquo;매력&amp;rsquo;을 멤버들과 동기화&lt;/p&gt;
+
+&lt;h4 id=&#34;왜-scala&#34;&gt;왜 Scala&lt;/h4&gt;
+
+&lt;p&gt;함수형 프로그래밍 언어 -&amp;gt; side effect 없는 프로그래밍을 지원하고 장려하는 언어&lt;/p&gt;
+
+&lt;p&gt;scala oop+fP 다리역할
+  -&amp;gt; 멤버들이 oop에 익숙한 상태에서 fp를 자연스럽게 넘어갈때 !!&lt;/p&gt;
+
+&lt;p&gt;#(2번째 주제) 스타트업 1인 개발 극복기
+&lt;a href=&#34;http://www.slideshare.net/ParkMijeong/ss-65069602&#34;&gt;슬라이드참조&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[발번역]The Java™ Tutorials - 2-2. Pausing Execution with Sleep</title>
+      <link>http://durtchrt.github.io/blog/java/concurrency/5/</link>
+      <pubDate>Thu, 24 Nov 2016 15:00:35 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/concurrency/5/</guid>
+      <description>
+
+&lt;h2 id=&#34;원문링크-http-docs-oracle-com-javase-tutorial-essential-concurrency-sleep-html&#34;&gt;&lt;a href=&#34;http://docs.oracle.com/javase/tutorial/essential/concurrency/sleep.html&#34;&gt;원문링크&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;sleep으로-실행-중지하기&#34;&gt;Sleep으로 실행 중지하기&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Pausing Execution with Sleep&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Thread.sleep은 현재 실행하는 쓰레드를 정해진 시간만큼 실행을 중지한다. 컴퓨터에서 동작하는 어플리케이션의 프로세서의 시간을 효율적으로 만든다. sleep 메서드는 아래 예제처럼 다른 스레드들간에 동일한 간격(4초)으로 실행하게 하는데 사용하거나 다음 섹션에 SimpleThreads처럼 다른 스레드를 기다리게할 수 있다.
+&lt;code&gt;Thread.sleep causes the current thread to suspend execution for a specified period. This is an efficient means of making processor time available to the other threads of an application or other applications that might be running on a computer system. The sleep method can also be used for pacing, as shown in the example that follows, and waiting for another thread with duties that are understood to have time requirements, as with the SimpleThreads example in a later section.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;두가지 오버로드 버전 sleep 제공: 하나는 sleep 시간을 밀리초(ms)로, 다른 하나는 나노초(ns)로 명시햇다. 하지만 sleep되는 시간은 완벽하게는 보장되지 않는다. 왜냐하면 OS단에서 제공하는 기능 제약 때문이다. 또한 sleep 시간은 나중에 나올 섹션에 볼 수 있듯이 인터럽트에 의해 종료될수 있습니다.  어쨌든, sleep을 호출해서 설정한 시간을 완벽히 스레드가 정지한다고 확신 할 수 없다.
+&lt;code&gt;Two overloaded versions of sleep are provided: one that specifies the sleep time to the millisecond and one that specifies the sleep time to the nanosecond. However, these sleep times are not guaranteed to be precise, because they are limited by the facilities provided by the underlying OS. Also, the sleep period can be terminated by interrupts, as we&#39;ll see in a later section. In any case, you cannot assume that invoking sleep will suspend the thread for precisely the time period specified.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;SleepMessage 예제는 4초 간격으로 메세지를 프린트하려 sleep 메서드를 사용한다.
+&lt;code&gt;The SleepMessages example uses sleep to print messages at four-second intervals:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class SleepMessages {
+    public static void main(String args[])
+        throws InterruptedException {
+        String importantInfo[] = {
+            &amp;quot;Mares eat oats&amp;quot;,
+            &amp;quot;Does eat oats&amp;quot;,
+            &amp;quot;Little lambs eat ivy&amp;quot;,
+            &amp;quot;A kid will eat ivy too&amp;quot;
+        };
+
+        for (int i = 0;
+             i &amp;lt; importantInfo.length;
+             i++) {
+            //Pause for 4 seconds
+            Thread.sleep(4000);
+            //Print a message
+            System.out.println(importantInfo[i]);
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;main 메서드는  InterruptedException을 throws 한다. 현재 실행되는 쓰레드가 sleep하는 동안 다른 쓰레드가 인터럽트를하면 sleep 메서드가 throws하는 예외입니다. 이 어플리케이션은 다른 쓰레드를 인터럽트하지 않기 때문에  InterruptedException이 발생하지 않습니다.
+&lt;code&gt;Notice that main declares that it throws InterruptedException. This is an exception that sleep throws when another thread interrupts the current thread while sleep is active. Since this application has not defined another thread to cause the interrupt, it doesn&#39;t bother to catch InterruptedException.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[발번역]The Java™ Tutorials - 2-1. 쓰레드 정의와 시작 Defining and Starting a Thread</title>
+      <link>http://durtchrt.github.io/blog/java/concurrency/4/</link>
+      <pubDate>Thu, 24 Nov 2016 14:00:35 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/concurrency/4/</guid>
+      <description>
+
+&lt;h2 id=&#34;원문링크-http-docs-oracle-com-javase-tutorial-essential-concurrency-runthread-html&#34;&gt;&lt;a href=&#34;http://docs.oracle.com/javase/tutorial/essential/concurrency/runthread.html&#34;&gt;원문링크&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;쓰레드-정의와-시작&#34;&gt;쓰레드 정의와 시작&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Defining and Starting a Thread&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;쓰레드의 인스턴스를 생성하는 응용프로그램은 반드시 쓰레드에 run 메서드 코드를 제공해야합니다. 이는 두가지 방법이 있습니다.
+&lt;code&gt;An application that creates an instance of Thread must provide the code that will run in that thread. There are two ways to do this:&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;Runnable 객체 제공&lt;/code&gt; Runnable 인터페이스는 쓰레드에서 실행하는 코드를 포함하는 단일 메서드 run을 정의합니다. 이 Runnable 객체는 쓰레드 생성자에 인자로 전달됩니다. HelloRunnable 예제 참조
+&lt;code&gt;Provide a Runnable object. The Runnable interface defines a single method, run, meant to contain the code executed in the thread. The Runnable object is passed to the Thread constructor, as in the HelloRunnable example:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class HelloRunnable implements Runnable {
+
+public void run() {
+    System.out.println(&amp;quot;Hello from a thread!&amp;quot;);
+}
+
+public static void main(String args[]) {
+    (new Thread(new HelloRunnable())).start();
+}
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;서브클래스 쓰레드&lt;/code&gt; 쓰레드 클래스는 스스로 Runnable 인터페이스를 구현함에도 불구하고 run 메서드는 (main 메서드안에) 없습니다 어플리케이션은 HelloThread 예제처럼 자신의 run 메서드 구현체를 제공하여 Thread의 서브클래스화 할 수 있습니다.(Thread의 서브 클래스이므로 Thread로 동작 가능해짐.)
+&lt;code&gt;Subclass Thread. The Thread class itself implements Runnable, though its run method does nothing. An application can subclass Thread, providing its own implementation of run, as in the HelloThread example:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class HelloThread extends Thread {
+
+public void run() {
+    System.out.println(&amp;quot;Hello from a thread!&amp;quot;);
+}
+
+public static void main(String args[]) {
+    (new HelloThread()).start();
+}
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;두 예제는 새 스레드를 시작하기위해 Thread.start를 호출한다.
+&lt;code&gt;Notice that both examples invoke Thread.start in order to start the new thread.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;두 용례중 어느것을 사용하겠습니까? 첫번째 용례 Runnable 객체를 사용하는 것이 더 일반적이다 왜냐하면 Runnable 객체는 Thread가아닌 다른 클래스를 서브클래스화 할 수 있습니다. 두번째 용례는 간단한 응용프로그램에서 사용하기 쉽지만 태스크 클래스가 Thread의 하위 클래스여하는 제한이 있습니다. 이 수업에서는 실행하는 태스크인 Thread 객체로부터 Runnable 태스크를 분리하는 것에 초점을 두고있습니다. 이 방법은 더 유연하고 나중에 다를 고수준 쓰레드 관리 API에 적용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Which of these idioms should you use? The first idiom, which employs a Runnable object, is more general, because the Runnable object can subclass a class other than Thread. The second idiom is easier to use in simple applications, but is limited by the fact that your task class must be a descendant of Thread. This lesson focuses on the first approach, which separates the Runnable task from the Thread object that executes the task. Not only is this approach more flexible, but it is applicable to the high-level thread management APIs covered later.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;쓰레드 클래스는 쓰레드 관리를 위해 쓸만한 메서드들을 정의했다. 이는 쓰레드에대한 정보나 쓰레드의 상태에 영향에 대한 정적 메서들를 제공한다.(???? - the thread invoking the method.) 다른 메서드들은 다른 쓰레드로부터 호출됩니다.(쓰레드와 쓰레드 객체를 관리하는데 관련된) 우리는 이러한 메서드들을 다음 세션에서 검토할 것이다.
+&lt;code&gt;The Thread class defines a number of methods useful for thread management. These include static methods, which provide information about, or affect the status of, the thread invoking the method. The other methods are invoked from other threads involved in managing the thread and Thread object. We&#39;ll examine some of these methods in the following sections.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[발번역]The Java™ Tutorials - 2. Thread Objects</title>
+      <link>http://durtchrt.github.io/blog/java/concurrency/3/</link>
+      <pubDate>Thu, 24 Nov 2016 13:00:35 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/concurrency/3/</guid>
+      <description>
+
+&lt;h2 id=&#34;원문링크-http-docs-oracle-com-javase-tutorial-essential-concurrency-threads-html&#34;&gt;&lt;a href=&#34;http://docs.oracle.com/javase/tutorial/essential/concurrency/threads.html&#34;&gt;원문링크&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;쓰레드-객체&#34;&gt;쓰레드 객체&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Thread Objects&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;쓰레드마다 클래스 쓰레드의 인스턴스와 연관되어있다. 병행 어플리케이션을 만드는 쓰레드 객체를 사용하기 위해서는 두가지 전략이 있다.
+&lt;code&gt;Each thread is associated with an instance of the class Thread. There are two basic strategies for using Thread objects to create a concurrent application.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;직접적으로 쓰레드 생성과 관리를하려면, 어플리케이션이 비동기 태스크를 시작려는 필요할때마다 쓰레드를 인스턴스화합니다. 나머지 어플리케이션으로부터 추상 스레드를 관려하려면, 어플리케이션의 태스크를 executor에 전달하시요. 이 섹션에서는 쓰레드 객체의 사용법을 설명합니다.  Excutor는 고수준 병행 객체와 함께 논의합니다.
+&lt;code&gt;To directly control thread creation and management, simply instantiate Thread each time the application needs to initiate an asynchronous task. 
+To abstract thread management from the rest of your application, pass the application&#39;s tasks to an executor.
+This section documents the use of Thread objects. Executors are discussed with other high-level concurrency objects.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[발번역]The Java™ Tutorials - 1. Processes and Threads </title>
+      <link>http://durtchrt.github.io/blog/java/concurrency/2/</link>
+      <pubDate>Thu, 24 Nov 2016 12:00:35 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/concurrency/2/</guid>
+      <description>
+
+&lt;p&gt;##&lt;a href=&#34;http://docs.oracle.com/javase/tutorial/essential/concurrency/procthread.html&#34;&gt;원문링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;프로세스와-쓰레드&#34;&gt;프로세스와 쓰레드&lt;/h1&gt;
+
+&lt;p&gt;&lt;code&gt;Processes and Threads&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;병행 프로그래밍에서는 실행의 두개의 기본 개념이 있다(프로세스, 쓰레드). 자바 프로그래밍 언어에서는 병행 프로그래밍은 거의 대부분 쓰레드와 관련있다. 하지만 프로세스 역시 중요하다.
+&lt;code&gt;In concurrent programming, there are two basic units of execution: processes and threads. In the Java programming language, concurrent programming is mostly concerned with threads. However, processes are also important.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;컴퓨터 시스템은 일반적으로 많은 활동적인 프로세스와 쓰레드를 가지고 있다. 싱글 코에서는 하나만 동작할 수 있으므로 한순간에는 한 스레드만 동작할 수 있다. (;;;;) 싱글코어는 타임슬라이싱이라고 불리는 OS 기능을 통해 프로세스와 스레드들간에 공유한다.(Processing time for ???)
+&lt;code&gt;A computer system normally has many active processes and threads. This is true even in systems that only have a single execution core, and thus only have one thread actually executing at any given moment. Processing time for a single core is shared among processes and threads through an OS feature called time slicing.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;컴퓨터 시스템은 멀티 프로세서 또는  멀티 코어를 가지는건 점점 더 흔해지고 있다. 이건 시스템의  프로세스와 스레드의 병행 실행 능력을 훌륭하게 높여주였다. 하지만 병행성은 멀티프로세서 또는 멀티코어가 아니더라도 싱글코어 시스템에서도 가능하다.
+&lt;code&gt;It&#39;s becoming more and more common for computer systems to have multiple processors or processors with multiple execution cores. This greatly enhances a system&#39;s capacity for concurrent execution of processes and threads — but concurrency is possible even on simple systems, without multiple processors or execution cores.&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;프로세스&#34;&gt;프로세스&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Processes&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;프로세스는 독립 실행환경을 가졌습니다. 프로세스는 일반적으로 완벽하고, 외부에 노출안되는  런타임 자원의 집합을 제공합니다.(말이 어렵네;;); 개별적으로 각각의 프로세스들은 자신만의 메모리 공간을 가집니다.
+&lt;code&gt;A process has a self-contained execution environment. A process generally has a complete, private set of basic run-time resources; in particular, each process has its own memory space.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;프로세스는 프로그램 또는 어플리케이션과 유의어로 종종 인지한다. 하지만 사용자가 단일 어플리케이션처럼 보이는것은 사실 협력적인 프로세스일수 있습니다. 프로스스간에 통신이 잘될려면, OS는 파이프, 소켓 같은 IPC(Inter Process Communication)을 지원한다. IPC는 단순히 동일 시스템내에서 프록세스간의 통신뿐만 아니라 다른 시스템의 프로세스들간에도 사용됩니다.(뭔가 어려움;;)
+&lt;code&gt;Processes are often seen as synonymous with programs or applications. However, what the user sees as a single application may in fact be a set of cooperating processes. To facilitate communication between processes, most operating systems support Inter Process Communication (IPC) resources, such as pipes and sockets. IPC is used not just for communication between processes on the same system, but processes on different systems.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;거의 모든 자바 가상머신은 싱글 프로세스로 구현된다. 자바 어플리케이션은 ProcessBuilder 객체를 사용해서 추가 프로세스들을 만들수 있습니다. 멀티프로세스 어플리케이션은 이 수업의 범위를 넘기므로 없습니다.
+&lt;code&gt;Most implementations of the Java virtual machine run as a single process. A Java application can create additional processes using a ProcessBuilder object. Multiprocess applications are beyond the scope of this lesson.&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;쓰레드&#34;&gt;쓰레드&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;Threads&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;쓰레드는 때때로 가벼운 프로세스(lightwight processes)라고 불린다. 프로세스와 쓰레드는 실행환경을 제공하지만 새로운 프로세스를 생성하는 것보다 스레드를 생성하는게 자원 사용이 적다.
+&lt;code&gt;Threads are sometimes called lightweight processes. Both processes and threads provide an execution environment, but creating a new thread requires fewer resources than creating a new process.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;쓰레드는 프로세스 안에 존재한다.(모든 프로세스는 최소한 하나의 스레드를 가진다.) 스레드는 프로세스의 메모리, 열린 파일등을 포함하여 자원을 공유한다. 이건 효과적이지만 잠재적으로 문제가 있습니다.(communication??)
+&lt;code&gt;Threads exist within a process — every process has at least one. Threads share the process&#39;s resources, including memory and open files. This makes for efficient, but potentially problematic, communication.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;멀티쓰레드 동작은 자바 플랫폼의 필수적인 특징이다. 모든 어플리케이션은 최소한 하나의 (또는 여러개 )스레드를 가진다.메모리 관리와 시그널 핸들링과 같은 것과 같이 &amp;ldquo;시스템&amp;rdquo; 스레드를 셀 수 있습니다(???). 그러나 어플리케이션 프로그래머의 관점에서 보면 main 쓰레드라고 불리는 하나의 스레드로부터 시작합니다. 이 스레드는 추가 스레드를 생성하는 능력을 가졌다. 다음 섹션에서 설명하겠다.
+&lt;code&gt;Multithreaded execution is an essential feature of the Java platform. Every application has at least one thread — or several, if you count &amp;quot;system&amp;quot; threads that do things like memory management and signal handling. But from the application programmer&#39;s point of view, you start with just one thread, called the main thread. This thread has the ability to create additional threads, as we&#39;ll demonstrate in the next section.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[발번역]The Java™ Tutorials - 0. Concurrency</title>
+      <link>http://durtchrt.github.io/blog/java/concurrency/1/</link>
+      <pubDate>Thu, 24 Nov 2016 12:00:34 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/java/concurrency/1/</guid>
+      <description>
+
+&lt;p&gt;##&lt;a href=&#34;http://docs.oracle.com/javase/tutorial/essential/concurrency/index.html&#34;&gt;원문링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;lesson-concurrency&#34;&gt;Lesson: Concurrency&lt;/h1&gt;
+
+&lt;p&gt;컴퓨터는 사용자에게 동일시간에 한가지 이상의 일을 할 수 있도록 시스템이 보장이 되야한다. 컴퓨터 사용자는 워드프로세서 작업을 할 때 다른 어플리케이션이 파일 다운로드, 스트리밍 오디오, 프린터 큐 관리등을 동시에 하는게 당연하사 생각한다. 심지어 하나의 어플레케이션이 한번에 한가지 이상의 동작하는 것을 종종 기대한다. 예를들면 스트리밍 오디오 어플레케이션은 반드시 동시에 네트워크로부터 디지털 오디오 읽기, 압축을 풀기, 재생 관리, 디스플레이 업데이트를 수행한다. 심지어 워드프로세서도 디스플레이 업데이트나 텍스트를 다시 포맷팅하는것이 얼마나 바쁜지 상관없이 키보드의 응답, 마우스 이벤트들의 응답을 대기해야한다. 그러한 것을 할 수 있는 소프트웨어를 병행성(동시성) 소프트웨어라고 알려져있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Computer users take it for granted that their systems can do more than one thing at a time. They assume that they can continue to work in a word processor, while other applications download files, manage the print queue, and stream audio. Even a single application is often expected to do more than one thing at a time. For example, that streaming audio application must simultaneously read the digital audio off the network, decompress it, manage playback, and update its display. Even the word processor should always be ready to respond to keyboard and mouse events, no matter how busy it is reformatting text or updating the display. Software that can do such things is known as concurrent software.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;자바 플랫폼은 병행 프로그래밍을 지원하도록 (밑바닥부터 끝까지) 설계 되었다. 자바 프로그래밍 언어와 자바 클래스 라이브러리들로 기본 병행성을 지원한다. 자바 플랫폼 5.0 버전부터는 고수준의 concurrency API도 포함되었다. 이번 자바 플랫폼의 수업은 기본 병행 지원과 몇가지 java.util.concurrent 패키지의 수준 API의 요약을 소개한다.
+&lt;code&gt;The Java platform is designed from the ground up to support concurrent programming, with basic concurrency support in the Java programming language and the Java class libraries. Since version 5.0, the Java platform has also included high-level concurrency APIs. This lesson introduces the platform&#39;s basic concurrency support and summarizes some of the high-level APIs in the java.util.concurrent packages.&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[컨퍼런스 후기- 20161123] playnode2016</title>
+      <link>http://durtchrt.github.io/blog/conference/20161123/1/</link>
+      <pubDate>Wed, 23 Nov 2016 11:55:37 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/conference/20161123/1/</guid>
+      <description>
+
+&lt;p&gt;&lt;code&gt;강연후기 1&lt;/code&gt;&lt;/p&gt;
+
 &lt;h1 id=&#34;javascrpt-everywhere-하나의-프로그래밍-언어로-모바일부터-로봇까지&#34;&gt;javascrpt everywhere - 하나의 프로그래밍 언어로 모바일부터 로봇까지&lt;/h1&gt;
+
+&lt;p&gt;#소개
+JavaScript Everywhere - 하나의 프로그래밍 언어로 천하통일을 꿈꾸는 메이커&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;JavaScript 와 Node.JS 만으로 IoT 제작/교육 플랫폼을 만들고, 로봇을 위한 임베디드도 Node.JS 로 제작한 사례를 공유합니다.
+MongoDB 와 Elasticsearch 채용으로, 모바일 부터 로봇, 그리고 데이터 분석 까지 전 영역에 JavaScript 를 적용함으로써 얻은 교훈을 이야기 합니다.
+
+박종건 | Circulus 대표/수원대학교 조교수
+
+게임을 너무 좋아하여 휴학하고 다음 게임에 입사 하였다가, 직장이 아닌 직업을 찾기위해 IT개발을 위해 삼성SDS 정보기술연구소로 입사, IoT 기반 공급망/물류 시스템및 데이터 시각화 업무를 담당했습니다. 삼성 근무 시 내가 해야할 일은 남들도 누구나 SW+HW 를 이용하여 만들 수 있게 하자는 목적으로, 2013년 Circulus 커뮤니티를 시작, 뜻을 펼치기 위해 2016년 로봇 기반 에듀테크 스타트업 Circulus 를 시작하였습니다.
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;주제&#34;&gt;주제&lt;/h3&gt;
 
@@ -34,8 +627,6 @@
 &lt;li&gt;rippertnt@gmail.com&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.circul.us&#34;&gt;http://www.circul.us&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
 
 &lt;h2 id=&#34;why-javascript&#34;&gt;Why - Javascript&lt;/h2&gt;
 
@@ -147,196 +738,248 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h2 id=&#34;how-robotics-intelligent-bot&#34;&gt;How - Robotics (Intelligent Bot)&lt;/h2&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>4Clojure 문제 모음 30 ~</title>
-      <link>http://durtchrt.github.io/blog/clojure/4clojure/questions30/</link>
-      <pubDate>Tue, 22 Nov 2016 18:22:01 +0900</pubDate>
-      
-      <guid>http://durtchrt.github.io/blog/clojure/4clojure/questions30/</guid>
-      <description>
+&lt;h4 id=&#34;how-robotics-intelligent-bot&#34;&gt;How - Robotics (Intelligent Bot)&lt;/h4&gt;
 
-&lt;h3 id=&#34;26-피보나치-시퀀스-fibonacci-sequence-https-www-4clojure-com-problem-26&#34;&gt;26.피보나치 시퀀스 &lt;a href=&#34;https://www.4clojure.com/problem/26&#34;&gt;Fibonacci Sequence&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;-&amp;gt; 발표자 회사 소개 자료..&lt;/p&gt;
 
-&lt;p&gt;난이도: 쉬움
-주제: Fibonacci seqs&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;code&gt;강연후기 2&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;
-피보나치 숫자들중 주어진 인자값만큼 피보나치 시퀀스를 반환하는 함수를 작성하세요.&lt;/p&gt;
+&lt;h1 id=&#34;how-the-node-js-event-loop-works&#34;&gt;How the Node.js event loop works&lt;/h1&gt;
 
-&lt;pre&gt;&lt;code&gt;Write a function which returns the first X fibonacci numbers.
+&lt;pre&gt;&lt;code&gt;Node.js프로그래머들은 비동기 I/O와 event loop에 대해 너무나 익숙합니다. 하지만 event loop가 실제 어떻게 작동되는지 아는 사람은 많지 않습니다. node가 Threads를 쓰는지 안쓰는지? Callback은 어디에서 오는지? nextTick을 쓸지 setImmediate을 쓸지? node 저변에는 &amp;quot;libuv&amp;quot;라이브러리가 여러 플랫폼 간의 이 모든 마법을 가능하게 합니다. HTTP 요청 처리 여부, 파일의 읽기나 타이머 처리까지 libuv 가 이 모든 것을 가능하게 합니다. 이 세션에서 libuv아키텍트인 Bert Belder는 event loop의 작동 방식, libuv가 어떻게 비동기화 I/O를 가능하게 하는지, 그리고 당신의 Node.js코드를 최대한 활용할 수 있도록 어떻게 돕는지에 대해 이해하기 쉽게 설명할 것입니다.
+
+Bert Belder | Node.js core developer / Strongloop founder, IBM
+
+Bert Belder는 2011년부터 Node.js 코어 컨트리뷰터로, 가장 오래된 node 메인테이너이자 지금도 활발하게 활동하고 있습니다. 2013년에 Bert는 동료 Ben Noordhuis와 함께 StrongLoop을 설립했습니다. 오픈 소스에는 libuv를 윈도우에 포팅하는 작업을 기점으로 첫 발을 들였으며, 그 이후로 지금까지 node 커뮤니티의 리더로 활동하고 있습니다.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;how-the-node-js-event-loop-works-1&#34;&gt;How the node.js event loop works&lt;/h1&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;(= (__ 3) &#39;(1 1 2))
-(= (__ 6) &#39;(1 1 2 3 5 8))
-(= (__ 8) &#39;(1 1 2 3 5 8 13 21))
+&lt;p&gt;=&amp;gt; 사전 지식으로 커널에 대해 알고 있어야 이해가 감.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Bert Belder 
+Node.js core developer / Strongloop founder, IBM
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.google.co.kr/search?q=nodejs+eventloop&amp;amp;espv=2&amp;amp;biw=1246&amp;amp;bih=780&amp;amp;source=lnms&amp;amp;tbm=isch&amp;amp;sa=X&amp;amp;ved=0ahUKEwja-KWEib7QAhWJVLwKHQcICc0Q_AUIBigB&#34;&gt;구글 이미지 검색 node.js event loop&lt;/a&gt;
+=&amp;gt; 모두 잘못되었다고 말함;; 임팩트를 줌!!&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;네트워킹-프로그래밍을-할때-최소-3번은-blocking이-생긴다&#34;&gt;네트워킹 프로그래밍을 할때 최소 3번은 blocking이 생긴다.&lt;/h4&gt;
+
+&lt;p&gt;(psedo code로 c 코드를 보여줌)
+- I/O 작업시에 블럭킹 발생
+    - connect method
+    - write method
+    - read method&lt;/p&gt;
+
+&lt;p&gt;==&amp;gt; 그러나 컴퓨터 H/W는 비동기임.
+==&amp;gt; 보여준 코드는 절차적이면서 스테이트먼트가 끝나려면 응답을 기다리는 blocking 구조임.&lt;/p&gt;
+
+&lt;h4 id=&#34;h-w-비동기-참조-pio-dma&#34;&gt;H/W 비동기 참조 PIO -&amp;gt; DMA&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://ko.wikipedia.org/wiki/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8_%EC%9E%85%EC%B6%9C%EB%A0%A5&#34;&gt;PIO&lt;/a&gt;
+&lt;a href=&#34;https://ko.wikipedia.org/wiki/%EC%A7%81%EC%A0%91_%EB%A9%94%EB%AA%A8%EB%A6%AC_%EC%A0%91%EA%B7%BC&#34;&gt;DMA&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;cpu &amp;ndash; command  &amp;mdash;&amp;gt;
+    &amp;lt;&amp;ndash;interrupt  &amp;mdash;  disk &amp;lt;&amp;ndash;data&amp;mdash;&amp;gt; ram&lt;/p&gt;
+
+&lt;h4 id=&#34;nodejs-eventloop&#34;&gt;nodejs eventloop&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;../1.jpg&#34; alt=&#34;설명자료1&#34; /&gt;
+&lt;img src=&#34;../2.jpg&#34; alt=&#34;설명자료&#34; /&gt;
+&lt;img src=&#34;../3.jpg&#34; alt=&#34;설명자료&#34; /&gt;
+&lt;img src=&#34;../4.jpg&#34; alt=&#34;설명자료&#34; /&gt;
+&lt;img src=&#34;../5.jpg&#34; alt=&#34;설명자료&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;유니콘-함수-설명&#34;&gt;유니콘 함수 설명.&lt;/h5&gt;
+
+&lt;p&gt;function unicorn {
+  //Put the main thread to sleep
+  // Wake u when:
+  * there ar events ffrom the kernel to process
+  * a thread pool thread has completed an operation
+  * the next timer goes off&lt;/p&gt;
+
+&lt;p&gt;nonblocking o/s main method
+linux - epoll_wait
+ios- kevent
+windows-GetQueuedCompletionStatusEx()&lt;/p&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;h4 id=&#34;non-blocking-i-o&#34;&gt;Non-blocking I/O&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Try an I/O operation(rad, write)&lt;/li&gt;
+&lt;li&gt;If it couldn&amp;rsquo;t be done immediately, EAGAIN or EWOULDBLCIK is returned&lt;/li&gt;
+&lt;li&gt;Call epoll() / kqueue() to knwo when you should try again&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Overlapped I/O
+1. send a command to the kernel(WSARecv, WSASend)
+2. Call GetQueuedCompletionStatusEx() later to get the result.&lt;/p&gt;
+
+&lt;h5 id=&#34;node에서-커널관심사&#34;&gt;node에서 커널관심사&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&#34;../6.jpg&#34; alt=&#34;이미지&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;node-loop-tick&#34;&gt;node loop tick(??)&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;../7.jpg&#34; alt=&#34;이미지&#34; /&gt;
+원래는 nextTick/callback만 있었는데 Resolve/Promise&lt;/p&gt;
+
+&lt;p&gt;발표자 트위터 @scisauresus&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;code&gt;강연후기 3&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;난이도: 쉬움
-주제:&lt;/p&gt;
+&lt;h1 id=&#34;electron을-이용한-모바일-테스트-자동화-소프트웨어-개발&#34;&gt;Electron을 이용한 모바일 테스트 자동화 소프트웨어 개발&lt;/h1&gt;
 
-&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Electron을 이용한 모바일 테스트 자동화 소프트웨어 개발
 
-&lt;pre&gt;&lt;code&gt;C
+Node기반의 Electron을 이용하여 모바일 앱 테스트 자동화 소프트웨어 개발 사례를 소개하고, Node가 가진 인프라를(NPM) 프론트-엔드 기술에 접목시켰을 때의 효과와, 달라지는 것은 무엇인지에 대하여 알아보는 시간을 가져봅시다.
+
+경준호 | 알서포트
+
+자바스크립트를 매우 사랑하는 10년차 프론트-엔드 개발자입니다. Firejune이라는 닉으로 활동 중이며, 순수 미술을 전공했고 웹 디자인을 시작으로 IT업계에 발을 들여 놓았다가 안타깝게도 개발자가 되고 말았습니다…
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;agenda&#34;&gt;Agenda&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;Test Atutomationwith ATDD&lt;/li&gt;
+&lt;li&gt;node based desktop application&lt;/li&gt;
+&lt;li&gt;introduction to project psyclone&lt;/li&gt;
+&lt;li&gt;test cloud service with psyclone&lt;/li&gt;
+&lt;li&gt;QA&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;test-automation-with-atdd&#34;&gt;Test Automation with ATDD&lt;/h3&gt;
+
+&lt;p&gt;&amp;ldquo;ATDD: Acceptance Test Driven Development&amp;rdquo;
+수용가능한 테스트 주도 개발&lt;/p&gt;
+
+&lt;p&gt;pullrequest시에 코드만 있고 테스트가 없을때&lt;/p&gt;
+
+&lt;p&gt;Where is Test
+정적테스트 -  개발중인 테스트 코드
+Dynamic test - 이미 완성된 코드를 테스트할때&lt;/p&gt;
+
+&lt;p&gt;TDD, BDD, ATDD cycle 이미지 참조&lt;/p&gt;
+
+&lt;h3 id=&#34;web-e2e-testing-tools&#34;&gt;Web E2E Testing tools&lt;/h3&gt;
+
+&lt;p&gt;selenium, Webdriver, nemo, nightwatch, protractor webdriverIO, &amp;hellip;.&lt;/p&gt;
+
+&lt;p&gt;CI와 연계하면 좋음&lt;/p&gt;
+
+&lt;h4 id=&#34;selenium&#34;&gt;Selenium&lt;/h4&gt;
+
+&lt;p&gt;Webdriver - selenium이 만든 spec - 브라우저 벤더가 만들어줌. &lt;a href=&#34;https://www.w3.org/TR/webdriver/&#34;&gt;2015 W3C 채택&lt;/a&gt;
+Grid
+IDE
+Remote Controlll&lt;/p&gt;
+
+&lt;p&gt;Testscript -&amp;gt; webdriver client -&amp;gt; remote server -&amp;gt; selenium(?)&amp;hellip;&lt;/p&gt;
+
+&lt;h4 id=&#34;nightwatch-script&#34;&gt;Nightwatch Script&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://nightwatchjs.org/&#34;&gt;링크&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;examples/test/googleDemoTest.js&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;module.exports = {
+  &#39;Demo test Google&#39; : function (client) {
+    client
+      .url(&#39;http://www.google.com&#39;)
+      .waitForElementVisible(&#39;body&#39;, 1000)
+      .assert.title(&#39;Google&#39;)
+      .assert.visible(&#39;input[type=text]&#39;)
+      .setValue(&#39;input[type=text]&#39;, &#39;rembrandt van rijn&#39;)
+      .waitForElementVisible(&#39;button[name=btnG]&#39;, 1000)
+      .click(&#39;button[name=btnG]&#39;)
+      .pause(1000)
+      .assert.containsText(&#39;ol#rso li:first-child&#39;,
+        &#39;Rembrandt - Wikipedia&#39;)
+      .end();
+  }
+};
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;./bin/nightwatch -t examples/test/googleDemoTest.js&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;node-based-desktop-application&#34;&gt;Node based Desktop Application&lt;/h5&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/sindresorhus/awesome-electron&#34;&gt;Awesome Electron&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;electron-atom-shell&#34;&gt;Electron(Atom-Shell)&lt;/h4&gt;
+
+&lt;p&gt;architecture&lt;/p&gt;
+
+&lt;h4 id=&#34;psyclone&#34;&gt;Psyclone&lt;/h4&gt;
+
+&lt;p&gt;Environments
+- React + reduct
+- mocha should
+- node canvas
+- opencv
+- pty.js
+- highcharts
+- fallow W3c&amp;rsquo;s web driver spec
+- next generator javascript
+- custom npm modules&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/wycats/javascript-decorators&#34;&gt;javascript decorator&lt;/a&gt;
+&lt;a href=&#34;https://github.com/a-framework/REMOVE-react-redux-decorators&#34;&gt;react-redux-decorators&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;code&gt;강연후기 4&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;난이도: 쉬움
-주제:&lt;/p&gt;
+&lt;h1 id=&#34;docker-docker-swarm-관리-툴-gorae-project&#34;&gt;Docker, Docker Swarm 관리 툴 Gorae Project&lt;/h1&gt;
 
-&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;React.js, Node.js 로 개발되어진 Docker 관리 도구인 Gorae 프로젝트의 개발 구조와 과정에 대해서 이야기하고 Docker 환경에 친해지고 인사이트를 얻을 수 있는 시간을 마련해보고자 합니다.
 
-&lt;pre&gt;&lt;code&gt;C
+Rhio Kim (김양원) | CDNetworks
+
+프론트 엔드 기술을 좋아하고 늘 꾸준한 개발과 연구를 즐겨합니다. Haroopress 와 Haroopad 개발자입니다.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;gorae&#34;&gt;Gorae&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;hypervisor vs LXC(LinuX Containers)
+&lt;img src=&#34;http://blog.jayway.com/wp-content/uploads/2015/03/vm-vs-docker.png&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;hypervisor - kvm, vmware, hyper-v
+LXC - docker &lt;a href=&#34;http://robinsystems.com/blog/linux-containers-comparison-lxc-docker/&#34;&gt;참고&lt;/a&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=UEK-mpfjrMM&amp;amp;feature=youtu.be&#34;&gt;참고동영상&lt;/a&gt;&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;p&gt;What&amp;rsquo;s Gorae&lt;/p&gt;
 
-&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker GUI tool&lt;/li&gt;
+&lt;li&gt;Docker Swarm GUI tool&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;난이도: 쉬움
-주제:&lt;/p&gt;
+&lt;p&gt;비슷한 docker ochestration tool(도커 컨테이너 관리,  WEB UI)&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://kubernetes.io/&#34;&gt;kubernetes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://kubernetes.io/docs/user-guide/ui/&#34;&gt;kubernetes ui&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;pre&gt;&lt;code&gt;C
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Components&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;난이도: 쉬움
-주제:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;C
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;난이도: 쉬움
-주제:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;C
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;난이도: 쉬움
-주제:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;C
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;.[](&lt;a href=&#34;https://www.4clojure.com/problem/&#34;&gt;https://www.4clojure.com/problem/&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;난이도: 쉬움
-주제:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;문제&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;C
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;문제 코드&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;통과한 코드&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
+&lt;ul&gt;
+&lt;li&gt;Gorae(ui)&lt;/li&gt;
+&lt;li&gt;Gorae-swarm(ui)&lt;/li&gt;
+&lt;li&gt;Gorae-server(Backend)&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -1542,557 +2185,6 @@ Number의 서브타입인 Integer를 가진 Box&amp;lt;Integer&amp;gt;는 Box&am
     return count;
 }
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>자바 제네릭스(6) Java Generics: 제한된 타입 매개변수 (Bounded Type Parameters)</title>
-      <link>http://durtchrt.github.io/blog/java/generics/6/</link>
-      <pubDate>Fri, 04 Nov 2016 18:03:27 +0900</pubDate>
-      
-      <guid>http://durtchrt.github.io/blog/java/generics/6/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/bounded.html&#34;&gt;원문 링크&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;제한된-타입-매개변수-bounded-type-parameters&#34;&gt;제한된 타입 매개변수 &lt;code&gt;Bounded Type Parameters&lt;/code&gt;&lt;/h3&gt;
-
-&lt;p&gt;매개변수화된 타입에 타입인자를 넣을때 타입 제한을 걸고 싶을 때가 있을 것이다. 예를 들어, Number 타입 또는 Number 타입의 자식 클래스의 객체만 허용하는 숫자 처리를 위한 메서드를 만들 수 있다. 이것이 제한된 타입 매개변수다
-&lt;code&gt;There may be times when you want to restrict the types that can be used as type arguments in a parameterized type. For example, a method that operates on numbers might only want to accept instances of Number or its subclasses. This is what bounded type parameters are for.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;제한된 타입매개변수를 선언하는 방법은, 타입매개변수의 이름 뒤에  extends 키워드를 놓고 제한시킬 타입을 작성하면 된다. 아래의 에에서는 Number 타입으로 하였다. 주의할점은, 여기서 사용한 extends는 클래스안의 &amp;ldquo;extends&amp;rdquo; 또는 인터페이스의 &amp;ldquo;implements&amp;rdquo; 처럼 구현한다는 의미는 아니다.
-&lt;code&gt;To declare a bounded type parameter, list the type parameter&#39;s name, followed by the extends keyword, followed by its upper bound, which in this example is Number. Note that, in this context, extends is used in a general sense to mean either &amp;quot;extends&amp;quot; (as in classes) or &amp;quot;implements&amp;quot; (as in interfaces).&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class Box&amp;lt;T&amp;gt; {
-
-    private T t;
-
-    public void set(T t) {
-        this.t = t;
-    }
-
-    public T get() {
-        return t;
-    }
-
-    public &amp;lt;U extends Number&amp;gt; void inspect(U u){
-        System.out.println(&amp;quot;T: &amp;quot; + t.getClass().getName());
-        System.out.println(&amp;quot;U: &amp;quot; + u.getClass().getName());
-    }
-
-    public static void main(String[] args) {
-        Box&amp;lt;Integer&amp;gt; integerBox = new Box&amp;lt;Integer&amp;gt;();
-        integerBox.set(new Integer(10));
-        integerBox.inspect(&amp;quot;some text&amp;quot;); // error: this is still String!
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;generic Box 클래스는 제한된 타입 파라메터를 가진 메서드인 inspect를 포함하도록 기존 코드를 수정하였다. inspect 메서드 호출시에 String 타입을 인자로 받았기 때문에 컴파일이 실패할 것이다.
-&lt;code&gt;By modifying our generic method to include this bounded type parameter, compilation will now fail, since our invocation of inspect still includes a String:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;Box.java:21: &amp;lt;U&amp;gt;inspect(U) in Box&amp;lt;java.lang.Integer&amp;gt; cannot
-  be applied to (java.lang.String)
-                        integerBox.inspect(&amp;quot;10&amp;quot;);
-                                  ^
-1 error
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;결론은 generic 타입을 객체로 만들때 제한을 걸수 있다. 제한된 타입 매개변수는 정의된 제한된 범위 내에서 메서드를 호출 할 수 있다.
-&lt;code&gt;In addition to limiting the types you can use to instantiate a generic type, bounded type parameters allow you to invoke methods defined in the bounds:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class NaturalNumber&amp;lt;T extends Integer&amp;gt; {
-
-    private T n;
-
-    public NaturalNumber(T n)  { this.n = n; }
-
-    public boolean isEven() {
-        return n.intValue() % 2 == 0;
-    }
-
-    // ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;isEven 메서드는 변수 n에 타입인자로 전달된 Integer 타입에 정의된 intValue 메서드를 호출한다.
-&lt;code&gt;The isEven method invokes the intValue method defined in the Integer class through n.&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;여러번-제한하기-multiple-bounds&#34;&gt;여러번 제한하기 &lt;code&gt;Multiple Bounds&lt;/code&gt;&lt;/h3&gt;
-
-&lt;p&gt;이전까지 예제는 하나만 제한한 타입매개변수를 사용한 것만 설명했지만, 타입 매개변수는 여러개를 제한할 수 있다.
-&lt;code&gt;The preceding example illustrates the use of a type parameter with a single bound, but a type parameter can have multiple bounds:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;&amp;lt;T extends B1 &amp;amp; B2 &amp;amp; B3&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;여러개의 제한들로 구성된 타입매개변수는 제한하려 나열한 모든 타입들의 서브타입이다.(굳이 class라고 안하고 타입이란 용어를 쓰는건 interface를 포함하는 단어가 아니기 때문이다. 클래스는 타입의 부분) 제한된 타입중 하나가 class라면, class는 열거되는 타입들중 처음에 작성해야한다. 예를 들면:
-&lt;code&gt;A type variable with multiple bounds is a subtype of all the types listed in the bound. If one of the bounds is a class, it must be specified first. For example:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Class A { /* ... */ }
-interface B { /* ... */ }
-interface C { /* ... */ }
-
-class D &amp;lt;T extends A &amp;amp; B &amp;amp; C&amp;gt; { /* ... */ }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;만약 A라는 제한 class가 다른 제한 클래스들중 처음에 위치하지 않으면, 컴파일타임 에러를 발생된다.
-&lt;code&gt;If bound A is not specified first, you get a compile-time error:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;class D &amp;lt;T extends B &amp;amp; A &amp;amp; C&amp;gt; { /* ... */ }  // compile-time error
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>자바 제네릭스(5) Java Generics: 제네릭 메서드</title>
-      <link>http://durtchrt.github.io/blog/java/generics/5/</link>
-      <pubDate>Fri, 04 Nov 2016 13:43:44 +0900</pubDate>
-      
-      <guid>http://durtchrt.github.io/blog/java/generics/5/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/methods.html&#34;&gt;원문 링크&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;generic-메서드-generic-methods&#34;&gt;Generic 메서드 &lt;code&gt;Generic Methods&lt;/code&gt;&lt;/h3&gt;
-
-&lt;p&gt;Generic 메서드는 자시의 타입매개변수를 가진 메서드이다. generic 타입을 선언하는 것과 비슷하지만 타입매개변수의 스코프는 메서드로 제한된다. 일반 메서드, 정적 메서드 generic 클래스의 생성자는 이 룰을 동일하게 적용된다.
-&lt;code&gt;Generic methods are methods that introduce their own type parameters. This is similar to declaring a generic type, but the type parameter&#39;s scope is limited to the method where it is declared. Static and non-static generic methods are allowed, as well as generic class constructors.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;generic 메서드 문법은 return 타입 전에 꺽쇠 사이에 타입매개변수를 표기한다. static generic 메서드를 위해 타입매개변수는 반드시 메서드의 return 타입 이전에 위치해야한다.
-&lt;code&gt;The syntax for a generic method includes a type parameter, inside angle brackets, and appears before the method&#39;s return type. For static generic methods, the type parameter section must appear before the method&#39;s return type.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Util 클래스는 두 Pair 객체를 비교하는 generic 메서드를 포함하고 있습니다.
-&lt;code&gt;The Util class includes a generic method, compare, which compares two Pair objects:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class Util {
-    public static &amp;lt;K, V&amp;gt; boolean compare(Pair&amp;lt;K, V&amp;gt; p1, Pair&amp;lt;K, V&amp;gt; p2) {
-        return p1.getKey().equals(p2.getKey()) &amp;amp;&amp;amp;
-               p1.getValue().equals(p2.getValue());
-    }
-}
-
-public class Pair&amp;lt;K, V&amp;gt; {
-
-    private K key;
-    private V value;
-
-    public Pair(K key, V value) {
-        this.key = key;
-        this.value = value;
-    }
-
-    public void setKey(K key) { this.key = key; }
-    public void setValue(V value) { this.value = value; }
-    public K getKey()   { return key; }
-    public V getValue() { return value; }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;이 메서드를(static &lt;K, V&gt; boolean compare)를 호출한 문장은 다음과 같다.
-&lt;code&gt;The complete syntax for invoking this method would be:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Pair&amp;lt;Integer, String&amp;gt; p1 = new Pair&amp;lt;&amp;gt;(1, &amp;quot;apple&amp;quot;);
-Pair&amp;lt;Integer, String&amp;gt; p2 = new Pair&amp;lt;&amp;gt;(2, &amp;quot;pear&amp;quot;);
-boolean same = Util.&amp;lt;Integer, String&amp;gt;compare(p1, p2);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Util.&lt;strong&gt;&amp;lt;Integer, String&amp;gt;&lt;/strong&gt;compare(p1, p2)&lt;br&gt;
-강조한 영역처럼 타입을 명시하였다. 타입인자는 컴파일러가 타입 추론할때 필요한 정보가 된다.
-&lt;code&gt;The type has been explicitly provided, as shown in bold. Generally, this can be left out and the compiler will infer the type that is needed:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Pair&amp;lt;Integer, String&amp;gt; p1 = new Pair&amp;lt;&amp;gt;(1, &amp;quot;apple&amp;quot;);
-Pair&amp;lt;Integer, String&amp;gt; p2 = new Pair&amp;lt;&amp;gt;(2, &amp;quot;pear&amp;quot;);
-boolean same = Util.compare(p1, p2);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;위의 코드는 타입 추론을 나타낸것이다. 꺽쇠에 타입 명시하지 않고 generic 메서드가 아닌 일반 메서드를 호출해도 타입 추론이 이루어진다. 이 주제는 뒤에 나오는 타입 추론 섹션에서 더 논의한다.
-&lt;code&gt;This feature, known as type inference, allows you to invoke a generic method as an ordinary method, without specifying a type between angle brackets. This topic is further discussed in the following section, Type Inference.&lt;/code&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>자바 제네릭스(4) Java Generics: 원천(Raw) 타입들</title>
-      <link>http://durtchrt.github.io/blog/java/generics/4/</link>
-      <pubDate>Tue, 01 Nov 2016 16:05:56 +0900</pubDate>
-      
-      <guid>http://durtchrt.github.io/blog/java/generics/4/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/rawTypes.html&#34;&gt;원문 링크&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;원천-타입들-raw-types&#34;&gt;원천 타입들 &lt;code&gt;Raw Types&lt;/code&gt;&lt;/h3&gt;
-
-&lt;p&gt;Raw 타입은 generic 클래스 혹은 인터페이스에 타입인자가 없는 것. 예를들어 generic Box 클래스를 보자
-&lt;code&gt;A raw type is the name of a generic class or interface without any type arguments. For example, given the generic Box class:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class Box&amp;lt;T&amp;gt; {
-    public void set(T t) { /* ... */ }
-    // ...
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;아래 코드를 보면 Box&lt;T&gt;의 매개변수화된 타입을 만드면서, 타입매개변수 T에 해당하는 Integer를 타입인자로 제공하였다.
-&lt;code&gt;To create a parameterized type of Box&amp;lt;T&amp;gt;, you supply an actual type argument for the formal type parameter T:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Box&amp;lt;Integer&amp;gt; intBox = new Box&amp;lt;&amp;gt;();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;타입인자가 생략된 경우 Box&lt;T&gt;의 Raw 타입을 만들수 있다.
-&lt;code&gt;If the actual type argument is omitted, you create a raw type of Box&amp;lt;T&amp;gt;:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Box rawBox = new Box();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;결국, Box는 generic 타입 Box&lt;T&gt;의 raw 타입이다. 하지만, generic 클래스 또는 인터페이스가 아닌경우는 raw 타입이 될 수 없다.()
-&lt;code&gt;Therefore, Box is the raw type of the generic type Box&amp;lt;T&amp;gt;. However, a non-generic class or interface type is not a raw type.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Raw 타입은 JDK 5.0 이전 자바 API 클래스들은 제네릭을 지원하지 않았기 때문에(예를 들어 Collections 클래스) 레거시 코드에서 나타난다. raw 타입을 사용할 때는 반드시 generics 이전 방법(타입 캐스팅)을 하시오. 하위호환성을 위해, 타입매개변수는 raw타입을 허용하였다.
-&lt;code&gt;Raw types show up in legacy code because lots of API classes (such as the Collections classes) were not generic prior to JDK 5.0. When using raw types, you essentially get pre-generics behavior — a Box gives you Objects. For backward compatibility, assigning a parameterized type to its raw type is allowed:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Box&amp;lt;String&amp;gt; stringBox = new Box&amp;lt;&amp;gt;();
-Box rawBox = stringBox;               // OK
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;하지만 타입매개변수에 raw 타입을 할당하면 (컴파일러로부터) 경고를 받습니다.
-&lt;code&gt;But if you assign a raw type to a parameterized type, you get a warning:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Box rawBox = new Box();           // rawBox is a raw type of Box&amp;lt;T&amp;gt;
-Box&amp;lt;Integer&amp;gt; intBox = rawBox;     // warning: unchecked conversion
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;또한 generic 타입에 정의된 generic 메서드를 호출할때에도 raw 타입을 사용하면 경고를 받습니다.
-&lt;code&gt;You also get a warning if you use a raw type to invoke generic methods defined in the corresponding generic type:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Box&amp;lt;String&amp;gt; stringBox = new Box&amp;lt;&amp;gt;();
-Box rawBox = stringBox;
-rawBox.set(8);  // warning: unchecked invocation to set(T)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;경고는 raw 타입들이 generic 타입체크를 할수 없다는 것을 보여줍니다. (컴파일 타임에 체크될 수 있는) 불안한 코드가 런타임에 붙잡히게 (컴파일 타임 체킹을 런타임으로) 딜레이 시키는 것이므로 raw 타입 사용은 피하는것이 좋을 것이다.&lt;br /&gt;
-&lt;code&gt;The warning shows that raw types bypass generic type checks, deferring the catch of unsafe code to runtime. Therefore, you should avoid using raw types.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;타입소거 섹션에서는 자바 컴파일러가 raw 타입을 사용하는 것에 대한 더 자세한 설명이 있다.
-&lt;code&gt;The Type Erasure section has more information on how the Java compiler uses raw types.&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;unchecked-error-messages&#34;&gt;Unchecked Error Messages&lt;/h3&gt;
-
-&lt;p&gt;이전에 말햇듯, generic 코드와 레거시 코드를 섞게 되면, 아래와 같은 경고 메세지를 마주칠 것이다.
-&lt;code&gt;As mentioned previously, when mixing legacy code with generic code, you may encounter warning messages similar to the following:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Note: Example.java uses unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;This can happen when using an older API that operates on raw types, as shown in the following example:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class WarningDemo {
-    public static void main(String[] args){
-        Box&amp;lt;Integer&amp;gt; bi;
-        bi = createBox();
-    }
-
-    static Box createBox(){
-        return new Box();
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&amp;ldquo;unchecked(체크되지 않음)&amp;ldquo;는 타입 안정성을 보장하기 위해 필요한 타입체크 정보가 충분치 않다는 것을 의미한다. &amp;ldquo;unchecked&amp;rdquo; 경고는 컴파일러에게 기본 설정으로는 사용하지 않는다.&amp;ldquo;unchecked&amp;rdquo; 경고를 보고 싶다면 -Xlint:unchecked옵션을 주고 다시 컴파일하면 모든 &amp;ldquo;unchecked&amp;rdquo; 경고를 볼 수 있다.
-&lt;code&gt;The term &amp;quot;unchecked&amp;quot; means that the compiler does not have enough type information to perform all type checks necessary to ensure type safety. The &amp;quot;unchecked&amp;quot; warning is disabled, by default, though the compiler gives a hint. To see all &amp;quot;unchecked&amp;quot; warnings, recompile with -Xlint:unchecked.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;-Xlint:unchecked 옵션과 함께 예제를 다시 컴파일해보면 아래에 보이는 내용이 나타날 것이다.
-&lt;code&gt;Recompiling the previous example with -Xlint:unchecked reveals the following additional information:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;WarningDemo.java:4: warning: [unchecked] unchecked conversion
-found   : Box
-required: Box&amp;lt;java.lang.Integer&amp;gt;
-        bi = createBox();
-                      ^
-1 warning
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;컴파일 옵션에 -Xlint:-unchecked 플래그를 사용하면 unchecked 경고를 없앨 수 있다. @SupporessWarnings(&amp;ldquo;unchecked&amp;rdquo;) 어노테이션은 unchecked 경고가 나타나지 않게 할 수 있다. @SupressWarnings 문법이 생소하면 Annotations 섹션을 보시오. &lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/annotations/index.html&#34;&gt;링크&lt;/a&gt;
-&lt;code&gt;To completely disable unchecked warnings, use the -Xlint:-unchecked flag. The @SuppressWarnings(&amp;quot;unchecked&amp;quot;) annotation suppresses unchecked warnings. If you are unfamiliar with the @SuppressWarnings syntax, see Annotations.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;역자 첨부&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;$ javac WarningDemo.java 
-
-Note: WarningDemo.java uses unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
-    
-$ javac -Xlint:unchecked WarningDemo.java
-
-WarningDemo.java:7: warning: [unchecked] unchecked conversion
-        bi = createBox();
-                      ^
-required: Box&amp;lt;Integer&amp;gt;
-found:    Box
-1 warning
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>자바 제네릭스(3) Java Generics: 제네릭 타입들</title>
-      <link>http://durtchrt.github.io/blog/java/generics/3/</link>
-      <pubDate>Mon, 31 Oct 2016 17:08:57 +0900</pubDate>
-      
-      <guid>http://durtchrt.github.io/blog/java/generics/3/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/types.html&#34;&gt;원문 링크&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;용어 참조&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;타입 : 자바에서는 클래스, 추상클래스, 인터페이스, 열거형(Enum), 배열을 의미. 기본형, 참조형을 포괄하는 개념
-
-&lt;ul&gt;
-&lt;li&gt;기본형: byte, short, int, long, float, double, char, String, boolean (call by value)&lt;/li&gt;
-&lt;li&gt;참조형: 기본형을 제외한 모든 타입 (call by reference)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;매개변수 vs 인자&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;매개변수(Parameter): 함수 선언할 때 변수의 이름&lt;/li&gt;
-&lt;li&gt;인자(Argument): 함수를 호출할 때 전달하는 값&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;generic-types&#34;&gt;Generic Types&lt;/h3&gt;
-
-&lt;p&gt;generic 타입은 클래스, 인터페이스를 타입 파라미터화하는 것이다. Box 클래스는 generic  타입을 설명하면서 코드를 수정할 것이다.
-&lt;code&gt;A generic type is a generic class or interface that is parameterized over types. The following Box class will be modified to demonstrate the concept.&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;a-simple-box-class&#34;&gt;A Simple Box Class&lt;/h3&gt;
-
-&lt;p&gt;generic을 사용하지 않은 예제로 시작해봅시다. Box 클래스는 set(추가), get(조회) 2개의 메서드가 있습니다.
-&lt;code&gt;Begin by examining a non-generic Box class that operates on objects of any type. It needs only to provide two methods: set, which adds an object to the box, and get, which retrieves it:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class Box {
-    private Object object;
-
-    public void set(Object object) { this.object = object; }
-    public Object get() { return object; }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;객체의 set, get 메서드는 기본형을 제외하면 어떤 타입(참조형)이든 인자로 넣을수 있다. Box 클래스가 사용되어지지만 컴파일 타임에 검증할 방법이 없다. 코드 일부분에서는 Integer를 넣고 Integer가 return되어지길 기대하지만 다른 일부분에서는 실수로 String을 입력해서 런타임 에러가 나올 것이다.
-&lt;code&gt;Since its methods accept or return an Object, you are free to pass in whatever you want, provided that it is not one of the primitive types. There is no way to verify, at compile time, how the class is used. One part of the code may place an Integer in the box and expect to get Integers out of it, while another part of the code may mistakenly pass in a String, resulting in a runtime error.&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;generic-버전의-box-클래스-br&#34;&gt;Generic 버전의 Box 클래스.&lt;br&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;A Generic Version of the Box Class&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;generic 클래시는 아래 포멧처럼 정의되었다.&lt;br&gt;
-&lt;code&gt;A generic class is defined with the following format:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;class name&amp;lt;T1, T2, ..., Tn&amp;gt; { /* ... */ }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;타입 파라미터 문법은 클래스명 뒤에 꺽쇠(&amp;lt;&amp;gt;) 기호로 구분된다. 이것은 T1, T2, &amp;hellip;, and Tn 등으로 타입 매개변수를 명시한다.(타입변수라고 불리기도한다.)
-&lt;code&gt;The type parameter section, delimited by angle brackets (&amp;lt;&amp;gt;), follows the class name. It specifies the type parameters (also called type variables) T1, T2, ..., and Tn.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Box 클래스를 generics로 변경해보자. &amp;ldquo;public class Box&amp;rdquo; 코드를 &amp;ldquo;public class Box&lt;T&gt;&amp;ldquo;로 변경해서 generic 타입을 선언하여 만든다. T라는 타입 매개변수는 클래스 어디든지 사용할 수 있는 변수이다.
-&lt;code&gt;To update the Box class to use generics, you create a generic type declaration by changing the code &amp;quot;public class Box&amp;quot; to &amp;quot;public class Box&amp;lt;T&amp;gt;&amp;quot;. This introduces the type variable, T, that can be used anywhere inside the class.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Box 클래스가 이렇게 바뀐다.&lt;br&gt;
-&lt;code&gt;With this change, the Box class becomes:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;/**
- * Generic version of the Box class.
- * @param &amp;lt;T&amp;gt; the type of the value being boxed
- */
-public class Box&amp;lt;T&amp;gt; {
-    // T stands for &amp;quot;Type&amp;quot;
-    private T t;
-
-    public void set(T t) { this.t = t; }
-    public T get() { return t; }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;소스 코드 변경에서 보이듯, 기존 코드에서 Object 대신 T로 수정되었다. Type 변수는 기본형 빼고는(=참조형)이면 된다.(클래스/인터페이스/배열 타입 또는 다른 Type 변수가 Type 변수로 될 수 있다.)
-&lt;code&gt;As you can see, all occurrences of Object are replaced by T. A type variable can be any non-primitive type you specify: any class type, any interface type, any array type, or even another type variable.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;generic 인터페이스를 만드는 방법도 같다.
-&amp;lsquo;This same technique can be applied to create generic interfaces.&amp;rsquo;&lt;/p&gt;
-
-&lt;h3 id=&#34;type-파라미터-네이밍-관습&#34;&gt;Type 파라미터 네이밍 관습&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;Type Parameter Naming Conventions&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;관습에 의하면, Type 파라미터는 단일 대문자입니다. 이 기준은 이미 알고 있는 변수 네이밍 관습에 극명하게 반대입니다. (좋은점은)이런 관습이 없으면 Type 변수와 일반적인 클래스 혹은 인터페이스명 사이에 차이를 전달하기 어려울겁니다.
-&lt;code&gt;By convention, type parameter names are single, uppercase letters. This stands in sharp contrast to the variable naming conventions that you already know about, and with good reason: Without this convention, it would be difficult to tell the difference between a type variable and an ordinary class or interface name.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;일반적으로 사용되어지는 Type파라미터명&lt;br&gt;
-&lt;code&gt;The most commonly used type parameter names are:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;E - Element (자바 콜렉션 프레인워크에 광범위하게 사용됨 - used extensively by the Java Collections Framework)
-K - Key
-N - Number
-T - Type
-V - Value
-S,U,V etc. - 2nd, 3rd, 4th types
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;이러한 이름들이 자바SE API을 통해 쓰여지는 것을 볼 수 있을 것입니다.
-&lt;code&gt;You&#39;ll see these names used throughout the Java SE API and the rest of this lesson.&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;generic-type-호출과-객체-생성&#34;&gt;Generic Type 호출과 객체 생성&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;Invoking and Instantiating a Generic Type&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;코드내에 generic Box 클래스를 참조하려면, generic Type을 호출해 Integer 같은 구현값(타입값)으로 T를 교체합니다.
-&lt;code&gt;To reference the generic Box class from within your code, you must perform a generic type invocation, which replaces T with some concrete value, such as Integer:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Box&amp;lt;Integer&amp;gt; integerBox;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;흔한 메소드 호출과 generic type 호출이 비슷하고 생각할 수 있다. 하지만 &lt;strong&gt;메소드&lt;/strong&gt;에 인자를 전달하는 반면에 Box &lt;strong&gt;클래스&lt;/strong&gt;에 type 인자를 전달한다(이번에는 Integer임).
-&lt;code&gt;You can think of a generic type invocation as being similar to an ordinary method invocation, but instead of passing an argument to a method, you are passing a type argument — Integer in this case — to the Box class itself.&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&#39;Type 파라미터&#39;, &#39;Type 인자&#39; 용어 설명: 많은 개발자들은 &amp;quot;type 파라미터&amp;quot;와 &amp;quot;type 인자&amp;quot;를 혼용해서 사용한다. 하지만 이 용어나 같지 않다. 코딩할 때 파라미터화한 type을 생성하기 위해서 type인자를 만든다. 그 결과, Foo&amp;lt;T&amp;gt;의 T는 Type 파라미터이고 Foo&amp;lt;String&amp;gt;의 String은  Type 인자이다. 이번장에서 Type 인자와 Type 파라미터를 사용할 때 위에 설명한 내용을 상기하고 살펴봅시다.
-
-`Type Parameter and Type Argument Terminology: Many developers use the terms &amp;quot;type parameter&amp;quot; and &amp;quot;type argument&amp;quot; interchangeably, but these terms are not the same. When coding, one provides type arguments in order to create a parameterized type. Therefore, the T in Foo&amp;lt;T&amp;gt; is a type parameter and the String in Foo&amp;lt;String&amp;gt; f is a type argument. This lesson observes this definition when using these terms.`
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;다른 변수를 선언하듯이, 이 코드는 새로운 Box 객체를 실제로 생성하지 않습니다. 간단히 말하면 integerBox 변수는 &amp;ldquo;Integer 타입의 Box 클래스&amp;rdquo;를 가리킨다.( Box&lt;Integer&gt;는 &amp;ldquo;Box of Integer&amp;rdquo;라고 읽는다.)
-Like any other variable declaration, this code does not actually create a new Box object. It simply declares that integerBox will hold a reference to a &amp;ldquo;Box of Integer&amp;rdquo;, which is how Box&lt;Integer&gt; is read.&lt;/p&gt;
-
-&lt;p&gt;generic 타입 호출은 일반적으로 파라미터화된 type으로 알려져 있다.
-&lt;code&gt;An invocation of a generic type is generally known as a parameterized type.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;클래스를 객체화할때 사용하는 new 키워드는 기존과 같지만 Generics를 위한 표기법으로  &lt;strong&gt;&lt;Integer&gt;&lt;/strong&gt;가 클래스명과 소괄호(()) 사이에 있다.
-&lt;code&gt;To instantiate this class, use the new keyword, as usual, but place &amp;lt;Integer&amp;gt; between the class name and the parenthesis:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Box&amp;lt;Integer&amp;gt; integerBox = new Box&amp;lt;Integer&amp;gt;();
-````
-### 다이아몬드 연산자(&amp;lt;&amp;gt;) `The Diamond`
-
-자바SE 7부터 컴파일러가 코드의 문맥을 보고 타입을 추론 할수 있게 되어 타입 인자가 필요한 부분에 empty type argument(빈 type 인자 = &amp;lt;&amp;gt;)를 사용할 수 있다. 꺽쇠(&amp;lt;&amp;gt;)는 비공식적이지만 다이아몬드라고 불린다. 예를 들면, Box&amp;lt;Integer&amp;gt; 객체를 생성할때 아래의 문법을 따른다:
-`In Java SE 7 and later, you can replace the type arguments required to invoke the constructor of a generic class with an empty set of type arguments (&amp;lt;&amp;gt;) as long as the compiler can determine, or infer, the type arguments from the context. This pair of angle brackets, &amp;lt;&amp;gt;, is informally called the diamond. For example, you can create an instance of Box&amp;lt;Integer&amp;gt; with the following statement:`
-
-```java
-Box&amp;lt;Integer&amp;gt; integerBox = new Box&amp;lt;&amp;gt;();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;다이아몬드 표기법과 타입 추론에 대한 더 자세한 정보는 타입 추론을 보시오.
-&lt;code&gt;For more information on diamond notation and type inference, see Type Inference.&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;복수개의-타입매개변수&#34;&gt;복수개의 타입매개변수&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;Multiple Type Parameters&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;이전에 말했듯이, generic 클래스는 여러개의 타입매개변수를 가질수 있다. 예를들어, generic OrderdPair클래스는 generic Pair 인터페이스를 구현하였다.
-&lt;code&gt;As mentioned previously, a generic class can have multiple type parameters. For example, the generic OrderedPair class, which implements the generic Pair interface:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public interface Pair&amp;lt;K, V&amp;gt; {
-    public K getKey();
-    public V getValue();
-}
-
-public class OrderedPair&amp;lt;K, V&amp;gt; implements Pair&amp;lt;K, V&amp;gt; {
-
-    private K key;
-    private V value;
-
-    public OrderedPair(K key, V value) {
-	this.key = key;
-	this.value = value;
-    }
-
-    public K getKey()	{ return key; }
-    public V getValue() { return value; }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;아래는 OrderedPair클래스로 두개의 객체를 만드는 코드이다.
-&lt;code&gt;The following statements create two instantiations of the OrderedPair class:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Pair&amp;lt;String, Integer&amp;gt; p1 = new OrderedPair&amp;lt;String, Integer&amp;gt;(&amp;quot;Even&amp;quot;, 8);
-Pair&amp;lt;String, String&amp;gt;  p2 = new OrderedPair&amp;lt;String, String&amp;gt;(&amp;quot;hello&amp;quot;, &amp;quot;world&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;코드는 OrderedPair&lt;String, Integer&gt; 객체를 생성하면, K는 String 타입이고 V는 Integer 타입이다. Orderedpair의 생성자의 파라미터 타입들은 String, Integer이다.  autoboxing을 통해 String과 int를 OrderedPair클래스에 전달해도 문제없다.(참조형은 상관 없는데 기본형인 int는 참조형으로 변경되어야한다. int -&amp;gt; Integer) 
-&lt;code&gt;The code, new OrderedPair&amp;lt;String, Integer&amp;gt;, instantiates K as a String and V as an Integer. Therefore, the parameter types of OrderedPair&#39;s constructor are String and Integer, respectively. Due to autoboxing, it is valid to pass a String and an int to the class.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;이전에 다아몬드 연산자를 언급했듯이, 자바 컴파일러는 OrderedPair&lt;String, Integer&gt;로 선언한 K, V 타입을 추론 할수 있기 때문에 다이아몬드문법을 사용해서 코드를 줄일수 있다.
-&lt;code&gt;As mentioned in The Diamond, because a Java compiler can infer the K and V types from the declaration OrderedPair&amp;lt;String, Integer&amp;gt;, these statements can be shortened using diamond notation:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;OrderedPair&amp;lt;String, Integer&amp;gt; p1 = new OrderedPair&amp;lt;&amp;gt;(&amp;quot;Even&amp;quot;, 8);
-OrderedPair&amp;lt;String, String&amp;gt;  p2 = new OrderedPair&amp;lt;&amp;gt;(&amp;quot;hello&amp;quot;, &amp;quot;world&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;generic 인터페이스를 생성하는것은 generic 클래스를 만드는 방법과 같다
-&lt;code&gt;To create a generic interface, follow the same conventions as for creating a generic class.&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;타입-파라미터화&#34;&gt;타입 파라미터화&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;Parameterized Types&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;매개변수타입(예 K, V)은  매개변수화된 타입(예 List&lt;String&gt;)으로 대체할 수 있다. OrderedPair&lt;K, V&gt;를 예를 들면:
-&lt;code&gt;You can also substitute a type parameter (i.e., K or V) with a parameterized type (i.e., List&amp;lt;String&amp;gt;). For example, using the OrderedPair&amp;lt;K, V&amp;gt; example:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;OrderedPair&amp;lt;String, Box&amp;lt;Integer&amp;gt;&amp;gt; p = new OrderedPair&amp;lt;&amp;gt;(&amp;quot;primes&amp;quot;, new Box&amp;lt;Integer&amp;gt;(...));
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;위의 코드에서 매개변수화된 타입(Parameterized Type)은 위의 소스에서는 &lt;strong&gt;Box&amp;lt;Integer&amp;gt;&lt;/strong&gt;을 의미&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>자바 제네릭스(2) Java Generics: 제네릭스는 왜 사용하는가? </title>
-      <link>http://durtchrt.github.io/blog/java/generics/2/</link>
-      <pubDate>Mon, 31 Oct 2016 15:52:48 +0900</pubDate>
-      
-      <guid>http://durtchrt.github.io/blog/java/generics/2/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/generics/why.html&#34;&gt;원문&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Generics는 왜 사용하는가&lt;/strong&gt;  (Why Use Generics?)&lt;/p&gt;
-
-&lt;p&gt;간단히 말하면, generics는 타입을 클래스, 인터페이스, 메소드를 정의할 때 파라메터화 할 수 있다. 메소드 선언에 사용되는 파라미터 형식처럼, 타입 파라미터는 다른 입력값을 같은 코드를 재 사용할 수 있는 방법을 제시한다. 다른점은 형식 파라미터는 값이 입력이다, 타입 파라메터는 타입이 입력이다.
-&lt;code&gt;In a nutshell, generics enable types (classes and interfaces) to be parameters when defining classes, interfaces and methods. Much like the more familiar formal parameters used in method declarations, type parameters provide a way for you to re-use the same code with different inputs. The difference is that the inputs to formal parameters are values, while the inputs to type parameters are types.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;generic를 사용한 코드는 그렇지 않는 코드 대비 많은 장점을 가졌다:
-&lt;code&gt;Code that uses generics has many benefits over non-generic code&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;컴파일 타임에 강력한 타입 체크를한다.
-&lt;code&gt;Stronger type checks at compile time.&lt;/code&gt;
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;자바 컴파일러는 타입 안전성에 위반하는 코드가 있다면 일반적인 코드와 오류 이슈에 강한 타입 검사를 적용한다. 컴파일타임에 에러를 고치는 것은 런타임 에러를 고치는 것 보다 쉽다.&lt;br /&gt;
-&lt;code&gt;A Java compiler applies strong type checking to generic code and issues errors if the code violates type safety. Fixing compile-time errors is easier than fixing runtime errors, which can be difficult to find.&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Elimination of casts. &lt;br/&gt;
-generics 없이 캐스팅이 필요한 코드 조각입니다.
-&lt;code&gt;The following code snippet without generics requires casting:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List list = new ArrayList();
-list.add(&amp;quot;hello&amp;quot;);
-String s = (String) list.get(0);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;generics를 사용해서 코드를 다시 작성하면, 코드는 더이상 캐스팅이 필요 없어집니다.
-&lt;code&gt;When re-written to use generics, the code does not require casting:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List&amp;lt;String&amp;gt; list = new ArrayList&amp;lt;String&amp;gt;();
-list.add(&amp;quot;hello&amp;quot;);
-String s = list.get(0);   // no cast
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;프로그래머들이 일반적인 알고리즘을 구현하도록 지원한다.&lt;br&gt;
-generics를 사용하면서 프로그래머들은 다양한 타입들의 콜렉션에서 동작하고, 수정가능하며, 더 안정적이고 읽기 쉬운 코드를 일반적인 알고리즘으로 구현할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Enabling programmers to implement generic algorithms.
-By using generics, programmers can implement generic algorithms that work on collections of different types, can be customized, and are type safe and easier to read.&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
