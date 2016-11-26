@@ -69,6 +69,98 @@ ga('send', 'pageview');
     <div class="row">
       
       <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/generics/8/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/8/">자바 제네릭스(8) Java Generics: 제네릭스, 상속, 서브타입 (Generics, Inheritance, and Subtypes)</a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-05T08:48:42JST">Nov 5, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">원문링크
+용어 메서드 시그니처(method signature): 메서들간에 개성 주는것으로 자바 컴파일러인지 메서드 시그니처를 기준으로 오버로딩을 한다. 자바에서는 메서드명, 파라미터 갯수, 파라미터 타입, 파라미터 순서(자바에서는 리턴타입은 시그니처가 아니다.) - 파라미터명도 시그니처인지는 아리까리하다. 메서드 오버로딩를 생각하면 맞는거 같은데&hellip; 좀더 생각해보고 내용 수정 예정 콘크리트 타입, 구현타입(concrete type): 자바에서는 타입들중 interface, abstract class를 제외하고 남은 class를 concrete 타입으로 이해하면 될 듯.참고링크 - 영문: 번역 예정
+제네릭스, 상속, 서브타입 Generics, Inheritance, and Subtypes 타입간 호환이된다면 특정 타입의 객체를 다른 타입에 할당이 가능합니다.</div>
+  </div>
+</article>
+</div>
+      
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/generics/7/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/7/">자바 제네릭스(7) Java Generics: Generic 메서드와 제한된 타입 매개변수 (Generic Methods and Bounded Type Parameters)</a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-05T08:24:47JST">Nov 5, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">Generic 메서드와 제한된 타입 매개변수 Generic Methods and Bounded Type Parameters 제한된 타입 매개변수는 generic 알고리즘들을 구현할때 핵심이된다. 아래의 예는 두번째 인자보다 큰 값이 첫번째 인자인 배열에 몇개가 있는지 세는 메서드이다. Bounded type parameters are key to the implementation of generic algorithms. Consider the following method that counts the number of elements in an array T[] that are greater than a specified element elem.
+public static &lt;T&gt; int countGreaterThan(T[] anArray, T elem) { int count = 0; for (T e : anArray) if (e &gt; elem) // compiler error ++count; return count; }  메서드 구현은 간단하지만, &lsquo;&gt;&rsquo; 연산자가 기본형(short, int, double, long, float, byte, char)에만 동작이 허용되기 때문이다.</div>
+  </div>
+</article>
+</div>
+      <div class="col-sm-12"></div>
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/generics/6/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/6/">자바 제네릭스(6) Java Generics: 제한된 타입 매개변수 (Bounded Type Parameters)</a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-04T18:03:27JST">Nov 4, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">원문 링크
+제한된 타입 매개변수 Bounded Type Parameters 매개변수화된 타입에 타입인자를 넣을때 타입 제한을 걸고 싶을 때가 있을 것이다. 예를 들어, Number 타입 또는 Number 타입의 자식 클래스의 객체만 허용하는 숫자 처리를 위한 메서드를 만들 수 있다. 이것이 제한된 타입 매개변수다 There may be times when you want to restrict the types that can be used as type arguments in a parameterized type. For example, a method that operates on numbers might only want to accept instances of Number or its subclasses.</div>
+  </div>
+</article>
+</div>
+      
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/generics/5/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/5/">자바 제네릭스(5) Java Generics: 제네릭 메서드</a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-04T13:43:44JST">Nov 4, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">원문 링크
+Generic 메서드 Generic Methods Generic 메서드는 자시의 타입매개변수를 가진 메서드이다. generic 타입을 선언하는 것과 비슷하지만 타입매개변수의 스코프는 메서드로 제한된다. 일반 메서드, 정적 메서드 generic 클래스의 생성자는 이 룰을 동일하게 적용된다. Generic methods are methods that introduce their own type parameters. This is similar to declaring a generic type, but the type parameter's scope is limited to the method where it is declared. Static and non-static generic methods are allowed, as well as generic class constructors.</div>
+  </div>
+</article>
+</div>
+      <div class="col-sm-12"></div>
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/generics/4/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/4/">자바 제네릭스(4) Java Generics: 원천(Raw) 타입들</a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-01T16:05:56JST">Nov 1, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">원문 링크
+원천 타입들 Raw Types Raw 타입은 generic 클래스 혹은 인터페이스에 타입인자가 없는 것. 예를들어 generic Box 클래스를 보자 A raw type is the name of a generic class or interface without any type arguments. For example, given the generic Box class:
+public class Box&lt;T&gt; { public void set(T t) { /* ... */ } // ... }  아래 코드를 보면 Box의 매개변수화된 타입을 만드면서, 타입매개변수 T에 해당하는 Integer를 타입인자로 제공하였다.</div>
+  </div>
+</article>
+</div>
+      
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
   <a href="http://durtchrt.github.io/blog/java/generics/3/" class="thumb"></a>
   <div class="content-inner thin">
     <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/3/">자바 제네릭스(3) Java Generics: 제네릭 타입들</a></h2>
@@ -86,7 +178,7 @@ ga('send', 'pageview');
   </div>
 </article>
 </div>
-      
+      <div class="col-sm-12"></div>
       
       <div class="col-sm-6 col-xs-12"><article class="li">
   <a href="http://durtchrt.github.io/blog/java/generics/2/" class="thumb"></a>
@@ -105,7 +197,7 @@ Generics는 왜 사용하는가 (Why Use Generics?)
   </div>
 </article>
 </div>
-      <div class="col-sm-12"></div>
+      
       
       <div class="col-sm-6 col-xs-12"><article class="li">
   <a href="http://durtchrt.github.io/blog/java/generics/1/" class="thumb"></a>
@@ -124,7 +216,7 @@ In any nontrivial software project, bugs are simply a fact of life. Careful plan
   </div>
 </article>
 </div>
-      
+      <div class="col-sm-12"></div>
       
     </div>
 
@@ -296,7 +388,7 @@ In any nontrivial software project, bugs are simply a fact of life. Careful plan
     <header>tag</header>
     <div>
       <ul class="p-terms">
-        <li><a href="http://durtchrt.github.io/blog/tags/generics">generics</a></li><li><a href="http://durtchrt.github.io/blog/tags/java">java</a></li><li><a href="http://durtchrt.github.io/blog/tags/%EB%B2%88%EC%97%AD">번역</a></li><li><a href="http://durtchrt.github.io/blog/tags/4clojure">4clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/bounded-type-parameter">bounded-type-parameter</a></li><li><a href="http://durtchrt.github.io/blog/tags/clojure">clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/favorite">favorite</a></li><li><a href="http://durtchrt.github.io/blog/tags/generic-method">generic-method</a></li><li><a href="http://durtchrt.github.io/blog/tags/inheritance">inheritance</a></li><li><a href="http://durtchrt.github.io/blog/tags/javascript">javascript</a></li>
+        <li><a href="http://durtchrt.github.io/blog/tags/java">java</a></li><li><a href="http://durtchrt.github.io/blog/tags/generics">generics</a></li><li><a href="http://durtchrt.github.io/blog/tags/%EB%B2%88%EC%97%AD">번역</a></li><li><a href="http://durtchrt.github.io/blog/tags/concurrency">concurrency</a></li><li><a href="http://durtchrt.github.io/blog/tags/4clojure">4clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/bounded-type-parameter">bounded-type-parameter</a></li><li><a href="http://durtchrt.github.io/blog/tags/clojure">clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/favorite">favorite</a></li><li><a href="http://durtchrt.github.io/blog/tags/generic-method">generic-method</a></li><li><a href="http://durtchrt.github.io/blog/tags/inheritance">inheritance</a></li>
       </ul>
     </div>
   </section>

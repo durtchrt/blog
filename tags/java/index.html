@@ -69,6 +69,100 @@ ga('send', 'pageview');
     <div class="row">
       
       <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/concurrency/5/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/concurrency/5/">[발번역]The Java™ Tutorials - 2-2. Pausing Execution with Sleep</a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-24T15:00:35JST">Nov 24, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">원문링크 Sleep으로 실행 중지하기 Pausing Execution with Sleep
+Thread.sleep은 현재 실행하는 쓰레드를 정해진 시간만큼 실행을 중지한다. 컴퓨터에서 동작하는 어플리케이션의 프로세서의 시간을 효율적으로 만든다. sleep 메서드는 아래 예제처럼 다른 스레드들간에 동일한 간격(4초)으로 실행하게 하는데 사용하거나 다음 섹션에 SimpleThreads처럼 다른 스레드를 기다리게할 수 있다. Thread.sleep causes the current thread to suspend execution for a specified period. This is an efficient means of making processor time available to the other threads of an application or other applications that might be running on a computer system.</div>
+  </div>
+</article>
+</div>
+      
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/concurrency/4/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/concurrency/4/">[발번역]The Java™ Tutorials - 2-1. 쓰레드 정의와 시작 Defining and Starting a Thread</a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-24T14:00:35JST">Nov 24, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">원문링크 쓰레드 정의와 시작 Defining and Starting a Thread
+쓰레드의 인스턴스를 생성하는 응용프로그램은 반드시 쓰레드에 run 메서드 코드를 제공해야합니다. 이는 두가지 방법이 있습니다. An application that creates an instance of Thread must provide the code that will run in that thread. There are two ways to do this:
+ Runnable 객체 제공 Runnable 인터페이스는 쓰레드에서 실행하는 코드를 포함하는 단일 메서드 run을 정의합니다. 이 Runnable 객체는 쓰레드 생성자에 인자로 전달됩니다. HelloRunnable 예제 참조 Provide a Runnable object.</div>
+  </div>
+</article>
+</div>
+      <div class="col-sm-12"></div>
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/concurrency/3/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/concurrency/3/">[발번역]The Java™ Tutorials - 2. Thread Objects</a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-24T13:00:35JST">Nov 24, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">원문링크 쓰레드 객체 Thread Objects
+쓰레드마다 클래스 쓰레드의 인스턴스와 연관되어있다. 병행 어플리케이션을 만드는 쓰레드 객체를 사용하기 위해서는 두가지 전략이 있다. Each thread is associated with an instance of the class Thread. There are two basic strategies for using Thread objects to create a concurrent application.
+직접적으로 쓰레드 생성과 관리를하려면, 어플리케이션이 비동기 태스크를 시작려는 필요할때마다 쓰레드를 인스턴스화합니다. 나머지 어플리케이션으로부터 추상 스레드를 관려하려면, 어플리케이션의 태스크를 executor에 전달하시요. 이 섹션에서는 쓰레드 객체의 사용법을 설명합니다.</div>
+  </div>
+</article>
+</div>
+      
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/concurrency/2/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/concurrency/2/">[발번역]The Java™ Tutorials - 1. Processes and Threads </a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-24T12:00:35JST">Nov 24, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">##원문링크
+프로세스와 쓰레드 Processes and Threads
+병행 프로그래밍에서는 실행의 두개의 기본 개념이 있다(프로세스, 쓰레드). 자바 프로그래밍 언어에서는 병행 프로그래밍은 거의 대부분 쓰레드와 관련있다. 하지만 프로세스 역시 중요하다. In concurrent programming, there are two basic units of execution: processes and threads. In the Java programming language, concurrent programming is mostly concerned with threads. However, processes are also important.
+컴퓨터 시스템은 일반적으로 많은 활동적인 프로세스와 쓰레드를 가지고 있다. 싱글 코에서는 하나만 동작할 수 있으므로 한순간에는 한 스레드만 동작할 수 있다.</div>
+  </div>
+</article>
+</div>
+      <div class="col-sm-12"></div>
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/concurrency/1/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/concurrency/1/">[발번역]The Java™ Tutorials - 0. Concurrency</a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-24T12:00:34JST">Nov 24, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">##원문링크
+Lesson: Concurrency 컴퓨터는 사용자에게 동일시간에 한가지 이상의 일을 할 수 있도록 시스템이 보장이 되야한다. 컴퓨터 사용자는 워드프로세서 작업을 할 때 다른 어플리케이션이 파일 다운로드, 스트리밍 오디오, 프린터 큐 관리등을 동시에 하는게 당연하사 생각한다. 심지어 하나의 어플레케이션이 한번에 한가지 이상의 동작하는 것을 종종 기대한다. 예를들면 스트리밍 오디오 어플레케이션은 반드시 동시에 네트워크로부터 디지털 오디오 읽기, 압축을 풀기, 재생 관리, 디스플레이 업데이트를 수행한다. 심지어 워드프로세서도 디스플레이 업데이트나 텍스트를 다시 포맷팅하는것이 얼마나 바쁜지 상관없이 키보드의 응답, 마우스 이벤트들의 응답을 대기해야한다.</div>
+  </div>
+</article>
+</div>
+      
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
   <a href="http://durtchrt.github.io/blog/java/generics/11/" class="thumb"></a>
   <div class="content-inner thin">
     <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/11/">자바 제네릭스(10) 와일드카드 Wildcards </a></h2>
@@ -83,7 +177,7 @@ ga('send', 'pageview');
   </div>
 </article>
 </div>
-      
+      <div class="col-sm-12"></div>
       
       <div class="col-sm-6 col-xs-12"><article class="li">
   <a href="http://durtchrt.github.io/blog/java/generics/10/" class="thumb"></a>
@@ -100,7 +194,7 @@ ga('send', 'pageview');
   </div>
 </article>
 </div>
-      <div class="col-sm-12"></div>
+      
       
       <div class="col-sm-6 col-xs-12"><article class="li">
   <a href="http://durtchrt.github.io/blog/java/generics/13/" class="thumb"></a>
@@ -118,7 +212,7 @@ ga('send', 'pageview');
   </div>
 </article>
 </div>
-      
+      <div class="col-sm-12"></div>
       
       <div class="col-sm-6 col-xs-12"><article class="li">
   <a href="http://durtchrt.github.io/blog/java/generics/12/" class="thumb"></a>
@@ -137,7 +231,7 @@ ga('send', 'pageview');
   </div>
 </article>
 </div>
-      <div class="col-sm-12"></div>
+      
       
       <div class="col-sm-6 col-xs-12"><article class="li">
   <a href="http://durtchrt.github.io/blog/java/generics/9/" class="thumb"></a>
@@ -154,98 +248,6 @@ ga('send', 'pageview');
 statement: 문장으로 해석하면 오해의 여지가 있어서 statement 영문 그대로 작성한다. 컴퓨터 프로그래밍에서는 statement를 독립적인 요소의 최소 단위. 영문위키의 중간을 보면 Kinds of statements 파트에 Simple statments, Compound statements 부분의 코드를 보면 느낌이 온다.
 원문링크
 타입추론 Type Inference 타입추론은 메서드를 호출하는 코드에서 타입인자가 정의한대로 제대로 쓰였는지 살펴보는 컴파일러의 능력이다. 타입추론은 인자의 타입을 확인하고 만약 사용가능하다면, 해당 타입을 할당하거나 리턴될 것이다. 결국 타입추론은 모든 인자에 동작해서 가장 구체적인 타입을 찾는 것을 시도한다.</div>
-  </div>
-</article>
-</div>
-      
-      
-      <div class="col-sm-6 col-xs-12"><article class="li">
-  <a href="http://durtchrt.github.io/blog/java/generics/8/" class="thumb"></a>
-  <div class="content-inner thin">
-    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/8/">자바 제네릭스(8) Java Generics: 제네릭스, 상속, 서브타입 (Generics, Inheritance, and Subtypes)</a></h2>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-05T08:48:42JST">Nov 5, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-      
-    </ul>
-
-    <div class="summary">원문링크
-용어 메서드 시그니처(method signature): 메서들간에 개성 주는것으로 자바 컴파일러인지 메서드 시그니처를 기준으로 오버로딩을 한다. 자바에서는 메서드명, 파라미터 갯수, 파라미터 타입, 파라미터 순서(자바에서는 리턴타입은 시그니처가 아니다.) - 파라미터명도 시그니처인지는 아리까리하다. 메서드 오버로딩를 생각하면 맞는거 같은데&hellip; 좀더 생각해보고 내용 수정 예정 콘크리트 타입, 구현타입(concrete type): 자바에서는 타입들중 interface, abstract class를 제외하고 남은 class를 concrete 타입으로 이해하면 될 듯.참고링크 - 영문: 번역 예정
-제네릭스, 상속, 서브타입 Generics, Inheritance, and Subtypes 타입간 호환이된다면 특정 타입의 객체를 다른 타입에 할당이 가능합니다.</div>
-  </div>
-</article>
-</div>
-      <div class="col-sm-12"></div>
-      
-      <div class="col-sm-6 col-xs-12"><article class="li">
-  <a href="http://durtchrt.github.io/blog/java/generics/7/" class="thumb"></a>
-  <div class="content-inner thin">
-    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/7/">자바 제네릭스(7) Java Generics: Generic 메서드와 제한된 타입 매개변수 (Generic Methods and Bounded Type Parameters)</a></h2>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-05T08:24:47JST">Nov 5, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-      
-    </ul>
-
-    <div class="summary">Generic 메서드와 제한된 타입 매개변수 Generic Methods and Bounded Type Parameters 제한된 타입 매개변수는 generic 알고리즘들을 구현할때 핵심이된다. 아래의 예는 두번째 인자보다 큰 값이 첫번째 인자인 배열에 몇개가 있는지 세는 메서드이다. Bounded type parameters are key to the implementation of generic algorithms. Consider the following method that counts the number of elements in an array T[] that are greater than a specified element elem.
-public static &lt;T&gt; int countGreaterThan(T[] anArray, T elem) { int count = 0; for (T e : anArray) if (e &gt; elem) // compiler error ++count; return count; }  메서드 구현은 간단하지만, &lsquo;&gt;&rsquo; 연산자가 기본형(short, int, double, long, float, byte, char)에만 동작이 허용되기 때문이다.</div>
-  </div>
-</article>
-</div>
-      
-      
-      <div class="col-sm-6 col-xs-12"><article class="li">
-  <a href="http://durtchrt.github.io/blog/java/generics/6/" class="thumb"></a>
-  <div class="content-inner thin">
-    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/6/">자바 제네릭스(6) Java Generics: 제한된 타입 매개변수 (Bounded Type Parameters)</a></h2>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-04T18:03:27JST">Nov 4, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-      
-    </ul>
-
-    <div class="summary">원문 링크
-제한된 타입 매개변수 Bounded Type Parameters 매개변수화된 타입에 타입인자를 넣을때 타입 제한을 걸고 싶을 때가 있을 것이다. 예를 들어, Number 타입 또는 Number 타입의 자식 클래스의 객체만 허용하는 숫자 처리를 위한 메서드를 만들 수 있다. 이것이 제한된 타입 매개변수다 There may be times when you want to restrict the types that can be used as type arguments in a parameterized type. For example, a method that operates on numbers might only want to accept instances of Number or its subclasses.</div>
-  </div>
-</article>
-</div>
-      <div class="col-sm-12"></div>
-      
-      <div class="col-sm-6 col-xs-12"><article class="li">
-  <a href="http://durtchrt.github.io/blog/java/generics/5/" class="thumb"></a>
-  <div class="content-inner thin">
-    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/5/">자바 제네릭스(5) Java Generics: 제네릭 메서드</a></h2>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-04T13:43:44JST">Nov 4, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-      
-    </ul>
-
-    <div class="summary">원문 링크
-Generic 메서드 Generic Methods Generic 메서드는 자시의 타입매개변수를 가진 메서드이다. generic 타입을 선언하는 것과 비슷하지만 타입매개변수의 스코프는 메서드로 제한된다. 일반 메서드, 정적 메서드 generic 클래스의 생성자는 이 룰을 동일하게 적용된다. Generic methods are methods that introduce their own type parameters. This is similar to declaring a generic type, but the type parameter's scope is limited to the method where it is declared. Static and non-static generic methods are allowed, as well as generic class constructors.</div>
-  </div>
-</article>
-</div>
-      
-      
-      <div class="col-sm-6 col-xs-12"><article class="li">
-  <a href="http://durtchrt.github.io/blog/java/generics/4/" class="thumb"></a>
-  <div class="content-inner thin">
-    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/4/">자바 제네릭스(4) Java Generics: 원천(Raw) 타입들</a></h2>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-01T16:05:56JST">Nov 1, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
-      
-    </ul>
-
-    <div class="summary">원문 링크
-원천 타입들 Raw Types Raw 타입은 generic 클래스 혹은 인터페이스에 타입인자가 없는 것. 예를들어 generic Box 클래스를 보자 A raw type is the name of a generic class or interface without any type arguments. For example, given the generic Box class:
-public class Box&lt;T&gt; { public void set(T t) { /* ... */ } // ... }  아래 코드를 보면 Box의 매개변수화된 타입을 만드면서, 타입매개변수 T에 해당하는 Integer를 타입인자로 제공하였다.</div>
   </div>
 </article>
 </div>
@@ -421,7 +423,7 @@ public class Box&lt;T&gt; { public void set(T t) { /* ... */ } // ... }  아래 
     <header>tag</header>
     <div>
       <ul class="p-terms">
-        <li><a href="http://durtchrt.github.io/blog/tags/generics">generics</a></li><li><a href="http://durtchrt.github.io/blog/tags/java">java</a></li><li><a href="http://durtchrt.github.io/blog/tags/%EB%B2%88%EC%97%AD">번역</a></li><li><a href="http://durtchrt.github.io/blog/tags/4clojure">4clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/bounded-type-parameter">bounded-type-parameter</a></li><li><a href="http://durtchrt.github.io/blog/tags/clojure">clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/favorite">favorite</a></li><li><a href="http://durtchrt.github.io/blog/tags/generic-method">generic-method</a></li><li><a href="http://durtchrt.github.io/blog/tags/inheritance">inheritance</a></li><li><a href="http://durtchrt.github.io/blog/tags/javascript">javascript</a></li>
+        <li><a href="http://durtchrt.github.io/blog/tags/java">java</a></li><li><a href="http://durtchrt.github.io/blog/tags/generics">generics</a></li><li><a href="http://durtchrt.github.io/blog/tags/%EB%B2%88%EC%97%AD">번역</a></li><li><a href="http://durtchrt.github.io/blog/tags/concurrency">concurrency</a></li><li><a href="http://durtchrt.github.io/blog/tags/4clojure">4clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/bounded-type-parameter">bounded-type-parameter</a></li><li><a href="http://durtchrt.github.io/blog/tags/clojure">clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/favorite">favorite</a></li><li><a href="http://durtchrt.github.io/blog/tags/generic-method">generic-method</a></li><li><a href="http://durtchrt.github.io/blog/tags/inheritance">inheritance</a></li>
       </ul>
     </div>
   </section>
