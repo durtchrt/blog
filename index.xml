@@ -7,8 +7,73 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>durtchrt</copyright>
-    <lastBuildDate>Fri, 25 Nov 2016 14:08:04 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 30 Nov 2016 18:34:23 +0900</lastBuildDate>
     <atom:link href="http://durtchrt.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>인텔리J 단축키 모음</title>
+      <link>http://durtchrt.github.io/blog/ide/intellij/shortcut/</link>
+      <pubDate>Wed, 30 Nov 2016 18:34:23 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/ide/intellij/shortcut/</guid>
+      <description>
+
+&lt;h1 id=&#34;intellij-설정-모음&#34;&gt;IntelliJ 설정 모음&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;탭사용 안하기
+&lt;img src=&#34;../1.png&#34; alt=&#34;1&#34; /&gt;
+Editor &amp;gt; General &amp;gt; Editor Tabs 이동후 Placement: None&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;최근 열었던 파일보기
+cmd + e
+최근 수정한 파일 보기
+cmd + shift + e&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;메서드의 파라메터 정보보기
+cmd + p&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;식 영역 선택
+ctrl + shift + p&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;컨텍스트 정보 보기
+ctrl + shift + q&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;최근 변경된 것들 보기
+option + shift + c&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;파일 구조 보기
+cmd + F12&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;네비게이션바로 이동
+cmd + ↑&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;히스토리로부터 붙여넣기
+shift + cmd + v&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;대소문자 토글
+shift + cmd + u&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;타입 계층구조보기
+ctrl + H&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;소스로 이동
+cmd + ↓&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;테스트
+shift + cmd + t&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;다음 에러 이동 / 이전 에러 이동
+F2 / shift + F2&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;확장 선택 / 선택 낮춤
+option + ↑ / option + ↓&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;스킴 바꾸기
+crtl + `&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title> 20161125 나는 프로그래머다 컨퍼런스</title>
@@ -56,25 +121,30 @@ oop의 단일책임원칙이 자연스럽게 적용됨.
 값을 직접입력하지 않아도 테스트 프레임워크가 자동으로 생성도 가능&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;재미!!!&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;과거 함수형 프로그래밍 언어는 느려서 못썼는데 요새는 속도가 빠름.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&#34;맛보기&#34;&gt;맛보기&lt;/h4&gt;
-
-&lt;p&gt;과거 함수형 프로그래밍 언어는 느려서 못썼는데
-요새는 속도가 빠름.&lt;/p&gt;
 
 &lt;p&gt;haskel 샘플&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-haskel&#34;&gt;let add :: Int -&amp;gt; Int -&amp;gt; Int
 add a b = a + b
+
+add 1 2
+=&amp;gt; 3
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;(파라메터)  (리턴타입)
-Int -&amp;gt;Int -&amp;gt; Int&lt;/p&gt;
+&lt;p&gt;let add // 함수 선언
+Int -&amp;gt;Int -&amp;gt; Int  // Int 파라메터 -&amp;gt; Int 파라메터 -&amp;gt; Int 리턴
+add a b // add 함수는 a, b  두 파라메터를 받음(Int, Int)
+add a b = a + b // a + b 동작 함수를  add에 할당.&lt;/p&gt;
 
 &lt;p&gt;함수형언어들은 함수 우선권을 가짐
 add 2 5 * 3
-=&amp;gt; 21&lt;/p&gt;
+=&amp;gt; 21
+add 2 (5 * 3)이 아니라 (add 2 5) *3으로 평가함.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;1.toString()
 ==&amp;gt; error
@@ -84,31 +154,28 @@ add 2 5 * 3
 ==&amp;gt; &amp;quot;1&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;자바에서의 1은 primitive type
-scala에서의 1은 object   =&amp;gt; PURE object oriented programming language&lt;/p&gt;
+&lt;p&gt;자바에서의 1은 기본형(primitive type)
+scala에서의 1은 객체(object)   =&amp;gt; &lt;code&gt;PURE&lt;/code&gt; object oriented programming language&lt;/p&gt;
 
-&lt;p&gt;Full-blown
+&lt;pre&gt;&lt;code&gt;Full-blown
 Functional Language
 =&amp;gt; 순수 함수형 언어가 아닌 함수형 프로그래밍하기에 적합한 언어를 지칭
-=&amp;gt; 스칼라가 이 범위에 있음.&lt;/p&gt;
+=&amp;gt; 스칼라가 이 범위에 있음.
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;호주 이민은 스칼라&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;kevin github -&amp;gt; functional transaction without aop&lt;/p&gt;
+&lt;p&gt;kevin github -&amp;gt;
+functional transaction without aop(비공개인듯 안보임)
+aop를 사용하지 않고 transaction을 처리한 예제를 케빈 github에 공유하였다고함.&lt;/p&gt;
 
-&lt;h2 id=&#34;br-br-br-br-br-br-br&#34;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;br-br-br-br-br&#34;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;발표 후기 2&lt;/code&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;machine-intelligence-at-google-service&#34;&gt;Machine Intelligence at Google Service&lt;/h1&gt;
 
-&lt;p&gt;What we&amp;rsquo;ll cover
-what is neural network and deep learning
-machine learning use cases at google services
-externalizing the power of ML
-tensorFlow: the open source library for ML
-tensorFlow in the wild
-??&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;영어 발표&lt;/code&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;what-is-neural-network-and-deep-learning&#34;&gt;What is Neural Network and Deep Learning&lt;/h4&gt;
 
@@ -196,7 +263,7 @@ tensor processiong unit&lt;/p&gt;
 
 &lt;p&gt;=&amp;gt; 40배 ~ 300배 성능 향상 가능&lt;/p&gt;
 
-&lt;h2 id=&#34;br-br-br-br-br-br-br-1&#34;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;br-br-br-br-br-1&#34;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;발표 후기 3&lt;/code&gt;&lt;/p&gt;
 
@@ -212,7 +279,7 @@ tensor processiong unit&lt;/p&gt;
 &lt;li&gt;나프다 동영상 참조. 시연신이 나오셔서 방해를 엄청하심;;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;br-br-br-br-br-br-br-2&#34;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;br-br-br-br-br-2&#34;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;발표 후기 4&lt;/code&gt;&lt;/p&gt;
 
@@ -327,7 +394,7 @@ MVI(Model-view-intent) 순환 스트림 설계 함수형 프로그래밍.&lt;/p&
 &lt;p&gt;Elm에서 영감을 얻은 Redux, Cycle.js
 다른 진영 또는 클래식한 기술에서 새로운 통찰을 경험.&lt;/p&gt;
 
-&lt;h2 id=&#34;br-br-br-br-br-br-br-3&#34;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;br-br-br-br-br-br-br&#34;&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;code&gt;발표 후기 5&lt;/code&gt;&lt;/p&gt;
 
@@ -2142,49 +2209,6 @@ Number의 서브타입인 Integer를 가진 Box&amp;lt;Integer&amp;gt;는 Box&am
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&#34;../8-3.gif&#34; alt=&#34;A sample PayloadList hierarchy&#34; /&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>자바 제네릭스(7) Java Generics: Generic 메서드와 제한된 타입 매개변수 (Generic Methods and Bounded Type Parameters)</title>
-      <link>http://durtchrt.github.io/blog/java/generics/7/</link>
-      <pubDate>Sat, 05 Nov 2016 08:24:47 +0900</pubDate>
-      
-      <guid>http://durtchrt.github.io/blog/java/generics/7/</guid>
-      <description>
-
-&lt;h3 id=&#34;generic-메서드와-제한된-타입-매개변수-generic-methods-and-bounded-type-parameters&#34;&gt;Generic 메서드와 제한된 타입 매개변수 &lt;code&gt;Generic Methods and Bounded Type Parameters&lt;/code&gt;&lt;/h3&gt;
-
-&lt;p&gt;제한된 타입 매개변수는 generic 알고리즘들을 구현할때 핵심이된다. 아래의 예는 두번째 인자보다 큰 값이 첫번째 인자인 배열에 몇개가 있는지 세는 메서드이다.
-&lt;code&gt;Bounded type parameters are key to the implementation of generic algorithms. Consider the following method that counts the number of elements in an array T[] that are greater than a specified element elem.&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static &amp;lt;T&amp;gt; int countGreaterThan(T[] anArray, T elem) {
-    int count = 0;
-    for (T e : anArray)
-        if (e &amp;gt; elem)  // compiler error
-            ++count;
-    return count;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;메서드 구현은 간단하지만, &amp;lsquo;&amp;gt;&amp;rsquo; 연산자가 기본형(short, int, double, long, float, byte, char)에만 동작이 허용되기 때문이다. &amp;lsquo;&amp;gt;&amp;rsquo; 연산자는 객체간 비교에는 사용할 수 없습니다. 비교연산자 대신 Comparable&lt;T&gt;  인터페이스를 사용해서 문제를 해결할 수 있습니다.
-&lt;code&gt;The implementation of the method is straightforward, but it does not compile because the greater than operator (&amp;gt;) applies only to primitive types such as short, int, double, long, float, byte, and char. You cannot use the &amp;gt; operator to compare objects. To fix the problem, use a type parameter bounded by the Comparable&amp;lt;T&amp;gt; interface:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public interface Comparable&amp;lt;T&amp;gt; {
-    public int compareTo(T o);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Comparable 인터페이스가 적용된 결과 코드는 아래의 코드처럼 될 것입니다. &lt;code&gt;The resulting code will be:&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static &amp;lt;T extends Comparable&amp;lt;T&amp;gt;&amp;gt; int countGreaterThan(T[] anArray, T elem) {
-    int count = 0;
-    for (T e : anArray)
-        if (e.compareTo(elem) &amp;gt; 0)
-            ++count;
-    return count;
-}
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
