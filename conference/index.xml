@@ -7,8 +7,269 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>durtchrt</copyright>
-    <lastBuildDate>Fri, 25 Nov 2016 14:08:04 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 21 Dec 2016 19:10:41 +0900</lastBuildDate>
     <atom:link href="http://durtchrt.github.io/blog/conference/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>컨퍼런스 후기:20161221 AKKA</title>
+      <link>http://durtchrt.github.io/blog/conference/20161221/akka/</link>
+      <pubDate>Wed, 21 Dec 2016 19:10:41 +0900</pubDate>
+      
+      <guid>http://durtchrt.github.io/blog/conference/20161221/akka/</guid>
+      <description>
+
+&lt;p&gt;Open Community의 정기기술 세미나 75차 발표 - Akka를 이용한 리엑티브 프로그래밍 101&lt;/p&gt;
+
+&lt;p&gt;발표자- 고재도&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://github.com/jeado/akka101&#34;&gt;github&lt;/a&gt;, &lt;a href=&#34;http://open.egovframe.go.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000014&amp;amp;nttId=18918&#34;&gt;opencommunity 공지&lt;/a&gt;, &lt;a href=&#34;../pdf.pdf&#34;&gt;발표자료&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;akka&#34;&gt;AKKA&lt;/h1&gt;
+
+&lt;h4 id=&#34;reactive란&#34;&gt;Reactive란?&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;유저액션에 즉각적인 빠른 응답&lt;/li&gt;
+&lt;li&gt;데이터 바인딩 선언적(절차지향과 반대)&lt;/li&gt;
+&lt;li&gt;리액티브 스트림은 비동기적인 데이터 스트림&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.reactivemanifesto.org/&#34;&gt;리액티브 선언&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;reative-선언&#34;&gt;Reative 선언&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;민감성(Responsive) -&amp;gt;  낮은 대기 시간&lt;/li&gt;
+&lt;li&gt;유연성(Resilient) -&amp;gt; 실패 탐색기로부터 장애상황시 즉각적으로 버팀.&lt;/li&gt;
+&lt;li&gt;신축성(Elastic) -&amp;gt; 클러스터 + 샤딩으로부터 스케일 up/out&lt;/li&gt;
+&lt;li&gt;메세지주도(Message-Driven) -&amp;gt; 액터 + 스트림을 통해 콤포넌트들간의 비동기 커뮤니케이션&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.zdnet.co.kr/column/column_view.asp?artice_id=20161010104628&#34;&gt;참고 - ZD넷 - 임백준 - 리액티브 개발 패러다임에 담긴 메시지&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;실무에-사용되는-회사&#34;&gt;실무에 사용되는 회사&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;../1.png&#34; alt=&#34;회사&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;paypal - 우리는 Akka로 148,000,000명이 넘는 사람들에게 미래의 돈을 전달하고 있습니다.&lt;/p&gt;
+
+&lt;h4 id=&#34;akka-소개&#34;&gt;Akka 소개&lt;/h4&gt;
+
+&lt;p&gt;아카는 Java와 스칼라를 둘다 지원하고 JVM 기반에서 병렬성, 신축성, 유연성을 처리하기위해 actor 기반의 메세지 주도 런타임과 툴킷입니다.(framework는 아닙니다. 기존 코드에 유틸리티 코드처럼 쉽게 추가할 수 있습니다.)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Akka is an actor-based message-driven runtime and toolkit for managing concurrency, elasticity and resilence on the JVM with support for both Java and Scala
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;간단하게 강력한 병렬성과 분산 어플리케이션을 만들수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;akka-1&#34;&gt;AKKA&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Actors - 간단하고 높은 성능의 병행처리&lt;/li&gt;
+&lt;li&gt;Cluster / Remoting - 지역 투명성, 유연성&lt;/li&gt;
+&lt;li&gt;Cluster Sharding - remote시에 자동으로 처리되는 것.&lt;/li&gt;
+&lt;li&gt;Streams - 스트림 back-pressured&lt;/li&gt;
+&lt;li&gt;Persistence - 이벤트 sourcing&lt;/li&gt;
+&lt;li&gt;HTTP - 카프카, 카산드라, DynamoDB와 통합된 완벽하게 비동기적이고 리액티브한  HTTP Server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://doc.akka.io/docs/akka/snapshot/intro/what-is-akka.html&#34;&gt;akka doc - what is akka&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Actors
+- Simple and high-level abstractions for distribution, concurrency and parallelism.
+- Asynchronous, non-blocking and highly performant message-driven programming model.
+- Very lightweight event-driven processes (several million actors per GB of heap memory).
+
+Fault Tolerance
+- Supervisor hierarchies with &amp;quot;let-it-crash&amp;quot; semantics.
+- Actor systems can span over multiple JVMs to provide truly fault-tolerant systems.
+- Excellent for writing highly fault-tolerant systems that self-heal and never stop.
+
+Location Transparency
+- Everything in Akka is designed to work in a distributed environment: all interactions of actors use pure message passing and everything is asynchronous.
+
+Persistence
+- State changes experienced by an actor can optionally be persisted and replayed when the actor is started or restarted. This allows actors to recover their state, even after JVM crashes or when being migrated to another node.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;actor&#34;&gt;Actor&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://doc.akka.io/docs/akka/snapshot/general/actors.html&#34;&gt;akka doc - actor&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;actor-model-frameworks-languages&#34;&gt;Actor Model Frameworks / Languages&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Erlang / Elixer&lt;/li&gt;
+&lt;li&gt;Akka(JVM/Akka.ent)&lt;/li&gt;
+&lt;li&gt;Orleans(.NET)&lt;/li&gt;
+&lt;li&gt;CAF(C++)&lt;/li&gt;
+&lt;li&gt;Celluloid(Ruby)&lt;/li&gt;
+&lt;li&gt;Pulsar(Python)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;1973 Actor모델 이론 발표  -&amp;gt; 1986 Erlang이 Actor모델 적용 -&amp;gt; 2009 jvm scala akka 탄생&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Actor model은 컴퓨터 과학에서 행위자를 형행 연산의 기본적 기본 단위로 취급하는 병행 컴퓨팅의 수학적 모델이다. 행위자가 받는 메시지에 댕으하여, 행위자는 자체적인 결정을 하고 더 많은 행위자를 만들며, 더 많은 메시지를 보내고, 다음에 받을 메시지에 대한 응답 행위를 결정할 수 있다. 행위자는 개인 상태를 수정할 수 있지만, 메시지를 통해서만 서로에게 영향을 줄 수 있다.(락의 필요성을 제거함.)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;액터는 병행처리 원시 기술. -&amp;gt; Thread 대신 Actor로 병행처리 지원&lt;/p&gt;
+
+&lt;h4 id=&#34;actor-1&#34;&gt;Actor&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;concurrency primitive&lt;/li&gt;
+&lt;li&gt;persistent&lt;/li&gt;
+&lt;li&gt;encapsulate internal state&lt;/li&gt;
+&lt;li&gt;actors interact exclusively via asychronous messages&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;actor가-할-수-있는것&#34;&gt;Actor가 할 수 있는것.&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Actor sends messages&lt;/li&gt;
+&lt;li&gt;Actor change its state&lt;/li&gt;
+&lt;li&gt;Actor change its behavior&lt;/li&gt;
+&lt;li&gt;Actor create more actors&lt;/li&gt;
+&lt;li&gt;Actor process exactly one message at a time&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;actor-구조&#34;&gt;actor 구조&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;../2.png&#34; alt=&#34;Akka Actor&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;akka-actor-path&#34;&gt;Akka Actor Path&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;../3.png&#34; alt=&#34;akka path&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;액터 identifies&lt;/li&gt;
+&lt;li&gt;액터를 가리키는 proxy / forwarder를 표현할 수 있다.&lt;/li&gt;
+&lt;li&gt;Contains location and transport information&lt;/li&gt;
+&lt;li&gt;지역 투명성
+
+&lt;ul&gt;
+&lt;li&gt;하나의 path는 많은 actor를 표현할 수 있다.(router pool)&lt;/li&gt;
+&lt;li&gt;하나의 actor는 많은 주소를 가질 수 있다.(cluster)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;supervision&#34;&gt;supervision&lt;/h4&gt;
+
+&lt;p&gt;액터의 동작 상태는 다른 액터에게 감시되고 관리되어진다.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;The running state of an actor is monitored and managed by another actor
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;let it crash -&amp;gt; supervision after crash&lt;/p&gt;
+
+&lt;h4 id=&#34;akka-actor-hierachy&#34;&gt;Akka Actor Hierachy&lt;/h4&gt;
+
+&lt;!-- TODO 이미지 참조 --&gt;
+
+&lt;p&gt;parent actor는 child actor를 supervision할 수 있어서 child의 상태를 받아볼 수 있고 설정할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../4.png&#34; alt=&#34;akka actor hierarchy&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://doc.akka.io/docs/akka/current/general/addressing.html&#34;&gt;참조 - Actor References, Paths and Addresses &lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;demo&#34;&gt;Demo&lt;/h4&gt;
+
+&lt;p&gt;CO2 Monitoring Device -&amp;gt; Akka baseed Rule Engine System&lt;/p&gt;
+
+&lt;h2 id=&#34;scale-up-with-router&#34;&gt;Scale up with router&lt;/h2&gt;
+
+&lt;h4 id=&#34;routers&#34;&gt;Routers&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;pool - the router creates routees as child actors and removes them from the router if they terminate&lt;/li&gt;
+&lt;li&gt;group - the routee actors are created externally to ther router and the router sends messages to the specified path using actor selection, without watching for termination.
+a pool needs the number of routee instances, and a group needs a list of routee paths.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;../5.png&#34; alt=&#34;router&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;routers-1&#34;&gt;Routers&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;akka.actor.deployment {
+	/parent/router1 {
+		router = round-robin-pool
+		nr-of-instances = 5
+	}
+}
+
+val poolRouter: ActorRef = 
+	context.actorOf(FromConfig.props(Props[Worker]), &amp;quot;router1&amp;quot;)
+
+val router2: ActorRef = 
+	context.actorOf(RoundRobinBool(5).props(Props[Workder]), &amp;quot;router2&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;routers-2&#34;&gt;Routers&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;akka.actor.deployment {
+	/parent/router3 {
+		router = round-robin-group
+		routees.paths = [&amp;quot;/user/workers/w1&amp;quot;, &amp;quot;/user/workers/w2&amp;quot;, &amp;quot;/user/workers/w3&amp;quot;]
+	}
+}
+
+val pool: ActorRef = 
+	context.actorOf(FromConfig.props(), &amp;quot;router3&amp;quot;)
+
+val router2: ActorRef = 
+	context.actorOf(RoundRobinBool(paths).props), &amp;quot;router4&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;routing-logic&#34;&gt;Routing Logic&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RoundRobinPool and RoundRobinGroup&lt;/li&gt;
+&lt;li&gt;RandomPool and RandomGroup&lt;/li&gt;
+&lt;li&gt;BalancingPool&lt;/li&gt;
+&lt;li&gt;SmallestMailboxPool&lt;/li&gt;
+&lt;li&gt;BroadcastPool and BroadcastGroup&lt;/li&gt;
+&lt;li&gt;ScatterGatherFirstCompletedPool and ScatterGatherFirstCompletedGroup&lt;/li&gt;
+&lt;li&gt;TailChoppingPool and TailChoppingGroup&lt;/li&gt;
+&lt;li&gt;ConsistentHashingPool and ConsistentHashingGroup&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;demo-1&#34;&gt;DEMO&lt;/h4&gt;
+
+&lt;h2 id=&#34;akka-cluster&#34;&gt;Akka Cluster&lt;/h2&gt;
+
+&lt;h4 id=&#34;akka-cluster-1&#34;&gt;Akka Cluster&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;../6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;akka-cluster-membership&#34;&gt;Akka Cluster Membership&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;../7.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;akka-cluster-joining-the-cluster&#34;&gt;Akka Cluster Joining the cluster&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;../8.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;akka-cluster-leaving-and-exiting&#34;&gt;Akka Cluster Leaving and Exiting&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;../9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;demo-2&#34;&gt;DEMO&lt;/h4&gt;
+
+&lt;h4 id=&#34;akka-in-ligthbend&#34;&gt;akka in ligthbend&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;../10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;auto downing은 production에 사용하지 말라고함 -_-?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://doc.akka.io/docs/akka/snapshot/scala/cluster-usage.html&#34;&gt;http://doc.akka.io/docs/akka/snapshot/scala/cluster-usage.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;anti-use-case&#34;&gt;anti use case&lt;/h4&gt;
+
+&lt;p&gt;actor 안에서 future를 쓸 때 sender가 꼬이는 문제가 있으니 조심.
+&lt;a href=&#34;http://stackoverflow.com/questions/16898131/sender-inside-a-future&#34;&gt;http://stackoverflow.com/questions/16898131/sender-inside-a-future&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title> 20161125 나는 프로그래머다 컨퍼런스</title>

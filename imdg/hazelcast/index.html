@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+
+<meta name="generator" content="Hugo 0.17" />
+
+<link rel="apple-touch-icon" href="http://durtchrt.github.io/blog/images/logo.png">
+
+
+<link rel="canonical" href="http://durtchrt.github.io/blog/imdg/hazelcast/">
+
+
+    
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Montserrat" rel="stylesheet">
+    
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title> - 개발 저장소</title>
+    
+<meta name="description" content="date = &amp;ldquo;2016-12-12T14:04:52&#43;09:00&amp;rdquo; title = &amp;ldquo;hazelcast&amp;rdquo; draft = true&#43;&#43;&#43;HAZELCAST ###참고 링크 ###PDF 링크 -&amp;gt; 아지트에 공유된 자료들 - 실제로는 ppt를 새로 준비해서 가져옴.(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.">
+
+<meta property="og:title" content=" - 개발 저장소">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://durtchrt.github.io/blog/imdg/hazelcast/">
+<meta property="og:image" content="http://durtchrt.github.io/blog/images/default.png">
+<meta property="og:site_name" content="개발 저장소">
+<meta property="og:description" content="date = &amp;ldquo;2016-12-12T14:04:52&#43;09:00&amp;rdquo; title = &amp;ldquo;hazelcast&amp;rdquo; draft = true&#43;&#43;&#43;HAZELCAST ###참고 링크 ###PDF 링크 -&amp;gt; 아지트에 공유된 자료들 - 실제로는 ppt를 새로 준비해서 가져옴.(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="개발 저장소">
+<meta name="twitter:url" content="http://durtchrt.github.io/blog/imdg/hazelcast/">
+<meta name="twitter:title" content=" - 개발 저장소">
+<meta name="twitter:description" content="date = &amp;ldquo;2016-12-12T14:04:52&#43;09:00&amp;rdquo; title = &amp;ldquo;hazelcast&amp;rdquo; draft = true&#43;&#43;&#43;HAZELCAST ###참고 링크 ###PDF 링크 -&amp;gt; 아지트에 공유된 자료들 - 실제로는 ppt를 새로 준비해서 가져옴.(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.">
+<meta name="twitter:image" content="http://durtchrt.github.io/blog/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http:\/\/durtchrt.github.io\/blog\/"
+    },
+    "headline": " - 개발 저장소",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http:\/\/durtchrt.github.io\/blog\/images\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "0001-01-01T00:00:00JST",
+    "dateModified": "0001-01-01T00:00:00JST",
+    "author": {
+      "@type": "Person",
+      "name": "개발 저장소"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "개발 저장소",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http:\/\/durtchrt.github.io\/blog\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "date = \x26ldquo;2016-12-12T14:04:52\x2b09:00\x26rdquo; title = \x26ldquo;hazelcast\x26rdquo; draft = true\n\x2b\x2b\x2b\nHAZELCAST ###참고 링크 ###PDF 링크 -\x26gt; 아지트에 공유된 자료들 - 실제로는 ppt를 새로 준비해서 가져옴.\n(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)\n장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]\npublic class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map\x26lt;String, String\x26gt; map = new HashMap\x26lt;\x26gt;(); map.put(\x26quot;key\x26quot;, \x26quot;value\x26quot;); map.get(\x26quot;key\x26quot;); \/\/Concurrent Map methods map."
+  }
+</script>
+
+
+    <style>
+      html { font-size: 18px;}@media (max-width: 768px) { html { font-size: 15px; }}body { font-family: 'Noto Sans','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-size: inherit; font-weight: 300; line-height: 1rem; background-color: #eceff1;}p { margin: 0;}a { color: #4caf50;}a:hover { text-decoration: none; color: #388e3c;}ul,ol { margin: 0; padding: 0;}h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 700;}h1 { font-size: 1.8rem; line-height: 2rem; margin: 1.5rem 0; }h2 { font-size: 1.4rem; line-height: 2rem; margin: 1.5rem 0; }h3 { font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; }h4, h5, h6 { font-size: 1rem; line-height: 1.5rem; margin: 1.5rem 0; }main { display: block;}.content-inner { padding: 1rem 2rem;}.content-inner.thin { padding: .5rem 1rem;}@media (max-width: 768px) { .content-inner { padding: 1rem; }}/* Override */.container { position: relative;}/* Parts:layouts */.l-header { background-color: #fff; margin-bottom: 1rem; padding: 1rem 0; text-align: center;}.l-footer { font-size: .8rem; padding: 1.5rem 0;}/* Parts:menu */.p-menu { position: absolute; right: 15px; top: 0;}/* Parts:terms */.p-terms { list-style: none;}.p-terms .terms-title { margin: 0;}.p-terms a { display: inline-block; padding: .25rem 0;}.p-terms.inline li { display: inline-block; font-size: .8rem;}.p-terms.inline li::after { content: ',';}.p-terms.inline li:last-child::after { content: '';}/* Parts:paging */.p-paging { margin-bottom: 1.5rem; text-align: center;}.p-paging a { display: inline-block; padding: 1rem 1.5rem; margin: 0 .5rem; background-color: #cfd8dc; color: #263238;}/* Parts:section */section { margin-bottom: 1.5rem;}section>header { font-size: .8rem; font-weight: 700; margin-bottom: .5rem; text-transform: uppercase;}section>header a { color: #333; text-decoration: underline;}section.article-footer { margin-bottom: 1rem;}section.article-footer>header { margin-bottom: 0;}/* Parts:share */.p-share { min-width: 100%; margin-bottom: 1.5rem;}.p-share .share-inner { display: table; table-layout: fixed; width: 100%; border-spacing: .25rem;}.p-share a { display: table-cell; text-align: center; font-weight: 700; font-size: .7rem; padding: .5rem 0; color: #fff; border-radius: 5px;}.p-share a.ht { background-color: #00a4de; border-bottom: 2px solid #0083b1; }.p-share a.fb { background-color: #3b5998; border-bottom: 2px solid #2f4779; }.p-share a.tw { background-color: #1da1f2; border-bottom: 2px solid #1780c1; }.p-share a.gp { background-color: #dd4b39; border-bottom: 2px solid #b03c2d; }.p-share a.ln { background-color: #00c300; border-bottom: 2px solid #009c00; }.p-share a.ht::before { content: 'Hatena'; }.p-share a.fb::before { content: 'Facebook'; }.p-share a.tw::before { content: 'Twitter'; }.p-share a.gp::before { content: 'Google+'; }.p-share a.ln::before { content: 'LINE'; }/* Parts:logo */.h-logo { font-family: 'Montserrat', sans-serif;}.p-logo { display: inline-block; text-transform: uppercase;}.p-logo a { display: inline-block; font-size: 1.4rem; line-height: 2rem; color: #000;}/* Parts:crumb */.p-crumb ol { list-style: none; margin-bottom: 1rem;}.p-crumb li { display: inline; margin-right: .25rem; font-size: .8rem; color: #607d8b;}.p-crumb li::after { content: '/'; margin-left: .25rem;}.p-crumb li:last-child::after { content: '';}/* Parts:facts */.p-facts { list-style: none; font-size: .8rem; margin-bottom: 1rem;}.p-facts li { display: inline-block; margin-right: .5rem; color: #90a4ae;}.p-facts li i { margin-right: .5rem; color: #cfd8dc;}/* Parts:article */article { background-color: #fff;}article .title { margin: 0; margin-bottom: .5rem; font-weight: 700;}article .title a { color: #000;}article .thumb { display: block; background-image: url(http://durtchrt.github.io/blog/images/default.jpg); background-position: center; background-size: cover;}article .summary { margin-bottom: .5rem; max-height: 5rem; overflow: hidden;}article.single .thumb { height: 18rem; margin-bottom: 1rem;}@media (max-width: 768px) { article.single .thumb { height: 12rem; }}article.li { margin-bottom: 1rem;}article.li .thumb { height: 7.5rem; margin-bottom: .5rem;}article.li.sm { background-color: transparent; margin-bottom: .5rem;}article.li.sm>header { padding: .5rem 0;}article.li.sm .title { font-size: .8rem; line-height: 1rem; margin-bottom: .25rem;}article.li.sm .p-facts { font-size: .6rem; margin-bottom: 0;}article.li.sm .thumb { float: left; margin-right: .5rem; height: 3rem; width: 3rem;}.article-body h2 { padding: 1rem 0; border-bottom: 2px solid #eceff1;}.article-body h2:first-child { margin-top: 0; }.article-body h3 { color: #428bca;}.article-body h4 { border-left: solid .25rem #428bca; padding: 0 .5rem;}.article-body p { margin: 1.5rem 0; line-height: 1.5rem;}.article-body a { text-decoration: underline;}.article-body ul,.article-body ol { padding-left: 1.5rem;}.article-body code { display: inline-block; font-family: Menlo, consolas, monospace; font-size: .8rem; padding: 0 .5rem; line-height: 1.5rem;}.article-body pre { margin: 1.5rem 0; padding: 0; font-size: .8rem; border: none; border-radius: 0;}.article-body pre code { display: block; line-height: 1rem; padding: 1rem;}.article-body blockquote { margin: 1.5rem 0; padding: .5rem 0; font-size: .8rem; border-top: 1px solid #eceff1; border-bottom: 1px solid #eceff1; color: #607d8b;}.article-body blockquote p { margin: .5rem 0; line-height: 1rem;}.article-body strong { box-shadow: 0 -.5rem 0 0 #90caf9 inset;}.article-body em { font-style: normal; font-weight: 700; color: #03a9f4;}.article-body figure { margin: 1.5rem 0; }.article-body figure img { max-width: 100%; }.article-body figure.left,.article-body figure.right { width: 15rem; height: 12rem; margin-top: 0;}.article-body figure.left { float: left; margin-right: 1rem; }.article-body figure.right { float: right; margin-left: 1rem; }@media (max-width: 768px) { .article-body figure.left, .article-body figure.right { float: none; margin: 0; width: auto; height: auto; }}.article-body figcaption { padding: .5rem 0; font-size: .8rem; text-align: center;}.article-body figcaption a { color: #263238;}.article-body img { width: 100%; }#layout {height:10px;}
+      
+      
+    </style>
+  </head>
+
+  <body>
+    
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-86354121-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+
+    <header class="l-header">
+      <div class="container">
+        <div class="p-logo">
+          <a href="http://durtchrt.github.io/blog/" class="h-logo">개발 저장소</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol>
+        <li><a href="http://durtchrt.github.io/blog/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/imdg/" itemprop="url"><span itemprop="title">imdg</span></a></li>
+        
+        <li class="active"></li>
+      </ol>
+    </nav>
+
+    <article class="single">
+
+
+  <a href="http://durtchrt.github.io/blog/imdg/hazelcast/" class="thumb"></a>
+  <div class="content-inner">
+    <h1 class="title"></h1>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="0001-01-01T00:00:00JST">Jan 1, 0001</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/imdg/">imdg</a></li>
+      
+    </ul>
+<br>
+<div style="width:100%;height:120px;">
+	    번역 또는 블로그 내용에 오류(또는 하고 싶은 이야기가)가 있으면 언제든 자유롭게 github를 통해 issue 등록 또는 풀리퀘해주세요. 감사! 또 감사합니다!! ^^
+    <span style="float:right;" >
+	<a href="https://github.com/durtchrt/durtchrt.github.io/blob/master/hugo_blog/content/imdg/hazelcast.md"><h1>[Github 링크]</h1> </a>
+    </span>
+</div>
+    <div class="article-body">
+
+<p>date = &ldquo;2016-12-12T14:04:52+09:00&rdquo;
+title = &ldquo;hazelcast&rdquo;
+draft = true</p>
+
+<p>+++</p>
+
+<h3 id="hazelcast">HAZELCAST</h3>
+
+<p>###<a href="http://estech.biz/2016/11/05/seoul-hazelcast-meetup-ppt-2016-11-03/">참고 링크</a>
+###<a href="../hazelcast.pdf">PDF 링크</a>
+-&gt; 아지트에 공유된 자료들 - 실제로는 ppt를 새로 준비해서 가져옴.</p>
+
+<p>(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)</p>
+
+<h3 id="장점">장점</h3>
+
+<h5 id="1-기존-코드를-거의-고치지-않고-캐싱-사용-가능">1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능</h5>
+
+<p>[기존]</p>
+
+<pre><code class="language-java">public class DistributedMap {
+    public static void main(String[] args) {
+        Config config = new Config();
+        Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
+        map.put(&quot;key&quot;, &quot;value&quot;);
+        map.get(&quot;key&quot;);
+
+        //Concurrent Map methods
+        map.putIfAbsent(&quot;somekey&quot;, &quot;somevalue&quot;);
+        map.replace(&quot;key&quot;, &quot;value&quot;, &quot;newvalue&quot;);
+    }
+} 
+</code></pre>
+
+<p>[하젤캐스트 사용]</p>
+
+<pre><code class="language-java">public class DistributedMap {
+    public static void main(String[] args) {
+        Config config = new Config();
+        HazelcastInstance h = Hazelcast.newHazelcastInstance(config);
+        ConcurrentMap&lt;String, String&gt; map = h.getMap(&quot;my-distributed-map&quot;);
+        map.put(&quot;key&quot;, &quot;value&quot;);
+        map.get(&quot;key&quot;);
+
+        //Concurrent Map methods
+        map.putIfAbsent(&quot;somekey&quot;, &quot;somevalue&quot;);
+        map.replace(&quot;key&quot;, &quot;value&quot;, &quot;newvalue&quot;);
+    }
+} 
+</code></pre>
+
+<pre><code>기존 코드에서 몇 줄만 고치면 hazelcast 사용 가능
+HazelcastInstance h = Hazelcast.newHazelcastInstance(config);
+ConcurrentMap&lt;String, String&gt; map = h.getMap(&quot;my-distributed-map&quot;);
+</code></pre>
+
+<h5 id="2-자바-상임의원이-hazelcast에-몸담고-있음">2. 자바 상임의원이 hazelcast에 몸담고 있음</h5>
+
+<ul>
+<li>jcache등 자바 표준의 기술들을 기반으로 개발하고 있고 적극적으로 사용하는 모습을 보임. 자바쪽 진영에 영향력이 있어서 표준을 이끌수 있어 보임</li>
+</ul>
+
+<h5 id="3-스프링과의-연동의-쉬움">3. 스프링과의 연동의 쉬움</h5>
+
+<ul>
+<li>적극적으로 스프링과의 integration을 지원함.(스프링 커뮤니티에서 hazelcast를 적극 추천하는 이유를 알 수 있었음.)</li>
+</ul>
+
+<h3 id="hazelcast-hd-유료">hazelcast HD(유료)</h3>
+
+<p>heap을 사용하지 않고 자체적으로 개발한 메모리 모델을 사용 - FULL GC 발생 안됨.
+1. 흔히들 full gc시 Stop the world을 방지하기 위해 64G 메모리에 4G * 16(jvm)를 띄워서 Full GC 대응을 한다.
+2. 하지만, jvm 갯수가 늘어나는 만큼 관리 비용이 크다.
+3. HD를 사용하면 Full GC 걱정 안해도 되고 물리 메모리를 최대한 확보해도 상관 없다.(60G를 hazelcast의 HD에 할당해도 GC로 인한 frozen 걱정은 최소화된다. - 하드웨어 자원 최대한 사용 가능해짐.)</p>
+
+<h3 id="분산-연산-지원-distribute-computing">분산 연산 지원 - Distribute Computing</h3>
+
+<p>하젤 캐스트 서비스 레이어에 Callable/Runable 객체만 던지면 하젤캐스트 노드들간에서 분산 처리후 결과를 던지는 기능(hadoop의 map-reduce와 비슷한듯. spark의 RDD)
+- 노드가 늘어날 수록 고속 연산에 유리해짐.
+- 노드들간에 syncronize 가능 - lock 전략 사용 -&gt; 이건 나라면 안쓸듯.</p>
+
+<h3 id="partition-sharding">Partition &amp; Sharding</h3>
+
+<p>hash를 사용해서 데이터를 파티셔닝함.(파티션을 전체 데이터의 일부 데이터 셋으로 보면 됨. )
+파티셔닝한 데이터를 두가지로 관리
+1. major(원래 노드가 관리하는 파티션)
+2. backup(다른 노드에서 관리하는 파티션의 일부를 저장)
+-&gt; 만약 하나의 노드가 깨지면 백업 파티션 및 major 파티션에서 알아서 분산 저장 실행.</p>
+
+<h4 id="hash-process">hash process</h4>
+
+<p>KEY -&gt; byte[] -&gt; string-&gt; hashcode -&gt; node의 갯수 기준으로 나머지 연산(%) 후 적절한 노드 선택후 저장</p>
+
+<h3 id="노드구성시-주의사항">노드구성시 주의사항.</h3>
+
+<p>LAN으로(WAN X) 노드를 관리해야함. nextwork priority 개념이 없음.
+-&gt; network간 거리가 멀게 구성하면 성능 저하의 요인.</p>
+
+<h3 id="hazelcast-heimdall-유료">hazelcast heimdall(유료)</h3>
+
+<p>기존 : service -&gt; JDBC -&gt; RDB
+변경 : service -&gt; (heimdall JDBC) -&gt; JDBC -&gt; RDB</p>
+
+<p>기존 JDBC 사용하는 코드에 라이브러리만 헤임달 JDBC로 변경해주면 알아서 데이터베이스 캐싱 및 데이터 베이스 장애시에 해임달이 캐싱한(테이블 구조를 그대로 캐싱) 데이터를 전달
+-&gt; netflix의 hystrix랑 비슷한 구조.</p>
+
+<h3 id="장애대응">장애대응</h3>
+
+<p>장애로 인한 노트가 망가지고 네트워크 트래픽이 많은 경우 hazelcast는 자동으로 감지해서 대응한다.
+파티션의 갯수가 1000이고 전체가 100G의 데이터인경우 하나의 파티션은 100M를 차지함 분산 저장시 10개의 파티션을 기본으로 설정하면. 1G의 네트워크 전송량이 필요
+=&gt; 파티션을 10000개로 10배 늘리면 100G의 데이터의 하나의 파티션의 용량은 10M로 줄어들고 1회 전송하는 파티셧의 셋의 갯수를 5개로 줄이면 50M의 네트워크 전송량 필요(20배를 줄여서 내부 부하를 줄이는 전략을 취함.)
+=&gt; 위의 과정이 자동으로 전환</p>
+
+<h3 id="deploy">Deploy</h3>
+
+<p>2가지 Mode지원
+Embedded(같은 jvm내에 hazelcast 사용),  Client-Server(다른 jvm에 띄움 - 같은 머신일수도 다른 머신일 수도~)
+=&gt; 간단한 설정 변경으로 둘 다 편하게 사용 가능</p>
+
+<h3 id="smart-routing">Smart routing</h3>
+
+<p>1의 클라이언트는 하나의 노드와 연결을 맺음. =&gt; smart routing -_-
+ - 모든 노드가 connection을 맺지 않는다
+ - 이 컨셉으로 고가용성(high avaiablity)이 가능
+ - network 장애, gc 응답없음(stop the world)일 경우 fault tolerance 가능하게 함.
+ - hazelcast의 router가 클라이언트 - 노드간 reconnect</p>
+
+<h3 id="hazelcast-zet-무료">Hazelcast zet (무료!!)</h3>
+
+<p>기존의 <a href="https://en.wikipedia.org/wiki/Cascading_(software)">cascading</a>보다 편하다고함.
+스파크보다 분산 처리 성능이 44배 빠르다고함(업체측 자료만을 못믿음.)
+하둡처럼 대용량 데이터, 스파크처럼 in memory 분산 처리 뭐 이런 것을 하나의 솔루션으로 처리 가능한 것으로 보임.(람다 아키텍쳐를 hazelcast zet으로 한방에 처리 뭐 이런 느낌)</p>
+
+<h3 id="발표자-주소">발표자 주소</h3>
+
+<p>rahul@haselcast.com
+james@estech21.com =&gt; 12월말까지 hazelcast korea로 변경 hazelcast.com</p>
+</div>
+  </div>
+
+  <footer class="article-footer">
+    <div class="content-inner">
+
+      <aside class="p-share">
+  <div class="share-inner">
+    
+    <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fdurtchrt.github.io%2fblog%2fimdg%2fhazelcast%2f&t=" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
+    <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fimdg%2fhazelcast%2f&text=&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
+    <a href="https://plus.google.com/share?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fimdg%2fhazelcast%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
+    <a href="http://line.me/R/msg/text/? http%3a%2f%2fdurtchrt.github.io%2fblog%2fimdg%2fhazelcast%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
+  </div>
+</aside>
+
+
+      <nav class="p-crumb">
+        <ol>
+          <li><a href="http://durtchrt.github.io/blog/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+          
+          <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/imdg/" itemprop="url"><span itemprop="title">imdg</span></a></li>
+          
+          <li class="active"></li>
+        </ol>
+      </nav>
+
+      
+      
+      
+      
+    </div>
+  </footer>
+
+</article>
+
+
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'bjm';
+    var disqus_identifier = 'http:\/\/durtchrt.github.io\/blog\/imdg\/hazelcast\/';
+    var disqus_title = '';
+    var disqus_url = 'http:\/\/durtchrt.github.io\/blog\/imdg\/hazelcast\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+
+  <div class="col-md-4">
+    <aside class="site">
+
+  <section>
+    <header>latests</header>
+    <div>
+      <div class="row">
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/conference/20161221/akka/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/conference/20161221/akka/">컨퍼런스 후기:20161221 AKKA</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-12-21T19:10:41JST">Dec 21, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/conference/">conference</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/ide/intellij/shortcut/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/ide/intellij/shortcut/">인텔리J 단축키 모음</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-30T18:34:23JST">Nov 30, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/ide/">ide</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        <div class="col-sm-12"></div>
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/conference/20161125/1/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/conference/20161125/1/"> 20161125 나는 프로그래머다 컨퍼런스</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-25T14:08:04JST">Nov 25, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/conference/">conference</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/concurrency/5/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/concurrency/5/">[발번역]The Java™ Tutorials - 2-2. Pausing Execution with Sleep</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-24T15:00:35JST">Nov 24, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        <div class="col-sm-12"></div>
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/concurrency/4/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/concurrency/4/">[발번역]The Java™ Tutorials - 2-1. 쓰레드 정의와 시작 Defining and Starting a Thread</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-24T14:00:35JST">Nov 24, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/concurrency/3/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/concurrency/3/">[발번역]The Java™ Tutorials - 2. Thread Objects</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-24T13:00:35JST">Nov 24, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        <div class="col-sm-12"></div>
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/concurrency/2/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/concurrency/2/">[발번역]The Java™ Tutorials - 1. Processes and Threads </a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-24T12:00:35JST">Nov 24, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/java/concurrency/1/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/java/concurrency/1/">[발번역]The Java™ Tutorials - 0. Concurrency</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-24T12:00:34JST">Nov 24, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        <div class="col-sm-12"></div>
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/conference/20161123/1/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/conference/20161123/1/">[컨퍼런스 후기- 20161123] playnode2016</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-23T11:55:37JST">Nov 23, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/conference/">conference</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/clojure/4clojure/questions25/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/clojure/4clojure/questions25/">4Clojure 문제 모음 1 ~ 25</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-20T04:22:01JST">Nov 20, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/clojure/">clojure</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        <div class="col-sm-12"></div>
+        
+      </div>
+    </div>
+  </section>
+
+  
+  <section>
+    <header>tag</header>
+    <div>
+      <ul class="p-terms">
+        <li><a href="http://durtchrt.github.io/blog/tags/java">java</a></li><li><a href="http://durtchrt.github.io/blog/tags/generics">generics</a></li><li><a href="http://durtchrt.github.io/blog/tags/%EB%B2%88%EC%97%AD">번역</a></li><li><a href="http://durtchrt.github.io/blog/tags/concurrency">concurrency</a></li><li><a href="http://durtchrt.github.io/blog/tags/4clojure">4clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/bounded-type-parameter">bounded-type-parameter</a></li><li><a href="http://durtchrt.github.io/blog/tags/clojure">clojure</a></li><li><a href="http://durtchrt.github.io/blog/tags/favorite">favorite</a></li><li><a href="http://durtchrt.github.io/blog/tags/generic-method">generic-method</a></li><li><a href="http://durtchrt.github.io/blog/tags/inheritance">inheritance</a></li>
+      </ul>
+    </div>
+  </section>
+  
+
+</aside>
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p>durtchrt</p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

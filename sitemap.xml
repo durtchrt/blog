@@ -3,7 +3,12 @@
   
   <url>
     <loc>http://durtchrt.github.io/blog/</loc>
-    <lastmod>2016-11-30T18:34:23+09:00</lastmod>
+    <lastmod>2016-12-21T19:10:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://durtchrt.github.io/blog/conference/20161221/akka/</loc>
+    <lastmod>2016-12-21T19:10:41+09:00</lastmod>
   </url>
   
   <url>
@@ -119,6 +124,10 @@
   <url>
     <loc>http://durtchrt.github.io/blog/2016/10/26/daum_favorites_javascript/</loc>
     <lastmod>2016-10-26T18:19:58+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://durtchrt.github.io/blog/imdg/hazelcast/</loc>
   </url>
   
 </urlset>
