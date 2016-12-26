@@ -63,6 +63,25 @@ ga('send', 'pageview');
     <div class="row">
       
       <div class="col-sm-6 col-xs-12"><article class="li">
+  <a href="http://durtchrt.github.io/blog/java/generics/4/" class="thumb"></a>
+  <div class="content-inner thin">
+    <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/4/">자바 제네릭스(4) Java Generics: 원천(Raw) 타입들</a></h2>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-01T16:05:56JST">Nov 1, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      
+    </ul>
+
+    <div class="summary">원문 링크
+원천 타입들 Raw Types Raw 타입은 generic 클래스 혹은 인터페이스에 타입인자가 없는 것. 예를들어 generic Box 클래스를 보자 A raw type is the name of a generic class or interface without any type arguments. For example, given the generic Box class:
+public class Box&lt;T&gt; { public void set(T t) { /* ... */ } // ... }  아래 코드를 보면 Box의 매개변수화된 타입을 만드면서, 타입매개변수 T에 해당하는 Integer를 타입인자로 제공하였다.</div>
+  </div>
+</article>
+</div>
+      
+      
+      <div class="col-sm-6 col-xs-12"><article class="li">
   <a href="http://durtchrt.github.io/blog/java/generics/3/" class="thumb"></a>
   <div class="content-inner thin">
     <h2 class="title"><a href="http://durtchrt.github.io/blog/java/generics/3/">자바 제네릭스(3) Java Generics: 제네릭 타입들</a></h2>
@@ -80,7 +99,7 @@ ga('send', 'pageview');
   </div>
 </article>
 </div>
-      
+      <div class="col-sm-12"></div>
       
       <div class="col-sm-6 col-xs-12"><article class="li">
   <a href="http://durtchrt.github.io/blog/java/generics/2/" class="thumb"></a>
@@ -99,7 +118,7 @@ Generics는 왜 사용하는가 (Why Use Generics?)
   </div>
 </article>
 </div>
-      <div class="col-sm-12"></div>
+      
       
       <div class="col-sm-6 col-xs-12"><article class="li">
   <a href="http://durtchrt.github.io/blog/java/generics/1/" class="thumb"></a>
@@ -118,7 +137,7 @@ In any nontrivial software project, bugs are simply a fact of life. Careful plan
   </div>
 </article>
 </div>
-      
+      <div class="col-sm-12"></div>
       
       <div class="col-sm-6 col-xs-12"><article class="li">
   <a href="http://durtchrt.github.io/blog/2016/10/26/daum_favorites_javascript/" class="thumb"></a>
@@ -135,28 +154,6 @@ In any nontrivial software project, bugs are simply a fact of life. Careful plan
 (주소표시줄에 복사/붙여넣기하면 &lsquo;javascript:&rsquo; 글자가 없어져서 제대로 동작을하지 않아요)
 위의 이미지처럼 alert창이 나오면 스크립트 실행이 된 것입니다.
 2. 자바스크립트 즐겨찾기 추가 웹브라우저가 제공하는 기능으로 즐겨찾기가 있습니다. 크롬의 우측에 있는 메뉴를 보면 북마크 관리자가 있습니다. 북마크 관리자를 클릭하면 아래의 화면이 보이실 겁니다.</div>
-  </div>
-</article>
-</div>
-      <div class="col-sm-12"></div>
-      
-      <div class="col-sm-6 col-xs-12"><article class="li">
-  <a href="http://durtchrt.github.io/blog/imdg/hazelcast/" class="thumb"></a>
-  <div class="content-inner thin">
-    <h2 class="title"><a href="http://durtchrt.github.io/blog/imdg/hazelcast/"></a></h2>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="0001-01-01T00:00:00JST">Jan 1, 0001</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/imdg/">imdg</a></li>
-      
-    </ul>
-
-    <div class="summary">date = &ldquo;2016-12-12T14:04:52+09:00&rdquo; title = &ldquo;20161212: hazelcast 교육 내용 정리&rdquo;
-+++
-HAZELCAST ###참고 링크 ###PDF 링크
-(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)
-장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]
-public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&lt;String, String&gt; map = new HashMap&lt;&gt;(); map.put(&quot;key&quot;, &quot;value&quot;); map.get(&quot;key&quot;); //Concurrent Map methods map.putIfAbsent(&quot;somekey&quot;, &quot;somevalue&quot;); map.replace(&quot;key&quot;, &quot;value&quot;, &quot;newvalue&quot;); } }  [하젤캐스트 사용]</div>
   </div>
 </article>
 </div>
@@ -198,6 +195,20 @@ public class DistributedMap { public static void main(String[] args) { Config co
         
         
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
+  <a href="http://durtchrt.github.io/blog/conference/20161212/hazelcast/" class="thumb"></a>
+  <header>
+    <div class="title"><a href="http://durtchrt.github.io/blog/conference/20161212/hazelcast/">20161212: hazelcast 교육 내용 정리</a></div>
+
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-12-12T14:04:52JST">Dec 12, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/conference/">conference</a></li>
+    </ul>
+  </header>
+</article>
+</div>
+        <div class="col-sm-12"></div>
+        
+        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/ide/intellij/shortcut/" class="thumb"></a>
   <header>
     <div class="title"><a href="http://durtchrt.github.io/blog/ide/intellij/shortcut/">인텔리J 단축키 모음</a></div>
@@ -209,7 +220,7 @@ public class DistributedMap { public static void main(String[] args) { Config co
   </header>
 </article>
 </div>
-        <div class="col-sm-12"></div>
+        
         
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/conference/20161125/1/" class="thumb"></a>
@@ -223,7 +234,7 @@ public class DistributedMap { public static void main(String[] args) { Config co
   </header>
 </article>
 </div>
-        
+        <div class="col-sm-12"></div>
         
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/java/concurrency/5/" class="thumb"></a>
@@ -237,7 +248,7 @@ public class DistributedMap { public static void main(String[] args) { Config co
   </header>
 </article>
 </div>
-        <div class="col-sm-12"></div>
+        
         
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/java/concurrency/4/" class="thumb"></a>
@@ -251,7 +262,7 @@ public class DistributedMap { public static void main(String[] args) { Config co
   </header>
 </article>
 </div>
-        
+        <div class="col-sm-12"></div>
         
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/java/concurrency/3/" class="thumb"></a>
@@ -265,7 +276,7 @@ public class DistributedMap { public static void main(String[] args) { Config co
   </header>
 </article>
 </div>
-        <div class="col-sm-12"></div>
+        
         
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/java/concurrency/2/" class="thumb"></a>
@@ -279,7 +290,7 @@ public class DistributedMap { public static void main(String[] args) { Config co
   </header>
 </article>
 </div>
-        
+        <div class="col-sm-12"></div>
         
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/java/concurrency/1/" class="thumb"></a>
@@ -293,7 +304,7 @@ public class DistributedMap { public static void main(String[] args) { Config co
   </header>
 </article>
 </div>
-        <div class="col-sm-12"></div>
+        
         
         <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
   <a href="http://durtchrt.github.io/blog/conference/20161123/1/" class="thumb"></a>
@@ -303,20 +314,6 @@ public class DistributedMap { public static void main(String[] args) { Config co
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-23T11:55:37JST">Nov 23, 2016</time></li>
       <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/conference/">conference</a></li>
-    </ul>
-  </header>
-</article>
-</div>
-        
-        
-        <div class="col-md-12 col-sm-6 col-xs-12"><article class="li sm">
-  <a href="http://durtchrt.github.io/blog/clojure/4clojure/questions25/" class="thumb"></a>
-  <header>
-    <div class="title"><a href="http://durtchrt.github.io/blog/clojure/4clojure/questions25/">4Clojure 문제 모음 1 ~ 25</a></div>
-
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-20T04:22:01JST">Nov 20, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/clojure/">clojure</a></li>
     </ul>
   </header>
 </article>

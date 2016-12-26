@@ -11,7 +11,7 @@
 <link rel="apple-touch-icon" href="http://durtchrt.github.io/blog/images/logo.png">
 
 
-<link rel="canonical" href="http://durtchrt.github.io/blog/java/concurrency/1/">
+<link rel="canonical" href="http://durtchrt.github.io/blog/conference/20161212/hazelcast/">
 
 
     
@@ -20,23 +20,23 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>[발번역]The Java™ Tutorials - 0. Concurrency - 개발 저장소</title>
+    <title>20161212: hazelcast 교육 내용 정리 - 개발 저장소</title>
     
-<meta name="description" content="##원문링크Lesson: Concurrency 컴퓨터는 사용자에게 동일시간에 한가지 이상의 일을 할 수 있도록 시스템이 보장이 되야한다. 컴퓨터 사용자는 워드프로세서 작업을 할 때 다른 어플리케이션이 파일 다운로드, 스트리밍 오디오, 프린터 큐 관리등을 동시에 하는게 당연하사 생각한다. 심지어 하나의 어플레케이션이 한번에 한가지 이상의 동작하는 것을 종종 기대한다. 예를들면 스트리밍 오디오 어플레케이션은 반드시 동시에 네트워크로부터 디지털 오디오 읽기, 압축을 풀기, 재생 관리, 디스플레이 업데이트를 수행한다. 심지어 워드프로세서도 디스플레이 업데이트나 텍스트를 다시 포맷팅하는것이 얼마나 바쁜지 상관없이 키보드의 응답, 마우스 이벤트들의 응답을 대기해야한다.">
+<meta name="description" content="HAZELCAST ###참고 링크 ###PDF 링크(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.putIfAbsent(&amp;quot;somekey&amp;quot;, &amp;quot;somevalue&amp;quot;); map.replace(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;, &amp;quot;newvalue&amp;quot;); } }  [하젤캐스트 사용]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); HazelcastInstance h = Hazelcast.">
 
-<meta property="og:title" content="[발번역]The Java™ Tutorials - 0. Concurrency - 개발 저장소">
+<meta property="og:title" content="20161212: hazelcast 교육 내용 정리 - 개발 저장소">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://durtchrt.github.io/blog/java/concurrency/1/">
+<meta property="og:url" content="http://durtchrt.github.io/blog/conference/20161212/hazelcast/">
 <meta property="og:image" content="http://durtchrt.github.io/blog/images/default.png">
 <meta property="og:site_name" content="개발 저장소">
-<meta property="og:description" content="##원문링크Lesson: Concurrency 컴퓨터는 사용자에게 동일시간에 한가지 이상의 일을 할 수 있도록 시스템이 보장이 되야한다. 컴퓨터 사용자는 워드프로세서 작업을 할 때 다른 어플리케이션이 파일 다운로드, 스트리밍 오디오, 프린터 큐 관리등을 동시에 하는게 당연하사 생각한다. 심지어 하나의 어플레케이션이 한번에 한가지 이상의 동작하는 것을 종종 기대한다. 예를들면 스트리밍 오디오 어플레케이션은 반드시 동시에 네트워크로부터 디지털 오디오 읽기, 압축을 풀기, 재생 관리, 디스플레이 업데이트를 수행한다. 심지어 워드프로세서도 디스플레이 업데이트나 텍스트를 다시 포맷팅하는것이 얼마나 바쁜지 상관없이 키보드의 응답, 마우스 이벤트들의 응답을 대기해야한다.">
+<meta property="og:description" content="HAZELCAST ###참고 링크 ###PDF 링크(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.putIfAbsent(&amp;quot;somekey&amp;quot;, &amp;quot;somevalue&amp;quot;); map.replace(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;, &amp;quot;newvalue&amp;quot;); } }  [하젤캐스트 사용]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); HazelcastInstance h = Hazelcast.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="개발 저장소">
-<meta name="twitter:url" content="http://durtchrt.github.io/blog/java/concurrency/1/">
-<meta name="twitter:title" content="[발번역]The Java™ Tutorials - 0. Concurrency - 개발 저장소">
-<meta name="twitter:description" content="##원문링크Lesson: Concurrency 컴퓨터는 사용자에게 동일시간에 한가지 이상의 일을 할 수 있도록 시스템이 보장이 되야한다. 컴퓨터 사용자는 워드프로세서 작업을 할 때 다른 어플리케이션이 파일 다운로드, 스트리밍 오디오, 프린터 큐 관리등을 동시에 하는게 당연하사 생각한다. 심지어 하나의 어플레케이션이 한번에 한가지 이상의 동작하는 것을 종종 기대한다. 예를들면 스트리밍 오디오 어플레케이션은 반드시 동시에 네트워크로부터 디지털 오디오 읽기, 압축을 풀기, 재생 관리, 디스플레이 업데이트를 수행한다. 심지어 워드프로세서도 디스플레이 업데이트나 텍스트를 다시 포맷팅하는것이 얼마나 바쁜지 상관없이 키보드의 응답, 마우스 이벤트들의 응답을 대기해야한다.">
+<meta name="twitter:url" content="http://durtchrt.github.io/blog/conference/20161212/hazelcast/">
+<meta name="twitter:title" content="20161212: hazelcast 교육 내용 정리 - 개발 저장소">
+<meta name="twitter:description" content="HAZELCAST ###참고 링크 ###PDF 링크(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.putIfAbsent(&amp;quot;somekey&amp;quot;, &amp;quot;somevalue&amp;quot;); map.replace(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;, &amp;quot;newvalue&amp;quot;); } }  [하젤캐스트 사용]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); HazelcastInstance h = Hazelcast.">
 <meta name="twitter:image" content="http://durtchrt.github.io/blog/images/default.png">
 
 
@@ -48,15 +48,15 @@
       "@type": "WebPage",
       "@id":"http:\/\/durtchrt.github.io\/blog\/"
     },
-    "headline": "[발번역]The Java™ Tutorials - 0. Concurrency - 개발 저장소",
+    "headline": "20161212: hazelcast 교육 내용 정리 - 개발 저장소",
     "image": {
       "@type": "ImageObject",
       "url": "http:\/\/durtchrt.github.io\/blog\/images\/default.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2016-11-24T12:00:34JST",
-    "dateModified": "2016-11-24T12:00:34JST",
+    "datePublished": "2016-12-12T14:04:52JST",
+    "dateModified": "2016-12-12T14:04:52JST",
     "author": {
       "@type": "Person",
       "name": "개발 저장소"
@@ -71,7 +71,7 @@
         "height": 60
       }
     },
-    "description": "##원문링크\nLesson: Concurrency 컴퓨터는 사용자에게 동일시간에 한가지 이상의 일을 할 수 있도록 시스템이 보장이 되야한다. 컴퓨터 사용자는 워드프로세서 작업을 할 때 다른 어플리케이션이 파일 다운로드, 스트리밍 오디오, 프린터 큐 관리등을 동시에 하는게 당연하사 생각한다. 심지어 하나의 어플레케이션이 한번에 한가지 이상의 동작하는 것을 종종 기대한다. 예를들면 스트리밍 오디오 어플레케이션은 반드시 동시에 네트워크로부터 디지털 오디오 읽기, 압축을 풀기, 재생 관리, 디스플레이 업데이트를 수행한다. 심지어 워드프로세서도 디스플레이 업데이트나 텍스트를 다시 포맷팅하는것이 얼마나 바쁜지 상관없이 키보드의 응답, 마우스 이벤트들의 응답을 대기해야한다."
+    "description": "HAZELCAST ###참고 링크 ###PDF 링크\n(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)\n장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]\npublic class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map\x26lt;String, String\x26gt; map = new HashMap\x26lt;\x26gt;(); map.put(\x26quot;key\x26quot;, \x26quot;value\x26quot;); map.get(\x26quot;key\x26quot;); \/\/Concurrent Map methods map.putIfAbsent(\x26quot;somekey\x26quot;, \x26quot;somevalue\x26quot;); map.replace(\x26quot;key\x26quot;, \x26quot;value\x26quot;, \x26quot;newvalue\x26quot;); } }  [하젤캐스트 사용]\npublic class DistributedMap { public static void main(String[] args) { Config config = new Config(); HazelcastInstance h = Hazelcast."
   }
 </script>
 
@@ -116,43 +116,163 @@ ga('send', 'pageview');
       <ol>
         <li><a href="http://durtchrt.github.io/blog/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
         
-        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/java/" itemprop="url"><span itemprop="title">java</span></a></li>
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/conference/" itemprop="url"><span itemprop="title">conference</span></a></li>
         
-        <li class="active">[발번역]The Java™ Tutorials - 0. Concurrency</li>
+        <li class="active">20161212: hazelcast 교육 내용 정리</li>
       </ol>
     </nav>
 
     <article class="single">
 
 
-  <a href="http://durtchrt.github.io/blog/java/concurrency/1/" class="thumb"></a>
+  <a href="http://durtchrt.github.io/blog/conference/20161212/hazelcast/" class="thumb"></a>
   <div class="content-inner">
-    <h1 class="title">[발번역]The Java™ Tutorials - 0. Concurrency</h1>
+    <h1 class="title">20161212: hazelcast 교육 내용 정리</h1>
 
     <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-24T12:00:34JST">Nov 24, 2016</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/java/">java</a></li>
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-12-12T14:04:52JST">Dec 12, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://durtchrt.github.io/blog/conference/">conference</a></li>
       
     </ul>
 <br>
 <div style="width:100%;height:120px;">
 	    번역 또는 블로그 내용에 오류(또는 하고 싶은 이야기가)가 있으면 언제든 자유롭게 github를 통해 issue 등록 또는 풀리퀘해주세요. 감사! 또 감사합니다!! ^^
     <span style="float:right;" >
-	<a href="https://github.com/durtchrt/durtchrt.github.io/blob/master/hugo_blog/content/java/concurrency/1.md"><h1>[Github 링크]</h1> </a>
+	<a href="https://github.com/durtchrt/durtchrt.github.io/blob/master/hugo_blog/content/conference/20161212/hazelcast.md"><h1>[Github 링크]</h1> </a>
     </span>
 </div>
     <div class="article-body">
 
-<p>##<a href="http://docs.oracle.com/javase/tutorial/essential/concurrency/index.html">원문링크</a></p>
+<h3 id="hazelcast">HAZELCAST</h3>
 
-<h1 id="lesson-concurrency">Lesson: Concurrency</h1>
+<p>###<a href="http://estech.biz/2016/11/05/seoul-hazelcast-meetup-ppt-2016-11-03/">참고 링크</a>
+###<a href="../hazelcast.pdf">PDF 링크</a></p>
 
-<p>컴퓨터는 사용자에게 동일시간에 한가지 이상의 일을 할 수 있도록 시스템이 보장이 되야한다. 컴퓨터 사용자는 워드프로세서 작업을 할 때 다른 어플리케이션이 파일 다운로드, 스트리밍 오디오, 프린터 큐 관리등을 동시에 하는게 당연하사 생각한다. 심지어 하나의 어플레케이션이 한번에 한가지 이상의 동작하는 것을 종종 기대한다. 예를들면 스트리밍 오디오 어플레케이션은 반드시 동시에 네트워크로부터 디지털 오디오 읽기, 압축을 풀기, 재생 관리, 디스플레이 업데이트를 수행한다. 심지어 워드프로세서도 디스플레이 업데이트나 텍스트를 다시 포맷팅하는것이 얼마나 바쁜지 상관없이 키보드의 응답, 마우스 이벤트들의 응답을 대기해야한다. 그러한 것을 할 수 있는 소프트웨어를 병행성(동시성) 소프트웨어라고 알려져있다.</p>
+<p>(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)</p>
 
-<p><code>Computer users take it for granted that their systems can do more than one thing at a time. They assume that they can continue to work in a word processor, while other applications download files, manage the print queue, and stream audio. Even a single application is often expected to do more than one thing at a time. For example, that streaming audio application must simultaneously read the digital audio off the network, decompress it, manage playback, and update its display. Even the word processor should always be ready to respond to keyboard and mouse events, no matter how busy it is reformatting text or updating the display. Software that can do such things is known as concurrent software.</code></p>
+<h3 id="장점">장점</h3>
 
-<p>자바 플랫폼은 병행 프로그래밍을 지원하도록 (밑바닥부터 끝까지) 설계 되었다. 자바 프로그래밍 언어와 자바 클래스 라이브러리들로 기본 병행성을 지원한다. 자바 플랫폼 5.0 버전부터는 고수준의 concurrency API도 포함되었다. 이번 자바 플랫폼의 수업은 기본 병행 지원과 몇가지 java.util.concurrent 패키지의 수준 API의 요약을 소개한다.
-<code>The Java platform is designed from the ground up to support concurrent programming, with basic concurrency support in the Java programming language and the Java class libraries. Since version 5.0, the Java platform has also included high-level concurrency APIs. This lesson introduces the platform's basic concurrency support and summarizes some of the high-level APIs in the java.util.concurrent packages.</code></p>
+<h5 id="1-기존-코드를-거의-고치지-않고-캐싱-사용-가능">1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능</h5>
+
+<p>[기존]</p>
+
+<pre><code class="language-java">public class DistributedMap {
+    public static void main(String[] args) {
+        Config config = new Config();
+        Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
+        map.put(&quot;key&quot;, &quot;value&quot;);
+        map.get(&quot;key&quot;);
+
+        //Concurrent Map methods
+        map.putIfAbsent(&quot;somekey&quot;, &quot;somevalue&quot;);
+        map.replace(&quot;key&quot;, &quot;value&quot;, &quot;newvalue&quot;);
+    }
+} 
+</code></pre>
+
+<p>[하젤캐스트 사용]</p>
+
+<pre><code class="language-java">public class DistributedMap {
+    public static void main(String[] args) {
+        Config config = new Config();
+        HazelcastInstance h = Hazelcast.newHazelcastInstance(config);
+        ConcurrentMap&lt;String, String&gt; map = h.getMap(&quot;my-distributed-map&quot;);
+        map.put(&quot;key&quot;, &quot;value&quot;);
+        map.get(&quot;key&quot;);
+
+        //Concurrent Map methods
+        map.putIfAbsent(&quot;somekey&quot;, &quot;somevalue&quot;);
+        map.replace(&quot;key&quot;, &quot;value&quot;, &quot;newvalue&quot;);
+    }
+} 
+</code></pre>
+
+<pre><code>기존 코드에서 몇 줄만 고치면 hazelcast 사용 가능
+HazelcastInstance h = Hazelcast.newHazelcastInstance(config);
+ConcurrentMap&lt;String, String&gt; map = h.getMap(&quot;my-distributed-map&quot;);
+</code></pre>
+
+<h5 id="2-자바-상임의원이-hazelcast에-몸담고-있음">2. 자바 상임의원이 hazelcast에 몸담고 있음</h5>
+
+<ul>
+<li>jcache등 자바 표준의 기술들을 기반으로 개발하고 있고 적극적으로 사용하는 모습을 보임. 자바쪽 진영에 영향력이 있어서 표준을 이끌수 있어 보임</li>
+</ul>
+
+<h5 id="3-스프링과의-연동의-쉬움">3. 스프링과의 연동의 쉬움</h5>
+
+<ul>
+<li>적극적으로 스프링과의 integration을 지원함.(스프링 커뮤니티에서 hazelcast를 적극 추천하는 이유를 알 수 있었음.)</li>
+</ul>
+
+<h3 id="hazelcast-hd-유료">hazelcast HD(유료)</h3>
+
+<p>heap을 사용하지 않고 자체적으로 개발한 메모리 모델을 사용 - FULL GC 발생 안됨.
+1. 흔히들 full gc시 Stop the world을 방지하기 위해 64G 메모리에 4G * 16(jvm)를 띄워서 Full GC 대응을 한다.
+2. 하지만, jvm 갯수가 늘어나는 만큼 관리 비용이 크다.
+3. HD를 사용하면 Full GC 걱정 안해도 되고 물리 메모리를 최대한 확보해도 상관 없다.(60G를 hazelcast의 HD에 할당해도 GC로 인한 frozen 걱정은 최소화된다. - 하드웨어 자원 최대한 사용 가능해짐.)</p>
+
+<h3 id="분산-연산-지원-distribute-computing">분산 연산 지원 - Distribute Computing</h3>
+
+<p>하젤 캐스트 서비스 레이어에 Callable/Runable 객체만 던지면 하젤캐스트 노드들간에서 분산 처리후 결과를 던지는 기능(hadoop의 map-reduce와 비슷한듯. spark의 RDD)
+- 노드가 늘어날 수록 고속 연산에 유리해짐.
+- 노드들간에 syncronize 가능 - lock 전략 사용 -&gt; 이건 나라면 안쓸듯.</p>
+
+<h3 id="partition-sharding">Partition &amp; Sharding</h3>
+
+<p>hash를 사용해서 데이터를 파티셔닝함.(파티션을 전체 데이터의 일부 데이터 셋으로 보면 됨. )
+파티셔닝한 데이터를 두가지로 관리
+1. major(원래 노드가 관리하는 파티션)
+2. backup(다른 노드에서 관리하는 파티션의 일부를 저장)
+-&gt; 만약 하나의 노드가 깨지면 백업 파티션 및 major 파티션에서 알아서 분산 저장 실행.</p>
+
+<h4 id="hash-process">hash process</h4>
+
+<p>KEY -&gt; byte[] -&gt; string-&gt; hashcode -&gt; node의 갯수 기준으로 나머지 연산(%) 후 적절한 노드 선택후 저장</p>
+
+<h3 id="노드구성시-주의사항">노드구성시 주의사항.</h3>
+
+<p>LAN으로(WAN X) 노드를 관리해야함. nextwork priority 개념이 없음.
+-&gt; network간 거리가 멀게 구성하면 성능 저하의 요인.</p>
+
+<h3 id="hazelcast-heimdall-유료">hazelcast heimdall(유료)</h3>
+
+<p>기존 : service -&gt; JDBC -&gt; RDB
+변경 : service -&gt; (heimdall JDBC) -&gt; JDBC -&gt; RDB</p>
+
+<p>기존 JDBC 사용하는 코드에 라이브러리만 헤임달 JDBC로 변경해주면 알아서 데이터베이스 캐싱 및 데이터 베이스 장애시에 해임달이 캐싱한(테이블 구조를 그대로 캐싱) 데이터를 전달
+-&gt; netflix의 hystrix랑 비슷한 구조.</p>
+
+<h3 id="장애대응">장애대응</h3>
+
+<p>장애로 인한 노트가 망가지고 네트워크 트래픽이 많은 경우 hazelcast는 자동으로 감지해서 대응한다.
+파티션의 갯수가 1000이고 전체가 100G의 데이터인경우 하나의 파티션은 100M를 차지함 분산 저장시 10개의 파티션을 기본으로 설정하면. 1G의 네트워크 전송량이 필요
+=&gt; 파티션을 10000개로 10배 늘리면 100G의 데이터의 하나의 파티션의 용량은 10M로 줄어들고 1회 전송하는 파티셧의 셋의 갯수를 5개로 줄이면 50M의 네트워크 전송량 필요(20배를 줄여서 내부 부하를 줄이는 전략을 취함.)
+=&gt; 위의 과정이 자동으로 전환</p>
+
+<h3 id="deploy">Deploy</h3>
+
+<p>2가지 Mode지원
+Embedded(같은 jvm내에 hazelcast 사용),  Client-Server(다른 jvm에 띄움 - 같은 머신일수도 다른 머신일 수도~)
+=&gt; 간단한 설정 변경으로 둘 다 편하게 사용 가능</p>
+
+<h3 id="smart-routing">Smart routing</h3>
+
+<p>1의 클라이언트는 하나의 노드와 연결을 맺음. =&gt; smart routing -_-
+ - 모든 노드가 connection을 맺지 않는다
+ - 이 컨셉으로 고가용성(high avaiablity)이 가능
+ - network 장애, gc 응답없음(stop the world)일 경우 fault tolerance 가능하게 함.
+ - hazelcast의 router가 클라이언트 - 노드간 reconnect</p>
+
+<h3 id="hazelcast-zet-무료">Hazelcast zet (무료!!)</h3>
+
+<p>기존의 <a href="https://en.wikipedia.org/wiki/Cascading_(software)">cascading</a>보다 편하다고함.
+스파크보다 분산 처리 성능이 44배 빠르다고함(업체측 자료만을 못믿음.)
+하둡처럼 대용량 데이터, 스파크처럼 in memory 분산 처리 뭐 이런 것을 하나의 솔루션으로 처리 가능한 것으로 보임.(람다 아키텍쳐를 hazelcast zet으로 한방에 처리 뭐 이런 느낌)</p>
+
+<h3 id="발표자-주소">발표자 주소</h3>
+
+<p>rahul@haselcast.com
+james@estech21.com =&gt; 12월말까지 hazelcast korea로 변경 hazelcast.com</p>
 </div>
   </div>
 
@@ -162,10 +282,10 @@ ga('send', 'pageview');
       <aside class="p-share">
   <div class="share-inner">
     
-    <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fconcurrency%2f1%2f&t=%5b%eb%b0%9c%eb%b2%88%ec%97%ad%5dThe%20Java%e2%84%a2%20Tutorials%20-%200.%20Concurrency" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
-    <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fconcurrency%2f1%2f&text=%5b%eb%b0%9c%eb%b2%88%ec%97%ad%5dThe%20Java%e2%84%a2%20Tutorials%20-%200.%20Concurrency&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
-    <a href="https://plus.google.com/share?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fconcurrency%2f1%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
-    <a href="http://line.me/R/msg/text/?%5b%eb%b0%9c%eb%b2%88%ec%97%ad%5dThe%20Java%e2%84%a2%20Tutorials%20-%200.%20Concurrency http%3a%2f%2fdurtchrt.github.io%2fblog%2fjava%2fconcurrency%2f1%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
+    <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fdurtchrt.github.io%2fblog%2fconference%2f20161212%2fhazelcast%2f&t=20161212%3a%20hazelcast%20%ea%b5%90%ec%9c%a1%20%eb%82%b4%ec%9a%a9%20%ec%a0%95%eb%a6%ac" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
+    <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fconference%2f20161212%2fhazelcast%2f&text=20161212%3a%20hazelcast%20%ea%b5%90%ec%9c%a1%20%eb%82%b4%ec%9a%a9%20%ec%a0%95%eb%a6%ac&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
+    <a href="https://plus.google.com/share?url=http%3a%2f%2fdurtchrt.github.io%2fblog%2fconference%2f20161212%2fhazelcast%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
+    <a href="http://line.me/R/msg/text/?20161212%3a%20hazelcast%20%ea%b5%90%ec%9c%a1%20%eb%82%b4%ec%9a%a9%20%ec%a0%95%eb%a6%ac http%3a%2f%2fdurtchrt.github.io%2fblog%2fconference%2f20161212%2fhazelcast%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
   </div>
 </aside>
 
@@ -174,29 +294,14 @@ ga('send', 'pageview');
         <ol>
           <li><a href="http://durtchrt.github.io/blog/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
           
-          <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/java/" itemprop="url"><span itemprop="title">java</span></a></li>
+          <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://durtchrt.github.io/blog/conference/" itemprop="url"><span itemprop="title">conference</span></a></li>
           
-          <li class="active">[발번역]The Java™ Tutorials - 0. Concurrency</li>
+          <li class="active">20161212: hazelcast 교육 내용 정리</li>
         </ol>
       </nav>
 
       
       
-      
-      <section class="article-footer">
-        <header>
-          <a href="http://durtchrt.github.io/blog/tags/">TAGS</a>
-        </header>
-        <div>
-          <ul class="p-terms inline">
-            
-            <li><a href="http://durtchrt.github.io/blog/tags/java/">java</a></li>
-            
-            <li><a href="http://durtchrt.github.io/blog/tags/concurrency/">concurrency</a></li>
-            
-          </ul>
-        </div>
-      </section>
       
       
     </div>
@@ -208,9 +313,9 @@ ga('send', 'pageview');
     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'bjm';
-    var disqus_identifier = 'http:\/\/durtchrt.github.io\/blog\/java\/concurrency\/1\/';
-    var disqus_title = '[발번역]The Java™ Tutorials - 0. Concurrency';
-    var disqus_url = 'http:\/\/durtchrt.github.io\/blog\/java\/concurrency\/1\/';
+    var disqus_identifier = 'http:\/\/durtchrt.github.io\/blog\/conference\/20161212\/hazelcast\/';
+    var disqus_title = '20161212: hazelcast 교육 내용 정리';
+    var disqus_url = 'http:\/\/durtchrt.github.io\/blog\/conference\/20161212\/hazelcast\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

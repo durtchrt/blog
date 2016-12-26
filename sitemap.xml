@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>http://durtchrt.github.io/blog/conference/20161212/hazelcast/</loc>
+    <lastmod>2016-12-12T14:04:52+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://durtchrt.github.io/blog/ide/intellij/shortcut/</loc>
     <lastmod>2016-11-30T18:34:23+09:00</lastmod>
   </url>
@@ -124,10 +129,6 @@
   <url>
     <loc>http://durtchrt.github.io/blog/2016/10/26/daum_favorites_javascript/</loc>
     <lastmod>2016-10-26T18:19:58+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://durtchrt.github.io/blog/imdg/hazelcast/</loc>
   </url>
   
 </urlset>
