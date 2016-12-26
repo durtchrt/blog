@@ -18,16 +18,14 @@
       <description>
 
 &lt;p&gt;date = &amp;ldquo;2016-12-12T14:04:52+09:00&amp;rdquo;
-title = &amp;ldquo;hazelcast&amp;rdquo;
-draft = true&lt;/p&gt;
+title = &amp;ldquo;20161212: hazelcast 교육 내용 정리&amp;rdquo;&lt;/p&gt;
 
 &lt;p&gt;+++&lt;/p&gt;
 
 &lt;h3 id=&#34;hazelcast&#34;&gt;HAZELCAST&lt;/h3&gt;
 
 &lt;p&gt;###&lt;a href=&#34;http://estech.biz/2016/11/05/seoul-hazelcast-meetup-ppt-2016-11-03/&#34;&gt;참고 링크&lt;/a&gt;
-###&lt;a href=&#34;../hazelcast.pdf&#34;&gt;PDF 링크&lt;/a&gt;
--&amp;gt; 아지트에 공유된 자료들 - 실제로는 ppt를 새로 준비해서 가져옴.&lt;/p&gt;
+###&lt;a href=&#34;../hazelcast.pdf&#34;&gt;PDF 링크&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)&lt;/p&gt;
 

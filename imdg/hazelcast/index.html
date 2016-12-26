@@ -22,21 +22,21 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
     <title> - 개발 저장소</title>
     
-<meta name="description" content="date = &amp;ldquo;2016-12-12T14:04:52&#43;09:00&amp;rdquo; title = &amp;ldquo;hazelcast&amp;rdquo; draft = true&#43;&#43;&#43;HAZELCAST ###참고 링크 ###PDF 링크 -&amp;gt; 아지트에 공유된 자료들 - 실제로는 ppt를 새로 준비해서 가져옴.(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.">
+<meta name="description" content="date = &amp;ldquo;2016-12-12T14:04:52&#43;09:00&amp;rdquo; title = &amp;ldquo;20161212: hazelcast 교육 내용 정리&amp;rdquo;&#43;&#43;&#43;HAZELCAST ###참고 링크 ###PDF 링크(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.putIfAbsent(&amp;quot;somekey&amp;quot;, &amp;quot;somevalue&amp;quot;); map.replace(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;, &amp;quot;newvalue&amp;quot;); } }  [하젤캐스트 사용]">
 
 <meta property="og:title" content=" - 개발 저장소">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://durtchrt.github.io/blog/imdg/hazelcast/">
 <meta property="og:image" content="http://durtchrt.github.io/blog/images/default.png">
 <meta property="og:site_name" content="개발 저장소">
-<meta property="og:description" content="date = &amp;ldquo;2016-12-12T14:04:52&#43;09:00&amp;rdquo; title = &amp;ldquo;hazelcast&amp;rdquo; draft = true&#43;&#43;&#43;HAZELCAST ###참고 링크 ###PDF 링크 -&amp;gt; 아지트에 공유된 자료들 - 실제로는 ppt를 새로 준비해서 가져옴.(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.">
+<meta property="og:description" content="date = &amp;ldquo;2016-12-12T14:04:52&#43;09:00&amp;rdquo; title = &amp;ldquo;20161212: hazelcast 교육 내용 정리&amp;rdquo;&#43;&#43;&#43;HAZELCAST ###참고 링크 ###PDF 링크(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.putIfAbsent(&amp;quot;somekey&amp;quot;, &amp;quot;somevalue&amp;quot;); map.replace(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;, &amp;quot;newvalue&amp;quot;); } }  [하젤캐스트 사용]">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="개발 저장소">
 <meta name="twitter:url" content="http://durtchrt.github.io/blog/imdg/hazelcast/">
 <meta name="twitter:title" content=" - 개발 저장소">
-<meta name="twitter:description" content="date = &amp;ldquo;2016-12-12T14:04:52&#43;09:00&amp;rdquo; title = &amp;ldquo;hazelcast&amp;rdquo; draft = true&#43;&#43;&#43;HAZELCAST ###참고 링크 ###PDF 링크 -&amp;gt; 아지트에 공유된 자료들 - 실제로는 ppt를 새로 준비해서 가져옴.(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.">
+<meta name="twitter:description" content="date = &amp;ldquo;2016-12-12T14:04:52&#43;09:00&amp;rdquo; title = &amp;ldquo;20161212: hazelcast 교육 내용 정리&amp;rdquo;&#43;&#43;&#43;HAZELCAST ###참고 링크 ###PDF 링크(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.putIfAbsent(&amp;quot;somekey&amp;quot;, &amp;quot;somevalue&amp;quot;); map.replace(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;, &amp;quot;newvalue&amp;quot;); } }  [하젤캐스트 사용]">
 <meta name="twitter:image" content="http://durtchrt.github.io/blog/images/default.png">
 
 
@@ -71,7 +71,7 @@
         "height": 60
       }
     },
-    "description": "date = \x26ldquo;2016-12-12T14:04:52\x2b09:00\x26rdquo; title = \x26ldquo;hazelcast\x26rdquo; draft = true\n\x2b\x2b\x2b\nHAZELCAST ###참고 링크 ###PDF 링크 -\x26gt; 아지트에 공유된 자료들 - 실제로는 ppt를 새로 준비해서 가져옴.\n(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)\n장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]\npublic class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map\x26lt;String, String\x26gt; map = new HashMap\x26lt;\x26gt;(); map.put(\x26quot;key\x26quot;, \x26quot;value\x26quot;); map.get(\x26quot;key\x26quot;); \/\/Concurrent Map methods map."
+    "description": "date = \x26ldquo;2016-12-12T14:04:52\x2b09:00\x26rdquo; title = \x26ldquo;20161212: hazelcast 교육 내용 정리\x26rdquo;\n\x2b\x2b\x2b\nHAZELCAST ###참고 링크 ###PDF 링크\n(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)\n장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]\npublic class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map\x26lt;String, String\x26gt; map = new HashMap\x26lt;\x26gt;(); map.put(\x26quot;key\x26quot;, \x26quot;value\x26quot;); map.get(\x26quot;key\x26quot;); \/\/Concurrent Map methods map.putIfAbsent(\x26quot;somekey\x26quot;, \x26quot;somevalue\x26quot;); map.replace(\x26quot;key\x26quot;, \x26quot;value\x26quot;, \x26quot;newvalue\x26quot;); } }  [하젤캐스트 사용]"
   }
 </script>
 
@@ -144,16 +144,14 @@ ga('send', 'pageview');
     <div class="article-body">
 
 <p>date = &ldquo;2016-12-12T14:04:52+09:00&rdquo;
-title = &ldquo;hazelcast&rdquo;
-draft = true</p>
+title = &ldquo;20161212: hazelcast 교육 내용 정리&rdquo;</p>
 
 <p>+++</p>
 
 <h3 id="hazelcast">HAZELCAST</h3>
 
 <p>###<a href="http://estech.biz/2016/11/05/seoul-hazelcast-meetup-ppt-2016-11-03/">참고 링크</a>
-###<a href="../hazelcast.pdf">PDF 링크</a>
--&gt; 아지트에 공유된 자료들 - 실제로는 ppt를 새로 준비해서 가져옴.</p>
+###<a href="../hazelcast.pdf">PDF 링크</a></p>
 
 <p>(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)</p>
 

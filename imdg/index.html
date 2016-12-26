@@ -77,12 +77,12 @@ ga('send', 'pageview');
       
     </ul>
 
-    <div class="summary">date = &ldquo;2016-12-12T14:04:52+09:00&rdquo; title = &ldquo;hazelcast&rdquo; draft = true
+    <div class="summary">date = &ldquo;2016-12-12T14:04:52+09:00&rdquo; title = &ldquo;20161212: hazelcast 교육 내용 정리&rdquo;
 +++
-HAZELCAST ###참고 링크 ###PDF 링크 -&gt; 아지트에 공유된 자료들 - 실제로는 ppt를 새로 준비해서 가져옴.
+HAZELCAST ###참고 링크 ###PDF 링크
 (참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)
 장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]
-public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&lt;String, String&gt; map = new HashMap&lt;&gt;(); map.put(&quot;key&quot;, &quot;value&quot;); map.get(&quot;key&quot;); //Concurrent Map methods map.</div>
+public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&lt;String, String&gt; map = new HashMap&lt;&gt;(); map.put(&quot;key&quot;, &quot;value&quot;); map.get(&quot;key&quot;); //Concurrent Map methods map.putIfAbsent(&quot;somekey&quot;, &quot;somevalue&quot;); map.replace(&quot;key&quot;, &quot;value&quot;, &quot;newvalue&quot;); } }  [하젤캐스트 사용]</div>
   </div>
 </article>
 </div>
