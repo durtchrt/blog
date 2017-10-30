@@ -27,6 +27,14 @@
        body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
        .h-logo { font-family: Lobster, cursive; } 
     </style>
+<style>
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
   </head>
 
   <body>
@@ -107,8 +115,9 @@ Thread.sleep은 현재 실행하는 쓰레드를 정해진 시간만큼 실행�
       </ul>
 
       <div class="summary">원문링크 쓰레드 정의와 시작 Defining and Starting a Thread
-쓰레드의 인스턴스를 생성하는 응용프로그램은 반드시 쓰레드에 run 메서드 코드를 제공해야합니다. 이는 두가지 방법이 있습니다. An application that creates an instance of Thread must provide the code that will run in that thread. There are two ways to do this:
- Runnable 객체 제공 Runnable 인터페이스는 쓰레드에서 실행하는 코드를 포함하는 단일 메서드 run을 정의합니다. 이 Runnable 객체는 쓰레드 생성자에 인자로 전달됩니다. HelloRunnable 예제 참조 Provide a Runnable object.</div>
+쓰레드의 인스턴스를 생성하는 응용프로그램은 반드시 쓰레드에 run 메서드 코드를 제공해야합니다. 이는 두가지 방법이 있습니다.
+An application that creates an instance of Thread must provide the code that will run in that thread. There are two ways to do this:
+ Runnable 객체 제공 Runnable 인터페이스는 쓰레드에서 실행하는 코드를 포함하는 단일 메서드 run을 정의합니다. 이 Runnable 객체는 쓰레드 생성자에 인자로 전달됩니다. HelloRunnable 예제 참조  Provide a Runnable object.</div>
     </div>
   </a>
 </article>
@@ -128,8 +137,8 @@ Thread.sleep은 현재 실행하는 쓰레드를 정해진 시간만큼 실행�
       </ul>
 
       <div class="summary">원문링크 쓰레드 객체 Thread Objects
-쓰레드마다 클래스 쓰레드의 인스턴스와 연관되어있다. 병행 어플리케이션을 만드는 쓰레드 객체를 사용하기 위해서는 두가지 전략이 있다. Each thread is associated with an instance of the class Thread. There are two basic strategies for using Thread objects to create a concurrent application.
-직접적으로 쓰레드 생성과 관리를하려면, 어플리케이션이 비동기 태스크를 시작려는 필요할때마다 쓰레드를 인스턴스화합니다. 나머지 어플리케이션으로부터 추상 스레드를 관려하려면, 어플리케이션의 태스크를 executor에 전달하시요. 이 섹션에서는 쓰레드 객체의 사용법을 설명합니다.</div>
+쓰레드마다 클래스 쓰레드의 인스턴스와 연관되어있다. 병행 어플리케이션을 만드는 쓰레드 객체를 사용하기 위해서는 두가지 전략이 있다.
+Each thread is associated with an instance of the class Thread. There are two basic strategies for using Thread objects to create a concurrent application.  직접적으로 쓰레드 생성과 관리를하려면, 어플리케이션이 비동기 태스크를 시작려는 필요할때마다 쓰레드를 인스턴스화합니다. 나머지 어플리케이션으로부터 추상 스레드를 관려하려면, 어플리케이션의 태스크를 executor에 전달하시요. 이 섹션에서는 쓰레드 객체의 사용법을 설명합니다.</div>
     </div>
   </a>
 </article>
@@ -150,8 +159,8 @@ Thread.sleep은 현재 실행하는 쓰레드를 정해진 시간만큼 실행�
 
       <div class="summary">##원문링크
 프로세스와 쓰레드 Processes and Threads
-병행 프로그래밍에서는 실행의 두개의 기본 개념이 있다(프로세스, 쓰레드). 자바 프로그래밍 언어에서는 병행 프로그래밍은 거의 대부분 쓰레드와 관련있다. 하지만 프로세스 역시 중요하다. In concurrent programming, there are two basic units of execution: processes and threads. In the Java programming language, concurrent programming is mostly concerned with threads. However, processes are also important.
-컴퓨터 시스템은 일반적으로 많은 활동적인 프로세스와 쓰레드를 가지고 있다. 싱글 코에서는 하나만 동작할 수 있으므로 한순간에는 한 스레드만 동작할 수 있다.</div>
+병행 프로그래밍에서는 실행의 두개의 기본 개념이 있다(프로세스, 쓰레드). 자바 프로그래밍 언어에서는 병행 프로그래밍은 거의 대부분 쓰레드와 관련있다. 하지만 프로세스 역시 중요하다.
+In concurrent programming, there are two basic units of execution: processes and threads. In the Java programming language, concurrent programming is mostly concerned with threads. However, processes are also important.  컴퓨터 시스템은 일반적으로 많은 활동적인 프로세스와 쓰레드를 가지고 있다. 싱글 코에서는 하나만 동작할 수 있으므로 한순간에는 한 스레드만 동작할 수 있다.</div>
     </div>
   </a>
 </article>
@@ -190,7 +199,7 @@ Lesson: Concurrency 컴퓨터는 사용자에게 동일시간에 한가지 이�
         
       </ul>
 
-      <div class="summary">상위 제한된 와일드 카드 Upper Bounded Wildcards 변수에 완화된 제한을 걸고 싶을때 upper bounded wildcard를 사용한다. 예를들면, List&lt;Integer&gt;, List&lt;Double&gt;, List&lt;Number&gt; 타입들에서 동작하는 메서드를 작성할때 upper bounded wildcard를 사용해서 만들수 있다. You can use an upper bounded wildcard to relax the restrictions on a variable. For example, say you want to write a method that works on List&lt;Integer&gt;, List&lt;Double&gt;, and List&lt;Number&gt;; you can achieve this by using an upper bounded wildcard.</div>
+      <div class="summary">상위 제한된 와일드 카드 Upper Bounded Wildcards 변수에 완화된 제한을 걸고 싶을때 upper bounded wildcard를 사용한다. 예를들면, List&lt;Integer&gt;, List&lt;Double&gt;, List&lt;Number&gt; 타입들에서 동작하는 메서드를 작성할때 upper bounded wildcard를 사용해서 만들수 있다. You can use an upper bounded wildcard to relax the restrictions on a variable. For example, say you want to write a method that works on List, List, and List; you can achieve this by using an upper bounded wildcard.</div>
     </div>
   </a>
 </article>

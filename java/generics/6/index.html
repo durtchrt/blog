@@ -84,6 +84,14 @@
        body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
        .h-logo { font-family: Lobster, cursive; } 
     </style>
+<style>
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
   </head>
 
   <body>
@@ -154,10 +162,12 @@ ga('send', 'pageview');
 <h3 id="제한된-타입-매개변수-bounded-type-parameters">제한된 타입 매개변수 <code>Bounded Type Parameters</code></h3>
 
 <p>매개변수화된 타입에 타입인자를 넣을때 타입 제한을 걸고 싶을 때가 있을 것이다. 예를 들어, Number 타입 또는 Number 타입의 자식 클래스의 객체만 허용하는 숫자 처리를 위한 메서드를 만들 수 있다. 이것이 제한된 타입 매개변수다
-<code>There may be times when you want to restrict the types that can be used as type arguments in a parameterized type. For example, a method that operates on numbers might only want to accept instances of Number or its subclasses. This is what bounded type parameters are for.</code></p>
+<br>
+There may be times when you want to restrict the types that can be used as type arguments in a parameterized type. For example, a method that operates on numbers might only want to accept instances of Number or its subclasses. This is what bounded type parameters are for.</p>
 
 <p>제한된 타입매개변수를 선언하는 방법은, 타입매개변수의 이름 뒤에  extends 키워드를 놓고 제한시킬 타입을 작성하면 된다. 아래의 에에서는 Number 타입으로 하였다. 주의할점은, 여기서 사용한 extends는 클래스안의 &ldquo;extends&rdquo; 또는 인터페이스의 &ldquo;implements&rdquo; 처럼 구현한다는 의미는 아니다.
-<code>To declare a bounded type parameter, list the type parameter's name, followed by the extends keyword, followed by its upper bound, which in this example is Number. Note that, in this context, extends is used in a general sense to mean either &quot;extends&quot; (as in classes) or &quot;implements&quot; (as in interfaces).</code></p>
+<br>
+To declare a bounded type parameter, list the type parameter&rsquo;s name, followed by the extends keyword, followed by its upper bound, which in this example is Number. Note that, in this context, extends is used in a general sense to mean either &ldquo;extends&rdquo; (as in classes) or &ldquo;implements&rdquo; (as in interfaces).</p>
 
 <pre><code class="language-java">public class Box&lt;T&gt; {
 
@@ -185,7 +195,8 @@ ga('send', 'pageview');
 </code></pre>
 
 <p>generic Box 클래스는 제한된 타입 파라메터를 가진 메서드인 inspect를 포함하도록 기존 코드를 수정하였다. inspect 메서드 호출시에 String 타입을 인자로 받았기 때문에 컴파일이 실패할 것이다.
-<code>By modifying our generic method to include this bounded type parameter, compilation will now fail, since our invocation of inspect still includes a String:</code></p>
+<br>
+By modifying our generic method to include this bounded type parameter, compilation will now fail, since our invocation of inspect still includes a String:</p>
 
 <pre><code class="language-shell">Box.java:21: &lt;U&gt;inspect(U) in Box&lt;java.lang.Integer&gt; cannot
   be applied to (java.lang.String)
@@ -195,7 +206,8 @@ ga('send', 'pageview');
 </code></pre>
 
 <p>결론은 generic 타입을 객체로 만들때 제한을 걸수 있다. 제한된 타입 매개변수는 정의된 제한된 범위 내에서 메서드를 호출 할 수 있다.
-<code>In addition to limiting the types you can use to instantiate a generic type, bounded type parameters allow you to invoke methods defined in the bounds:</code></p>
+<br>
+In addition to limiting the types you can use to instantiate a generic type, bounded type parameters allow you to invoke methods defined in the bounds:</p>
 
 <pre><code class="language-java">public class NaturalNumber&lt;T extends Integer&gt; {
 
@@ -212,18 +224,21 @@ ga('send', 'pageview');
 </code></pre>
 
 <p>isEven 메서드는 변수 n에 타입인자로 전달된 Integer 타입에 정의된 intValue 메서드를 호출한다.
-<code>The isEven method invokes the intValue method defined in the Integer class through n.</code></p>
+<br>
+The isEven method invokes the intValue method defined in the Integer class through n.</p>
 
 <h3 id="여러번-제한하기-multiple-bounds">여러번 제한하기 <code>Multiple Bounds</code></h3>
 
 <p>이전까지 예제는 하나만 제한한 타입매개변수를 사용한 것만 설명했지만, 타입 매개변수는 여러개를 제한할 수 있다.
-<code>The preceding example illustrates the use of a type parameter with a single bound, but a type parameter can have multiple bounds:</code></p>
+<br>
+The preceding example illustrates the use of a type parameter with a single bound, but a type parameter can have multiple bounds:</p>
 
 <pre><code class="language-java">&lt;T extends B1 &amp; B2 &amp; B3&gt;
 </code></pre>
 
 <p>여러개의 제한들로 구성된 타입매개변수는 제한하려 나열한 모든 타입들의 서브타입이다.(굳이 class라고 안하고 타입이란 용어를 쓰는건 interface를 포함하는 단어가 아니기 때문이다. 클래스는 타입의 부분) 제한된 타입중 하나가 class라면, class는 열거되는 타입들중 처음에 작성해야한다. 예를 들면:
-<code>A type variable with multiple bounds is a subtype of all the types listed in the bound. If one of the bounds is a class, it must be specified first. For example:</code></p>
+<br>
+A type variable with multiple bounds is a subtype of all the types listed in the bound. If one of the bounds is a class, it must be specified first. For example:</p>
 
 <pre><code class="language-java">Class A { /* ... */ }
 interface B { /* ... */ }
@@ -233,7 +248,8 @@ class D &lt;T extends A &amp; B &amp; C&gt; { /* ... */ }
 </code></pre>
 
 <p>만약 A라는 제한 class가 다른 제한 클래스들중 처음에 위치하지 않으면, 컴파일타임 에러를 발생된다.
-<code>If bound A is not specified first, you get a compile-time error:</code></p>
+<br>
+If bound A is not specified first, you get a compile-time error:</p>
 
 <pre><code class="language-java">class D &lt;T extends B &amp; A &amp; C&gt; { /* ... */ }  // compile-time error
 </code></pre>

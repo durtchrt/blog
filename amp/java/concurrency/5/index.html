@@ -142,14 +142,14 @@ Thread.sleep은 현재 실행하는 쓰레드를 정해진 시간만큼 실행�
 
 <p><code>Pausing Execution with Sleep</code></p>
 
-<p>Thread.sleep은 현재 실행하는 쓰레드를 정해진 시간만큼 실행을 중지한다. 컴퓨터에서 동작하는 어플리케이션의 프로세서의 시간을 효율적으로 만든다. sleep 메서드는 아래 예제처럼 다른 스레드들간에 동일한 간격(4초)으로 실행하게 하는데 사용하거나 다음 섹션에 SimpleThreads처럼 다른 스레드를 기다리게할 수 있다.
-<code>Thread.sleep causes the current thread to suspend execution for a specified period. This is an efficient means of making processor time available to the other threads of an application or other applications that might be running on a computer system. The sleep method can also be used for pacing, as shown in the example that follows, and waiting for another thread with duties that are understood to have time requirements, as with the SimpleThreads example in a later section.</code></p>
+<p>Thread.sleep은 현재 실행하는 쓰레드를 정해진 시간만큼 실행을 중지한다. 컴퓨터에서 동작하는 어플리케이션의 프로세서의 시간을 효율적으로 만든다. sleep 메서드는 아래 예제처럼 다른 스레드들간에 동일한 간격(4초)으로 실행하게 하는데 사용하거나 다음 섹션에 SimpleThreads처럼 다른 스레드를 기다리게할 수 있다. <br>
+Thread.sleep causes the current thread to suspend execution for a specified period. This is an efficient means of making processor time available to the other threads of an application or other applications that might be running on a computer system. The sleep method can also be used for pacing, as shown in the example that follows, and waiting for another thread with duties that are understood to have time requirements, as with the SimpleThreads example in a later section.</p>
 
-<p>두가지 오버로드 버전 sleep 제공: 하나는 sleep 시간을 밀리초(ms)로, 다른 하나는 나노초(ns)로 명시햇다. 하지만 sleep되는 시간은 완벽하게는 보장되지 않는다. 왜냐하면 OS단에서 제공하는 기능 제약 때문이다. 또한 sleep 시간은 나중에 나올 섹션에 볼 수 있듯이 인터럽트에 의해 종료될수 있습니다.  어쨌든, sleep을 호출해서 설정한 시간을 완벽히 스레드가 정지한다고 확신 할 수 없다.
-<code>Two overloaded versions of sleep are provided: one that specifies the sleep time to the millisecond and one that specifies the sleep time to the nanosecond. However, these sleep times are not guaranteed to be precise, because they are limited by the facilities provided by the underlying OS. Also, the sleep period can be terminated by interrupts, as we'll see in a later section. In any case, you cannot assume that invoking sleep will suspend the thread for precisely the time period specified.</code></p>
+<p>두가지 오버로드 버전 sleep 제공: 하나는 sleep 시간을 밀리초(ms)로, 다른 하나는 나노초(ns)로 명시햇다. 하지만 sleep되는 시간은 완벽하게는 보장되지 않는다. 왜냐하면 OS단에서 제공하는 기능 제약 때문이다. 또한 sleep 시간은 나중에 나올 섹션에 볼 수 있듯이 인터럽트에 의해 종료될수 있습니다.  어쨌든, sleep을 호출해서 설정한 시간을 완벽히 스레드가 정지한다고 확신 할 수 없다.<br>
+Two overloaded versions of sleep are provided: one that specifies the sleep time to the millisecond and one that specifies the sleep time to the nanosecond. However, these sleep times are not guaranteed to be precise, because they are limited by the facilities provided by the underlying OS. Also, the sleep period can be terminated by interrupts, as we&rsquo;ll see in a later section. In any case, you cannot assume that invoking sleep will suspend the thread for precisely the time period specified.</p>
 
-<p>SleepMessage 예제는 4초 간격으로 메세지를 프린트하려 sleep 메서드를 사용한다.
-<code>The SleepMessages example uses sleep to print messages at four-second intervals:</code></p>
+<p>SleepMessage 예제는 4초 간격으로 메세지를 프린트하려 sleep 메서드를 사용한다. <br>
+The SleepMessages example uses sleep to print messages at four-second intervals:</p>
 
 <pre><code class="language-java">public class SleepMessages {
     public static void main(String args[])
@@ -174,7 +174,8 @@ Thread.sleep은 현재 실행하는 쓰레드를 정해진 시간만큼 실행�
 </code></pre>
 
 <p>main 메서드는  InterruptedException을 throws 한다. 현재 실행되는 쓰레드가 sleep하는 동안 다른 쓰레드가 인터럽트를하면 sleep 메서드가 throws하는 예외입니다. 이 어플리케이션은 다른 쓰레드를 인터럽트하지 않기 때문에  InterruptedException이 발생하지 않습니다.
-<code>Notice that main declares that it throws InterruptedException. This is an exception that sleep throws when another thread interrupts the current thread while sleep is active. Since this application has not defined another thread to cause the interrupt, it doesn't bother to catch InterruptedException.</code></p>
+<br>
+Notice that main declares that it throws InterruptedException. This is an exception that sleep throws when another thread interrupts the current thread while sleep is active. Since this application has not defined another thread to cause the interrupt, it doesn&rsquo;t bother to catch InterruptedException.</p>
 </div>
 
   <footer class="article-footer">

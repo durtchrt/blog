@@ -84,6 +84,14 @@
        body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
        .h-logo { font-family: Lobster, cursive; } 
     </style>
+<style>
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
   </head>
 
   <body>
@@ -154,22 +162,28 @@ ga('send', 'pageview');
 <h3 id="하위-제한-와일드카드-lower-bounded-wildcards">하위 제한 와일드카드  <code>Lower Bounded Wildcards</code></h3>
 
 <p>상위제한와일드카드장은 특정 타입이나 그 특정타입의  서브타입을 알 수 없을때는 &lsquo;extends&rsquo; 키워드를 사용하는 것을 보여줬다. 비슷한 것으로, 하위제한와일드카드는 특정타입이나 그 특정 타입의 슈퍼타입을 제한하고자할때 사용한다.
-<code>The Upper Bounded Wildcards section shows that an upper bounded wildcard restricts the unknown type to be a specific type or a subtype of that type and is represented using the extends keyword. In a similar way, a lower bounded wildcard restricts the unknown type to be a specific type or a super type of that type.</code></p>
+<br>
+The Upper Bounded Wildcards section shows that an upper bounded wildcard restricts the unknown type to be a specific type or a subtype of that type and is represented using the extends keyword. In a similar way, a lower bounded wildcard restricts the unknown type to be a specific type or a super type of that type.</p>
 
 <p>하위제한 와일드카드는 와일드카드문자(&lsquo;?&rsquo;) 그 뒤로 super 키워드와 그 뒤로 하위제한 타입이 온다. &lt;? super A&gt;.
-<code>A lower bounded wildcard is expressed using the wildcard character ('?'), following by the super keyword, followed by its lower bound: &lt;? super A&gt;.</code></p>
+<br>
+A lower bounded wildcard is expressed using the wildcard character (&lsquo;?&rsquo;), following by the super keyword, followed by its lower bound: &lt;? super A&gt;.</p>
 
-<p><code>중요: 상위제한와일드카드를 사용하거나 하위제한와일드카드를 사용할 수 있지만, 둘을 동시에 사용할 수 없다.</code>
-<code>Note: You can specify an upper bound for a wildcard, or you can specify a lower bound, but you cannot specify both.</code></p>
+<p>중요: 상위제한와일드카드를 사용하거나 하위제한와일드카드를 사용할 수 있지만, 둘을 동시에 사용할 수 없다.
+<br>
+Note: You can specify an upper bound for a wildcard, or you can specify a lower bound, but you cannot specify both.</p>
 
 <p>리스트에 Integer 객체를 넣는 코드를 작성할때, List&lt;Integer&gt;, List&lt;Number&gt;, List&lt;Object\&gt;에서만 동작하길 원하는 메서드를 만든다고 가정하자.
-<code>Say you want to write a method that puts Integer objects into a list. To maximize flexibility, you would like the method to work on List&lt;Integer&gt;, List&lt;Number&gt;, and List&lt;Object&gt; — anything that can hold Integer values.</code></p>
+<br>
+Say you want to write a method that puts Integer objects into a list. To maximize flexibility, you would like the method to work on List<Integer>, List<Number>, and List<Object> — anything that can hold Integer values.</p>
 
 <p>Integer타이이나 Integer의 상위타입에서 동작하는 메서드를 작성하려면 List&lt;? super Integer&gt;라고 할 수 있다. List&lt;Integer&gt;는 List&lt;? super Integer&gt;보다 제한적이다. 왜냐하면 전자는 Integer 타입의 리스트만 사용, 후자는 Integer 타입과 Integer의 슈퍼타입에 사용할 수 있기 때문이다.
-<code>To write the method that works on lists of Integer and the supertypes of Integer, such as Integer, Number, and Object, you would specify List&lt;? super Integer&gt;. The term List&lt;Integer&gt; is more restrictive than List&lt;? super Integer&gt; because the former matches a list of type Integer only, whereas the latter matches a list of any type that is a supertype of Integer.</code></p>
+<br>
+To write the method that works on lists of Integer and the supertypes of Integer, such as Integer, Number, and Object, you would specify List&lt;? super Integer&gt;. The term List<Integer> is more restrictive than List&lt;? super Integer&gt; because the former matches a list of type Integer only, whereas the latter matches a list of any type that is a supertype of Integer.</p>
 
 <p>아래의 코드는 1에서 10까지 리스트에 add한다.
-<code>The following code adds the numbers 1 through 10 to the end of a list:</code></p>
+<br>
+The following code adds the numbers 1 through 10 to the end of a list:</p>
 
 <pre><code class="language-java">public static void addNumbers(List&lt;? super Integer&gt; list) {
     for (int i = 1; i &lt;= 10; i++) {
@@ -179,7 +193,8 @@ ga('send', 'pageview');
 </code></pre>
 
 <p>와일드카드 사용절에서는 상위제한와일드카드와 하위제한와일드카드를 각각 언제 사용할지 설명하였다.
-<code>The Guidelines for Wildcard Use section provides guidance on when to use upper bounded wildcards and when to use lower bounded wildcards.</code></p>
+<br>
+The Guidelines for Wildcard Use section provides guidance on when to use upper bounded wildcards and when to use lower bounded wildcards.</p>
 </div>
 
   <footer class="article-footer">

@@ -85,6 +85,14 @@ Lesson: Concurrency 컴퓨터는 사용자에게 동일시간에 한가지 이�
        body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
        .h-logo { font-family: Lobster, cursive; } 
     </style>
+<style>
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
   </head>
 
   <body>
@@ -156,10 +164,13 @@ ga('send', 'pageview');
 
 <p>컴퓨터는 사용자에게 동일시간에 한가지 이상의 일을 할 수 있도록 시스템이 보장이 되야한다. 컴퓨터 사용자는 워드프로세서 작업을 할 때 다른 어플리케이션이 파일 다운로드, 스트리밍 오디오, 프린터 큐 관리등을 동시에 하는게 당연하사 생각한다. 심지어 하나의 어플레케이션이 한번에 한가지 이상의 동작하는 것을 종종 기대한다. 예를들면 스트리밍 오디오 어플레케이션은 반드시 동시에 네트워크로부터 디지털 오디오 읽기, 압축을 풀기, 재생 관리, 디스플레이 업데이트를 수행한다. 심지어 워드프로세서도 디스플레이 업데이트나 텍스트를 다시 포맷팅하는것이 얼마나 바쁜지 상관없이 키보드의 응답, 마우스 이벤트들의 응답을 대기해야한다. 그러한 것을 할 수 있는 소프트웨어를 병행성(동시성) 소프트웨어라고 알려져있다.</p>
 
-<p><code>Computer users take it for granted that their systems can do more than one thing at a time. They assume that they can continue to work in a word processor, while other applications download files, manage the print queue, and stream audio. Even a single application is often expected to do more than one thing at a time. For example, that streaming audio application must simultaneously read the digital audio off the network, decompress it, manage playback, and update its display. Even the word processor should always be ready to respond to keyboard and mouse events, no matter how busy it is reformatting text or updating the display. Software that can do such things is known as concurrent software.</code></p>
+<pre><code>Computer users take it for granted that their systems can do more than one thing at a time. They assume that they can continue to work in a word processor, while other applications download files, manage the print queue, and stream audio. Even a single application is often expected to do more than one thing at a time. For example, that streaming audio application must simultaneously read the digital audio off the network, decompress it, manage playback, and update its display. Even the word processor should always be ready to respond to keyboard and mouse events, no matter how busy it is reformatting text or updating the display. Software that can do such things is known as concurrent software.
+</code></pre>
 
-<p>자바 플랫폼은 병행 프로그래밍을 지원하도록 (밑바닥부터 끝까지) 설계 되었다. 자바 프로그래밍 언어와 자바 클래스 라이브러리들로 기본 병행성을 지원한다. 자바 플랫폼 5.0 버전부터는 고수준의 concurrency API도 포함되었다. 이번 자바 플랫폼의 수업은 기본 병행 지원과 몇가지 java.util.concurrent 패키지의 수준 API의 요약을 소개한다.
-<code>The Java platform is designed from the ground up to support concurrent programming, with basic concurrency support in the Java programming language and the Java class libraries. Since version 5.0, the Java platform has also included high-level concurrency APIs. This lesson introduces the platform's basic concurrency support and summarizes some of the high-level APIs in the java.util.concurrent packages.</code></p>
+<p>자바 플랫폼은 병행 프로그래밍을 지원하도록 (밑바닥부터 끝까지) 설계 되었다. 자바 프로그래밍 언어와 자바 클래스 라이브러리들로 기본 병행성을 지원한다. 자바 플랫폼 5.0 버전부터는 고수준의 concurrency API도 포함되었다. 이번 자바 플랫폼의 수업은 기본 병행 지원과 몇가지 java.util.concurrent 패키지의 수준 API의 요약을 소개한다.</p>
+
+<pre><code>The Java platform is designed from the ground up to support concurrent programming, with basic concurrency support in the Java programming language and the Java class libraries. Since version 5.0, the Java platform has also included high-level concurrency APIs. This lesson introduces the platform's basic concurrency support and summarizes some of the high-level APIs in the java.util.concurrent packages.
+</code></pre>
 </div>
 
   <footer class="article-footer">

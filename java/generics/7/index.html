@@ -84,6 +84,14 @@
        body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
        .h-logo { font-family: Lobster, cursive; } 
     </style>
+<style>
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
   </head>
 
   <body>
@@ -152,7 +160,8 @@ ga('send', 'pageview');
 <h3 id="generic-메서드와-제한된-타입-매개변수-generic-methods-and-bounded-type-parameters">Generic 메서드와 제한된 타입 매개변수 <code>Generic Methods and Bounded Type Parameters</code></h3>
 
 <p>제한된 타입 매개변수는 generic 알고리즘들을 구현할때 핵심이된다. 아래의 예는 두번째 인자보다 큰 값이 첫번째 인자인 배열에 몇개가 있는지 세는 메서드이다.
-<code>Bounded type parameters are key to the implementation of generic algorithms. Consider the following method that counts the number of elements in an array T[] that are greater than a specified element elem.</code></p>
+<br>
+Bounded type parameters are key to the implementation of generic algorithms. Consider the following method that counts the number of elements in an array T[] that are greater than a specified element elem.</p>
 
 <pre><code class="language-java">public static &lt;T&gt; int countGreaterThan(T[] anArray, T elem) {
     int count = 0;
@@ -164,14 +173,17 @@ ga('send', 'pageview');
 </code></pre>
 
 <p>메서드 구현은 간단하지만, &lsquo;&gt;&rsquo; 연산자가 기본형(short, int, double, long, float, byte, char)에만 동작이 허용되기 때문이다. &lsquo;&gt;&rsquo; 연산자는 객체간 비교에는 사용할 수 없습니다. 비교연산자 대신 Comparable<T>  인터페이스를 사용해서 문제를 해결할 수 있습니다.
-<code>The implementation of the method is straightforward, but it does not compile because the greater than operator (&gt;) applies only to primitive types such as short, int, double, long, float, byte, and char. You cannot use the &gt; operator to compare objects. To fix the problem, use a type parameter bounded by the Comparable&lt;T&gt; interface:</code></p>
+<br>
+The implementation of the method is straightforward, but it does not compile because the greater than operator (&gt;) applies only to primitive types such as short, int, double, long, float, byte, and char. You cannot use the &gt; operator to compare objects. To fix the problem, use a type parameter bounded by the Comparable<T> interface:</p>
 
 <pre><code class="language-java">public interface Comparable&lt;T&gt; {
     public int compareTo(T o);
 }
 </code></pre>
 
-<p>Comparable 인터페이스가 적용된 결과 코드는 아래의 코드처럼 될 것입니다. <code>The resulting code will be:</code></p>
+<p>Comparable 인터페이스가 적용된 결과 코드는 아래의 코드처럼 될 것입니다.
+<br>
+The resulting code will be:</p>
 
 <pre><code class="language-java">public static &lt;T extends Comparable&lt;T&gt;&gt; int countGreaterThan(T[] anArray, T elem) {
     int count = 0;

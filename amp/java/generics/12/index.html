@@ -140,17 +140,21 @@
 <h3 id="제한없는-와일드카드-unbounded-wildcards">제한없는 와일드카드 <code>Unbounded Wildcards</code></h3>
 
 <p>제한없는 와일드카드 타입은 와일드카드 문자(&lsquo;?&rsquo;)만 사용한것이다. 예를 들면 List&lt;?&gt;와 같다. List&lt;?&gt;의 ?는 List의 &lsquo;알수없는 타입(unkown type)&lsquo;이라고 부른다. 아래 두개의 시나리오는 제한없는 와일드카드가 유용한 접근법이다.
-<code>The unbounded wildcard type is specified using the wildcard character (?), for example, List&lt;?&gt;. This is called a list of unknown type. There are two scenarios where an unbounded wildcard is a useful approach:</code></p>
+<br>
+The unbounded wildcard type is specified using the wildcard character (?), for example, List&lt;?&gt;. This is called a list of unknown type. There are two scenarios where an unbounded wildcard is a useful approach:</p>
 
 <ul>
 <li>Object 클래스에서 제공하는 기능(메서드)을 사용하도록 메서드를 구현할 때.
-<code>- If you are writing a method that can be implemented using functionality provided in the Object class.</code></li>
+<br>
+If you are writing a method that can be implemented using functionality provided in the Object class.`</li>
 <li>코드가 generic 클래스에서 메서드가 타입매개변수에 의존적이지 않게 작성하고 싶을 때.(예 List.size나 List.clear). 사실, Class&lt;T&gt; 클래스는 범위없는 와일드카드를 자주 사용한다.(Class&lt;T&gt;의 메서드가 T에 의존적으로 동작하지 않게 만들기 위해)
-<code>- When the code is using methods in the generic class that don't depend on the type parameter. For example, List.size or List.clear. In fact, Class&lt;?&gt; is so often used because most of the methods in Class&lt;T&gt; do not depend on T.</code></li>
+<br>
+When the code is using methods in the generic class that don&rsquo;t depend on the type parameter. For example, List.size or List.clear. In fact, Class&lt;?&gt; is so often used because most of the methods in Class<T> do not depend on T.</li>
 </ul>
 
 <p>printList 메서드를 살펴보자.
-<code>Consider the following method, printList:</code></p>
+<br>
+Consider the following method, printList:</p>
 
 <pre><code class="language-java">public static void printList(List&lt;Object&gt; list) {
     for (Object elem : list)
@@ -159,9 +163,9 @@
 }
 </code></pre>
 
-<p>printList는 List가 가진 객체가 어떤 타입이든간에 상관없이 print하고 싶어한다. 하지만 List 객체는 Object 타입의 객체만 출력할 수 있다. (참조:<a href="../8">제네릭스, 상속, 서브타입</a>) List&lt;Object&gt;는 List&lt;Integer&gt;, List&lt;String&gt;, List&lt;Double&gt;을 출력할 수 없다. 왜냐하면 List&lt;Object&gt; 타입의 stub type(스텁타입 용어 아시는분 공유 부탁요 ㅠㅠ)이 아니다. 아래는 List&lt;?&gt;를 사용해서 generic 메서드인 printList를 작성한 예이다..</p>
-
-<p><code>The goal of printList is to print a list of any type, but it fails to achieve that goal — it prints only a list of Object instances; it cannot print List&lt;Integer&gt;, List&lt;String&gt;, List&lt;Double&gt;, and so on, because they are not subtypes of List&lt;Object&gt;. To write a generic printList method, use List&lt;?&gt;:</code></p>
+<p>printList는 List가 가진 객체가 어떤 타입이든간에 상관없이 print하고 싶어한다. 하지만 List 객체는 Object 타입의 객체만 출력할 수 있다. (참조:<a href="../8">제네릭스, 상속, 서브타입</a>) List&lt;Object&gt;는 List&lt;Integer&gt;, List&lt;String&gt;, List&lt;Double&gt;을 출력할 수 없다. 왜냐하면 List&lt;Object&gt; 타입의 stub type(스텁타입 용어 아시는분 공유 부탁요 ㅠㅠ)이 아니다. 아래는 List&lt;?&gt;를 사용해서 generic 메서드인 printList를 작성한 예이다..
+<br>
+The goal of printList is to print a list of any type, but it fails to achieve that goal — it prints only a list of Object instances; it cannot print List<Integer>, List<String>, List<Double>, and so on, because they are not subtypes of List<Object>. To write a generic printList method, use List&lt;?&gt;:</p>
 
 <p>(역자 추가 - 위의 예가 설명하는 코드 - 컴파일 에러 발생)</p>
 
@@ -177,7 +181,8 @@ printList(integerList);   // 컴파일 에러
 </code></pre>
 
 <p>아무 타입을 A로 지칭했을때, List&lt;?&gt;의 서브타입은 List&lt;A&gt;이 성립이 되기 때문에, printList 메서드가 모든 타입을 대상으로 print할 수 있다.
-<code>Because for any concrete type A, List&lt;A&gt; is a subtype of List&lt;?&gt;, you can use printList to print a list of any type:</code></p>
+<br>
+Because for any concrete type A, List<A> is a subtype of List&lt;?&gt;, you can use printList to print a list of any type:</p>
 
 <pre><code class="language-java">List&lt;Integer&gt; li = Arrays.asList(1, 2, 3);
 List&lt;String&gt;  ls = Arrays.asList(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;);
@@ -186,10 +191,12 @@ printList(ls);
 </code></pre>
 
 <p>참고: Arrays.asList 메서드는 범위없는 와일드카드를 사용해서 구현되었다. Arrays.asList라는 static 팩토리 메서드는 배열을 구체화하여 변경하고(요소들의 공통 타입을 타입추론)  고정된 사이즈의 리스트를 반환한다.
-<code>Note: The Arrays.asList method is used in examples throughout this lesson. This static factory method converts the specified array and returns a fixed-size list.</code></p>
+<br>
+Note: The Arrays.asList method is used in examples throughout this lesson. This static factory method converts the specified array and returns a fixed-size list.</p>
 
 <p>(중요!)List<Object>와 List&lt;?&gt;과 다르다. List<Object>에 Object 타입이나 Object의 서브타입을 insert할 수 있다. 하지만 List&lt;?&gt;에는 null만 insert할 수 있다.(하고자하는 말이 무언지 이해가 안된다;;;) 와일드카드 사용 섹션은은 상황별 어떤 와일드카드를 사용할지 결정에 대한 가이드라인을 제공한다.
-<code>It's important to note that List&lt;Object&gt; and List&lt;?&gt; are not the same. You can insert an Object, or any subtype of Object, into a List&lt;Object&gt;. But you can only insert null into a List&lt;?&gt;. The Guidelines for Wildcard Use section has more information on how to determine what kind of wildcard, if any, should be used in a given situation.</code></p>
+<br>
+It&rsquo;s important to note that List<Object> and List&lt;?&gt; are not the same. You can insert an Object, or any subtype of Object, into a List<Object>. But you can only insert null into a List&lt;?&gt;. The Guidelines for Wildcard Use section has more information on how to determine what kind of wildcard, if any, should be used in a given situation.</p>
 </div>
 
   <footer class="article-footer">
