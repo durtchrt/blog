@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+
+<meta name="generator" content="Hugo 0.31-DEV" />
+
+<link rel="apple-touch-icon" href="http://blog.durtchrt.comimages/logo.png">
+
+
+<link rel="canonical" href="http://blog.durtchrt.com/conference/20161125/1/">
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel="stylesheet">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <title> 20161125 나는 프로그래머다 컨퍼런스 - durtchrt</title>
+    
+<meta name="description" content="발표 후기 1Functional Programming 그게 뭐죠? 함수  절차지향  subroutin  functional  수학에서 말하는 함수   Why? Functional Programming  동시성 무어의 법칙이 깨진후 CPU제조업체가 멀티 코어 성능 향상을 꾀함. 간결 expression의 조합 고민해야할 문제가 하나로 줄어듬. oop의 단일책임원칙이 자연스럽게 적용됨. 동일 입력값이 동일 출력값으로 테스트 값을 직접입력하지 않아도 테스트 프레임워크가 자동으로 생성도 가능 재미!!! 과거 함수형 프로그래밍 언어는 느려서 못썼는데 요새는 속도가 빠름.">
+
+<meta property="og:title" content=" 20161125 나는 프로그래머다 컨퍼런스 - durtchrt">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://blog.durtchrt.com/conference/20161125/1/">
+<meta property="og:image" content="http://blog.durtchrt.comimages/default.png">
+<meta property="og:site_name" content="durtchrt">
+<meta property="og:description" content="발표 후기 1Functional Programming 그게 뭐죠? 함수  절차지향  subroutin  functional  수학에서 말하는 함수   Why? Functional Programming  동시성 무어의 법칙이 깨진후 CPU제조업체가 멀티 코어 성능 향상을 꾀함. 간결 expression의 조합 고민해야할 문제가 하나로 줄어듬. oop의 단일책임원칙이 자연스럽게 적용됨. 동일 입력값이 동일 출력값으로 테스트 값을 직접입력하지 않아도 테스트 프레임워크가 자동으로 생성도 가능 재미!!! 과거 함수형 프로그래밍 언어는 느려서 못썼는데 요새는 속도가 빠름.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="durtchrt">
+<meta name="twitter:url" content="http://blog.durtchrt.com/conference/20161125/1/">
+<meta name="twitter:title" content=" 20161125 나는 프로그래머다 컨퍼런스 - durtchrt">
+<meta name="twitter:description" content="발표 후기 1Functional Programming 그게 뭐죠? 함수  절차지향  subroutin  functional  수학에서 말하는 함수   Why? Functional Programming  동시성 무어의 법칙이 깨진후 CPU제조업체가 멀티 코어 성능 향상을 꾀함. 간결 expression의 조합 고민해야할 문제가 하나로 줄어듬. oop의 단일책임원칙이 자연스럽게 적용됨. 동일 입력값이 동일 출력값으로 테스트 값을 직접입력하지 않아도 테스트 프레임워크가 자동으로 생성도 가능 재미!!! 과거 함수형 프로그래밍 언어는 느려서 못썼는데 요새는 속도가 빠름.">
+<meta name="twitter:image" content="http://blog.durtchrt.comimages/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http://blog.durtchrt.com"
+    },
+    "headline": " 20161125 나는 프로그래머다 컨퍼런스 - durtchrt",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://blog.durtchrt.comimages/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2016-11-25T14:08:04JST",
+    "dateModified": "2016-11-25T14:08:04JST",
+    "author": {
+      "@type": "Person",
+      "name": "durtchrt"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "durtchrt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://blog.durtchrt.comimages/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "발표 후기 1
+Functional Programming 그게 뭐죠? 함수  절차지향  subroutin  functional  수학에서 말하는 함수   Why? Functional Programming  동시성 무어의 법칙이 깨진후 CPU제조업체가 멀티 코어 성능 향상을 꾀함.
+ 간결 expression의 조합 고민해야할 문제가 하나로 줄어듬. oop의 단일책임원칙이 자연스럽게 적용됨. 동일 입력값이 동일 출력값으로
+ 테스트 값을 직접입력하지 않아도 테스트 프레임워크가 자동으로 생성도 가능
+ 재미!!!
+ 과거 함수형 프로그래밍 언어는 느려서 못썼는데 요새는 속도가 빠름."
+  }
+</script>
+
+
+    <style amp-custom>
+      html { font-size: 18px; background-color: rgba(236,239,241,.5);}@media (max-width: 768px) { html { font-size: 15px; }}body { color: #333; font-family: 'Roboto Slab','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-feature-settings : "palt"; font-size: inherit; line-height: 1rem; margin: 0; padding: 0;}h1, h2, h3, h4, h5 ,h6 { font-size: 1rem; font-weight: 700; line-height: 1rem; margin: 0;}hr { border: 0; border-top: 1px dashed #cfd8dc; margin: 1rem 0;}p { margin: 0; line-height: 1rem;}a { color: #2196f3; text-decoration: none; transition-duration: .3s;}ul, ol { margin: 0; padding: 0;}table { border-collapse: collapse;}th, td { font-size: .8rem; padding: .5rem;}tr { border-bottom: 1px dashed #ddd;}/* Layouts */main,aside { display: block;}main { padding: 1rem 0 3rem 0; }aside.h { padding: 3rem 0; }main.f,aside.f { background-color: #333; border-top: 2px dashed #fff; border-bottom: 2px dashed #fff;}.l-container { position: relative; max-width: 68rem; margin: 0 auto; padding: 0 1rem;}.l-container.thin { max-width: 44rem;}.l-header { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem 0; text-align: center;}.l-header .description { margin-top: .5rem; font-size: .8rem;}.l-footer { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); font-size: .6rem; font-weight: 700; padding: 1rem 0;}@media (max-width: 768px) { .l-sidebar { margin-top: 4rem; }}.mrow { margin: 0 -1rem; overflow: hidden;}.mcol { box-sizing: border-box; float: left; padding: 0 1rem;}.c6 { width: 50%; }.c4 { width: 33.26323833%; }.c8 { width: 66.66666%; }@media (max-width: 768px) { .mcol { width: 100%; float: none; }}.logo a { font-size: 1.4rem; line-height: 1.5rem; font-weight: 700; color: #333;}.articles { margin: -1rem 0; margin-bottom: 1rem;}.articles.sm { margin: -.5rem 0; margin-bottom: 0;}article { border-radius: 4px; overflow: hidden;}article.li { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); height: 20rem; overflow: hidden; margin: 1rem 0;}article.li > a { display: block; color: #333;}article.li .inner { padding: 1rem;}article.li .thumb { height: 8rem;}article.li .title { color: #333; font-size: 1.2rem; line-height: 1.5rem; margin-bottom: .5rem;}article.li .summary { font-size: .8rem; height: 6rem; overflow: hidden; margin-top: 1rem;}article.li .summary::after { content: '...';}article.lism { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin: .5rem 0;}article.lism::after { content: ''; display: block; clear: both;}article.lism > a { display: block; color: #333;}article.lism .inner { display: table-cell; vertical-align: middle; height: 5rem; padding: 0 .75rem;}article.lism .thumb { width: 5rem; height: 5rem; float: left;}article.lism .title { font-weight: 700; font-size: .8rem; margin-bottom: .25rem;}article.sn { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin-bottom: 1rem;}article.sn .thumb { height: 20rem;}@media (max-width: 768px) { article.sn .thumb { height: 10rem; }}article.sn > .article-header,article.sn > .article-body,article.sn .article-footer { padding: 2rem;}article.sn > .article-body { padding: 0 2rem;}@media (max-width: 768px) { article.sn > .article-header, article.sn > .article-body, article.sn .article-footer { padding: 1rem; } article.sn > .article-body { padding: 0 1rem; }}article.sn > .article-header .title { font-size: 1.8rem; line-height: 2rem; margin-bottom: .5rem;}@media (max-width: 768px) { article.sn > .article-header .title { font-size: 1.4rem; line-height: 1.5rem; }}article.sn > .article-header .facts { margin-bottom: 1rem;}article.sn > .article-body { margin-bottom: 1.5rem;}article.sn > .article-body h2 { border-bottom: .25rem solid #333; font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; padding: .5rem 0;}article.sn > .article-body h3 { border-left: .5rem solid #333; line-height: 1.5rem; margin: 1.5rem 0; padding: .125rem .5rem;}article.sn > .article-body ul,article.sn > .article-body ol { margin: 1.5rem 0; padding-left: 1.5rem;}article.sn > .article-body li { padding-bottom: .5rem; line-height: 1.5rem;}article.sn > .article-body li:last-child { padding-bottom: 0;}article.sn > .article-body p { margin: 1rem 0; line-height: 1.5rem;}article.sn > .article-body strong,article.sn > .article-body em { font-style: normal; font-weight: 700;}article.sn > .article-body strong { box-shadow: 0 -.5rem 0 0 #ffc107 inset;}article.sn > .article-body em { color: #8bc34a;}article.sn > .article-body code,article.sn > .article-body pre { font-family: Menlo, Consolas, monospace; font-size: .7rem;}article.sn > .article-body pre { background-color: #333; color: #fff; line-height: 1rem; margin: 1.5rem -2rem; overflow: auto;}@media (max-width: 768px) { article.sn > .article-body pre { margin: 1.5rem -1rem; }}article.sn > .article-body pre > code { display: block; padding: 1rem 2rem;}@media (max-width: 768px) { article.sn > .article-body pre > code { padding: 1rem; }}article.sn > .article-body p code { background-color: #eceff1; color: #333; border-radius: 4px; margin: 0 .25rem; padding: .375rem; white-space: nowrap;}article.sn > .article-body blockquote { position: relative; border-left: .25rem solid #333; font-size: .8rem; padding: .125rem 1rem; margin: 1.5rem 0;}@media (max-width: 768px) { article.sn > .article-body blockquote { font-size: 1rem; }}article.sn > .article-body blockquote p { margin: .5rem 0; line-height: 1rem;}article.sn > .article-body figure { margin: 1.5rem 0;}article.sn > .article-body figure img,article.sn > .article-body figure amp-img { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); max-width: 100%;}article.sn > .article-body figcaption { color: #cfd8dc; font-size: .8rem; font-weight: 700; margin-top: .5rem;}.facts li { display: inline; font-size: .8rem; margin-right: 1rem;}.facts i { color: #cfd8dc; margin-right: .5em;}.facts.sm li { font-size: .7rem;}.sections.sidebar { margin: -1rem 0;}.sections.footer { margin: -1rem 0;}section.sidebar { margin: 2rem 0;}section.sidebar > header { font-size: .8rem; font-weight: 700; letter-spacing: 4px; text-align: center; margin: 1.5rem 0;}section.footer { margin: 1rem 0;}section.footer > header { font-size: .8rem; margin: .5rem 0;}section.footer > header::before { content: "- ";}section.footer > header a { font-weight: 700; color: #333; text-decoration: underline;}.terms { margin: -.25rem;}.terms li { display: inline-block;}.terms a { display: block; float: left; background-color: #333; border-radius: 4px; color: #fff; font-size: .7rem; margin: .25rem; padding: 0 .75rem; line-height: 1.75rem;}.paging { text-align: center; padding: 1rem 0;}.paging a { display: inline-block; background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); border-radius: 4px; color: #333; padding: 0 1rem; line-height: 3rem;}.page-title { text-align: center; margin: 1rem 0;}.page-title::after { content: ''; display: block; border-bottom: .25rem solid #333; width: 3rem; margin: 1.5rem auto;}.page-title > .title { font-size: 1.2rem; line-height: 1.5rem;}/* Parts:breadcrumb */.crumb ol { text-overflow: ellipsis; color: #cfd8dc; white-space: nowrap; overflow: hidden;}.crumb li { display: inline; font-size: .8rem;}.crumb li::after { content: '›'; margin: 0 .25rem 0 .5rem;}.crumb li:last-child::after { content: '';}.crumb a { color: #cfd8dc;}.crumb i { margin-right: .5em;}.share { padding: 0;}.share a { display: inline-block; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); min-width: 1rem; height: 2rem; border-radius: 4px; color: #333; font-size: .8rem; font-weight: 700; line-height: 2rem; text-align: center; padding: 0 .5rem;}.adj article.lism { margin-bottom: 1rem;}.adj header { font-weight: 700; font-size: .8rem;}.toc { padding: 0 2rem;}@media (max-width: 768px) { .toc { padding: 0 1rem; }}.toc { margin: 1rem 0;}.toc nav>ul { background-color: #eceff1; border-radius: 4px; display: inline-block; font-size: .8rem; padding: .5rem 1rem; word-break: break-all; list-style: none;}.toc ul { padding: 0;}.toc ul ul { padding-left: 1rem;}.toc ul ul ul { padding-left: 1rem;}.toc li { color: #90a4ae;}.toc ul ul>li { font-weight: 700; margin: .5rem 0; list-style-type: decimal;}.toc ul ul ul>li { list-style-type: disc; font-weight: 500;}.author { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem; border-radius: 4px; text-align: center;}.author .author-thumb { margin: 0 auto 1rem; width: 6rem; height: 6rem; border-radius: 50%; background-color: #eceff1; background-size: cover; background-position: center;}.author .author-name { margin-bottom: .5rem; font-weight: 700;}.author .author-facts { margin-bottom: 1rem;}.author .author-facts li { display: inline;}.author .author-facts li a { display: inline-block; background-color: #eceff1; width: 1.75rem; height: 1.75rem; line-height: 1.75rem; text-align: center; color: #333; font-size: .8rem; border-radius: 2px;}.author .author-facts li a:hover { color: #fff; background-color: #333;}.author .author-description { text-align: left; font-size: .8rem;}.author .author-description p { margin: .5rem 0;}.thumb { background-image: url(http://blog.durtchrt.comimages/default.jpg); background-size: cover; background-position: center;}
+      
+       body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
+       .h-logo { font-family: Lobster, cursive; } 
+      .l-container { max-width: 40rem; margin: 0 auto; }
+    </style>
+  </head>
+
+  <body>
+    
+    <amp-analytics type="googleanalytics" id="analytics1">
+      <script type="application/json"> { "vars": { "account": "UA-108897430-1"}, "triggers": { "trackPageview": { "on": "visible", "request": "pageview" } } }
+      </script>
+    </amp-analytics>
+    
+
+    <header class="l-header">
+      <div class="l-container">
+        <div class="logo">
+          <a href="http://blog.durtchrt.com">durtchrt</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="l-container">
+        
+<article class="sn">
+
+  <div class="thumb thumb-081b5c715121317a5173986d7c65de5b"></div>
+
+  <header class="article-header">
+    <h1 class="title"> 20161125 나는 프로그래머다 컨퍼런스</h1>
+
+    <ul class="facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-25T14:08:04JST">Nov 25, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://blog.durtchrt.comconference/">CONFERENCE</a></li>
+      
+    </ul>
+
+    <aside class="share">
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161125%2f1%2f&title=%2020161125%20%eb%82%98%eb%8a%94%20%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%a8%b8%eb%8b%a4%20%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161125%2f1%2f&text=%2020161125%20%eb%82%98%eb%8a%94%20%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%a8%b8%eb%8b%a4%20%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161125%2f1%2f&t=%2020161125%20%eb%82%98%eb%8a%94%20%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%a8%b8%eb%8b%a4%20%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161125%2f1%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161125%2f1%2f&title=%2020161125%20%eb%82%98%eb%8a%94%20%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%a8%b8%eb%8b%a4%20%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%2020161125%20%eb%82%98%eb%8a%94%20%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%a8%b8%eb%8b%a4%20%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4 http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161125%2f1%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+</aside>
+
+  </header>
+
+  
+
+  <div class="article-body">
+
+<hr />
+
+<p><code>발표 후기 1</code></p>
+
+<h1 id="functional-programming-그게-뭐죠">Functional Programming 그게 뭐죠?</h1>
+
+<h4 id="함수">함수</h4>
+
+<ul>
+<li>절차지향
+
+<ul>
+<li>subroutin</li>
+</ul></li>
+<li>functional
+
+<ul>
+<li>수학에서 말하는 함수</li>
+</ul></li>
+</ul>
+
+<h4 id="why-functional-programming">Why? Functional Programming</h4>
+
+<ul>
+<li><p>동시성
+무어의 법칙이 깨진후
+CPU제조업체가 멀티 코어 성능 향상을 꾀함.</p></li>
+
+<li><p>간결
+expression의 조합
+고민해야할 문제가 하나로 줄어듬.
+oop의 단일책임원칙이 자연스럽게 적용됨.
+동일 입력값이 동일 출력값으로</p></li>
+
+<li><p>테스트
+값을 직접입력하지 않아도 테스트 프레임워크가 자동으로 생성도 가능</p></li>
+
+<li><p>재미!!!</p></li>
+
+<li><p>과거 함수형 프로그래밍 언어는 느려서 못썼는데 요새는 속도가 빠름.</p></li>
+</ul>
+
+<h4 id="맛보기">맛보기</h4>
+
+<p>haskel 샘플</p>
+
+<pre><code class="language-haskel">let add :: Int -&gt; Int -&gt; Int
+add a b = a + b
+
+add 1 2
+=&gt; 3
+</code></pre>
+
+<p>let add // 함수 선언
+Int -&gt;Int -&gt; Int  // Int 파라메터 -&gt; Int 파라메터 -&gt; Int 리턴
+add a b // add 함수는 a, b  두 파라메터를 받음(Int, Int)
+add a b = a + b // a + b 동작 함수를  add에 할당.</p>
+
+<p>함수형언어들은 함수 우선권을 가짐
+add 2 5 * 3
+=&gt; 21
+add 2 (5 * 3)이 아니라 (add 2 5) *3으로 평가함.</p>
+
+<pre><code class="language-java">1.toString()
+==&gt; error
+</code></pre>
+
+<pre><code class="language-scala">1.toString
+==&gt; &quot;1&quot;
+</code></pre>
+
+<p>자바에서의 1은 기본형(primitive type)
+scala에서의 1은 객체(object)   =&gt; <code>PURE</code> object oriented programming language</p>
+
+<pre><code>Full-blown
+Functional Language
+=&gt; 순수 함수형 언어가 아닌 함수형 프로그래밍하기에 적합한 언어를 지칭
+=&gt; 스칼라가 이 범위에 있음.
+</code></pre>
+
+<p><code>호주 이민은 스칼라</code></p>
+
+<p>kevin github -&gt;
+functional transaction without aop(비공개인듯 안보임)
+aop를 사용하지 않고 transaction을 처리한 예제를 케빈 github에 공유하였다고함.</p>
+
+<h2 id="br-br-br-br-br"><br><br><br><br><br></h2>
+
+<p><code>발표 후기 2</code></p>
+
+<h1 id="machine-intelligence-at-google-service">Machine Intelligence at Google Service</h1>
+
+<p><code>영어 발표</code></p>
+
+<h4 id="what-is-neural-network-and-deep-learning">What is Neural Network and Deep Learning</h4>
+
+<p>Neural network is a functio that can learn
+-&gt; 고양이의 이미지를 분석해서 레이블을 만듬.
+-&gt; 이러한 기술을 게임서버에서 로그를 분석해서 악성행위 분석 가능</p>
+
+<p><img src="../1.png" alt="spiral" /></p>
+
+<p>나선 이미지를 보면 오렌지, 블루 색상을 사람은 쉽게 알 수 있음</p>
+
+<p>하지만 컴퓨터는&hellip;
+점마다 위치정보를 if-else하는 프로그래밍은 괴로움.
+-&gt; 이러한 문제를 해결하기 위해 ML사용</p>
+
+<p><a href="http://playground.tensorflow.org/#activation=tanh&amp;batchSize=10&amp;dataset=spiral&amp;regDataset=reg-plane&amp;learningRate=0.03&amp;regularizationRate=0&amp;noise=0&amp;networkShape=4,2&amp;seed=0.82086&amp;showTestData=false&amp;discretize=false&amp;percTrainData=50&amp;x=true&amp;y=true&amp;xTimesY=false&amp;xSquared=false&amp;ySquared=false&amp;cosX=false&amp;sinX=false&amp;cosY=false&amp;sinY=false&amp;collectStats=false&amp;problem=classification&amp;initZero=false&amp;hideText=false">Neural network traning play ground</a> - site sample</p>
+
+<ul>
+<li>site에서 패턴인식하는게 실시간으로 나와서 파란색과 오렌지색을 인식하는것을 볼 수 있음</li>
+<li>더 많은 데이터와 더 많은 샘플을 주면 더 빠르고 더 정확하게 데이터를 학습함.</li>
+<li>한레이어에서 나오는 아웃풋을 그 다음 레이어의 인풋으로 제공해서 더 스마트헤거 됨.</li>
+<li>각각의 레이어는 단순하지만 이 것들이 통합하면서 스마트한 뉴런네트워크가 됨.</li>
+</ul>
+
+<p>=&gt; 사람이 이미지를 어떻게 인식하라고 알려주지 않아도 알아서 하는 것이 중요<br>
+=&gt; AI, AlphaGo가 이세돌을 이길수 있었던것.
+=&gt; 컴퓨터가 스스로 방법을 찾아내기 때문에 사람보다 뛰어난 방법을 찾아낼 수 있는 것.</p>
+
+<p><img src="https://www.petdrugsonline.co.uk/images/page-headers/cats-master-header" alt="cat" /></p>
+
+<p>고양이 인식<br>
+=&gt; 고양이를 인식하기 위해 50개 이상의 레이어가 생성되고, 각각의 레이어(뉴런)은 단순 하지만 모이면 스마트해지면서 컴퓨터가 이미지상에서 고양이를 판별할 수 있게됨.</p>
+
+<h4 id="machine-learning-use-cases-at-google-services">machine learning use cases at google services</h4>
+
+<p>구글 검색을 통해 이를 사용하고 있음
+최근에 구글은 랭크브레인이라는 서비스를 내놓음
+Image를 컨텐츠에 따라 구분하는 google photo
+gmail - smart reply in box mobile - 이메일을 자동으로 전송.
+google translate with neural machine translation
+data center - energy save
+More&hellip;. 60개 이상의 프로덕트에 사용</p>
+
+<h4 id="externalizing-the-power-of-ml">externalizing the power of ML</h4>
+
+<p>ML api는 머신러닝과 상관없는 개발자가 사용하도록 제공하려함.</p>
+
+<ul>
+<li>CoudVision API
+이미 트레이닝된 모델을 제공하기 때문에 이미지가 인풋되면 바로 결과가 나옴.
+8만개 이상의 이미지를 이용해서 서비스를 사용.
+사진을 주면 다양한 레이블 정보를 줌 (0_0 데모 우와~~)</li>
+<li>WebSpeech Api
+google.com/speech</li>
+</ul>
+
+<h4 id="tensorflow-the-open-source-library-for-ml">tensorFlow: the open source library for ML</h4>
+
+<p>자신의 뉴럴네트워크를 구축하고 싶을때 사용하는 오픈소스
+Portable and Scalable</p>
+
+<h4 id="tensorflow-in-the-wild">tensorFlow in the wild</h4>
+
+<ul>
+<li><p>일본의 예를 보여줌.
+어머니는 오이를 하루 8시간씩 골라내는 일을 함.
+스스로 텐서플로우로 오이 분류기를 만듬.
+embedded software 개발자로 머신러닝을 모르는 사람이지만 함!!!
+현재 70%의 정확성으로 오이를 9개의 등급으로 나눌수 있다.</p></li>
+
+<li><p>치킨너겟을 서빙하는 로봇 팔.</p></li>
+
+<li><p>드론으로 트럭의 갯수를 세는 것.</p></li>
+</ul>
+
+<h4 id="distributed-training-and-prediction-in-computing-power">Distributed training and prediction in Computing power(?)</h4>
+
+<p>컴퓨터 파워가 엄청 필요함.
+GPU가 있어도 몇주가 걸리기도 함.</p>
+
+<p>구글 클라우드가 수십만개의 GPU 클러스터를 가짐.</p>
+
+<p>jupitor network
+tensor processiong unit</p>
+
+<p>=&gt; 40배 ~ 300배 성능 향상 가능</p>
+
+<h2 id="br-br-br-br-br-1"><br><br><br><br><br></h2>
+
+<p><code>발표 후기 3</code></p>
+
+<h1 id="스칼라로-웹사이트-개발하기">스칼라로 웹사이트 개발하기</h1>
+
+<ul>
+<li>라스칼라코딩단, 최정열 &amp; 케빈리</li>
+</ul>
+
+<p>=&gt; 라이브 코딩(작성 못함. T-T)</p>
+
+<ul>
+<li>나프다 동영상 참조. 시연신이 나오셔서 방해를 엄청하심;;</li>
+</ul>
+
+<h2 id="br-br-br-br-br-2"><br><br><br><br><br></h2>
+
+<p><code>발표 후기 4</code></p>
+
+<h1 id="ms는-rx를-왜-만들었을까-feat-rxjs">MS는 Rx를 왜 만들었을까?  feat. RxJS</h1>
+
+<ul>
+<li>네이버, 김훈민</li>
+</ul>
+
+<p><a href="http://huns.me/development/2051">발표자가 발표 주제로 포스팅한 글</a></p>
+
+<h4 id="rx는-어디에서-왔을까">Rx는 어디에서 왔을까?</h4>
+
+<p>volta project에서 시작
+-&gt; live labs 다양한 기술을 하나의 플랫폼에서 실행 GWT과 비슷하지만 많은 플랫폼과 대응하는게 목적.
+-&gt; volta 프로젝트는 좌초됨.</p>
+
+<p>volta =&gt; Reactive Framework를 가져와서 =&gt; .Net의 Reactive Extenstion</p>
+
+<ul>
+<li>2009.11.17
+Rx.NET 릴리즈</li>
+<li>2010.03.17
+RxJS</li>
+<li>2012.11.06
+오픈소스 공개
+Rx.NET, RxJS, Rx++</li>
+<li>2013.02.05
+RxJava by Netflix</li>
+</ul>
+
+<p><a href="http://www.reactivemanifesto.org">리액트 선언 - Reative Manifesto</a>
+<img src="http://www.reactivemanifesto.org/images/reactive-traits.svg" alt="설명" /></p>
+
+<h4 id="2-rx를-지탱하는-키워드">2 Rx를 지탱하는 키워드</h4>
+
+<p>Reactive Programming
+데이터 플로우와 상태 변경을 전파한다는 생각에 근간을 둔 프로그래밍 패러다임.</p>
+
+<p>1985 - on the development of reactive systems
+=&gt; 논문에 reactive란 용어 시초라고 봄.</p>
+
+<ol>
+<li>반응
+자극은 밖에서 안으로 흐름
+자극이 있어야만 반응하는 수동성</li>
+</ol>
+
+<p><img src="http://huns.me/wp/wp-content/uploads/2016/09/reactive-eric.png" alt="참조이미지" /></p>
+
+<p>iterator pattern - pull
+observalbe pattern - push</p>
+
+<p>iterator - observable 쌍대 관계에 있다.
+-&gt; slide의 설명문을 보면  @_@
+=&gt; A와 B의 본질이 같다.</p>
+
+<p>메서드표 자료 참조</p>
+
+<ol>
+<li>LINQ to Events
+이벤트와  LINQ의 개념을 결합한 오퍼레이터(Operator) 제공
+Language Intergrated Query
+에릭마이어가 만든 통합 질의 언어 C# 3.0부터 등장 데이터 질의 문법 설탕
+두가지 스타일을 지원</li>
+<li>Query syntax</li>
+
+<li><p>Method syntax</p></li>
+
+<li><p>Scheduler
+비동기 환경에서 오퍼레이터 실행 시점 제어</p></li>
+</ol>
+
+<h4 id="rp와-frp의-경계에서">RP와 FRP의 경계에서</h4>
+
+<p>RP != FRP</p>
+
+<p>FRAN(Functional Reactive Animaton)1997 - 표현과 모델링의 분리 -&gt;  시간에 따라 변하는 값을 표현(Behavior)
+-&gt; 함수형 리액티브 프로그래밍의 시작</p>
+
+<p>Evan Czaplicki - Elm만든 사람.
+Controlling Time and Space -&gt; FRP 다양한 변종들 설명.</p>
+
+<p>FRP 번위를 간단히 좁히면 (FRAN 논문 저자 왈)
+1. denotational : 연속하는 시간에 따라 변하는 값이 1급 시민으로 표현되어야함.
+2. countinuous-time</p>
+
+<p>개념적인 FRAN, 실질적인 Rx불연속값 처리 스트림 결합시 일괁성 없는 동시 이벤트 처리 발생
+단점 -&gt; 구성성 결여</p>
+
+<p>rx는 순간 불일치(glitch) 생김 =&gt; 진정한 FRP 구현체라고 보기 힘들어함.</p>
+
+<p>제대로된 reactive를 보고 싶으면 &lsquo;reactive-banana&rsquo; 라이브러리 참조.
+=&gt; FRP 설명을 하스켈로 설명.</p>
+
+<h4 id="웹프론트엔드-그리고-rxjs">웹프론트엔드, 그리고  RxJS</h4>
+
+<p>뷰와 상태의 동기화 문제를 프레임워크마다 푸는 방식
+backborn - KVO(key-value observing) =&gt; 데이터 변경 체크 까지만 프레임워크 뷰의 상태 변화는 개발자가(MVC)
+angular - 양방향 databinding =&gt; 속도 문제 발생
+reactjs - virtual dom - 상대가 변경되면 뷰가 바낌.
+flux - react는 view만 담당. 순수 함수 조합 단방향 데이터 플로우
+MVI(Model-view-intent) 순환 스트림 설계 함수형 프로그래밍.</p>
+
+<ul>
+<li>Reactive</li>
+<li>Functinal</li>
+</ul>
+
+<h4 id="rx는-fe-개발자에게-좋은-자극제">Rx는 FE 개발자에게 좋은 자극제</h4>
+
+<p>Elm에서 영감을 얻은 Redux, Cycle.js
+다른 진영 또는 클래식한 기술에서 새로운 통찰을 경험.</p>
+
+<h2 id="br-br-br-br-br-br-br"><br><br><br><br><br><br><br></h2>
+
+<p><code>발표 후기 5</code></p>
+
+<h1 id="스타트업-1인-개발-극복기-와-javascript-vs-scala-함수형-언어-관점으로-방황기">&lsquo;스타트업 1인 개발 극복기&rsquo;와 &lsquo;javascript vs Scala, (함수형 언어 관점으로)방황기&rsquo;</h1>
+
+<ul>
+<li>I/O Inc, 박미정</li>
+</ul>
+
+<h4 id="왜-함수형-언어">왜 함수형 언어?</h4>
+
+<ul>
+<li>개인
+
+<ul>
+<li>성장욕구</li>
+<li>높은 추상화</li>
+<li>코드 신뢰성</li>
+<li>&hellip;</li>
+</ul></li>
+<li>회사
+
+<ul>
+<li>시간적 여유</li>
+<li>&hellip;</li>
+</ul></li>
+</ul>
+
+<p>&lsquo;코드 신뢰성&rsquo; -&gt; 적은 코드가 적은 버그를 만들어낸다.</p>
+
+<h4 id="어떻게-팀에-도입을">어떻게 팀에 도입을?</h4>
+
+<p>매주 sw 세미나 -&gt; (관심끌기 성공) -&gt; 함수형 패러다임 도적 -&gt; 프로덕션 적용 시작</p>
+
+<p>&lsquo;관심끌기 사례&rsquo;
+ - &gt; 같은 입력 같은 출력 (사이드이펙트가 없으니) TDD시에 상당히 자연스럽게 연결.</p>
+
+<h4 id="어떻게-팀에-도입을-1">어떻게 팀에 도입을?</h4>
+
+<p>함수형 언어에 등장하는 &lsquo;특성들&rsquo;을 &lsquo;기존 제품의 서버에 적용&rsquo; 해보고 함수형 패러다임의 &lsquo;매력&rsquo;을 멤버들과 동기화</p>
+
+<h4 id="왜-scala">왜 Scala</h4>
+
+<p>함수형 프로그래밍 언어 -&gt; side effect 없는 프로그래밍을 지원하고 장려하는 언어</p>
+
+<p>scala oop+fP 다리역할
+  -&gt; 멤버들이 oop에 익숙한 상태에서 fp를 자연스럽게 넘어갈때 !!</p>
+
+<p>#(2번째 주제) 스타트업 1인 개발 극복기
+<a href="http://www.slideshare.net/ParkMijeong/ss-65069602">슬라이드참조</a></p>
+</div>
+
+  <footer class="article-footer">
+
+    <aside class="share">
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161125%2f1%2f&title=%2020161125%20%eb%82%98%eb%8a%94%20%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%a8%b8%eb%8b%a4%20%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161125%2f1%2f&text=%2020161125%20%eb%82%98%eb%8a%94%20%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%a8%b8%eb%8b%a4%20%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161125%2f1%2f&t=%2020161125%20%eb%82%98%eb%8a%94%20%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%a8%b8%eb%8b%a4%20%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161125%2f1%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161125%2f1%2f&title=%2020161125%20%eb%82%98%eb%8a%94%20%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%a8%b8%eb%8b%a4%20%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%2020161125%20%eb%82%98%eb%8a%94%20%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%a8%b8%eb%8b%a4%20%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4 http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161125%2f1%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+</aside>
+
+
+    <section class="footer">
+      <div>
+        <nav class="crumb">
+          <ol>
+            <li><a href="http://blog.durtchrt.com"><i class="fa fa-home" aria-hidden="true"></i>TOP</a></li>
+            
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://blog.durtchrt.comconference/" itemprop="url"><span itemprop="title">CONFERENCE</span></a></li>
+            
+            <li class="active"> 20161125 나는 프로그래머다 컨퍼런스</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+</article>
+
+
+<div class="adj">
+  <div class="mrow">
+    
+    <div class="mcol c6">
+      <header>Previous Article</header>
+      <article class="lism">
+  <a href="http://blog.durtchrt.com/conference/20161123/1/">
+    <div class="thumb thumb-41c3de6ef11c9cdfe25b60cdc08a1e25"></div>
+
+    <div class="inner">
+      <div class="title">[컨퍼런스 후기- 20161123] playnode2016</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-23T11:55:37JST">Nov 23, 2016</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>CONFERENCE</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    </div>
+    
+    
+    <div class="mcol c6">
+      <header>Next Article</header>
+      <article class="lism">
+  <a href="http://blog.durtchrt.com/conference/20161212/hazelcast/">
+    <div class="thumb thumb-45da191bbc4d6169c880792e84f28dee"></div>
+
+    <div class="inner">
+      <div class="title">20161212: hazelcast 교육 내용 정리</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-12-12T14:04:52JST">Dec 12, 2016</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>CONFERENCE</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    </div>
+    
+  </div>
+</div>
+
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="l-container">
+        <p><span class="h-logo">&copy; durtchrt</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+  </body>
+</html>
+

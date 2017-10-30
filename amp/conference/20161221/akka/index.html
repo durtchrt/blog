@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+
+<meta name="generator" content="Hugo 0.31-DEV" />
+
+<link rel="apple-touch-icon" href="http://blog.durtchrt.comimages/logo.png">
+
+
+<link rel="canonical" href="http://blog.durtchrt.com/conference/20161221/akka/">
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel="stylesheet">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>컨퍼런스 후기:20161221 AKKA - durtchrt</title>
+    
+<meta name="description" content="Open Community의 정기기술 세미나 75차 발표 - Akka를 이용한 리엑티브 프로그래밍 101발표자- 고재도github, opencommunity 공지, 발표자료AKKA Reactive란?  유저액션에 즉각적인 빠른 응답 데이터 바인딩 선언적(절차지향과 반대) 리액티브 스트림은 비동기적인 데이터 스트림 리액티브 선언  Reative 선언  민감성(Responsive) -&amp;gt; 낮은 대기 시간 유연성(Resilient) -&amp;gt; 실패 탐색기로부터 장애상황시 즉각적으로 버팀. 신축성(Elastic) -&amp;gt; 클러스터 &#43; 샤딩으로부터 스케일 up/out 메세지주도(Message-Driven) -&amp;gt; 액터 &#43; 스트림을 통해 콤포넌트들간의 비동기 커뮤니케이션  참고 - ZD넷 - 임백준 - 리액티브 개발 패러다임에 담긴 메시지">
+
+<meta property="og:title" content="컨퍼런스 후기:20161221 AKKA - durtchrt">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://blog.durtchrt.com/conference/20161221/akka/">
+<meta property="og:image" content="http://blog.durtchrt.comimages/default.png">
+<meta property="og:site_name" content="durtchrt">
+<meta property="og:description" content="Open Community의 정기기술 세미나 75차 발표 - Akka를 이용한 리엑티브 프로그래밍 101발표자- 고재도github, opencommunity 공지, 발표자료AKKA Reactive란?  유저액션에 즉각적인 빠른 응답 데이터 바인딩 선언적(절차지향과 반대) 리액티브 스트림은 비동기적인 데이터 스트림 리액티브 선언  Reative 선언  민감성(Responsive) -&amp;gt; 낮은 대기 시간 유연성(Resilient) -&amp;gt; 실패 탐색기로부터 장애상황시 즉각적으로 버팀. 신축성(Elastic) -&amp;gt; 클러스터 &#43; 샤딩으로부터 스케일 up/out 메세지주도(Message-Driven) -&amp;gt; 액터 &#43; 스트림을 통해 콤포넌트들간의 비동기 커뮤니케이션  참고 - ZD넷 - 임백준 - 리액티브 개발 패러다임에 담긴 메시지">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="durtchrt">
+<meta name="twitter:url" content="http://blog.durtchrt.com/conference/20161221/akka/">
+<meta name="twitter:title" content="컨퍼런스 후기:20161221 AKKA - durtchrt">
+<meta name="twitter:description" content="Open Community의 정기기술 세미나 75차 발표 - Akka를 이용한 리엑티브 프로그래밍 101발표자- 고재도github, opencommunity 공지, 발표자료AKKA Reactive란?  유저액션에 즉각적인 빠른 응답 데이터 바인딩 선언적(절차지향과 반대) 리액티브 스트림은 비동기적인 데이터 스트림 리액티브 선언  Reative 선언  민감성(Responsive) -&amp;gt; 낮은 대기 시간 유연성(Resilient) -&amp;gt; 실패 탐색기로부터 장애상황시 즉각적으로 버팀. 신축성(Elastic) -&amp;gt; 클러스터 &#43; 샤딩으로부터 스케일 up/out 메세지주도(Message-Driven) -&amp;gt; 액터 &#43; 스트림을 통해 콤포넌트들간의 비동기 커뮤니케이션  참고 - ZD넷 - 임백준 - 리액티브 개발 패러다임에 담긴 메시지">
+<meta name="twitter:image" content="http://blog.durtchrt.comimages/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http://blog.durtchrt.com"
+    },
+    "headline": "컨퍼런스 후기:20161221 AKKA - durtchrt",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://blog.durtchrt.comimages/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2016-12-21T19:10:41JST",
+    "dateModified": "2016-12-21T19:10:41JST",
+    "author": {
+      "@type": "Person",
+      "name": "durtchrt"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "durtchrt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://blog.durtchrt.comimages/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "Open Community의 정기기술 세미나 75차 발표 - Akka를 이용한 리엑티브 프로그래밍 101
+발표자- 고재도
+github, opencommunity 공지, 발표자료
+AKKA Reactive란?  유저액션에 즉각적인 빠른 응답 데이터 바인딩 선언적(절차지향과 반대) 리액티브 스트림은 비동기적인 데이터 스트림 리액티브 선언  Reative 선언  민감성(Responsive) -&gt; 낮은 대기 시간 유연성(Resilient) -&gt; 실패 탐색기로부터 장애상황시 즉각적으로 버팀. 신축성(Elastic) -&gt; 클러스터 + 샤딩으로부터 스케일 up/out 메세지주도(Message-Driven) -&gt; 액터 + 스트림을 통해 콤포넌트들간의 비동기 커뮤니케이션  참고 - ZD넷 - 임백준 - 리액티브 개발 패러다임에 담긴 메시지"
+  }
+</script>
+
+
+    <style amp-custom>
+      html { font-size: 18px; background-color: rgba(236,239,241,.5);}@media (max-width: 768px) { html { font-size: 15px; }}body { color: #333; font-family: 'Roboto Slab','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-feature-settings : "palt"; font-size: inherit; line-height: 1rem; margin: 0; padding: 0;}h1, h2, h3, h4, h5 ,h6 { font-size: 1rem; font-weight: 700; line-height: 1rem; margin: 0;}hr { border: 0; border-top: 1px dashed #cfd8dc; margin: 1rem 0;}p { margin: 0; line-height: 1rem;}a { color: #2196f3; text-decoration: none; transition-duration: .3s;}ul, ol { margin: 0; padding: 0;}table { border-collapse: collapse;}th, td { font-size: .8rem; padding: .5rem;}tr { border-bottom: 1px dashed #ddd;}/* Layouts */main,aside { display: block;}main { padding: 1rem 0 3rem 0; }aside.h { padding: 3rem 0; }main.f,aside.f { background-color: #333; border-top: 2px dashed #fff; border-bottom: 2px dashed #fff;}.l-container { position: relative; max-width: 68rem; margin: 0 auto; padding: 0 1rem;}.l-container.thin { max-width: 44rem;}.l-header { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem 0; text-align: center;}.l-header .description { margin-top: .5rem; font-size: .8rem;}.l-footer { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); font-size: .6rem; font-weight: 700; padding: 1rem 0;}@media (max-width: 768px) { .l-sidebar { margin-top: 4rem; }}.mrow { margin: 0 -1rem; overflow: hidden;}.mcol { box-sizing: border-box; float: left; padding: 0 1rem;}.c6 { width: 50%; }.c4 { width: 33.26323833%; }.c8 { width: 66.66666%; }@media (max-width: 768px) { .mcol { width: 100%; float: none; }}.logo a { font-size: 1.4rem; line-height: 1.5rem; font-weight: 700; color: #333;}.articles { margin: -1rem 0; margin-bottom: 1rem;}.articles.sm { margin: -.5rem 0; margin-bottom: 0;}article { border-radius: 4px; overflow: hidden;}article.li { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); height: 20rem; overflow: hidden; margin: 1rem 0;}article.li > a { display: block; color: #333;}article.li .inner { padding: 1rem;}article.li .thumb { height: 8rem;}article.li .title { color: #333; font-size: 1.2rem; line-height: 1.5rem; margin-bottom: .5rem;}article.li .summary { font-size: .8rem; height: 6rem; overflow: hidden; margin-top: 1rem;}article.li .summary::after { content: '...';}article.lism { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin: .5rem 0;}article.lism::after { content: ''; display: block; clear: both;}article.lism > a { display: block; color: #333;}article.lism .inner { display: table-cell; vertical-align: middle; height: 5rem; padding: 0 .75rem;}article.lism .thumb { width: 5rem; height: 5rem; float: left;}article.lism .title { font-weight: 700; font-size: .8rem; margin-bottom: .25rem;}article.sn { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin-bottom: 1rem;}article.sn .thumb { height: 20rem;}@media (max-width: 768px) { article.sn .thumb { height: 10rem; }}article.sn > .article-header,article.sn > .article-body,article.sn .article-footer { padding: 2rem;}article.sn > .article-body { padding: 0 2rem;}@media (max-width: 768px) { article.sn > .article-header, article.sn > .article-body, article.sn .article-footer { padding: 1rem; } article.sn > .article-body { padding: 0 1rem; }}article.sn > .article-header .title { font-size: 1.8rem; line-height: 2rem; margin-bottom: .5rem;}@media (max-width: 768px) { article.sn > .article-header .title { font-size: 1.4rem; line-height: 1.5rem; }}article.sn > .article-header .facts { margin-bottom: 1rem;}article.sn > .article-body { margin-bottom: 1.5rem;}article.sn > .article-body h2 { border-bottom: .25rem solid #333; font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; padding: .5rem 0;}article.sn > .article-body h3 { border-left: .5rem solid #333; line-height: 1.5rem; margin: 1.5rem 0; padding: .125rem .5rem;}article.sn > .article-body ul,article.sn > .article-body ol { margin: 1.5rem 0; padding-left: 1.5rem;}article.sn > .article-body li { padding-bottom: .5rem; line-height: 1.5rem;}article.sn > .article-body li:last-child { padding-bottom: 0;}article.sn > .article-body p { margin: 1rem 0; line-height: 1.5rem;}article.sn > .article-body strong,article.sn > .article-body em { font-style: normal; font-weight: 700;}article.sn > .article-body strong { box-shadow: 0 -.5rem 0 0 #ffc107 inset;}article.sn > .article-body em { color: #8bc34a;}article.sn > .article-body code,article.sn > .article-body pre { font-family: Menlo, Consolas, monospace; font-size: .7rem;}article.sn > .article-body pre { background-color: #333; color: #fff; line-height: 1rem; margin: 1.5rem -2rem; overflow: auto;}@media (max-width: 768px) { article.sn > .article-body pre { margin: 1.5rem -1rem; }}article.sn > .article-body pre > code { display: block; padding: 1rem 2rem;}@media (max-width: 768px) { article.sn > .article-body pre > code { padding: 1rem; }}article.sn > .article-body p code { background-color: #eceff1; color: #333; border-radius: 4px; margin: 0 .25rem; padding: .375rem; white-space: nowrap;}article.sn > .article-body blockquote { position: relative; border-left: .25rem solid #333; font-size: .8rem; padding: .125rem 1rem; margin: 1.5rem 0;}@media (max-width: 768px) { article.sn > .article-body blockquote { font-size: 1rem; }}article.sn > .article-body blockquote p { margin: .5rem 0; line-height: 1rem;}article.sn > .article-body figure { margin: 1.5rem 0;}article.sn > .article-body figure img,article.sn > .article-body figure amp-img { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); max-width: 100%;}article.sn > .article-body figcaption { color: #cfd8dc; font-size: .8rem; font-weight: 700; margin-top: .5rem;}.facts li { display: inline; font-size: .8rem; margin-right: 1rem;}.facts i { color: #cfd8dc; margin-right: .5em;}.facts.sm li { font-size: .7rem;}.sections.sidebar { margin: -1rem 0;}.sections.footer { margin: -1rem 0;}section.sidebar { margin: 2rem 0;}section.sidebar > header { font-size: .8rem; font-weight: 700; letter-spacing: 4px; text-align: center; margin: 1.5rem 0;}section.footer { margin: 1rem 0;}section.footer > header { font-size: .8rem; margin: .5rem 0;}section.footer > header::before { content: "- ";}section.footer > header a { font-weight: 700; color: #333; text-decoration: underline;}.terms { margin: -.25rem;}.terms li { display: inline-block;}.terms a { display: block; float: left; background-color: #333; border-radius: 4px; color: #fff; font-size: .7rem; margin: .25rem; padding: 0 .75rem; line-height: 1.75rem;}.paging { text-align: center; padding: 1rem 0;}.paging a { display: inline-block; background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); border-radius: 4px; color: #333; padding: 0 1rem; line-height: 3rem;}.page-title { text-align: center; margin: 1rem 0;}.page-title::after { content: ''; display: block; border-bottom: .25rem solid #333; width: 3rem; margin: 1.5rem auto;}.page-title > .title { font-size: 1.2rem; line-height: 1.5rem;}/* Parts:breadcrumb */.crumb ol { text-overflow: ellipsis; color: #cfd8dc; white-space: nowrap; overflow: hidden;}.crumb li { display: inline; font-size: .8rem;}.crumb li::after { content: '›'; margin: 0 .25rem 0 .5rem;}.crumb li:last-child::after { content: '';}.crumb a { color: #cfd8dc;}.crumb i { margin-right: .5em;}.share { padding: 0;}.share a { display: inline-block; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); min-width: 1rem; height: 2rem; border-radius: 4px; color: #333; font-size: .8rem; font-weight: 700; line-height: 2rem; text-align: center; padding: 0 .5rem;}.adj article.lism { margin-bottom: 1rem;}.adj header { font-weight: 700; font-size: .8rem;}.toc { padding: 0 2rem;}@media (max-width: 768px) { .toc { padding: 0 1rem; }}.toc { margin: 1rem 0;}.toc nav>ul { background-color: #eceff1; border-radius: 4px; display: inline-block; font-size: .8rem; padding: .5rem 1rem; word-break: break-all; list-style: none;}.toc ul { padding: 0;}.toc ul ul { padding-left: 1rem;}.toc ul ul ul { padding-left: 1rem;}.toc li { color: #90a4ae;}.toc ul ul>li { font-weight: 700; margin: .5rem 0; list-style-type: decimal;}.toc ul ul ul>li { list-style-type: disc; font-weight: 500;}.author { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem; border-radius: 4px; text-align: center;}.author .author-thumb { margin: 0 auto 1rem; width: 6rem; height: 6rem; border-radius: 50%; background-color: #eceff1; background-size: cover; background-position: center;}.author .author-name { margin-bottom: .5rem; font-weight: 700;}.author .author-facts { margin-bottom: 1rem;}.author .author-facts li { display: inline;}.author .author-facts li a { display: inline-block; background-color: #eceff1; width: 1.75rem; height: 1.75rem; line-height: 1.75rem; text-align: center; color: #333; font-size: .8rem; border-radius: 2px;}.author .author-facts li a:hover { color: #fff; background-color: #333;}.author .author-description { text-align: left; font-size: .8rem;}.author .author-description p { margin: .5rem 0;}.thumb { background-image: url(http://blog.durtchrt.comimages/default.jpg); background-size: cover; background-position: center;}
+      
+       body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
+       .h-logo { font-family: Lobster, cursive; } 
+      .l-container { max-width: 40rem; margin: 0 auto; }
+    </style>
+  </head>
+
+  <body>
+    
+    <amp-analytics type="googleanalytics" id="analytics1">
+      <script type="application/json"> { "vars": { "account": "UA-108897430-1"}, "triggers": { "trackPageview": { "on": "visible", "request": "pageview" } } }
+      </script>
+    </amp-analytics>
+    
+
+    <header class="l-header">
+      <div class="l-container">
+        <div class="logo">
+          <a href="http://blog.durtchrt.com">durtchrt</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="l-container">
+        
+<article class="sn">
+
+  <div class="thumb thumb-9efe639e57a24851d09af05d8751072d"></div>
+
+  <header class="article-header">
+    <h1 class="title">컨퍼런스 후기:20161221 AKKA</h1>
+
+    <ul class="facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-12-21T19:10:41JST">Dec 21, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://blog.durtchrt.comconference/">CONFERENCE</a></li>
+      
+    </ul>
+
+    <aside class="share">
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161221%2fakka%2f&title=%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4%20%ed%9b%84%ea%b8%b0%3a20161221%20AKKA" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161221%2fakka%2f&text=%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4%20%ed%9b%84%ea%b8%b0%3a20161221%20AKKA&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161221%2fakka%2f&t=%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4%20%ed%9b%84%ea%b8%b0%3a20161221%20AKKA" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161221%2fakka%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161221%2fakka%2f&title=%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4%20%ed%9b%84%ea%b8%b0%3a20161221%20AKKA" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4%20%ed%9b%84%ea%b8%b0%3a20161221%20AKKA http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161221%2fakka%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+</aside>
+
+  </header>
+
+  
+
+  <div class="article-body">
+
+<p>Open Community의 정기기술 세미나 75차 발표 - Akka를 이용한 리엑티브 프로그래밍 101</p>
+
+<p>발표자- 고재도</p>
+
+<p><a href="http://github.com/jeado/akka101">github</a>, <a href="http://open.egovframe.go.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000014&amp;nttId=18918">opencommunity 공지</a>, <a href="../pdf.pdf">발표자료</a></p>
+
+<h1 id="akka">AKKA</h1>
+
+<h4 id="reactive란">Reactive란?</h4>
+
+<ul>
+<li>유저액션에 즉각적인 빠른 응답</li>
+<li>데이터 바인딩 선언적(절차지향과 반대)</li>
+<li>리액티브 스트림은 비동기적인 데이터 스트림</li>
+<li><a href="http://www.reactivemanifesto.org/">리액티브 선언</a></li>
+</ul>
+
+<h4 id="reative-선언">Reative 선언</h4>
+
+<ul>
+<li>민감성(Responsive) -&gt;  낮은 대기 시간</li>
+<li>유연성(Resilient) -&gt; 실패 탐색기로부터 장애상황시 즉각적으로 버팀.</li>
+<li>신축성(Elastic) -&gt; 클러스터 + 샤딩으로부터 스케일 up/out</li>
+<li>메세지주도(Message-Driven) -&gt; 액터 + 스트림을 통해 콤포넌트들간의 비동기 커뮤니케이션</li>
+</ul>
+
+<p><a href="http://www.zdnet.co.kr/column/column_view.asp?artice_id=20161010104628">참고 - ZD넷 - 임백준 - 리액티브 개발 패러다임에 담긴 메시지</a></p>
+
+<h4 id="실무에-사용되는-회사">실무에 사용되는 회사</h4>
+
+<p><img src="../1.png" alt="회사" /></p>
+
+<p>paypal - 우리는 Akka로 148,000,000명이 넘는 사람들에게 미래의 돈을 전달하고 있습니다.</p>
+
+<h4 id="akka-소개">Akka 소개</h4>
+
+<p>아카는 Java와 스칼라를 둘다 지원하고 JVM 기반에서 병렬성, 신축성, 유연성을 처리하기위해 actor 기반의 메세지 주도 런타임과 툴킷입니다.(framework는 아닙니다. 기존 코드에 유틸리티 코드처럼 쉽게 추가할 수 있습니다.)</p>
+
+<pre><code>Akka is an actor-based message-driven runtime and toolkit for managing concurrency, elasticity and resilence on the JVM with support for both Java and Scala
+</code></pre>
+
+<blockquote>
+<p>간단하게 강력한 병렬성과 분산 어플리케이션을 만들수 있다.</p>
+</blockquote>
+
+<h4 id="akka-1">AKKA</h4>
+
+<ul>
+<li>Actors - 간단하고 높은 성능의 병행처리</li>
+<li>Cluster / Remoting - 지역 투명성, 유연성</li>
+<li>Cluster Sharding - remote시에 자동으로 처리되는 것.</li>
+<li>Streams - 스트림 back-pressured</li>
+<li>Persistence - 이벤트 sourcing</li>
+<li>HTTP - 카프카, 카산드라, DynamoDB와 통합된 완벽하게 비동기적이고 리액티브한  HTTP Server</li>
+</ul>
+
+<p><a href="http://doc.akka.io/docs/akka/snapshot/intro/what-is-akka.html">akka doc - what is akka</a></p>
+
+<pre><code>Actors
+- Simple and high-level abstractions for distribution, concurrency and parallelism.
+- Asynchronous, non-blocking and highly performant message-driven programming model.
+- Very lightweight event-driven processes (several million actors per GB of heap memory).
+
+Fault Tolerance
+- Supervisor hierarchies with &quot;let-it-crash&quot; semantics.
+- Actor systems can span over multiple JVMs to provide truly fault-tolerant systems.
+- Excellent for writing highly fault-tolerant systems that self-heal and never stop.
+
+Location Transparency
+- Everything in Akka is designed to work in a distributed environment: all interactions of actors use pure message passing and everything is asynchronous.
+
+Persistence
+- State changes experienced by an actor can optionally be persisted and replayed when the actor is started or restarted. This allows actors to recover their state, even after JVM crashes or when being migrated to another node.
+</code></pre>
+
+<h2 id="actor">Actor</h2>
+
+<p><a href="http://doc.akka.io/docs/akka/snapshot/general/actors.html">akka doc - actor</a></p>
+
+<h4 id="actor-model-frameworks-languages">Actor Model Frameworks / Languages</h4>
+
+<ul>
+<li>Erlang / Elixer</li>
+<li>Akka(JVM/Akka.ent)</li>
+<li>Orleans(.NET)</li>
+<li>CAF(C++)</li>
+<li>Celluloid(Ruby)</li>
+<li>Pulsar(Python)</li>
+</ul>
+
+<p>1973 Actor모델 이론 발표  -&gt; 1986 Erlang이 Actor모델 적용 -&gt; 2009 jvm scala akka 탄생</p>
+
+<pre><code>Actor model은 컴퓨터 과학에서 행위자를 형행 연산의 기본적 기본 단위로 취급하는 병행 컴퓨팅의 수학적 모델이다. 행위자가 받는 메시지에 댕으하여, 행위자는 자체적인 결정을 하고 더 많은 행위자를 만들며, 더 많은 메시지를 보내고, 다음에 받을 메시지에 대한 응답 행위를 결정할 수 있다. 행위자는 개인 상태를 수정할 수 있지만, 메시지를 통해서만 서로에게 영향을 줄 수 있다.(락의 필요성을 제거함.)
+</code></pre>
+
+<p>액터는 병행처리 원시 기술. -&gt; Thread 대신 Actor로 병행처리 지원</p>
+
+<h4 id="actor-1">Actor</h4>
+
+<ul>
+<li>concurrency primitive</li>
+<li>persistent</li>
+<li>encapsulate internal state</li>
+<li>actors interact exclusively via asychronous messages</li>
+</ul>
+
+<h4 id="actor가-할-수-있는것">Actor가 할 수 있는것.</h4>
+
+<ul>
+<li>Actor sends messages</li>
+<li>Actor change its state</li>
+<li>Actor change its behavior</li>
+<li>Actor create more actors</li>
+<li>Actor process exactly one message at a time</li>
+</ul>
+
+<h4 id="actor-구조">actor 구조</h4>
+
+<p><img src="../2.png" alt="Akka Actor" /></p>
+
+<h4 id="akka-actor-path">Akka Actor Path</h4>
+
+<p><img src="../3.png" alt="akka path" /></p>
+
+<ul>
+<li>액터 identifies</li>
+<li>액터를 가리키는 proxy / forwarder를 표현할 수 있다.</li>
+<li>Contains location and transport information</li>
+<li>지역 투명성
+
+<ul>
+<li>하나의 path는 많은 actor를 표현할 수 있다.(router pool)</li>
+<li>하나의 actor는 많은 주소를 가질 수 있다.(cluster)</li>
+</ul></li>
+</ul>
+
+<h4 id="supervision">supervision</h4>
+
+<p>액터의 동작 상태는 다른 액터에게 감시되고 관리되어진다.</p>
+
+<pre><code>The running state of an actor is monitored and managed by another actor
+</code></pre>
+
+<p>let it crash -&gt; supervision after crash</p>
+
+<h4 id="akka-actor-hierachy">Akka Actor Hierachy</h4>
+
+<!-- TODO 이미지 참조 -->
+
+<p>parent actor는 child actor를 supervision할 수 있어서 child의 상태를 받아볼 수 있고 설정할 수 있다.</p>
+
+<p><img src="../4.png" alt="akka actor hierarchy" /></p>
+
+<p><a href="http://doc.akka.io/docs/akka/current/general/addressing.html">참조 - Actor References, Paths and Addresses </a></p>
+
+<h4 id="demo">Demo</h4>
+
+<p>CO2 Monitoring Device -&gt; Akka baseed Rule Engine System</p>
+
+<h2 id="scale-up-with-router">Scale up with router</h2>
+
+<h4 id="routers">Routers</h4>
+
+<ul>
+<li>pool - the router creates routees as child actors and removes them from the router if they terminate</li>
+<li>group - the routee actors are created externally to ther router and the router sends messages to the specified path using actor selection, without watching for termination.
+a pool needs the number of routee instances, and a group needs a list of routee paths.</li>
+</ul>
+
+<p><img src="../5.png" alt="router" /></p>
+
+<h4 id="routers-1">Routers</h4>
+
+<pre><code class="language-scala">akka.actor.deployment {
+	/parent/router1 {
+		router = round-robin-pool
+		nr-of-instances = 5
+	}
+}
+
+val poolRouter: ActorRef = 
+	context.actorOf(FromConfig.props(Props[Worker]), &quot;router1&quot;)
+
+val router2: ActorRef = 
+	context.actorOf(RoundRobinBool(5).props(Props[Workder]), &quot;router2&quot;)
+</code></pre>
+
+<h4 id="routers-2">Routers</h4>
+
+<pre><code class="language-scala">akka.actor.deployment {
+	/parent/router3 {
+		router = round-robin-group
+		routees.paths = [&quot;/user/workers/w1&quot;, &quot;/user/workers/w2&quot;, &quot;/user/workers/w3&quot;]
+	}
+}
+
+val pool: ActorRef = 
+	context.actorOf(FromConfig.props(), &quot;router3&quot;)
+
+val router2: ActorRef = 
+	context.actorOf(RoundRobinBool(paths).props), &quot;router4&quot;)
+</code></pre>
+
+<h4 id="routing-logic">Routing Logic</h4>
+
+<ul>
+<li>RoundRobinPool and RoundRobinGroup</li>
+<li>RandomPool and RandomGroup</li>
+<li>BalancingPool</li>
+<li>SmallestMailboxPool</li>
+<li>BroadcastPool and BroadcastGroup</li>
+<li>ScatterGatherFirstCompletedPool and ScatterGatherFirstCompletedGroup</li>
+<li>TailChoppingPool and TailChoppingGroup</li>
+<li>ConsistentHashingPool and ConsistentHashingGroup</li>
+</ul>
+
+<h4 id="demo-1">DEMO</h4>
+
+<h2 id="akka-cluster">Akka Cluster</h2>
+
+<h4 id="akka-cluster-1">Akka Cluster</h4>
+
+<p><img src="../6.png" alt="" /></p>
+
+<h4 id="akka-cluster-membership">Akka Cluster Membership</h4>
+
+<p><img src="../7.png" alt="" /></p>
+
+<h4 id="akka-cluster-joining-the-cluster">Akka Cluster Joining the cluster</h4>
+
+<p><img src="../8.png" alt="" /></p>
+
+<h4 id="akka-cluster-leaving-and-exiting">Akka Cluster Leaving and Exiting</h4>
+
+<p><img src="../9.png" alt="" /></p>
+
+<h4 id="demo-2">DEMO</h4>
+
+<h4 id="akka-in-ligthbend">akka in ligthbend</h4>
+
+<p><img src="../10.png" alt="" /></p>
+
+<p>auto downing은 production에 사용하지 말라고함 -_-?</p>
+
+<p><a href="http://doc.akka.io/docs/akka/snapshot/scala/cluster-usage.html">http://doc.akka.io/docs/akka/snapshot/scala/cluster-usage.html</a></p>
+
+<h4 id="anti-use-case">anti use case</h4>
+
+<p>actor 안에서 future를 쓸 때 sender가 꼬이는 문제가 있으니 조심.
+<a href="http://stackoverflow.com/questions/16898131/sender-inside-a-future">http://stackoverflow.com/questions/16898131/sender-inside-a-future</a></p>
+</div>
+
+  <footer class="article-footer">
+
+    <aside class="share">
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161221%2fakka%2f&title=%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4%20%ed%9b%84%ea%b8%b0%3a20161221%20AKKA" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161221%2fakka%2f&text=%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4%20%ed%9b%84%ea%b8%b0%3a20161221%20AKKA&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161221%2fakka%2f&t=%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4%20%ed%9b%84%ea%b8%b0%3a20161221%20AKKA" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161221%2fakka%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161221%2fakka%2f&title=%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4%20%ed%9b%84%ea%b8%b0%3a20161221%20AKKA" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%ec%bb%a8%ed%8d%bc%eb%9f%b0%ec%8a%a4%20%ed%9b%84%ea%b8%b0%3a20161221%20AKKA http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161221%2fakka%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+</aside>
+
+
+    <section class="footer">
+      <div>
+        <nav class="crumb">
+          <ol>
+            <li><a href="http://blog.durtchrt.com"><i class="fa fa-home" aria-hidden="true"></i>TOP</a></li>
+            
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://blog.durtchrt.comconference/" itemprop="url"><span itemprop="title">CONFERENCE</span></a></li>
+            
+            <li class="active">컨퍼런스 후기:20161221 AKKA</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+</article>
+
+
+<div class="adj">
+  <div class="mrow">
+    
+    <div class="mcol c6">
+      <header>Previous Article</header>
+      <article class="lism">
+  <a href="http://blog.durtchrt.com/conference/20161212/hazelcast/">
+    <div class="thumb thumb-45da191bbc4d6169c880792e84f28dee"></div>
+
+    <div class="inner">
+      <div class="title">20161212: hazelcast 교육 내용 정리</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-12-12T14:04:52JST">Dec 12, 2016</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>CONFERENCE</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    </div>
+    
+    
+  </div>
+</div>
+
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="l-container">
+        <p><span class="h-logo">&copy; durtchrt</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+  </body>
+</html>
+

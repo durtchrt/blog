@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+
+<meta name="generator" content="Hugo 0.31-DEV" />
+
+<link rel="apple-touch-icon" href="http://blog.durtchrt.comimages/logo.png">
+
+
+<link rel="canonical" href="http://blog.durtchrt.com/java/generics/3/">
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel="stylesheet">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>자바 제네릭스(3) Java Generics: 제네릭 타입들 - durtchrt</title>
+    
+<meta name="description" content="자바 제네릭스(java generics) 번역">
+
+<meta property="og:title" content="자바 제네릭스(3) Java Generics: 제네릭 타입들 - durtchrt">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://blog.durtchrt.com/java/generics/3/">
+<meta property="og:image" content="http://blog.durtchrt.comimages/default.png">
+<meta property="og:site_name" content="durtchrt">
+<meta property="og:description" content="자바 제네릭스(java generics) 번역">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="durtchrt">
+<meta name="twitter:url" content="http://blog.durtchrt.com/java/generics/3/">
+<meta name="twitter:title" content="자바 제네릭스(3) Java Generics: 제네릭 타입들 - durtchrt">
+<meta name="twitter:description" content="자바 제네릭스(java generics) 번역">
+<meta name="twitter:image" content="http://blog.durtchrt.comimages/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http://blog.durtchrt.com"
+    },
+    "headline": "자바 제네릭스(3) Java Generics: 제네릭 타입들 - durtchrt",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://blog.durtchrt.comimages/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2016-10-31T17:08:57JST",
+    "dateModified": "2016-10-31T17:08:57JST",
+    "author": {
+      "@type": "Person",
+      "name": "durtchrt"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "durtchrt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://blog.durtchrt.comimages/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "자바 제네릭스(java generics) 번역"
+  }
+</script>
+
+
+    <style amp-custom>
+      html { font-size: 18px; background-color: rgba(236,239,241,.5);}@media (max-width: 768px) { html { font-size: 15px; }}body { color: #333; font-family: 'Roboto Slab','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-feature-settings : "palt"; font-size: inherit; line-height: 1rem; margin: 0; padding: 0;}h1, h2, h3, h4, h5 ,h6 { font-size: 1rem; font-weight: 700; line-height: 1rem; margin: 0;}hr { border: 0; border-top: 1px dashed #cfd8dc; margin: 1rem 0;}p { margin: 0; line-height: 1rem;}a { color: #2196f3; text-decoration: none; transition-duration: .3s;}ul, ol { margin: 0; padding: 0;}table { border-collapse: collapse;}th, td { font-size: .8rem; padding: .5rem;}tr { border-bottom: 1px dashed #ddd;}/* Layouts */main,aside { display: block;}main { padding: 1rem 0 3rem 0; }aside.h { padding: 3rem 0; }main.f,aside.f { background-color: #333; border-top: 2px dashed #fff; border-bottom: 2px dashed #fff;}.l-container { position: relative; max-width: 68rem; margin: 0 auto; padding: 0 1rem;}.l-container.thin { max-width: 44rem;}.l-header { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem 0; text-align: center;}.l-header .description { margin-top: .5rem; font-size: .8rem;}.l-footer { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); font-size: .6rem; font-weight: 700; padding: 1rem 0;}@media (max-width: 768px) { .l-sidebar { margin-top: 4rem; }}.mrow { margin: 0 -1rem; overflow: hidden;}.mcol { box-sizing: border-box; float: left; padding: 0 1rem;}.c6 { width: 50%; }.c4 { width: 33.26323833%; }.c8 { width: 66.66666%; }@media (max-width: 768px) { .mcol { width: 100%; float: none; }}.logo a { font-size: 1.4rem; line-height: 1.5rem; font-weight: 700; color: #333;}.articles { margin: -1rem 0; margin-bottom: 1rem;}.articles.sm { margin: -.5rem 0; margin-bottom: 0;}article { border-radius: 4px; overflow: hidden;}article.li { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); height: 20rem; overflow: hidden; margin: 1rem 0;}article.li > a { display: block; color: #333;}article.li .inner { padding: 1rem;}article.li .thumb { height: 8rem;}article.li .title { color: #333; font-size: 1.2rem; line-height: 1.5rem; margin-bottom: .5rem;}article.li .summary { font-size: .8rem; height: 6rem; overflow: hidden; margin-top: 1rem;}article.li .summary::after { content: '...';}article.lism { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin: .5rem 0;}article.lism::after { content: ''; display: block; clear: both;}article.lism > a { display: block; color: #333;}article.lism .inner { display: table-cell; vertical-align: middle; height: 5rem; padding: 0 .75rem;}article.lism .thumb { width: 5rem; height: 5rem; float: left;}article.lism .title { font-weight: 700; font-size: .8rem; margin-bottom: .25rem;}article.sn { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin-bottom: 1rem;}article.sn .thumb { height: 20rem;}@media (max-width: 768px) { article.sn .thumb { height: 10rem; }}article.sn > .article-header,article.sn > .article-body,article.sn .article-footer { padding: 2rem;}article.sn > .article-body { padding: 0 2rem;}@media (max-width: 768px) { article.sn > .article-header, article.sn > .article-body, article.sn .article-footer { padding: 1rem; } article.sn > .article-body { padding: 0 1rem; }}article.sn > .article-header .title { font-size: 1.8rem; line-height: 2rem; margin-bottom: .5rem;}@media (max-width: 768px) { article.sn > .article-header .title { font-size: 1.4rem; line-height: 1.5rem; }}article.sn > .article-header .facts { margin-bottom: 1rem;}article.sn > .article-body { margin-bottom: 1.5rem;}article.sn > .article-body h2 { border-bottom: .25rem solid #333; font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; padding: .5rem 0;}article.sn > .article-body h3 { border-left: .5rem solid #333; line-height: 1.5rem; margin: 1.5rem 0; padding: .125rem .5rem;}article.sn > .article-body ul,article.sn > .article-body ol { margin: 1.5rem 0; padding-left: 1.5rem;}article.sn > .article-body li { padding-bottom: .5rem; line-height: 1.5rem;}article.sn > .article-body li:last-child { padding-bottom: 0;}article.sn > .article-body p { margin: 1rem 0; line-height: 1.5rem;}article.sn > .article-body strong,article.sn > .article-body em { font-style: normal; font-weight: 700;}article.sn > .article-body strong { box-shadow: 0 -.5rem 0 0 #ffc107 inset;}article.sn > .article-body em { color: #8bc34a;}article.sn > .article-body code,article.sn > .article-body pre { font-family: Menlo, Consolas, monospace; font-size: .7rem;}article.sn > .article-body pre { background-color: #333; color: #fff; line-height: 1rem; margin: 1.5rem -2rem; overflow: auto;}@media (max-width: 768px) { article.sn > .article-body pre { margin: 1.5rem -1rem; }}article.sn > .article-body pre > code { display: block; padding: 1rem 2rem;}@media (max-width: 768px) { article.sn > .article-body pre > code { padding: 1rem; }}article.sn > .article-body p code { background-color: #eceff1; color: #333; border-radius: 4px; margin: 0 .25rem; padding: .375rem; white-space: nowrap;}article.sn > .article-body blockquote { position: relative; border-left: .25rem solid #333; font-size: .8rem; padding: .125rem 1rem; margin: 1.5rem 0;}@media (max-width: 768px) { article.sn > .article-body blockquote { font-size: 1rem; }}article.sn > .article-body blockquote p { margin: .5rem 0; line-height: 1rem;}article.sn > .article-body figure { margin: 1.5rem 0;}article.sn > .article-body figure img,article.sn > .article-body figure amp-img { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); max-width: 100%;}article.sn > .article-body figcaption { color: #cfd8dc; font-size: .8rem; font-weight: 700; margin-top: .5rem;}.facts li { display: inline; font-size: .8rem; margin-right: 1rem;}.facts i { color: #cfd8dc; margin-right: .5em;}.facts.sm li { font-size: .7rem;}.sections.sidebar { margin: -1rem 0;}.sections.footer { margin: -1rem 0;}section.sidebar { margin: 2rem 0;}section.sidebar > header { font-size: .8rem; font-weight: 700; letter-spacing: 4px; text-align: center; margin: 1.5rem 0;}section.footer { margin: 1rem 0;}section.footer > header { font-size: .8rem; margin: .5rem 0;}section.footer > header::before { content: "- ";}section.footer > header a { font-weight: 700; color: #333; text-decoration: underline;}.terms { margin: -.25rem;}.terms li { display: inline-block;}.terms a { display: block; float: left; background-color: #333; border-radius: 4px; color: #fff; font-size: .7rem; margin: .25rem; padding: 0 .75rem; line-height: 1.75rem;}.paging { text-align: center; padding: 1rem 0;}.paging a { display: inline-block; background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); border-radius: 4px; color: #333; padding: 0 1rem; line-height: 3rem;}.page-title { text-align: center; margin: 1rem 0;}.page-title::after { content: ''; display: block; border-bottom: .25rem solid #333; width: 3rem; margin: 1.5rem auto;}.page-title > .title { font-size: 1.2rem; line-height: 1.5rem;}/* Parts:breadcrumb */.crumb ol { text-overflow: ellipsis; color: #cfd8dc; white-space: nowrap; overflow: hidden;}.crumb li { display: inline; font-size: .8rem;}.crumb li::after { content: '›'; margin: 0 .25rem 0 .5rem;}.crumb li:last-child::after { content: '';}.crumb a { color: #cfd8dc;}.crumb i { margin-right: .5em;}.share { padding: 0;}.share a { display: inline-block; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); min-width: 1rem; height: 2rem; border-radius: 4px; color: #333; font-size: .8rem; font-weight: 700; line-height: 2rem; text-align: center; padding: 0 .5rem;}.adj article.lism { margin-bottom: 1rem;}.adj header { font-weight: 700; font-size: .8rem;}.toc { padding: 0 2rem;}@media (max-width: 768px) { .toc { padding: 0 1rem; }}.toc { margin: 1rem 0;}.toc nav>ul { background-color: #eceff1; border-radius: 4px; display: inline-block; font-size: .8rem; padding: .5rem 1rem; word-break: break-all; list-style: none;}.toc ul { padding: 0;}.toc ul ul { padding-left: 1rem;}.toc ul ul ul { padding-left: 1rem;}.toc li { color: #90a4ae;}.toc ul ul>li { font-weight: 700; margin: .5rem 0; list-style-type: decimal;}.toc ul ul ul>li { list-style-type: disc; font-weight: 500;}.author { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem; border-radius: 4px; text-align: center;}.author .author-thumb { margin: 0 auto 1rem; width: 6rem; height: 6rem; border-radius: 50%; background-color: #eceff1; background-size: cover; background-position: center;}.author .author-name { margin-bottom: .5rem; font-weight: 700;}.author .author-facts { margin-bottom: 1rem;}.author .author-facts li { display: inline;}.author .author-facts li a { display: inline-block; background-color: #eceff1; width: 1.75rem; height: 1.75rem; line-height: 1.75rem; text-align: center; color: #333; font-size: .8rem; border-radius: 2px;}.author .author-facts li a:hover { color: #fff; background-color: #333;}.author .author-description { text-align: left; font-size: .8rem;}.author .author-description p { margin: .5rem 0;}.thumb { background-image: url(http://blog.durtchrt.comimages/default.jpg); background-size: cover; background-position: center;}
+      
+       body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
+       .h-logo { font-family: Lobster, cursive; } 
+      .l-container { max-width: 40rem; margin: 0 auto; }
+    </style>
+  </head>
+
+  <body>
+    
+    <amp-analytics type="googleanalytics" id="analytics1">
+      <script type="application/json"> { "vars": { "account": "UA-108897430-1"}, "triggers": { "trackPageview": { "on": "visible", "request": "pageview" } } }
+      </script>
+    </amp-analytics>
+    
+
+    <header class="l-header">
+      <div class="l-container">
+        <div class="logo">
+          <a href="http://blog.durtchrt.com">durtchrt</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="l-container">
+        
+<article class="sn">
+
+  <div class="thumb thumb-f8dcb4a4ce7f06d381207c08afacea0c"></div>
+
+  <header class="article-header">
+    <h1 class="title">자바 제네릭스(3) Java Generics: 제네릭 타입들</h1>
+
+    <ul class="facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-10-31T17:08:57JST">Oct 31, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://blog.durtchrt.comjava/">JAVA</a></li>
+      
+    </ul>
+
+    <aside class="share">
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fblog.durtchrt.com%2fjava%2fgenerics%2f3%2f&title=%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%283%29%20Java%20Generics%3a%20%ec%a0%9c%eb%84%a4%eb%a6%ad%20%ed%83%80%ec%9e%85%eb%93%a4" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fblog.durtchrt.com%2fjava%2fgenerics%2f3%2f&text=%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%283%29%20Java%20Generics%3a%20%ec%a0%9c%eb%84%a4%eb%a6%ad%20%ed%83%80%ec%9e%85%eb%93%a4&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fblog.durtchrt.com%2fjava%2fgenerics%2f3%2f&t=%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%283%29%20Java%20Generics%3a%20%ec%a0%9c%eb%84%a4%eb%a6%ad%20%ed%83%80%ec%9e%85%eb%93%a4" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=http%3a%2f%2fblog.durtchrt.com%2fjava%2fgenerics%2f3%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=http%3a%2f%2fblog.durtchrt.com%2fjava%2fgenerics%2f3%2f&title=%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%283%29%20Java%20Generics%3a%20%ec%a0%9c%eb%84%a4%eb%a6%ad%20%ed%83%80%ec%9e%85%eb%93%a4" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%283%29%20Java%20Generics%3a%20%ec%a0%9c%eb%84%a4%eb%a6%ad%20%ed%83%80%ec%9e%85%eb%93%a4 http%3a%2f%2fblog.durtchrt.com%2fjava%2fgenerics%2f3%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+</aside>
+
+  </header>
+
+  
+
+  <div class="article-body">
+
+<p><a href="https://docs.oracle.com/javase/tutorial/java/generics/types.html">원문 링크</a></p>
+
+<p>용어 참조</p>
+
+<ul>
+<li>타입 : 자바에서는 클래스, 추상클래스, 인터페이스, 열거형(Enum), 배열을 의미. 기본형, 참조형을 포괄하는 개념
+
+<ul>
+<li>기본형: byte, short, int, long, float, double, char, String, boolean (call by value)</li>
+<li>참조형: 기본형을 제외한 모든 타입 (call by reference)</li>
+</ul></li>
+</ul>
+
+<p>매개변수 vs 인자</p>
+
+<ul>
+<li>매개변수(Parameter): 함수 선언할 때 변수의 이름</li>
+<li>인자(Argument): 함수를 호출할 때 전달하는 값</li>
+</ul>
+
+<h3 id="generic-types">Generic Types</h3>
+
+<p>generic 타입은 클래스, 인터페이스를 타입 파라미터화하는 것이다. Box 클래스는 generic  타입을 설명하면서 코드를 수정할 것이다.
+<code>A generic type is a generic class or interface that is parameterized over types. The following Box class will be modified to demonstrate the concept.</code></p>
+
+<h3 id="a-simple-box-class">A Simple Box Class</h3>
+
+<p>generic을 사용하지 않은 예제로 시작해봅시다. Box 클래스는 set(추가), get(조회) 2개의 메서드가 있습니다.
+<code>Begin by examining a non-generic Box class that operates on objects of any type. It needs only to provide two methods: set, which adds an object to the box, and get, which retrieves it:</code></p>
+
+<pre><code class="language-java">public class Box {
+    private Object object;
+
+    public void set(Object object) { this.object = object; }
+    public Object get() { return object; }
+}
+</code></pre>
+
+<p>객체의 set, get 메서드는 기본형을 제외하면 어떤 타입(참조형)이든 인자로 넣을수 있다. Box 클래스가 사용되어지지만 컴파일 타임에 검증할 방법이 없다. 코드 일부분에서는 Integer를 넣고 Integer가 return되어지길 기대하지만 다른 일부분에서는 실수로 String을 입력해서 런타임 에러가 나올 것이다.
+<code>Since its methods accept or return an Object, you are free to pass in whatever you want, provided that it is not one of the primitive types. There is no way to verify, at compile time, how the class is used. One part of the code may place an Integer in the box and expect to get Integers out of it, while another part of the code may mistakenly pass in a String, resulting in a runtime error.</code></p>
+
+<h3 id="generic-버전의-box-클래스-br">Generic 버전의 Box 클래스.<br></h3>
+
+<p><code>A Generic Version of the Box Class</code></p>
+
+<p>generic 클래시는 아래 포멧처럼 정의되었다.<br>
+<code>A generic class is defined with the following format:</code></p>
+
+<pre><code class="language-java">class name&lt;T1, T2, ..., Tn&gt; { /* ... */ }
+</code></pre>
+
+<p>타입 파라미터 문법은 클래스명 뒤에 꺽쇠(&lt;&gt;) 기호로 구분된다. 이것은 T1, T2, &hellip;, and Tn 등으로 타입 매개변수를 명시한다.(타입변수라고 불리기도한다.)
+<code>The type parameter section, delimited by angle brackets (&lt;&gt;), follows the class name. It specifies the type parameters (also called type variables) T1, T2, ..., and Tn.</code></p>
+
+<p>Box 클래스를 generics로 변경해보자. &ldquo;public class Box&rdquo; 코드를 &ldquo;public class Box<T>&ldquo;로 변경해서 generic 타입을 선언하여 만든다. T라는 타입 매개변수는 클래스 어디든지 사용할 수 있는 변수이다.
+<code>To update the Box class to use generics, you create a generic type declaration by changing the code &quot;public class Box&quot; to &quot;public class Box&lt;T&gt;&quot;. This introduces the type variable, T, that can be used anywhere inside the class.</code></p>
+
+<p>Box 클래스가 이렇게 바뀐다.<br>
+<code>With this change, the Box class becomes:</code></p>
+
+<pre><code class="language-java">/**
+ * Generic version of the Box class.
+ * @param &lt;T&gt; the type of the value being boxed
+ */
+public class Box&lt;T&gt; {
+    // T stands for &quot;Type&quot;
+    private T t;
+
+    public void set(T t) { this.t = t; }
+    public T get() { return t; }
+}
+</code></pre>
+
+<p>소스 코드 변경에서 보이듯, 기존 코드에서 Object 대신 T로 수정되었다. Type 변수는 기본형 빼고는(=참조형)이면 된다.(클래스/인터페이스/배열 타입 또는 다른 Type 변수가 Type 변수로 될 수 있다.)
+<code>As you can see, all occurrences of Object are replaced by T. A type variable can be any non-primitive type you specify: any class type, any interface type, any array type, or even another type variable.</code></p>
+
+<p>generic 인터페이스를 만드는 방법도 같다.
+&lsquo;This same technique can be applied to create generic interfaces.&rsquo;</p>
+
+<h3 id="type-파라미터-네이밍-관습">Type 파라미터 네이밍 관습</h3>
+
+<p><code>Type Parameter Naming Conventions</code></p>
+
+<p>관습에 의하면, Type 파라미터는 단일 대문자입니다. 이 기준은 이미 알고 있는 변수 네이밍 관습에 극명하게 반대입니다. (좋은점은)이런 관습이 없으면 Type 변수와 일반적인 클래스 혹은 인터페이스명 사이에 차이를 전달하기 어려울겁니다.
+<code>By convention, type parameter names are single, uppercase letters. This stands in sharp contrast to the variable naming conventions that you already know about, and with good reason: Without this convention, it would be difficult to tell the difference between a type variable and an ordinary class or interface name.</code></p>
+
+<p>일반적으로 사용되어지는 Type파라미터명<br>
+<code>The most commonly used type parameter names are:</code></p>
+
+<pre><code>E - Element (자바 콜렉션 프레인워크에 광범위하게 사용됨 - used extensively by the Java Collections Framework)
+K - Key
+N - Number
+T - Type
+V - Value
+S,U,V etc. - 2nd, 3rd, 4th types
+</code></pre>
+
+<p>이러한 이름들이 자바SE API을 통해 쓰여지는 것을 볼 수 있을 것입니다.
+<code>You'll see these names used throughout the Java SE API and the rest of this lesson.</code></p>
+
+<h3 id="generic-type-호출과-객체-생성">Generic Type 호출과 객체 생성</h3>
+
+<p><code>Invoking and Instantiating a Generic Type</code></p>
+
+<p>코드내에 generic Box 클래스를 참조하려면, generic Type을 호출해 Integer 같은 구현값(타입값)으로 T를 교체합니다.
+<code>To reference the generic Box class from within your code, you must perform a generic type invocation, which replaces T with some concrete value, such as Integer:</code></p>
+
+<pre><code class="language-java">Box&lt;Integer&gt; integerBox;
+</code></pre>
+
+<p>흔한 메소드 호출과 generic type 호출이 비슷하고 생각할 수 있다. 하지만 <strong>메소드</strong>에 인자를 전달하는 반면에 Box <strong>클래스</strong>에 type 인자를 전달한다(이번에는 Integer임).
+<code>You can think of a generic type invocation as being similar to an ordinary method invocation, but instead of passing an argument to a method, you are passing a type argument — Integer in this case — to the Box class itself.</code></p>
+
+<pre><code>'Type 파라미터', 'Type 인자' 용어 설명: 많은 개발자들은 &quot;type 파라미터&quot;와 &quot;type 인자&quot;를 혼용해서 사용한다. 하지만 이 용어나 같지 않다. 코딩할 때 파라미터화한 type을 생성하기 위해서 type인자를 만든다. 그 결과, Foo&lt;T&gt;의 T는 Type 파라미터이고 Foo&lt;String&gt;의 String은  Type 인자이다. 이번장에서 Type 인자와 Type 파라미터를 사용할 때 위에 설명한 내용을 상기하고 살펴봅시다.
+
+`Type Parameter and Type Argument Terminology: Many developers use the terms &quot;type parameter&quot; and &quot;type argument&quot; interchangeably, but these terms are not the same. When coding, one provides type arguments in order to create a parameterized type. Therefore, the T in Foo&lt;T&gt; is a type parameter and the String in Foo&lt;String&gt; f is a type argument. This lesson observes this definition when using these terms.`
+</code></pre>
+
+<p>다른 변수를 선언하듯이, 이 코드는 새로운 Box 객체를 실제로 생성하지 않습니다. 간단히 말하면 integerBox 변수는 &ldquo;Integer 타입의 Box 클래스&rdquo;를 가리킨다.( Box<Integer>는 &ldquo;Box of Integer&rdquo;라고 읽는다.)
+Like any other variable declaration, this code does not actually create a new Box object. It simply declares that integerBox will hold a reference to a &ldquo;Box of Integer&rdquo;, which is how Box<Integer> is read.</p>
+
+<p>generic 타입 호출은 일반적으로 파라미터화된 type으로 알려져 있다.
+<code>An invocation of a generic type is generally known as a parameterized type.</code></p>
+
+<p>클래스를 객체화할때 사용하는 new 키워드는 기존과 같지만 Generics를 위한 표기법으로  <strong><Integer></strong>가 클래스명과 소괄호(()) 사이에 있다.
+<code>To instantiate this class, use the new keyword, as usual, but place &lt;Integer&gt; between the class name and the parenthesis:</code></p>
+
+<pre><code class="language-java">Box&lt;Integer&gt; integerBox = new Box&lt;Integer&gt;();
+````
+### 다이아몬드 연산자(&lt;&gt;) `The Diamond`
+
+자바SE 7부터 컴파일러가 코드의 문맥을 보고 타입을 추론 할수 있게 되어 타입 인자가 필요한 부분에 empty type argument(빈 type 인자 = &lt;&gt;)를 사용할 수 있다. 꺽쇠(&lt;&gt;)는 비공식적이지만 다이아몬드라고 불린다. 예를 들면, Box&lt;Integer&gt; 객체를 생성할때 아래의 문법을 따른다:
+`In Java SE 7 and later, you can replace the type arguments required to invoke the constructor of a generic class with an empty set of type arguments (&lt;&gt;) as long as the compiler can determine, or infer, the type arguments from the context. This pair of angle brackets, &lt;&gt;, is informally called the diamond. For example, you can create an instance of Box&lt;Integer&gt; with the following statement:`
+
+```java
+Box&lt;Integer&gt; integerBox = new Box&lt;&gt;();
+</code></pre>
+
+<p>다이아몬드 표기법과 타입 추론에 대한 더 자세한 정보는 타입 추론을 보시오.
+<code>For more information on diamond notation and type inference, see Type Inference.</code></p>
+
+<h3 id="복수개의-타입매개변수">복수개의 타입매개변수</h3>
+
+<p><code>Multiple Type Parameters</code></p>
+
+<p>이전에 말했듯이, generic 클래스는 여러개의 타입매개변수를 가질수 있다. 예를들어, generic OrderdPair클래스는 generic Pair 인터페이스를 구현하였다.
+<code>As mentioned previously, a generic class can have multiple type parameters. For example, the generic OrderedPair class, which implements the generic Pair interface:</code></p>
+
+<pre><code class="language-java">public interface Pair&lt;K, V&gt; {
+    public K getKey();
+    public V getValue();
+}
+
+public class OrderedPair&lt;K, V&gt; implements Pair&lt;K, V&gt; {
+
+    private K key;
+    private V value;
+
+    public OrderedPair(K key, V value) {
+	this.key = key;
+	this.value = value;
+    }
+
+    public K getKey()	{ return key; }
+    public V getValue() { return value; }
+}
+</code></pre>
+
+<p>아래는 OrderedPair클래스로 두개의 객체를 만드는 코드이다.
+<code>The following statements create two instantiations of the OrderedPair class:</code></p>
+
+<pre><code class="language-java">Pair&lt;String, Integer&gt; p1 = new OrderedPair&lt;String, Integer&gt;(&quot;Even&quot;, 8);
+Pair&lt;String, String&gt;  p2 = new OrderedPair&lt;String, String&gt;(&quot;hello&quot;, &quot;world&quot;);
+</code></pre>
+
+<p>코드는 OrderedPair<String, Integer> 객체를 생성하면, K는 String 타입이고 V는 Integer 타입이다. Orderedpair의 생성자의 파라미터 타입들은 String, Integer이다.  autoboxing을 통해 String과 int를 OrderedPair클래스에 전달해도 문제없다.(참조형은 상관 없는데 기본형인 int는 참조형으로 변경되어야한다. int -&gt; Integer) 
+<code>The code, new OrderedPair&lt;String, Integer&gt;, instantiates K as a String and V as an Integer. Therefore, the parameter types of OrderedPair's constructor are String and Integer, respectively. Due to autoboxing, it is valid to pass a String and an int to the class.</code></p>
+
+<p>이전에 다아몬드 연산자를 언급했듯이, 자바 컴파일러는 OrderedPair<String, Integer>로 선언한 K, V 타입을 추론 할수 있기 때문에 다이아몬드문법을 사용해서 코드를 줄일수 있다.
+<code>As mentioned in The Diamond, because a Java compiler can infer the K and V types from the declaration OrderedPair&lt;String, Integer&gt;, these statements can be shortened using diamond notation:</code></p>
+
+<pre><code class="language-java">OrderedPair&lt;String, Integer&gt; p1 = new OrderedPair&lt;&gt;(&quot;Even&quot;, 8);
+OrderedPair&lt;String, String&gt;  p2 = new OrderedPair&lt;&gt;(&quot;hello&quot;, &quot;world&quot;);
+</code></pre>
+
+<p>generic 인터페이스를 생성하는것은 generic 클래스를 만드는 방법과 같다
+<code>To create a generic interface, follow the same conventions as for creating a generic class.</code></p>
+
+<h3 id="타입-파라미터화">타입 파라미터화</h3>
+
+<p><code>Parameterized Types</code></p>
+
+<p>매개변수타입(예 K, V)은  매개변수화된 타입(예 List<String>)으로 대체할 수 있다. OrderedPair<K, V>를 예를 들면:
+<code>You can also substitute a type parameter (i.e., K or V) with a parameterized type (i.e., List&lt;String&gt;). For example, using the OrderedPair&lt;K, V&gt; example:</code></p>
+
+<pre><code class="language-java">OrderedPair&lt;String, Box&lt;Integer&gt;&gt; p = new OrderedPair&lt;&gt;(&quot;primes&quot;, new Box&lt;Integer&gt;(...));
+</code></pre>
+
+<p>위의 코드에서 매개변수화된 타입(Parameterized Type)은 위의 소스에서는 <strong>Box&lt;Integer&gt;</strong>을 의미</p>
+</div>
+
+  <footer class="article-footer">
+
+    <aside class="share">
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fblog.durtchrt.com%2fjava%2fgenerics%2f3%2f&title=%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%283%29%20Java%20Generics%3a%20%ec%a0%9c%eb%84%a4%eb%a6%ad%20%ed%83%80%ec%9e%85%eb%93%a4" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fblog.durtchrt.com%2fjava%2fgenerics%2f3%2f&text=%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%283%29%20Java%20Generics%3a%20%ec%a0%9c%eb%84%a4%eb%a6%ad%20%ed%83%80%ec%9e%85%eb%93%a4&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fblog.durtchrt.com%2fjava%2fgenerics%2f3%2f&t=%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%283%29%20Java%20Generics%3a%20%ec%a0%9c%eb%84%a4%eb%a6%ad%20%ed%83%80%ec%9e%85%eb%93%a4" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=http%3a%2f%2fblog.durtchrt.com%2fjava%2fgenerics%2f3%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=http%3a%2f%2fblog.durtchrt.com%2fjava%2fgenerics%2f3%2f&title=%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%283%29%20Java%20Generics%3a%20%ec%a0%9c%eb%84%a4%eb%a6%ad%20%ed%83%80%ec%9e%85%eb%93%a4" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?%ec%9e%90%eb%b0%94%20%ec%a0%9c%eb%84%a4%eb%a6%ad%ec%8a%a4%283%29%20Java%20Generics%3a%20%ec%a0%9c%eb%84%a4%eb%a6%ad%20%ed%83%80%ec%9e%85%eb%93%a4 http%3a%2f%2fblog.durtchrt.com%2fjava%2fgenerics%2f3%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+</aside>
+
+
+    <section class="footer">
+      <div>
+        <nav class="crumb">
+          <ol>
+            <li><a href="http://blog.durtchrt.com"><i class="fa fa-home" aria-hidden="true"></i>TOP</a></li>
+            
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://blog.durtchrt.comjava/" itemprop="url"><span itemprop="title">JAVA</span></a></li>
+            
+            <li class="active">자바 제네릭스(3) Java Generics: 제네릭 타입들</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    
+    
+    
+    
+    
+    <section class="footer">
+      <header>
+        <a href="http://blog.durtchrt.comtags/">TAGS</a>
+      </header>
+      <div>
+        <ul class="terms">
+          
+          <li><a href="http://blog.durtchrt.comtags/java/">java</a></li>
+          
+          <li><a href="http://blog.durtchrt.comtags/generics/">generics</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+<div class="adj">
+  <div class="mrow">
+    
+    <div class="mcol c6">
+      <header>Previous Article</header>
+      <article class="lism">
+  <a href="http://blog.durtchrt.com/java/generics/2/">
+    <div class="thumb thumb-82677909b8449c550a0fb3e4ac8e7129"></div>
+
+    <div class="inner">
+      <div class="title">자바 제네릭스(2) Java Generics: 제네릭스는 왜 사용하는가? </div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-10-31T15:52:48JST">Oct 31, 2016</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>JAVA</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    </div>
+    
+    
+    <div class="mcol c6">
+      <header>Next Article</header>
+      <article class="lism">
+  <a href="http://blog.durtchrt.com/java/generics/4/">
+    <div class="thumb thumb-16289ec9ca2de745b2c0f7942d80e0a5"></div>
+
+    <div class="inner">
+      <div class="title">자바 제네릭스(4) Java Generics: 원천(Raw) 타입들</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-01T16:05:56JST">Nov 1, 2016</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>JAVA</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    </div>
+    
+  </div>
+</div>
+
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="l-container">
+        <p><span class="h-logo">&copy; durtchrt</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+  </body>
+</html>
+

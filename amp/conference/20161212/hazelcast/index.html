@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="theme-color" content="#263238">
+
+<meta name="generator" content="Hugo 0.31-DEV" />
+
+<link rel="apple-touch-icon" href="http://blog.durtchrt.comimages/logo.png">
+
+
+<link rel="canonical" href="http://blog.durtchrt.com/conference/20161212/hazelcast/">
+
+
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Lobster%7cLato:400,700" rel="stylesheet">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>20161212: hazelcast 교육 내용 정리 - durtchrt</title>
+    
+<meta name="description" content="HAZELCAST ###참고 링크 ###PDF 링크(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.putIfAbsent(&amp;quot;somekey&amp;quot;, &amp;quot;somevalue&amp;quot;); map.replace(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;, &amp;quot;newvalue&amp;quot;); } }  [하젤캐스트 사용]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); HazelcastInstance h = Hazelcast.">
+
+<meta property="og:title" content="20161212: hazelcast 교육 내용 정리 - durtchrt">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://blog.durtchrt.com/conference/20161212/hazelcast/">
+<meta property="og:image" content="http://blog.durtchrt.comimages/default.png">
+<meta property="og:site_name" content="durtchrt">
+<meta property="og:description" content="HAZELCAST ###참고 링크 ###PDF 링크(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.putIfAbsent(&amp;quot;somekey&amp;quot;, &amp;quot;somevalue&amp;quot;); map.replace(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;, &amp;quot;newvalue&amp;quot;); } }  [하젤캐스트 사용]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); HazelcastInstance h = Hazelcast.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="durtchrt">
+<meta name="twitter:url" content="http://blog.durtchrt.com/conference/20161212/hazelcast/">
+<meta name="twitter:title" content="20161212: hazelcast 교육 내용 정리 - durtchrt">
+<meta name="twitter:description" content="HAZELCAST ###참고 링크 ###PDF 링크(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&amp;lt;String, String&amp;gt; map = new HashMap&amp;lt;&amp;gt;(); map.put(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;); map.get(&amp;quot;key&amp;quot;); //Concurrent Map methods map.putIfAbsent(&amp;quot;somekey&amp;quot;, &amp;quot;somevalue&amp;quot;); map.replace(&amp;quot;key&amp;quot;, &amp;quot;value&amp;quot;, &amp;quot;newvalue&amp;quot;); } }  [하젤캐스트 사용]public class DistributedMap { public static void main(String[] args) { Config config = new Config(); HazelcastInstance h = Hazelcast.">
+<meta name="twitter:image" content="http://blog.durtchrt.comimages/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http://blog.durtchrt.com"
+    },
+    "headline": "20161212: hazelcast 교육 내용 정리 - durtchrt",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://blog.durtchrt.comimages/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2016-12-12T14:04:52JST",
+    "dateModified": "2016-12-12T14:04:52JST",
+    "author": {
+      "@type": "Person",
+      "name": "durtchrt"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "durtchrt",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://blog.durtchrt.comimages/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "HAZELCAST ###참고 링크 ###PDF 링크
+(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)
+장점 1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능 [기존]
+public class DistributedMap { public static void main(String[] args) { Config config = new Config(); Map&lt;String, String&gt; map = new HashMap&lt;&gt;(); map.put(&quot;key&quot;, &quot;value&quot;); map.get(&quot;key&quot;); //Concurrent Map methods map.putIfAbsent(&quot;somekey&quot;, &quot;somevalue&quot;); map.replace(&quot;key&quot;, &quot;value&quot;, &quot;newvalue&quot;); } }  [하젤캐스트 사용]
+public class DistributedMap { public static void main(String[] args) { Config config = new Config(); HazelcastInstance h = Hazelcast."
+  }
+</script>
+
+
+    <style amp-custom>
+      html { font-size: 18px; background-color: rgba(236,239,241,.5);}@media (max-width: 768px) { html { font-size: 15px; }}body { color: #333; font-family: 'Roboto Slab','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,sans-serif; font-feature-settings : "palt"; font-size: inherit; line-height: 1rem; margin: 0; padding: 0;}h1, h2, h3, h4, h5 ,h6 { font-size: 1rem; font-weight: 700; line-height: 1rem; margin: 0;}hr { border: 0; border-top: 1px dashed #cfd8dc; margin: 1rem 0;}p { margin: 0; line-height: 1rem;}a { color: #2196f3; text-decoration: none; transition-duration: .3s;}ul, ol { margin: 0; padding: 0;}table { border-collapse: collapse;}th, td { font-size: .8rem; padding: .5rem;}tr { border-bottom: 1px dashed #ddd;}/* Layouts */main,aside { display: block;}main { padding: 1rem 0 3rem 0; }aside.h { padding: 3rem 0; }main.f,aside.f { background-color: #333; border-top: 2px dashed #fff; border-bottom: 2px dashed #fff;}.l-container { position: relative; max-width: 68rem; margin: 0 auto; padding: 0 1rem;}.l-container.thin { max-width: 44rem;}.l-header { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem 0; text-align: center;}.l-header .description { margin-top: .5rem; font-size: .8rem;}.l-footer { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); font-size: .6rem; font-weight: 700; padding: 1rem 0;}@media (max-width: 768px) { .l-sidebar { margin-top: 4rem; }}.mrow { margin: 0 -1rem; overflow: hidden;}.mcol { box-sizing: border-box; float: left; padding: 0 1rem;}.c6 { width: 50%; }.c4 { width: 33.26323833%; }.c8 { width: 66.66666%; }@media (max-width: 768px) { .mcol { width: 100%; float: none; }}.logo a { font-size: 1.4rem; line-height: 1.5rem; font-weight: 700; color: #333;}.articles { margin: -1rem 0; margin-bottom: 1rem;}.articles.sm { margin: -.5rem 0; margin-bottom: 0;}article { border-radius: 4px; overflow: hidden;}article.li { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); height: 20rem; overflow: hidden; margin: 1rem 0;}article.li > a { display: block; color: #333;}article.li .inner { padding: 1rem;}article.li .thumb { height: 8rem;}article.li .title { color: #333; font-size: 1.2rem; line-height: 1.5rem; margin-bottom: .5rem;}article.li .summary { font-size: .8rem; height: 6rem; overflow: hidden; margin-top: 1rem;}article.li .summary::after { content: '...';}article.lism { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin: .5rem 0;}article.lism::after { content: ''; display: block; clear: both;}article.lism > a { display: block; color: #333;}article.lism .inner { display: table-cell; vertical-align: middle; height: 5rem; padding: 0 .75rem;}article.lism .thumb { width: 5rem; height: 5rem; float: left;}article.lism .title { font-weight: 700; font-size: .8rem; margin-bottom: .25rem;}article.sn { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); margin-bottom: 1rem;}article.sn .thumb { height: 20rem;}@media (max-width: 768px) { article.sn .thumb { height: 10rem; }}article.sn > .article-header,article.sn > .article-body,article.sn .article-footer { padding: 2rem;}article.sn > .article-body { padding: 0 2rem;}@media (max-width: 768px) { article.sn > .article-header, article.sn > .article-body, article.sn .article-footer { padding: 1rem; } article.sn > .article-body { padding: 0 1rem; }}article.sn > .article-header .title { font-size: 1.8rem; line-height: 2rem; margin-bottom: .5rem;}@media (max-width: 768px) { article.sn > .article-header .title { font-size: 1.4rem; line-height: 1.5rem; }}article.sn > .article-header .facts { margin-bottom: 1rem;}article.sn > .article-body { margin-bottom: 1.5rem;}article.sn > .article-body h2 { border-bottom: .25rem solid #333; font-size: 1.2rem; line-height: 1.5rem; margin: 1.5rem 0; padding: .5rem 0;}article.sn > .article-body h3 { border-left: .5rem solid #333; line-height: 1.5rem; margin: 1.5rem 0; padding: .125rem .5rem;}article.sn > .article-body ul,article.sn > .article-body ol { margin: 1.5rem 0; padding-left: 1.5rem;}article.sn > .article-body li { padding-bottom: .5rem; line-height: 1.5rem;}article.sn > .article-body li:last-child { padding-bottom: 0;}article.sn > .article-body p { margin: 1rem 0; line-height: 1.5rem;}article.sn > .article-body strong,article.sn > .article-body em { font-style: normal; font-weight: 700;}article.sn > .article-body strong { box-shadow: 0 -.5rem 0 0 #ffc107 inset;}article.sn > .article-body em { color: #8bc34a;}article.sn > .article-body code,article.sn > .article-body pre { font-family: Menlo, Consolas, monospace; font-size: .7rem;}article.sn > .article-body pre { background-color: #333; color: #fff; line-height: 1rem; margin: 1.5rem -2rem; overflow: auto;}@media (max-width: 768px) { article.sn > .article-body pre { margin: 1.5rem -1rem; }}article.sn > .article-body pre > code { display: block; padding: 1rem 2rem;}@media (max-width: 768px) { article.sn > .article-body pre > code { padding: 1rem; }}article.sn > .article-body p code { background-color: #eceff1; color: #333; border-radius: 4px; margin: 0 .25rem; padding: .375rem; white-space: nowrap;}article.sn > .article-body blockquote { position: relative; border-left: .25rem solid #333; font-size: .8rem; padding: .125rem 1rem; margin: 1.5rem 0;}@media (max-width: 768px) { article.sn > .article-body blockquote { font-size: 1rem; }}article.sn > .article-body blockquote p { margin: .5rem 0; line-height: 1rem;}article.sn > .article-body figure { margin: 1.5rem 0;}article.sn > .article-body figure img,article.sn > .article-body figure amp-img { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); max-width: 100%;}article.sn > .article-body figcaption { color: #cfd8dc; font-size: .8rem; font-weight: 700; margin-top: .5rem;}.facts li { display: inline; font-size: .8rem; margin-right: 1rem;}.facts i { color: #cfd8dc; margin-right: .5em;}.facts.sm li { font-size: .7rem;}.sections.sidebar { margin: -1rem 0;}.sections.footer { margin: -1rem 0;}section.sidebar { margin: 2rem 0;}section.sidebar > header { font-size: .8rem; font-weight: 700; letter-spacing: 4px; text-align: center; margin: 1.5rem 0;}section.footer { margin: 1rem 0;}section.footer > header { font-size: .8rem; margin: .5rem 0;}section.footer > header::before { content: "- ";}section.footer > header a { font-weight: 700; color: #333; text-decoration: underline;}.terms { margin: -.25rem;}.terms li { display: inline-block;}.terms a { display: block; float: left; background-color: #333; border-radius: 4px; color: #fff; font-size: .7rem; margin: .25rem; padding: 0 .75rem; line-height: 1.75rem;}.paging { text-align: center; padding: 1rem 0;}.paging a { display: inline-block; background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); border-radius: 4px; color: #333; padding: 0 1rem; line-height: 3rem;}.page-title { text-align: center; margin: 1rem 0;}.page-title::after { content: ''; display: block; border-bottom: .25rem solid #333; width: 3rem; margin: 1.5rem auto;}.page-title > .title { font-size: 1.2rem; line-height: 1.5rem;}/* Parts:breadcrumb */.crumb ol { text-overflow: ellipsis; color: #cfd8dc; white-space: nowrap; overflow: hidden;}.crumb li { display: inline; font-size: .8rem;}.crumb li::after { content: '›'; margin: 0 .25rem 0 .5rem;}.crumb li:last-child::after { content: '';}.crumb a { color: #cfd8dc;}.crumb i { margin-right: .5em;}.share { padding: 0;}.share a { display: inline-block; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); min-width: 1rem; height: 2rem; border-radius: 4px; color: #333; font-size: .8rem; font-weight: 700; line-height: 2rem; text-align: center; padding: 0 .5rem;}.adj article.lism { margin-bottom: 1rem;}.adj header { font-weight: 700; font-size: .8rem;}.toc { padding: 0 2rem;}@media (max-width: 768px) { .toc { padding: 0 1rem; }}.toc { margin: 1rem 0;}.toc nav>ul { background-color: #eceff1; border-radius: 4px; display: inline-block; font-size: .8rem; padding: .5rem 1rem; word-break: break-all; list-style: none;}.toc ul { padding: 0;}.toc ul ul { padding-left: 1rem;}.toc ul ul ul { padding-left: 1rem;}.toc li { color: #90a4ae;}.toc ul ul>li { font-weight: 700; margin: .5rem 0; list-style-type: decimal;}.toc ul ul ul>li { list-style-type: disc; font-weight: 500;}.author { background-color: #fff; box-shadow: 0 0 0 1px rgba(63,63,68,.05), 0 1px 3px rgba(63,63,68,.1), 0 1px 2px rgba(0,0,0,.05); padding: 1rem; border-radius: 4px; text-align: center;}.author .author-thumb { margin: 0 auto 1rem; width: 6rem; height: 6rem; border-radius: 50%; background-color: #eceff1; background-size: cover; background-position: center;}.author .author-name { margin-bottom: .5rem; font-weight: 700;}.author .author-facts { margin-bottom: 1rem;}.author .author-facts li { display: inline;}.author .author-facts li a { display: inline-block; background-color: #eceff1; width: 1.75rem; height: 1.75rem; line-height: 1.75rem; text-align: center; color: #333; font-size: .8rem; border-radius: 2px;}.author .author-facts li a:hover { color: #fff; background-color: #333;}.author .author-description { text-align: left; font-size: .8rem;}.author .author-description p { margin: .5rem 0;}.thumb { background-image: url(http://blog.durtchrt.comimages/default.jpg); background-size: cover; background-position: center;}
+      
+       body { font-family: Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif; } 
+       .h-logo { font-family: Lobster, cursive; } 
+      .l-container { max-width: 40rem; margin: 0 auto; }
+    </style>
+  </head>
+
+  <body>
+    
+    <amp-analytics type="googleanalytics" id="analytics1">
+      <script type="application/json"> { "vars": { "account": "UA-108897430-1"}, "triggers": { "trackPageview": { "on": "visible", "request": "pageview" } } }
+      </script>
+    </amp-analytics>
+    
+
+    <header class="l-header">
+      <div class="l-container">
+        <div class="logo">
+          <a href="http://blog.durtchrt.com">durtchrt</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="l-container">
+        
+<article class="sn">
+
+  <div class="thumb thumb-45da191bbc4d6169c880792e84f28dee"></div>
+
+  <header class="article-header">
+    <h1 class="title">20161212: hazelcast 교육 내용 정리</h1>
+
+    <ul class="facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-12-12T14:04:52JST">Dec 12, 2016</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://blog.durtchrt.comconference/">CONFERENCE</a></li>
+      
+    </ul>
+
+    <aside class="share">
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161212%2fhazelcast%2f&title=20161212%3a%20hazelcast%20%ea%b5%90%ec%9c%a1%20%eb%82%b4%ec%9a%a9%20%ec%a0%95%eb%a6%ac" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161212%2fhazelcast%2f&text=20161212%3a%20hazelcast%20%ea%b5%90%ec%9c%a1%20%eb%82%b4%ec%9a%a9%20%ec%a0%95%eb%a6%ac&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161212%2fhazelcast%2f&t=20161212%3a%20hazelcast%20%ea%b5%90%ec%9c%a1%20%eb%82%b4%ec%9a%a9%20%ec%a0%95%eb%a6%ac" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161212%2fhazelcast%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161212%2fhazelcast%2f&title=20161212%3a%20hazelcast%20%ea%b5%90%ec%9c%a1%20%eb%82%b4%ec%9a%a9%20%ec%a0%95%eb%a6%ac" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?20161212%3a%20hazelcast%20%ea%b5%90%ec%9c%a1%20%eb%82%b4%ec%9a%a9%20%ec%a0%95%eb%a6%ac http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161212%2fhazelcast%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+</aside>
+
+  </header>
+
+  
+
+  <div class="article-body">
+
+<h3 id="hazelcast">HAZELCAST</h3>
+
+<p>###<a href="http://estech.biz/2016/11/05/seoul-hazelcast-meetup-ppt-2016-11-03/">참고 링크</a>
+###<a href="../hazelcast.pdf">PDF 링크</a></p>
+
+<p>(참고 - 여기서 사용하는 노드는 hazelcast가 올라간 jvm을 의미)</p>
+
+<h3 id="장점">장점</h3>
+
+<h5 id="1-기존-코드를-거의-고치지-않고-캐싱-사용-가능">1. 기존 코드를 거의 고치지 않고 캐싱 사용 가능</h5>
+
+<p>[기존]</p>
+
+<pre><code class="language-java">public class DistributedMap {
+    public static void main(String[] args) {
+        Config config = new Config();
+        Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
+        map.put(&quot;key&quot;, &quot;value&quot;);
+        map.get(&quot;key&quot;);
+
+        //Concurrent Map methods
+        map.putIfAbsent(&quot;somekey&quot;, &quot;somevalue&quot;);
+        map.replace(&quot;key&quot;, &quot;value&quot;, &quot;newvalue&quot;);
+    }
+} 
+</code></pre>
+
+<p>[하젤캐스트 사용]</p>
+
+<pre><code class="language-java">public class DistributedMap {
+    public static void main(String[] args) {
+        Config config = new Config();
+        HazelcastInstance h = Hazelcast.newHazelcastInstance(config);
+        ConcurrentMap&lt;String, String&gt; map = h.getMap(&quot;my-distributed-map&quot;);
+        map.put(&quot;key&quot;, &quot;value&quot;);
+        map.get(&quot;key&quot;);
+
+        //Concurrent Map methods
+        map.putIfAbsent(&quot;somekey&quot;, &quot;somevalue&quot;);
+        map.replace(&quot;key&quot;, &quot;value&quot;, &quot;newvalue&quot;);
+    }
+} 
+</code></pre>
+
+<pre><code>기존 코드에서 몇 줄만 고치면 hazelcast 사용 가능
+HazelcastInstance h = Hazelcast.newHazelcastInstance(config);
+ConcurrentMap&lt;String, String&gt; map = h.getMap(&quot;my-distributed-map&quot;);
+</code></pre>
+
+<h5 id="2-자바-상임의원이-hazelcast에-몸담고-있음">2. 자바 상임의원이 hazelcast에 몸담고 있음</h5>
+
+<ul>
+<li>jcache등 자바 표준의 기술들을 기반으로 개발하고 있고 적극적으로 사용하는 모습을 보임. 자바쪽 진영에 영향력이 있어서 표준을 이끌수 있어 보임</li>
+</ul>
+
+<h5 id="3-스프링과의-연동의-쉬움">3. 스프링과의 연동의 쉬움</h5>
+
+<ul>
+<li>적극적으로 스프링과의 integration을 지원함.(스프링 커뮤니티에서 hazelcast를 적극 추천하는 이유를 알 수 있었음.)</li>
+</ul>
+
+<h3 id="hazelcast-hd-유료">hazelcast HD(유료)</h3>
+
+<p>heap을 사용하지 않고 자체적으로 개발한 메모리 모델을 사용 - FULL GC 발생 안됨.
+1. 흔히들 full gc시 Stop the world을 방지하기 위해 64G 메모리에 4G * 16(jvm)를 띄워서 Full GC 대응을 한다.
+2. 하지만, jvm 갯수가 늘어나는 만큼 관리 비용이 크다.
+3. HD를 사용하면 Full GC 걱정 안해도 되고 물리 메모리를 최대한 확보해도 상관 없다.(60G를 hazelcast의 HD에 할당해도 GC로 인한 frozen 걱정은 최소화된다. - 하드웨어 자원 최대한 사용 가능해짐.)</p>
+
+<h3 id="분산-연산-지원-distribute-computing">분산 연산 지원 - Distribute Computing</h3>
+
+<p>하젤 캐스트 서비스 레이어에 Callable/Runable 객체만 던지면 하젤캐스트 노드들간에서 분산 처리후 결과를 던지는 기능(hadoop의 map-reduce와 비슷한듯. spark의 RDD)
+- 노드가 늘어날 수록 고속 연산에 유리해짐.
+- 노드들간에 syncronize 가능 - lock 전략 사용 -&gt; 이건 나라면 안쓸듯.</p>
+
+<h3 id="partition-sharding">Partition &amp; Sharding</h3>
+
+<p>hash를 사용해서 데이터를 파티셔닝함.(파티션을 전체 데이터의 일부 데이터 셋으로 보면 됨. )
+파티셔닝한 데이터를 두가지로 관리
+1. major(원래 노드가 관리하는 파티션)
+2. backup(다른 노드에서 관리하는 파티션의 일부를 저장)
+-&gt; 만약 하나의 노드가 깨지면 백업 파티션 및 major 파티션에서 알아서 분산 저장 실행.</p>
+
+<h4 id="hash-process">hash process</h4>
+
+<p>KEY -&gt; byte[] -&gt; string-&gt; hashcode -&gt; node의 갯수 기준으로 나머지 연산(%) 후 적절한 노드 선택후 저장</p>
+
+<h3 id="노드구성시-주의사항">노드구성시 주의사항.</h3>
+
+<p>LAN으로(WAN X) 노드를 관리해야함. nextwork priority 개념이 없음.
+-&gt; network간 거리가 멀게 구성하면 성능 저하의 요인.</p>
+
+<h3 id="hazelcast-heimdall-유료">hazelcast heimdall(유료)</h3>
+
+<p>기존 : service -&gt; JDBC -&gt; RDB
+변경 : service -&gt; (heimdall JDBC) -&gt; JDBC -&gt; RDB</p>
+
+<p>기존 JDBC 사용하는 코드에 라이브러리만 헤임달 JDBC로 변경해주면 알아서 데이터베이스 캐싱 및 데이터 베이스 장애시에 해임달이 캐싱한(테이블 구조를 그대로 캐싱) 데이터를 전달
+-&gt; netflix의 hystrix랑 비슷한 구조.</p>
+
+<h3 id="장애대응">장애대응</h3>
+
+<p>장애로 인한 노트가 망가지고 네트워크 트래픽이 많은 경우 hazelcast는 자동으로 감지해서 대응한다.
+파티션의 갯수가 1000이고 전체가 100G의 데이터인경우 하나의 파티션은 100M를 차지함 분산 저장시 10개의 파티션을 기본으로 설정하면. 1G의 네트워크 전송량이 필요
+=&gt; 파티션을 10000개로 10배 늘리면 100G의 데이터의 하나의 파티션의 용량은 10M로 줄어들고 1회 전송하는 파티셧의 셋의 갯수를 5개로 줄이면 50M의 네트워크 전송량 필요(20배를 줄여서 내부 부하를 줄이는 전략을 취함.)
+=&gt; 위의 과정이 자동으로 전환</p>
+
+<h3 id="deploy">Deploy</h3>
+
+<p>2가지 Mode지원
+Embedded(같은 jvm내에 hazelcast 사용),  Client-Server(다른 jvm에 띄움 - 같은 머신일수도 다른 머신일 수도~)
+=&gt; 간단한 설정 변경으로 둘 다 편하게 사용 가능</p>
+
+<h3 id="smart-routing">Smart routing</h3>
+
+<p>1의 클라이언트는 하나의 노드와 연결을 맺음. =&gt; smart routing -_-
+ - 모든 노드가 connection을 맺지 않는다
+ - 이 컨셉으로 고가용성(high avaiablity)이 가능
+ - network 장애, gc 응답없음(stop the world)일 경우 fault tolerance 가능하게 함.
+ - hazelcast의 router가 클라이언트 - 노드간 reconnect</p>
+
+<h3 id="hazelcast-zet-무료">Hazelcast zet (무료!!)</h3>
+
+<p>기존의 <a href="https://en.wikipedia.org/wiki/Cascading_(software)">cascading</a>보다 편하다고함.
+스파크보다 분산 처리 성능이 44배 빠르다고함(업체측 자료만을 못믿음.)
+하둡처럼 대용량 데이터, 스파크처럼 in memory 분산 처리 뭐 이런 것을 하나의 솔루션으로 처리 가능한 것으로 보임.(람다 아키텍쳐를 hazelcast zet으로 한방에 처리 뭐 이런 느낌)</p>
+
+<h3 id="발표자-주소">발표자 주소</h3>
+
+<p>rahul@haselcast.com
+james@estech21.com =&gt; 12월말까지 hazelcast korea로 변경 hazelcast.com</p>
+</div>
+
+  <footer class="article-footer">
+
+    <aside class="share">
+  <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161212%2fhazelcast%2f&title=20161212%3a%20hazelcast%20%ea%b5%90%ec%9c%a1%20%eb%82%b4%ec%9a%a9%20%ec%a0%95%eb%a6%ac" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow">B!</a>
+  <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161212%2fhazelcast%2f&text=20161212%3a%20hazelcast%20%ea%b5%90%ec%9c%a1%20%eb%82%b4%ec%9a%a9%20%ec%a0%95%eb%a6%ac&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161212%2fhazelcast%2f&t=20161212%3a%20hazelcast%20%ea%b5%90%ec%9c%a1%20%eb%82%b4%ec%9a%a9%20%ec%a0%95%eb%a6%ac" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161212%2fhazelcast%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161212%2fhazelcast%2f&title=20161212%3a%20hazelcast%20%ea%b5%90%ec%9c%a1%20%eb%82%b4%ec%9a%a9%20%ec%a0%95%eb%a6%ac" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://line.me/R/msg/text/?20161212%3a%20hazelcast%20%ea%b5%90%ec%9c%a1%20%eb%82%b4%ec%9a%a9%20%ec%a0%95%eb%a6%ac http%3a%2f%2fblog.durtchrt.com%2fconference%2f20161212%2fhazelcast%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow">LINE</a>
+</aside>
+
+
+    <section class="footer">
+      <div>
+        <nav class="crumb">
+          <ol>
+            <li><a href="http://blog.durtchrt.com"><i class="fa fa-home" aria-hidden="true"></i>TOP</a></li>
+            
+            <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://blog.durtchrt.comconference/" itemprop="url"><span itemprop="title">CONFERENCE</span></a></li>
+            
+            <li class="active">20161212: hazelcast 교육 내용 정리</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    
+    
+    
+    
+    
+    
+  </footer>
+
+</article>
+
+
+<div class="adj">
+  <div class="mrow">
+    
+    <div class="mcol c6">
+      <header>Previous Article</header>
+      <article class="lism">
+  <a href="http://blog.durtchrt.com/conference/20161125/1/">
+    <div class="thumb thumb-081b5c715121317a5173986d7c65de5b"></div>
+
+    <div class="inner">
+      <div class="title"> 20161125 나는 프로그래머다 컨퍼런스</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-11-25T14:08:04JST">Nov 25, 2016</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>CONFERENCE</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    </div>
+    
+    
+    <div class="mcol c6">
+      <header>Next Article</header>
+      <article class="lism">
+  <a href="http://blog.durtchrt.com/conference/20161221/akka/">
+    <div class="thumb thumb-9efe639e57a24851d09af05d8751072d"></div>
+
+    <div class="inner">
+      <div class="title">컨퍼런스 후기:20161221 AKKA</div>
+
+      <ul class="facts sm">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2016-12-21T19:10:41JST">Dec 21, 2016</time></li>
+        <li><i class="fa fa-bookmark" aria-hidden="true"></i>CONFERENCE</li>
+        
+      </ul>
+
+    </div>
+  </a>
+</article>
+
+    </div>
+    
+  </div>
+</div>
+
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="l-container">
+        <p><span class="h-logo">&copy; durtchrt</span></p>
+        <aside>
+          <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
+          <p><a href="https://github.com/dim0627/hugo_theme_robust">Robust</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
+        </aside>
+      </div>
+    </footer>
+
+  </body>
+</html>
+
