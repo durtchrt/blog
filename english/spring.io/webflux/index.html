@@ -24,21 +24,21 @@
 
 <link rel="amphtml" type="text/html" href="http://durtchrt.github.io/blog/amp/english/spring.io/webflux/">
 
-<meta name="description" content="Introduction 스프링 프레임워크, 스프링 Web MVC에 있는 웹프레임워크는 Servlet API와 Servlet 컨테이너를 만들기위한 용도였습니다. 반응형스택, 웹프레임워크, 스프링 웹플럭스는 5.0 번전 이후에 추가되었습니다. 완전한 논블럭킹, Reactive Streams 지원, 역압(back pressure) 그리고 Netty, Undertow, Servlet 3.1 이상 컨테이너와 같은 서버에서 동작합니다. 두 웹프레임워크들 spring-webmvc, spring-webflux 는 스프링 프레임워크에서 나란히 공존합니다. 각각 모듈은 옵션널합니다. 어플리케이션은 하나 또는 다른 모듈을 또는 둘다 사용할수 있습니다. e.g 스프링 MVC 컨트롤러와 리액티브 웹클라이언트 새로운 웹프레임워크가 왜 필요할까?">
+<meta name="description" content="Introduction 스프링 프레임워크, 스프링 Web MVC에 있는 웹프레임워크는 Servlet API와 Servlet 컨테이너를 만들기위한 용도였습니다. 반응형스택, 웹프레임워크, 스프링 웹플럭스는 5.0 버전 이후에 추가되었습니다. 완전한 논블럭킹, Reactive Streams 지원, 역압(back pressure) 그리고 Netty, Undertow, Servlet 3.1 이상 서버에서 동작합니다. 두 웹프레임워크들 spring-webmvc, spring-webflux 는 스프링 프레임워크에서 나란히 공존하며 모듈들은 옵션입니다. 어플리케이션은 하나 또는 둘 다 사용할 수 있습니다. e.g 스프링 MVC 컨트롤러와 리액티브 웹클라이언트 새로운 웹프레임워크가 왜 필요할까? 대답의 일부로 적은 스레드 갯수로 비동기를 다루고 논블럭킹 웹스택과 적은 하드웨어 자원으로 확장이 필요하다는 것이다.">
 
 <meta property="og:title" content="Spring WebFlux - durtchrt">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://durtchrt.github.io/blog/english/spring.io/webflux/">
 <meta property="og:image" content="http://durtchrt.github.io/blog/images/default.png">
 <meta property="og:site_name" content="durtchrt">
-<meta property="og:description" content="Introduction 스프링 프레임워크, 스프링 Web MVC에 있는 웹프레임워크는 Servlet API와 Servlet 컨테이너를 만들기위한 용도였습니다. 반응형스택, 웹프레임워크, 스프링 웹플럭스는 5.0 번전 이후에 추가되었습니다. 완전한 논블럭킹, Reactive Streams 지원, 역압(back pressure) 그리고 Netty, Undertow, Servlet 3.1 이상 컨테이너와 같은 서버에서 동작합니다. 두 웹프레임워크들 spring-webmvc, spring-webflux 는 스프링 프레임워크에서 나란히 공존합니다. 각각 모듈은 옵션널합니다. 어플리케이션은 하나 또는 다른 모듈을 또는 둘다 사용할수 있습니다. e.g 스프링 MVC 컨트롤러와 리액티브 웹클라이언트 새로운 웹프레임워크가 왜 필요할까?">
+<meta property="og:description" content="Introduction 스프링 프레임워크, 스프링 Web MVC에 있는 웹프레임워크는 Servlet API와 Servlet 컨테이너를 만들기위한 용도였습니다. 반응형스택, 웹프레임워크, 스프링 웹플럭스는 5.0 버전 이후에 추가되었습니다. 완전한 논블럭킹, Reactive Streams 지원, 역압(back pressure) 그리고 Netty, Undertow, Servlet 3.1 이상 서버에서 동작합니다. 두 웹프레임워크들 spring-webmvc, spring-webflux 는 스프링 프레임워크에서 나란히 공존하며 모듈들은 옵션입니다. 어플리케이션은 하나 또는 둘 다 사용할 수 있습니다. e.g 스프링 MVC 컨트롤러와 리액티브 웹클라이언트 새로운 웹프레임워크가 왜 필요할까? 대답의 일부로 적은 스레드 갯수로 비동기를 다루고 논블럭킹 웹스택과 적은 하드웨어 자원으로 확장이 필요하다는 것이다.">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="durtchrt">
 <meta name="twitter:url" content="http://durtchrt.github.io/blog/english/spring.io/webflux/">
 <meta name="twitter:title" content="Spring WebFlux - durtchrt">
-<meta name="twitter:description" content="Introduction 스프링 프레임워크, 스프링 Web MVC에 있는 웹프레임워크는 Servlet API와 Servlet 컨테이너를 만들기위한 용도였습니다. 반응형스택, 웹프레임워크, 스프링 웹플럭스는 5.0 번전 이후에 추가되었습니다. 완전한 논블럭킹, Reactive Streams 지원, 역압(back pressure) 그리고 Netty, Undertow, Servlet 3.1 이상 컨테이너와 같은 서버에서 동작합니다. 두 웹프레임워크들 spring-webmvc, spring-webflux 는 스프링 프레임워크에서 나란히 공존합니다. 각각 모듈은 옵션널합니다. 어플리케이션은 하나 또는 다른 모듈을 또는 둘다 사용할수 있습니다. e.g 스프링 MVC 컨트롤러와 리액티브 웹클라이언트 새로운 웹프레임워크가 왜 필요할까?">
+<meta name="twitter:description" content="Introduction 스프링 프레임워크, 스프링 Web MVC에 있는 웹프레임워크는 Servlet API와 Servlet 컨테이너를 만들기위한 용도였습니다. 반응형스택, 웹프레임워크, 스프링 웹플럭스는 5.0 버전 이후에 추가되었습니다. 완전한 논블럭킹, Reactive Streams 지원, 역압(back pressure) 그리고 Netty, Undertow, Servlet 3.1 이상 서버에서 동작합니다. 두 웹프레임워크들 spring-webmvc, spring-webflux 는 스프링 프레임워크에서 나란히 공존하며 모듈들은 옵션입니다. 어플리케이션은 하나 또는 둘 다 사용할 수 있습니다. e.g 스프링 MVC 컨트롤러와 리액티브 웹클라이언트 새로운 웹프레임워크가 왜 필요할까? 대답의 일부로 적은 스레드 갯수로 비동기를 다루고 논블럭킹 웹스택과 적은 하드웨어 자원으로 확장이 필요하다는 것이다.">
 <meta name="twitter:image" content="http://durtchrt.github.io/blog/images/default.png">
 
 
@@ -73,9 +73,9 @@
         "height": 60
       }
     },
-    "description": "Introduction 스프링 프레임워크, 스프링 Web MVC에 있는 웹프레임워크는 Servlet API와 Servlet 컨테이너를 만들기위한 용도였습니다. 반응형스택, 웹프레임워크, 스프링 웹플럭스는 5.0 번전 이후에 추가되었습니다. 완전한 논블럭킹, Reactive Streams 지원, 역압(back pressure) 그리고 Netty, Undertow, Servlet 3.1 이상 컨테이너와 같은 서버에서 동작합니다.
- 두 웹프레임워크들 spring-webmvc, spring-webflux 는 스프링 프레임워크에서 나란히 공존합니다. 각각 모듈은 옵션널합니다. 어플리케이션은 하나 또는 다른 모듈을 또는 둘다 사용할수 있습니다. e.g 스프링 MVC 컨트롤러와 리액티브 웹클라이언트
- 새로운 웹프레임워크가 왜 필요할까?"
+    "description": "Introduction 스프링 프레임워크, 스프링 Web MVC에 있는 웹프레임워크는 Servlet API와 Servlet 컨테이너를 만들기위한 용도였습니다. 반응형스택, 웹프레임워크, 스프링 웹플럭스는 5.0 버전 이후에 추가되었습니다. 완전한 논블럭킹, Reactive Streams 지원, 역압(back pressure) 그리고 Netty, Undertow, Servlet 3.1 이상 서버에서 동작합니다.
+ 두 웹프레임워크들 spring-webmvc, spring-webflux 는 스프링 프레임워크에서 나란히 공존하며 모듈들은 옵션입니다. 어플리케이션은 하나 또는 둘 다 사용할 수 있습니다. e.g 스프링 MVC 컨트롤러와 리액티브 웹클라이언트
+ 새로운 웹프레임워크가 왜 필요할까? 대답의 일부로 적은 스레드 갯수로 비동기를 다루고 논블럭킹 웹스택과 적은 하드웨어 자원으로 확장이 필요하다는 것이다."
   }
 </script>
 
@@ -163,16 +163,16 @@ ga('send', 'pageview');
 <div class="paragraph">
 <p>스프링 프레임워크, 스프링 Web MVC에 있는 웹프레임워크는
 Servlet API와 Servlet 컨테이너를 만들기위한 용도였습니다. 반응형스택, 웹프레임워크,
-스프링 웹플럭스는 5.0 번전 이후에 추가되었습니다. 완전한 논블럭킹,
+스프링 웹플럭스는 5.0 버전 이후에 추가되었습니다. 완전한 논블럭킹,
 <a href="http://www.reactive-streams.org/">Reactive Streams</a> 지원, 역압(back pressure) 그리고
-Netty, Undertow, Servlet 3.1 이상 컨테이너와 같은 서버에서 동작합니다.</p>
+Netty, Undertow, Servlet 3.1 이상 서버에서 동작합니다.</p>
 </div>
 <div class="paragraph">
 <p>두 웹프레임워크들
 <a href="https://github.com/spring-projects/spring-framework/tree/master/spring-webmvc">spring-webmvc</a>,
 <a href="https://github.com/spring-projects/spring-framework/tree/master/spring-webflux">spring-webflux</a> 는
-스프링 프레임워크에서 나란히 공존합니다. 각각 모듈은 옵션널합니다.
-어플리케이션은 하나 또는 다른 모듈을 또는 둘다 사용할수 있습니다.
+스프링 프레임워크에서 나란히 공존하며 모듈들은 옵션입니다.
+어플리케이션은 하나 또는 둘 다 사용할 수 있습니다.
 e.g 스프링 MVC 컨트롤러와 리액티브 <code>웹클라이언트</code></p>
 </div>
 <div class="sect2">
@@ -223,7 +223,7 @@ HTTP 서버처럼 데이터를 생성할 수 있습니다.
 <div class="paragraph">
 <p><strong>질문: 퍼블리셔가 속도를 늦출수 없다면 어쩌죠?</strong><br>
 (The purpose of Reactive Streams is only to establish the mechanism and a boundary.)
-만약 퍼블리셔가 속도를 늦출수 없다면 (누가?) 버퍼링, 삭제 또는 실패를 결정해야합니다.</p>
+만약 퍼블리셔가 속도를 늦출수 없다면 (역자 - 누가?) 버퍼링, 삭제 또는 실패를 결정해야합니다.</p>
 </div>
 </td>
 </tr>
@@ -233,31 +233,25 @@ HTTP 서버처럼 데이터를 생성할 수 있습니다.
 <div class="sect2">
 <h3 id="webflux-reactive-api">리액티브 API</h3>
 <div class="paragraph">
-<p>Reactive Streams plays an important role for interoperability. It is of interest to libraries
-and infrastructure components but less useful as an application API because it is too
-low level. What applications need is a higher level and richer, functional API to
-compose async logic&#8201;&#8212;&#8201;similar to the Java 8 <code>Stream</code> API but not only for collections.
-This is the role that reactive libraries play.</p>
+<p>리액티브 스트림은 상오 운용성에 중용한 역할을 합니다.
+그건 라이브러리나 하부구조인데 너무 로우레벨이라 어플리케이션 API에 유용하지 않다. 어플리케이션이 원하는건
+비동기 로직을 구성하는데 필요로하는 더 추상화되고 더 풍부한 표현력을 가진 함수형 API이다.&#8201;&#8212;&#8201;컬렉션만 적용된 자바 8 <code>Stream</code> API와 유사하다.
+이게 리액티브 라이브러리가 수행하는 역할입니다.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://github.com/reactor/reactor">Reactor</a> is the reactive library of choice for
-Spring WebFlux. It provides the
-<a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html">Mono</a> and
-<a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html">Flux</a> API types
-to work on data sequences of 0..1 and 0..N through a rich set of operators aligned with the
-ReactiveX <a href="http://reactivex.io/documentation/operators.html">vocabulary of operators</a>.
-Reactor is a Reactive Streams library and therefore all of its operators support non-blocking back pressure.
-Reactor has a strong focus on server-side Java. It is developed in close collaboration
-with Spring.</p>
+<p><a href="https://github.com/reactor/reactor">Reactor</a>은 Spring WebFlux를 위해 선택한 리액티브 라이브러리입니다.
+이건 <a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html">Mono</a> 와
+<a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html">Flux</a> API 타입들은
+ReactiveX의 <a href="http://reactivex.io/documentation/operators.html">vocabulary of operators</a>와 비슷한 풍부한 오퍼레잍터들을 통해
+0..1(Mono)과 0..N(Flux)의 데이터 시퀀스에서 작업할 수 있습니다.
+리액터는 리액티브 스트림스 라이브러리이며 오퍼레이터는 논블록킹 역압을 지원합니다.
+리액터는 서버사이드쪽의 자바에 특화되어있습니다. 스프링과 함께 가깝게 협업하며 개발되고 있습니다.</p>
 </div>
 <div class="paragraph">
-<p>WebFlux requires Reactor as a core dependency but it is interoperable with other reactive
-libraries via Reactive Streams. As a general rule WebFlux APIs accept a plain <code>Publisher</code>
-as input, adapt it to Reactor types internally, use those, and then return either
-<code>Flux</code> or <code>Mono</code> as output. So you can pass any <code>Publisher</code> as input and you can apply
-operations on the output, but you&#8217;ll need to adapt the output for use with another reactive library.
-Whenever feasible&#8201;&#8212;&#8201;e.g. annotated controllers, WebFlux adapts transparently to the use
-of RxJava or other reactive library. See <a href="#webflux-reactive-libraries">[webflux-reactive-libraries]</a> for more details.</p>
+<p>웹플럭스는 핵심 디펜던시로 리액터를 필요로합니다만 리액티브 스트림스를 통해 다른 리액티브 라이브러리랑 호환됩니다.(역 - Reactive streams는 interface, reactor와 rxjava는 구현체)
+일반적으로 웹플럭스 API들은 `Publisher`를 입력으로 받고 내부적으로 Reactor 타입으로 적용시킨다. 그리고
+`Flux`나 `Mono`를 결과로 반환합니다. 그럼 당신은 `Publisher`를 입력값으로 전달하고 결과값에 오퍼레이션들을 적용킬수 있다.&#8201;&#8212;&#8201;e.g. 어노테이션이 붙은 컨트롤러, 웹플럭스는 RxJava나 다른 리액티브 라이브러리를 적용할 수 있습니다.
+<a href="#웹플럭스-리액티브-라이브러리">[웹플럭스-리액티브-라이브러리]</a>에 더 상세하게 있습니다.</p>
 </div>
 </div>
 <div class="sect2">
